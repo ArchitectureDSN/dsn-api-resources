@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gipmds:rapport type="ARE" profil="DSN" version="v01r06"
+	xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<envoi>
+		<envoi_identification>
+			<declarant>
+				<siret>31784106200019</siret>
+				<nom>TEST</nom>
+				<prenom>MICHEL</prenom>
+			</declarant>
+			<idflux>UR5WJEBA5T74R4jNmCgvm1F</idflux>
+			<identifiant>MtoM</identifiant>
+			<point_de_depot>01</point_de_depot>
+			<essai_reel />
+			<emetteur_siret>31784106200019</emetteur_siret>
+			<date_reception>2013-10-16</date_reception>
+			<heure_reception>10:42:34</heure_reception>
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>KO</envoi_etat>
+		</envoi_bilan>
+		<envoi_anomalie>
+			<description>
+				<code>B1-105-15</code>
+				<message>Le format du fichier depot_mtom n'est pas reconnu.
+				</message>
+			</description>
+		</envoi_anomalie>
+	</envoi>
+</gipmds:rapport>

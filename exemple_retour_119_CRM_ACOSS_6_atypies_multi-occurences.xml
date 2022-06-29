@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+	<RO>
+		<RO_R001>2022V1.3</RO_R001><RO_B000>
+		<RO_B000_R001>A1fv3vWBFAPcp6RsLN6QGAX</RO_B000_R001>
+		<!-- Identifiant S10_G00_95_900 Information alimentée dans la DSN par le bloc 1-->
+		<RO_B000_R002>1</RO_B000_R002>
+		<!-- RangDéclaration S20.G00.96.010 Information alimentée dans la DSN par le bloc 1-->
+		<RO_B000_R003>511940199XXXXX</RO_B000_R003>
+		<!-- SIRET Emetteur : Concaténation S10.G00.01.001 et S10.G00.01.002-->
+		<RO_B000_R004>511940199XXXXX</RO_B000_R004>
+		<!-- SIRET Declare : Concaténation S10_G00.06.001 et S10.G00.11.001-->
+		<RO_B000_R005>11</RO_B000_R005>
+		<!-- Numéro de fraction de déclaration - S21.G00.05.003 -->
+		<RO_B000_R006>2022-03-01</RO_B000_R006>
+		<!-- Date du mois principal déclaré - S21.G00.05.005 -->
+		<RO_B000_R007>01</RO_B000_R007>
+		<!-- Point de dépôt - S21.G00.00.007 -->
+		<RO_B000_R008>NOMLOGICIEL</RO_B000_R008>
+		<!-- Nom du logiciel utilisé - S21.G00.00.001 -->
+		<RO_B000_R009>NOMEDITEUR</RO_B000_R009>
+		<!--  Nom de l'éditeur - S21.G00.00.002 -->
+		<RO_B000_R010>NUMVERSION</RO_B000_R010>
+		<!-- Numéro de version du logiciel utilisé - S21.G00.00.003 -->
+		<RO_B000_R011>01</RO_B000_R011>
+		<!-- Type de la déclaration - S21.G00.05.002 -->
+		<RO_B000_R012>79647123700002</RO_B000_R012>
+		<!-- Numéro d'ordre de la déclaration - S21.G00.05.004 -->
+		<RO_B000_R013>02</RO_B000_R013>
+		<!-- Code envoi du fichier d'essai ou réel - S21.G00.00.005 -->
+		<RO_B000_R014>P22V01</RO_B000_R014>
+		<!-- Numéro de version de la norme utilisée - S21.G00.00.006 -->
+	</RO_B000>
+	<RO_B001>
+		<RO_B001_R001>01</RO_B001_R001>
+		<!-- Retour organisme sur une DSN mensuelle -->
+		<RO_B002>
+			<RO_B002_R001>3C116dgsdP154</RO_B002_R001>
+			<RO_B002_R002>119</RO_B002_R002>
+			<RO_B002_R003>CRM pour accompagner la résolution des anomalies</RO_B002_R003>
+			<RO_B002_R004>01</RO_B002_R004>
+			<!-- Retour organisme normal -->
+			<RO_B002_R005>URSSAF Caisse Nationnale</RO_B002_R005>
+			<RO_B002_R006>18003501600054</RO_B002_R006>
+			<RO_B002_R007>18003501600054</RO_B002_R007>
+			<RO_B002_R008>2022-02-01</RO_B002_R008>
+			<RO_B002_R009>2022-02-28</RO_B002_R009>
+			<RO_B002_R010>2022-03-02T01:01:01</RO_B002_R010>
+			<RO_B002_R011>2022-03-02T01:01:01</RO_B002_R011>
+			<RO_B003>
+				<RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
+				<RO_B003_R002>KO</RO_B003_R002>
+				<!-- Ecarts ne permettant pas de réaliser l'intégralité des traitements métiers -->
+			</RO_B003>
+				<RO_B004>
+					<RO_B004_R001>UR_ANO_ASS_CSG_CD14</RO_B004_R001>
+					<!-- DA_055 -->
+					<RO_B004_R002>Absence d'assiette CSG - CRDS</RO_B004_R002>
+					<RO_B004_R003>01</RO_B004_R003>
+					<RO_B004_R004>02</RO_B004_R004>
+					<RO_B004_R005>17</RO_B004_R005>
+					<RO_B004_R006>04</RO_B004_R006>
+					<RO_B004_R011>Ce contrôle relève une anomalie en cas d'absence de déclaration d'assiette chiffrée CSG-CRDS en DSN malgré la présence de cotisations de Sécurité sociale sur revenus d'activité ou de remplacement </RO_B004_R011>
+					<RO_B004_R012>"Article L136-1 CSS (Principe de la CSG sur revenu d'activité et remplacement)
+Article L136-1-1 CSS (CSG revenus d'activité)"</RO_B004_R012>
+					<RO_B004_R013>Si l'absence de déclaration d'assiette chiffrée CSG-CRDS est justifiée, alors vérifiez la cohérence des autres éléments de votre déclaration, notamment en cas de déclaration d'apprentis, de chômage partiel, etc.
+
+Sinon, vérifiez les bases de cotisation de votre DSN puis effectuez un bloc de régularisation en déclarant le code de cotisation (CTP) relatif à la CSG-CRDS dans le bloc Cotisation agrégée (S21.G00.23).
+
+Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.</RO_B004_R013>
+					<RO_B004_R014>Pour plus d’information, consultez urssaf.fr [https://www.urssaf.fr/portail/home/employeur/calculer-les-cotisations/les-taux-de-cotisations/la-csg-crds/qui-en-est-redevable.html]</RO_B004_R014>
+					<RO_B004_R015>Votre déclaration est erronée et peut entrainer des sanctions à la suite d'un contrôle.</RO_B004_R015>
+						<RO_B005>
+							<RO_B005_R001>Vous n’avez pas déclaré d’assiette chiffrée au titre de la CSG - CRDS. 
+Nous vous rappelons que les revenus des salariés et revenus de remplacement sont soumis à la CSG - CRDS, selon des conditions et modalités disponibles sur urssaf.fr [lien vers https://www.urssaf.fr/portail/home/employeur/calculer-les-cotisations/les-taux-de-cotisations/la-csg-crds.html]</RO_B005_R001>
+						<RO_B005_R002>2022-03-01</RO_B005_R002>
+						<RO_B005_R003>2022-03-31</RO_B005_R003>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+								<RO_B007_R009>04</RO_B007_R009>
+								<RO_B010>
+									<RO_B010_R001>060</RO_B010_R001></RO_B010><RO_B010>
+									<RO_B010_R001>260</RO_B010_R001></RO_B010><RO_B010>
+									<RO_B010_R001>264</RO_B010_R001></RO_B010><RO_B010>
+									<RO_B010_R001>274</RO_B010_R001></RO_B010><RO_B010>
+									<RO_B010_R001>276</RO_B010_R001></RO_B010><RO_B010>
+									<RO_B010_R001>278</RO_B010_R001></RO_B010><RO_B010>
+									<RO_B010_R001>280</RO_B010_R001></RO_B010><RO_B010>
+									<RO_B010_R001>284</RO_B010_R001>
+								</RO_B010>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.004</RO_B007_R001>
+								<RO_B007_R002>0</RO_B007_R002>
+								<RO_B007_R004>01</RO_B007_R004>
+								<RO_B007_R009>04</RO_B007_R009>
+							</RO_B007>
+					</RO_B005>
+			</RO_B004>
+			<RO_B004>
+				<RO_B004_R001>UR_ANO_EXO_REDG_DIEXO04</RO_B004_R001>
+				<RO_B004_R002>Réduction générale des cotisations patronales non autorisée pour ce salarié</RO_B004_R002>
+				<RO_B004_R003>01</RO_B004_R003>
+				<RO_B004_R004>05</RO_B004_R004>
+				<RO_B004_R005>12</RO_B004_R005>
+				<RO_B004_R006>05</RO_B004_R006>
+				<RO_B004_R007>03</RO_B004_R007>
+				<RO_B004_R008>01</RO_B004_R008>
+				<RO_B004_R009>1</RO_B004_R009>
+				<RO_B004_R010>1</RO_B004_R010>
+				<RO_B004_R011>Ce contrôle vérifie l'éligibilité d'un individu à la réduction générale des cotisations patronales de Sécurité sociale, d'Assurance Chômage et de retraite complémentaire
+Pour rappel, un salarié relevant d'un régime spécial (dont la déclaration en DSN en rubrique 020 du bloc 40 correspond à une certaine valeur) n'est pas éligible à la réduction générale. C'est le cas des salariés de SNCF (valeur 134), RATP (valeur 135), Marins (valeur 136), Mines (valeur 137), Banque de France (valeur 139), EDF - Engie (valeur 147), Comédie Française (valeur 159), Opéra de Paris (valeur 160).</RO_B004_R011>
+				<RO_B004_R012>Article L 241-13 CSS (réduction générale) </RO_B004_R012>
+				<RO_B004_R013>Si le salarié relève du régime général de vieillesse, effectuez un bloc changement dans votre prochaine DSN sur le code régime vieillesse (rubrique S21.G00.40.020) du salarié depuis l'origine de l'anomalie.
+
+Si le salarié relève d'un régime spécial, effectuez un bloc de régularisation dans votre prochaine DSN pour chaque mois concerné afin de déduire du bloc Cotisation agrégée S21.G00.23 la réduction générale déclarée pour ce salarié.
+
+Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.
+Vérifiez que les données demeurent cohérentes entre celles déclarées au bloc Cotisation agrégée (S21.G00.23) et celles déclarées aux blocs Cotisation individuelle (S21.G00.81).</RO_B004_R013>
+				<RO_B004_R014>Pour plus d’information, consultez urssaf.fr [lien : https://www.urssaf.fr/portail/home/employeur/beneficier-dune-exoneration/exonerations-generales/la-reduction-generale/les-employeurs-concernes.html]</RO_B004_R014>
+				<RO_B004_R015>Votre compte Urssaf présente un débit de cotisations à régler.</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>Vous avez appliqué une réduction générale des cotisations patronales pour Yang Sally (1850659418608) qui n'appartient pas au régime général, c’est-à-dire dont le code régime de base risque vieillesse au bloc S21.G00.40.020 est égal au code 136 (Marins).</RO_B005_R001>
+						<RO_B005_R002>2022-03-01</RO_B005_R002>
+						<RO_B005_R003>2022-03-31</RO_B005_R003>
+						<RO_B006>
+							<RO_B006_R001>1850659418608</RO_B006_R001>
+							<RO_B006_R003>Yang</RO_B006_R003>
+							<RO_B006_R004>Sally</RO_B006_R004>
+							<RO_B006_R005>9</RO_B006_R005>
+							<RO_B006_R006>2014-11-12</RO_B006_R006>
+							<RO_B006_R007>00000</RO_B006_R007>
+							<RO_B006_R008>1975-09-25</RO_B006_R008>
+						</RO_B006>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.40.020</RO_B007_R001>
+								<RO_B007_R002>136</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+								<RO_B007_R002>18</RO_B007_R002>
+								<RO_B007_R009>05</RO_B007_R009>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.81.004</RO_B007_R001>
+								<RO_B007_R002>100</RO_B007_R002>
+								<RO_B007_R009>05</RO_B007_R009>
+							</RO_B007>
+					</RO_B005>
+			</RO_B004>
+			<RO_B004>
+				<RO_B004_R001>UR_ANO_ASS_DPLF_CD12</RO_B004_R001>
+				<RO_B004_R002>Déclaration d'un code de cotisation (CTP) associé à une base déplafonnée au lieu d'une base plafonnée</RO_B004_R002>
+				<RO_B004_R003>01</RO_B004_R003>
+				<RO_B004_R004>02</RO_B004_R004>
+				<RO_B004_R005>17</RO_B004_R005>
+				<RO_B004_R006>01</RO_B004_R006>
+				<RO_B004_R011>Ce contrôle vérifie que le qualifiant d'assiette déclaré en rubrique  Qualifiant d'assiette - S21.G00.23.002 est cohérent, au regard du référentiel Table des Codes Type de Personnel, avec le CTP déclaré en rubrique Code de cotisation - S21.G00.23.001  dans un bloc Cotisation agrégée - S21.G00.23 . Il permet de vérifier la correcte utilisation de la valeur 920 (qualifiant d'assiette déplafonnée) et propose le cas échéant l'utilisation de la valeur 921 (qualifiant d'assiette plafonnée) en remplacement.</RO_B004_R011>
+				<RO_B004_R012>Article L241-3 CSS (cotisation Assurance vieillesse plafonnée)</RO_B004_R012>
+				<RO_B004_R013>Effectuez un bloc de régularisation dans votre prochaine DSN en déclarant une assiette plafonnée, code 921 du bloc Qualifiant d'assiette (S21.G00.23.002), pour ce code de cotisation (CTP).
+
+Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.
+Vérifiez que les données demeurent cohérentes entre celles déclarées au bloc Cotisation agrégée (S21.G00.23) et celles déclarées aux blocs Cotisation individuelle (S21.G00.81).</RO_B004_R013>
+				<RO_B004_R014>Pour plus d’information, consultez le guide Urssaf [lien : https://www.urssaf.fr/portail/files/live/sites/urssaf/files/documents/DSN_Guide-declaration-regularisation-cotisations-sociales-Urssaf_Norme-2021.pdf]</RO_B004_R014>
+				<RO_B004_R015>Votre déclaration ne peut pas être traitée intégralement par votre Urssaf et peut provoquer des calculs de montant de cotisation erroné.</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>Vous avez déclaré le code de cotisation 903 sur une assiette déplafonnée dans le bloc Cotisation agrégée (S21.G00.23), alors que ce code de cotisation n'est possible que sur une assiette plafonnée. </RO_B005_R001>
+						<RO_B005_R002>2022-03-01</RO_B005_R002>
+						<RO_B005_R003>2022-03-31</RO_B005_R003>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+								<RO_B007_R002>903</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.002</RO_B007_R001>
+								<RO_B007_R002>920</RO_B007_R002>
+								<RO_B007_R003>921</RO_B007_R003>
+								<RO_B007_R009>01</RO_B007_R009>
+							</RO_B007>
+					</RO_B005>
+			</RO_B004>
+			<RO_B004>
+				<RO_B004_R001>UR_ANO_TX_AT_DA059</RO_B004_R001>
+				<RO_B004_R002>Ecart entre le taux AT/MP déclaré et celui transmis par la CARSAT</RO_B004_R002>
+				<RO_B004_R003>01</RO_B004_R003>
+				<RO_B004_R004>02</RO_B004_R004>
+				<RO_B004_R005>17</RO_B004_R005>
+				<RO_B004_R006>01</RO_B004_R006>
+				<RO_B004_R011>Ce contrôle se déclenche lorsque le taux d'accident du travail et maladie professionnelle déclaré en rubrique Taux de cotisation S21.G00.23.003 est différent du taux défini par la Carsat pour l'établissement.</RO_B004_R011>
+				<RO_B004_R012>Article L242-5 CSS (Taux AT/MP)
+Article D242-6-1 CSS (Taux AT/MP par établissement)</RO_B004_R012>
+				<RO_B004_R013>Vérifiez votre taux AT/MP depuis le service Compte AT/MP, accessible depuis net-entreprises.
+Modifiez le paramétrage de votre logiciel de paie afin de ne pas reproduire cette anomalie.</RO_B004_R013>
+				<RO_B004_R014>Si vous souhaitez contester votre taux AT/MP, contactez votre Carsat / Cramif / CGSS [lien : http://www.risquesprofessionnels.ameli.fr/contact.html].</RO_B004_R014>
+				<RO_B004_R015>Votre Urssaf corrige automatiquement votre taux AT/MP à partir des éléments à sa disposition. 
+Cette correction peut générer un débit à régler, ou un crédit qui sera remboursé.</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>Vous avez déclaré un taux erroné pour le code de cotisations 823 en bloc Cotisation agrégée (S21.G00.23) ; en effet, un taux AT/MP de 1.10% a été appliqué au lieu du taux de 1.50%.</RO_B005_R001>
+						<RO_B005_R002>2022-03-01</RO_B005_R002>
+						<RO_B005_R003>2022-03-31</RO_B005_R003>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+								<RO_B007_R002>823</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.004</RO_B007_R001>
+								<RO_B007_R002>1250</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.003</RO_B007_R001>
+								<RO_B007_R002>1.50</RO_B007_R002>
+								<RO_B007_R003>1.10</RO_B007_R003>
+								<RO_B007_R009>01</RO_B007_R009>
+							</RO_B007>
+					</RO_B005>
+			</RO_B004>
+			<RO_B004>
+				<RO_B004_R001>UR_ANO_TX_AT_DA062</RO_B004_R001>
+				<RO_B004_R002>Ecart entre le taux AT/MP déclaré et celui connu de l'Urssaf</RO_B004_R002>
+				<RO_B004_R003>01</RO_B004_R003>
+				<RO_B004_R004>02</RO_B004_R004>
+				<RO_B004_R005>17</RO_B004_R005>
+				<RO_B004_R006>01</RO_B004_R006>
+				<RO_B004_R011>Ce contrôle se déclenche lorsque le taux d'accident du travail et maladie professionnelle déclaré en rubrique Taux de cotisation - S21.G00.23.003 est différent du taux connu de l'Urssaf pour l'établissement.</RO_B004_R011>
+				<RO_B004_R012>Article L242-5 CSS (Taux AT/MP)
+Article D242-6-1 CSS (Taux AT/MP par établissement)
+</RO_B004_R012>
+				<RO_B004_R013>Vérifiez votre taux AT/MP depuis le service Compte AT/MP, accessible depuis net-entreprises.
+Modifiez le paramétrage de votre logiciel de paie afin de ne pas reproduire cette anomalie.</RO_B004_R013>
+				<RO_B004_R014>Si vous souhaitez contester votre taux AT/MP, contactez votre Carsat / Cramif / CGSS [lien : http://www.risquesprofessionnels.ameli.fr/contact.html].</RO_B004_R014>
+				<RO_B004_R015>Votre Urssaf corrige automatiquement votre taux AT/MP à partir des éléments à sa disposition. 
+Cette correction peut générer un débit à régler, ou un crédit qui sera remboursé.</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>Vous avez déclaré un taux erroné pour le code de cotisations 823 en bloc Cotisation agrégée (S21.G00.23); en effet, un taux AT/MP de 1.10 a été appliqué au lieu du taux de 1.50.</RO_B005_R001>
+						<RO_B005_R002>2022-03-01</RO_B005_R002>
+						<RO_B005_R003>2022-03-31</RO_B005_R003>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+								<RO_B007_R002>823</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.23.003</RO_B007_R001>
+								<RO_B007_R002>1.50</RO_B007_R002>
+								<RO_B007_R003>1.10</RO_B007_R003>
+								<RO_B007_R009>01</RO_B007_R009>
+							</RO_B007>
+					</RO_B005>
+			</RO_B004>
+			<RO_B004>
+				<RO_B004_R001>UR_ANO_COT_VM_DIPA18</RO_B004_R001>
+				<RO_B004_R002>Versement mobilité : absence de code commune INSEE pour un salarié</RO_B004_R002>
+				<RO_B004_R003>01</RO_B004_R003>
+				<RO_B004_R004>04</RO_B004_R004>
+				<RO_B004_R005>12</RO_B004_R005>
+				<RO_B004_R006>02</RO_B004_R006>
+				<RO_B004_R007>02</RO_B004_R007>
+				<RO_B004_R008>01</RO_B004_R008>
+				<RO_B004_R009>2</RO_B004_R009>
+				<RO_B004_R010>2</RO_B004_R010>
+				<RO_B004_R011>Ce contrôle vérifie que la rubrique S21.G00.81.005 (code commune INSEE) du bloc CotisationIndividuelle (S21.G00.81) est renseignée. 
+Si :
+- le code de la rubrique S21.G00.81.001 est 081 (versement transport) ou 082 (taxe additionnelle) ou que la base assujettie (S21.G00.78.001) est valorisée à 57 (Assiette versement transport) 
+- et que le montant d'assiette transport est non nul 
+alors la rubrique S21.G00.81.005 doit être renseignée.</RO_B004_R011>
+				<RO_B004_R012>Article L2333-64 CGCT (Versement mobilité Hors IDF)
+Article L2531-2 CGCT (Versement mobilité IDF)
+L5722-7 et L 5722-7-1 CGCT (versement mobilité additionnel et versement mobilité )</RO_B004_R012>
+				<RO_B004_R013>Effectuez un bloc de régularisation dans votre prochaine DSN en précisant dans le bloc Cotisations individuelles (S21.G00.81), en rubrique S21.G00.81.005, votre code INSEE Commune. 
+
+Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.
+Vérifiez que les données demeurent cohérentes entre celles déclarées au bloc Cotisation agrégée (S21.G00.23) et celles déclarées aux blocs Cotisation individuelle (S21.G00.81).</RO_B004_R013>
+				<RO_B004_R014>Pour plus d’information, consultez le guide Urssaf [lien : https://www.urssaf.fr/portail/files/live/sites/urssaf/files/documents/DSN_Guide-declaration-regularisation-cotisations-sociales-Urssaf_Norme-2021.pdf]</RO_B004_R014>
+				<RO_B004_R015>Sans régularisation, l'Urssaf rattachera ce salarié à la contribution versement mobilité déterminée par le code commune INSEE de l'établissement de rattachement administratif déclaré au bloc Cotisation agrégée (S21.G00.23), un débit à régler est possible.</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>Vous avez déclaré une assiette liée à la contribution versement mobilité en bloc Cotisation individuelle (S21.G00.81.003) de Burt Alisha (1920362001209 - matricule 00029), alors que le code commune INSEE nécessaire pour déterminer le taux applicable n'est pas renseigné au bloc Cotisation individuelle (S21.G00.81.005).</RO_B005_R001>
+						<RO_B005_R002>2022-03-01</RO_B005_R002>
+						<RO_B005_R003>2022-03-31</RO_B005_R003>
+							<RO_B006>
+								<RO_B006_R001>1920362001209</RO_B006_R001>
+								<RO_B006_R003>Burt</RO_B006_R003>
+								<RO_B006_R004>Alisha</RO_B006_R004>
+								<RO_B006_R005>00029</RO_B006_R005>
+								<RO_B006_R006>2014-11-12</RO_B006_R006>
+								<RO_B006_R008>1968-03-30</RO_B006_R008>
+							</RO_B006>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+								<RO_B007_R002>081</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.81.003</RO_B007_R001>
+								<RO_B007_R002>1754.00</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.81.005</RO_B007_R001>
+								<RO_B007_R009>02</RO_B007_R009>
+							</RO_B007>
+					</RO_B005>
+					<RO_B005>
+						<RO_B005_R001>Vous avez déclaré une assiette liée à la contribution versement mobilité en bloc Cotisation individuelle (S21.G00.81.003) de Burt Alisha (1950597719547 - 31817898086954306 matricule EMP0006), alors que le code commune INSEE nécessaire pour déterminer le taux applicable n'est pas renseigné au bloc Cotisation individuelle (S21.G00.81.005).</RO_B005_R001>
+						<RO_B005_R002>2022-03-01</RO_B005_R002>
+						<RO_B005_R003>2022-03-31</RO_B005_R003>
+							<RO_B006>
+								<RO_B006_R001>1950597719547</RO_B006_R001>
+								<RO_B006_R002>31817898086954306</RO_B006_R002>
+								<RO_B006_R003>Henson</RO_B006_R003>
+								<RO_B006_R004>Tamara</RO_B006_R004>
+								<RO_B006_R005>EMP0006</RO_B006_R005>
+								<RO_B006_R006>2018-07-08</RO_B006_R006>
+								<RO_B006_R008>1961-12-15</RO_B006_R008>
+							</RO_B006>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+								<RO_B007_R002>082</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.81.003</RO_B007_R001>
+								<RO_B007_R002>560.00</RO_B007_R002>
+							</RO_B007>
+							<RO_B007>
+								<RO_B007_R001>S21.G00.81.005</RO_B007_R001>
+								<RO_B007_R009>02</RO_B007_R009>
+							</RO_B007>
+					</RO_B005>
+			</RO_B004>
+	</RO_B002>
+</RO_B001>
+	</RO>
+</GIPMDS>
+

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BPIJ Nature="BPIJ" Version="02.03" xmlns="www.cnamts.fr/tlsemp/IJ">
+    <Identification>602845</Identification>
+    <Temps>2021-06-30T00:00:00.000+02:00</Temps>
+    <Fonction Q="REQBPIJ">9 : document original</Fonction>
+    <Declarant>
+        <Identite R="SIRET">18003502403003</Identite>
+        <RaisonSociale></RaisonSociale>
+        <Cumul>
+            <Libelle>Total Declarant</Libelle>
+            <Montant>5.97</Montant>
+        </Cumul>
+        <Declare>
+            <Identite R="SIRET">18003502400058</Identite>
+            <RaisonSociale></RaisonSociale>
+            <Cumul>
+                <Libelle>Total Entreprise</Libelle>
+                <Montant>5.97</Montant>
+            </Cumul>
+            <Caisse>
+                <CodeCPAM>971</CodeCPAM>
+                <Libelle>CGSS de la GUADELOUPE</Libelle>
+                <JComptable>2021-06-28</JComptable>
+                <Cumul>
+                    <Libelle>Total bordereau par organisme émetteur</Libelle>
+                    <Montant>5.97</Montant>
+                </Cumul>
+                <Assure>
+                    <NIR>9999999999999</NIR>
+                    <Nom></Nom>
+                    <Prenom></Prenom>
+                    <Cumul>
+                        <Libelle>Total Salarié</Libelle>
+                        <Montant>-35.29</Montant>
+                    </Cumul>
+                    <Assurance>
+                        <CodeNature>AS</CodeNature>
+                        <Cumul>
+                            <Libelle>Total Nature Assurance</Libelle>
+                            <Montant>-35.29</Montant>
+                        </Cumul>
+                        <Prestation>
+                            <CodeNature>RPR</CodeNature>
+                            <Reference>2103943157</Reference>
+                            <Libelle>RECUPERATION D'INDU</Libelle>
+                            <DateDebPrest>2021-06-28</DateDebPrest>
+                            <IJSub>false</IJSub>
+                            <Montant>-35.29</Montant>
+                        </Prestation>
+                    </Assurance>
+                    <Rappel>
+                        <Numero>2103943157</Numero>
+                        <Montant>-35.29</Montant>
+                    </Rappel>
+                </Assure>
+                <Assure>
+                    <NIR>0851201001001</NIR>
+                    <Nom>ANONYME1</Nom>
+                    <Prenom>JEAN</Prenom>
+                    <Cumul>
+                        <Libelle>Total Salarié</Libelle>
+                        <Montant>41.26</Montant>
+                    </Cumul>
+                    <Assurance>
+                        <CodeNature>AT</CodeNature>
+                        <Cumul>
+                            <Libelle>Total Nature Assurance</Libelle>
+                            <Montant>41.26</Montant>
+                        </Cumul>
+                        <Prestation>
+                            <CodeNature>IJNOR</CodeNature>
+                            <Libelle>I.J. NORMALES</Libelle>
+                            <DateDebPrest>2021-05-06</DateDebPrest>
+                            <DateFinPrest>2021-05-06</DateFinPrest>
+                            <NumSin>235812327</NumSin>
+                            <NbIJ>1.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>44.22</PU>
+                            <Montant>44.22</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>RETCRD</CodeNature>
+                            <Libelle>RETENUE CONTRIB. REMBOURSEMENT DETTE SOCIALE</Libelle>
+                            <DateDebPrest>2021-05-06</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>-0.22</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>RETRCJ</CodeNature>
+                            <Libelle>RETENUE REGUL.CONTRIB. SOCIALE GENERALISEE</Libelle>
+                            <DateDebPrest>2021-05-06</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>-2.74</Montant>
+                        </Prestation>
+                    </Assurance>
+                    <Assurance>
+                        <CodeNature>AS</CodeNature>
+                        <Cumul>
+                            <Libelle>Total Nature Assurance</Libelle>
+                            <Montant>-35.29</Montant>
+                        </Cumul>
+                        <Prestation>
+                            <CodeNature>IJNOR</CodeNature>
+                            <Libelle>I.J. NORMALES</Libelle>
+                            <DateDebPrest>2021-05-06</DateDebPrest>
+                            <DateFinPrest>2021-05-06</DateFinPrest>
+                            <NumSin>235812327</NumSin>
+                            <NbIJ>1.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>-37.83</PU>
+                            <Montant>-37.83</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>REGRCJ</CodeNature>
+                            <Libelle>REGULARISATION REGUL.CONTRIB. SOCIALE GENERALISEE</Libelle>
+                            <DateDebPrest>2021-05-06</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>2.35</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>REGRRD</CodeNature>
+                            <Libelle>REGULARISATION REGUL. REMBOURSEMENT DETTE SOCIALE</Libelle>
+                            <DateDebPrest>2021-05-06</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>0.19</Montant>
+                        </Prestation>
+                    </Assurance>
+                    <Indu>
+                        <Numero>2103943157</Numero>
+                        <Montant>35.29</Montant>
+                    </Indu>
+                </Assure>
+            </Caisse>
+        </Declare>
+    </Declarant>
+</BPIJ>

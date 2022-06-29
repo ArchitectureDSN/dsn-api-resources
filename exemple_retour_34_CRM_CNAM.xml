@@ -1,0 +1,69 @@
+<gipmds:rapport type="34" profil="DSN" version="v02r02"
+	xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<envoi>
+		<envoi_identification>
+			<idflux>F1RwdjpMGt6s6mIteMc1IeG</idflux> <!-- Idflux de la déclaration DSN -->
+			<emetteur_siret>33345477500011</emetteur_siret> <!-- SIRET du déclarant -->
+			<raison_sociale>Raison sociale</raison_sociale> <!-- Raison sociale du déclarant -->
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>OK</envoi_etat> <!-- Toujours valorisé à OK -->
+		</envoi_bilan>
+	</envoi>
+	<declaration>
+		<declaration_identification>
+			<rang>1</rang> <!-- Rang de la déclaration DSN -->
+			<SIREN>404767881</SIREN> <!-- SIREN du déclaré -->
+			<nic_affectation>00018</nic_affectation> <!-- NIC du déclaré -->
+		</declaration_identification>
+		<declaration_bilan>
+			<etat>OK</etat> <!-- Toujours valorisé à OK -->
+		</declaration_bilan>
+	</declaration>
+	<communication>
+		<information_collective type="atmp">	<!-- Information collective Taux Atmp -->
+			<calcul date_calcul="2020-02-23T04:05:11">	<!-- Bloc calcul de l'information -->
+				<information>
+					<donnees_clefs>
+						<!-- Donnees clefs de l'information, dependant du type d'information -->
+						<rubriques>
+							<rubrique_string name="section">01</rubrique_string>
+							<rubrique_date name="dateDebutEffet">2019-07-10</rubrique_date>
+						</rubriques>
+					</donnees_clefs>
+					<donnees_paie>
+						<!-- Donnnees necessaires au calcul de la paie, dependant du type d'information -->
+						<taux part="patronale">3.41</taux>
+					</donnees_paie>	
+					<donnees_declaration>
+						<!-- Donnees necessaires a la declaration, dependant du type d'information -->
+						<rubriques>
+							<rubrique_string name="codeCTN">AB</rubrique_string>
+							<rubrique_string name="codeRisque">123AB</rubrique_string>
+							<rubrique_string name="temoinBureau"/>
+						</rubriques>	
+					</donnees_declaration>
+				</information>
+				<information>
+					<donnees_clefs>
+						<!-- Donnees clefs de l'information, dependant du type d'information -->
+						<rubriques>
+							<rubrique_string name="section">02</rubrique_string>
+							<rubrique_date name="dateDebut">2019-07-10</rubrique_date>
+						</rubriques>
+					</donnees_clefs>
+					<donnees_paie>
+						<taux part="patronale">1.70</taux>
+					</donnees_paie>
+					<donnees_declaration>
+						<rubriques>
+							<rubrique_string name="codeCTN">AB</rubrique_string>
+							<rubrique_string name="codeRisque">123AB</rubrique_string>
+							<rubrique_string name="temoinBureau">B</rubrique_string>
+						</rubriques>
+					</donnees_declaration>
+				</information>
+			</calcul>
+		</information_collective>
+	</communication>
+</gipmds:rapport>

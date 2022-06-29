@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gipmds:rapport type="AEE" profil="DSN" version="v01r06"
+	xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<envoi>
+		<envoi_identification>
+			<declarant>
+				<siret>41027602600029</siret>
+				<nom>test</nom>
+				<prenom>dsn</prenom>
+			</declarant>
+			<idflux>WSaah7AQlUpYL5RsQssseG.</idflux>
+			<identifiant>MtoM</identifiant>
+			<point_de_depot>01</point_de_depot>
+			<essai_reel>02</essai_reel>
+			<emetteur_siret>41027602600029</emetteur_siret>
+			<date_reception>2015-02-10</date_reception>
+			<heure_reception>11:02:59</heure_reception>
+			<date_enregistrement>2015-02-10</date_enregistrement>
+			<heure_enregistrement>11:02:59</heure_enregistrement>
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>OK</envoi_etat>
+		</envoi_bilan>
+	</envoi>
+</gipmds:rapport>

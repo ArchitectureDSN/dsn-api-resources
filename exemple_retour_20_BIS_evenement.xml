@@ -1,0 +1,66 @@
+﻿<gipmds:rapport type="20" profil="DSN" version="v01r06"
+	message="Votre déclaration a été rejetée car l&apos;identité du salarié déclaré n&apos;est pas certifiée. Merci de corriger votre déclaration ou d&apos;utiliser la procédure déclarative hors DSN."
+	xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v01r06.xsd ">
+	<envoi>
+		<envoi_identification>
+			<declarant>
+				<siret>12345678912345</siret>
+				<nom>CHERIFI</nom>
+				<prenom>SAMIR</prenom>
+			</declarant>
+			<idflux>identifiant-du-flux</idflux>
+			<identifiant>KDT-CRM-191.xml</identifiant>
+			<version_norme>P02V01</version_norme>
+			<point_de_depot>01</point_de_depot>
+			<type_envoi>01</type_envoi>
+			<essai_reel>02</essai_reel>
+			<emetteur_siret>55201802001691</emetteur_siret>
+			<nom_logiciel>superpaie</nom_logiciel>
+			<editeur_logiciel>génielog</editeur_logiciel>
+			<version_logiciel>v99</version_logiciel>
+			<code_conformite>code conformite pre ctrl</code_conformite>
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>OK</envoi_etat>
+		</envoi_bilan>
+	</envoi>
+	<declaration>
+		<declaration_identification>
+			<rang>123450</rang>
+			<nature>04</nature>
+			<type>01</type>
+			<fraction>11</fraction>
+			<ordre>1</ordre>
+			<identifiant_metier>1</identifiant_metier>
+			<SIREN>222000200</SIREN>
+			<nic_siege>30003</nic_siege>
+			<nic_affectation>30003</nic_affectation>
+		</declaration_identification>
+		<declaration_bilan>
+			<etat>KO</etat>
+			<declaration_contenu>
+				<salaries>0</salaries>
+			</declaration_contenu>
+		</declaration_bilan>
+		<declaration_anomalie>
+			<description>
+				<code>I0320</code>
+				<categorie>bloquant</categorie>
+				<message>SALARIE_INCONNU</message>
+				<nombre>1</nombre>
+			</description>
+			<environnement>
+				<salarie origine="DSN">
+					<NIR>1700102889999</NIR>
+					<NTT>1700102722136</NTT>
+					<nom_famille>NOM-INCONNU</nom_famille>
+					<nom_usage>NOM-USAGE</nom_usage>
+					<prenoms>PRENOM-INCONNU</prenoms>
+					<date_naissance>01041970</date_naissance>
+					<matricule>0002</matricule>
+				</salarie>
+			</environnement>
+		</declaration_anomalie>
+	</declaration>
+</gipmds:rapport>

@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BPIJ Nature="BPIJ" Version="02.03" xmlns="www.cnamts.fr/tlsemp/IJ">
+    <Identification>381194</Identification>
+    <Temps>2021-02-25T00:00:00.000+01:00</Temps>
+    <Fonction Q="REQBPIJ">9 : document original</Fonction>
+    <Declarant>
+        <Identite R="SIRET">18003502403003</Identite>
+        <RaisonSociale></RaisonSociale>
+        <Cumul>
+            <Libelle>Total Declarant</Libelle>
+            <Montant>5591.71</Montant>
+        </Cumul>
+        <Declare>
+            <Identite R="SIRET">18003502400058</Identite>
+            <RaisonSociale></RaisonSociale>
+            <Cumul>
+                <Libelle>Total Entreprise</Libelle>
+                <Montant>5591.71</Montant>
+            </Cumul>
+            <Caisse>
+                <CodeCPAM>631</CodeCPAM>
+                <Libelle>CPAM du PUY de DOME</Libelle>
+                <JComptable>2021-02-22</JComptable>
+                <Cumul>
+                    <Libelle>Total bordereau par organisme émetteur</Libelle>
+                    <Montant>3747.53</Montant>
+                </Cumul>
+                <Assure>
+                    <NIR>0851201001001</NIR>
+                    <Nom>ANONYME1</Nom>
+                    <Prenom>JEAN</Prenom>
+                    <Cumul>
+                        <Libelle>Total Salarié</Libelle>
+                        <Montant>782.69</Montant>
+                    </Cumul>
+                    <Assurance>
+                        <CodeNature>MA</CodeNature>
+                        <Cumul>
+                            <Libelle>Total Nature Assurance</Libelle>
+                            <Montant>782.69</Montant>
+                        </Cumul>
+                        <Prestation>
+                            <CodeNature>PRE</CodeNature>
+                            <Libelle>I.J. PRENATALES</Libelle>
+                            <DateDebPrest>2020-07-17</DateDebPrest>
+                            <DateFinPrest>2020-08-01</DateFinPrest>
+                            <NumSin>235812327</NumSin>
+                            <NbIJ>16.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>52.60</PU>
+                            <Montant>841.60</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>RETCRD</CodeNature>
+                            <Libelle>RETENUE CONTRIB. REMBOURSEMENT DETTE SOCIALE</Libelle>
+                            <DateDebPrest>2020-07-17</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>-4.21</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>CSJ</CodeNature>
+                            <Libelle>CONTRIBUTION SOCIALE GENERALISEE</Libelle>
+                            <DateDebPrest>2020-07-17</DateDebPrest>
+                            <NumSin>235812327</NumSin>
+                            <NbIJ>0.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>0.00</PU>
+                            <Montant>-54.70</Montant>
+                        </Prestation>
+                    </Assurance>
+                </Assure>
+                <Assure>
+                    <NIR>0851201001002</NIR>
+                    <Nom>ANONYME2</Nom>
+                    <Prenom>MARIE</Prenom>
+                    <Cumul>
+                        <Libelle>Total Salarié</Libelle>
+                        <Montant>2964.84</Montant>
+                    </Cumul>
+                    <Assurance>
+                        <CodeNature>AT</CodeNature>
+                        <Cumul>
+                            <Libelle>Total Nature Assurance</Libelle>
+                            <Montant>2964.84</Montant>
+                        </Cumul>
+                        <Prestation>
+                            <CodeNature>IJNOR</CodeNature>
+                            <Libelle>I.J. NORMALES</Libelle>
+                            <DateDebPrest>2020-03-09</DateDebPrest>
+                            <DateFinPrest>2020-03-18</DateFinPrest>
+                            <NumSin>235812327</NumSin>
+                            <NbIJ>10.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>150.00</PU>
+                            <Montant>1500.00</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>RETCRD</CodeNature>
+                            <Libelle>RETENUE CONTRIB. REMBOURSEMENT DETTE SOCIALE</Libelle>
+                            <DateDebPrest>2020-03-19</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>-7.50</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>CSJ</CodeNature>
+                            <Libelle>CONTRIBUTION SOCIALE GENERALISEE</Libelle>
+                            <DateDebPrest>2020-03-19</DateDebPrest>
+                            <NumSin>235812327</NumSin>
+                            <NbIJ>0.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>0.00</PU>
+                            <Montant>-97.50</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>IJMAJ</CodeNature>
+                            <Libelle>I.J. MAJOREES</Libelle>
+                            <DateDebPrest>2020-03-19</DateDebPrest>
+                            <DateFinPrest>2020-03-28</DateFinPrest>
+                            <NumSin>235812327</NumSin>
+                            <NbIJ>10.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>168.80</PU>
+                            <Montant>1688.00</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>RETCRD</CodeNature>
+                            <Libelle>RETENUE CONTRIB. REMBOURSEMENT DETTE SOCIALE</Libelle>
+                            <DateDebPrest>2020-03-19</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>-8.44</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>CSJ</CodeNature>
+                            <Libelle>CONTRIBUTION SOCIALE GENERALISEE</Libelle>
+                            <DateDebPrest>2020-03-19</DateDebPrest>
+                            <NumSin>235812327</NumSin>
+                            <NbIJ>0.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>0.00</PU>
+                            <Montant>-109.72</Montant>
+                        </Prestation>
+                    </Assurance>
+                </Assure>
+            </Caisse>
+            <Caisse>
+                <CodeCPAM>631</CodeCPAM>
+                <Libelle>CPAM du PUY de DOME</Libelle>
+                <JComptable>2021-02-23</JComptable>
+                <Cumul>
+                    <Libelle>Total bordereau par organisme émetteur</Libelle>
+                    <Montant>1844.18</Montant>
+                </Cumul>
+                <Assure>
+                    <NIR>0851201001003</NIR>
+                    <Nom>ANONYME3</Nom>
+                    <Prenom>PIERRE</Prenom>
+                    <Cumul>
+                        <Libelle>Total Salarié</Libelle>
+                        <Montant>1844.18</Montant>
+                    </Cumul>
+                    <Assurance>
+                        <CodeNature>AS</CodeNature>
+                        <Cumul>
+                            <Libelle>Total Nature Assurance</Libelle>
+                            <Montant>1844.18</Montant>
+                        </Cumul>
+                        <Prestation>
+                            <CodeNature>CAR</CodeNature>
+                            <Libelle>CARENCE</Libelle>
+                            <DateDebPrest>2020-03-01</DateDebPrest>
+                            <DateFinPrest>2020-03-03</DateFinPrest>
+                            <NumSin>0</NumSin>
+                            <NbIJ>3.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>0.00</PU>
+                            <Montant>0.00</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>IJNOR</CodeNature>
+                            <Libelle>I.J. NORMALES</Libelle>
+                            <DateDebPrest>2020-03-04</DateDebPrest>
+                            <DateFinPrest>2020-03-30</DateFinPrest>
+                            <NumSin>0</NumSin>
+                            <NbIJ>27.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>18.08</PU>
+                            <Montant>488.16</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>RETCRD</CodeNature>
+                            <Libelle>RETENUE CONTRIB. REMBOURSEMENT DETTE SOCIALE</Libelle>
+                            <DateDebPrest>2020-03-04</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>-2.44</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>CSJ</CodeNature>
+                            <Libelle>CONTRIBUTION SOCIALE GENERALISEE</Libelle>
+                            <DateDebPrest>2020-03-04</DateDebPrest>
+                            <NumSin>0</NumSin>
+                            <NbIJ>0.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>0.00</PU>
+                            <Montant>-31.73</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>IJMAJ</CodeNature>
+                            <Libelle>I.J. MAJOREES</Libelle>
+                            <DateDebPrest>2020-03-31</DateDebPrest>
+                            <DateFinPrest>2020-05-31</DateFinPrest>
+                            <NumSin>0</NumSin>
+                            <NbIJ>62.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>24.11</PU>
+                            <Montant>1494.82</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>RETCRD</CodeNature>
+                            <Libelle>RETENUE CONTRIB. REMBOURSEMENT DETTE SOCIALE</Libelle>
+                            <DateDebPrest>2020-03-31</DateDebPrest>
+                            <IJSub>true</IJSub>
+                            <Montant>-7.47</Montant>
+                        </Prestation>
+                        <Prestation>
+                            <CodeNature>CSJ</CodeNature>
+                            <Libelle>CONTRIBUTION SOCIALE GENERALISEE</Libelle>
+                            <DateDebPrest>2020-03-31</DateDebPrest>
+                            <NumSin>0</NumSin>
+                            <NbIJ>0.0</NbIJ>
+                            <IJSub>true</IJSub>
+                            <PU>0.00</PU>
+                            <Montant>-97.16</Montant>
+                        </Prestation>
+                    </Assurance>
+                </Assure>
+            </Caisse>
+        </Declare>
+    </Declarant>
+</BPIJ>

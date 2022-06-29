@@ -1,0 +1,88 @@
+<gipmds:rapport type="21" profil="DSN" version="v01r06"
+	xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v01r06.xsd ">
+	<envoi>
+		<envoi_identification>
+			<declarant>
+				<siret>33300018050000</siret>
+				<nom>CHERIFI</nom>
+				<prenom>SAMIR</prenom>
+			</declarant>
+			<idflux>identifiant-du-flux</idflux>
+			<identifiant>KDT-CRM-495 M C02 04.xml</identifiant>
+			<version_norme>P02V01</version_norme>
+			<point_de_depot>01</point_de_depot>
+			<type_envoi>01</type_envoi>
+			<essai_reel>02</essai_reel>
+			<emetteur_siret>55201802001691</emetteur_siret>
+			<nom_logiciel>superpaie</nom_logiciel>
+			<editeur_logiciel>génielog</editeur_logiciel>
+			<version_logiciel>v99</version_logiciel>
+			<code_conformite>code conformite pre ctrl</code_conformite>
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>OK</envoi_etat>
+		</envoi_bilan>
+	</envoi>
+	<declaration>
+		<declaration_identification>
+			<rang>123450</rang>
+			<nature>01</nature>
+			<type>01</type>
+			<fraction>11</fraction>
+			<ordre>1</ordre>
+			<mois>01072014</mois>
+			<SIREN>222000242</SIREN>
+			<nic_siege>50003</nic_siege>
+			<nic_affectation>50003</nic_affectation>
+		</declaration_identification>
+		<declaration_bilan>
+			<etat>OK</etat>
+			<declaration_contenu>
+				<salaries>2</salaries>
+			</declaration_contenu>
+		</declaration_bilan>
+		<declaration_anomalie>
+			<description>
+				<code>C0202</code>
+				<categorie>non-bloquant</categorie>
+				<message>ETAB - 222000242 - 50003 - Contrat absent sans fin de contrat déclarée. Données mois précédent : NIR : 2500105061099, Date début du contrat : 01062014, Numéro du contrat : Contrat1</message>
+				<nombre>2</nombre>
+			</description>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>C0202</code>
+				<categorie>non-bloquant</categorie>
+				<message>ETAB - 222000242 - 50003 - Contrat absent sans fin de contrat déclarée. Données mois précédent : NIR : 1700103190063, Date début du contrat : 01062014, Numéro du contrat : Contrat2</message>
+				<nombre>2</nombre>
+			</description>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>C0201</code>
+				<categorie>non-bloquant</categorie>
+				<message>CONTRAT - Contrat présent sans embauche</message>
+				<nombre>1</nombre>
+			</description>
+			<environnement>
+				<salarie origine="DSN">
+					<NIR>2500105061099</NIR>
+					<NTT>155201802015373</NTT>
+					<nom_famille>NADINSOIXANTEDIXNEUF</nom_famille>
+					<nom_usage>NADINSOIXANTEDIXNEUF</nom_usage>
+					<prenoms>DANIELE</prenoms>
+					<date_naissance>07011950</date_naissance>
+					<lieu_naissance>Paris</lieu_naissance>
+					<code_pays>FR</code_pays>
+					<matricule>15373</matricule>
+					<rang>1</rang>
+				</salarie>
+				<contrat>
+					<date_debut_contrat>01062014</date_debut_contrat>
+					<num_contrat>Contrat1bis</num_contrat>
+				</contrat>
+			</environnement>
+		</declaration_anomalie>
+	</declaration>
+</gipmds:rapport>

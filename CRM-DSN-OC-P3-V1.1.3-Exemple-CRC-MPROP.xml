@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Exemple CRM OC phases 2/3 - CRC complet avec retour mandat propriétaire - 08/10/2020 -->
+<Fichier VersionCRM="113" IdEnvoi="AZ123...Egfk---jRR__qsdqsd" TypCRM="3" ModeDepot="Upload" SiteDeposant="12345678912345" PointDepot="01" TailleFichier="0" DateHeureReceptionDep="20200424112458" SiretEmetteur="12345678912345" NomEmetteur="Raison sociale émetteur" SiretDeposant="12345678912345" NomDeposant="MARTIN" PrenomDeposant="Henri" TypeEnvoi="01" VersionNorme="P21V01" CodeEnvoi="01" DateHeureReceptionOC="20200424102458" DateHeureReceptionDELEG="20200424112453" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CRM-DSN-OC-P3-V1.1.3.08102020.xsd">
+	<Declaration IdDec="1" NatureDecla="01" TypeDecla="01" FractionDecla="11" NoOrdreDecla="1" DateMoisDec="31032020" DateConstitution="10042020" ChampDec="01" SirenDecla="123456789" NicSiegeDecla="12345" NicAffectation="12345" CodeOC="P9999" CodeDELEG="DXXXXX" CodeProducteurCRM="P9999" NomProducteurCRM="Raison sociale organisme" DateHeureProductionCRM="20200424152832" NbreSal="35" NbreErreur="2" NbreAff="0" NbreRad="1" NomContact="Contact organisme" TelContact="0102030405" MailContact="contact@organisme.fr" CodeRetourDecla="2" ComplementRetourDecla="Message explicatif global">
+		<MandatProp BIC="CEPAFRPP118" IBAN="FR7630046001290029721519546" ICS="FR12ZZZ123456" URLMandatProp="https://www.mon-mandat.fr"/>
+		<RetourMetier IdRetour="1" NbErreursSimilaires="1" CodeRetourMetier="EADH02" LibelCodeRetourMetier="Référence Contrat de l'adhésion erronée" DescriptionRetour="Description complémentaire" RubriqueBlocRetour="S21.G00.15.001" LibelRubBlocRetour="Référence du contrat de Prévoyance" ValeurRubriqueErreur="C123" ValeurCorrigeeAjoutee="C321">
+			<ContexteRetourMetier Rubrique="S21.G00.15.001" Libelle="Référence du contrat de Prévoyance" Valeur="C123"/>
+			<ContexteRetourMetier Rubrique="S21.G00.15.002" Libelle="Code organisme de Prévoyance" Valeur="P9999" LibelVal="Raison sociale organisme"/>
+		</RetourMetier>
+		<RetourMetier IdRetour="2" NbErreursSimilaires="1" CodeRetourMetier="IVER02" LibelCodeRetourMetier="Information de paiement non prise en compte" RubriqueBlocRetour="S21.G00.20" LibelRubBlocRetour="Versement organisme de protection sociale">
+			<ContexteRetourMetier Rubrique="S21.G00.20.001" Libelle="Identifiant Organisme de Protection Sociale" Valeur="P9999" LibelVal="Raison sociale organisme"/>
+			<ContexteRetourMetier Rubrique="S21.G00.20.005" Libelle="Montant du versement" Valeur="999.99"/>
+		</RetourMetier>
+		<RetourMetier IdRetour="3" NbErreursSimilaires="1" CodeRetourMetier="EVER17" LibelCodeRetourMetier="Absence de mandat SEPA" RubriqueBlocRetour="S21.G00.20" LibelRubBlocRetour="Versement organisme de protection sociale">
+			<ContexteRetourMetier Rubrique="S21.G00.20.001" Libelle="Identifiant Organisme de Protection Sociale" Valeur="P9999" LibelVal="Raison sociale organisme"/>
+			<ContexteRetourMetier Rubrique="S21.G00.20.005" Libelle="Montant du versement" Valeur="999.99"/>
+		</RetourMetier>
+		<RetourMetier IdRetour="4" NbErreursSimilaires="1" CodeRetourMetier="ECIN05" LibelCodeRetourMetier="Composant base assujettie manquant" DescriptionRetour=" Tranche B manquante" RubriqueBlocRetour="S21.G00.79" LibelRubBlocRetour="Composant de base assujettie" LibelValCorrigeeAjoutee="Tranche B Prévoyance" ValeurCorrigeeAjoutee="13">
+			<ContexteRetourMetier Rubrique="S21.G00.15.001" Libelle="Référence du contrat de Prévoyance" Valeur="C123"/>
+			<ContexteRetourMetier Rubrique="S21.G00.15.002" Libelle="Code organisme de Prévoyance" Valeur="P9999" LibelVal="Raison sociale organisme"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.001" Libelle="Numéro d'inscription au répertoire" Valeur="1550575888999"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.002" Libelle="Nom de famille" Valeur="DURAND"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.003" Libelle="Nom d'usage" Valeur="DURAND"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.004" Libelle="Prénoms" Valeur="Etienne Marcel"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.019" Libelle="Matricule" Valeur="654321"/>
+			<ContexteRetourMetier Rubrique="S21.G00.40.001" Libelle="Date de début du contrat" Valeur="01012000"/>
+			<ContexteRetourMetier Rubrique="S21.G00.40.009" Libelle="Numéro du contrat" Valeur="11111"/>
+			<ContexteRetourMetier Rubrique="S21.G00.70.004" Libelle="Code option retenue par le salarié" Valeur="OPT2"/>
+			<ContexteRetourMetier Rubrique="S21.G00.70.005" Libelle="Code population de rattachement" Valeur="POP2"/>
+			<ContexteRetourMetier Rubrique="S21.G00.78.001" Libelle="Date de début de période de rattachement" Valeur="01032020"/>
+			<ContexteRetourMetier Rubrique="S21.G00.78.002" Libelle="Date de fin de période de rattachement" Valeur="31032020"/>
+		</RetourMetier>
+		<RetourMetier IdRetour="5" NbErreursSimilaires="1" CodeRetourMetier="IEVT07" LibelCodeRetourMetier="Radiation prise en compte suite à fin de contrat" DescriptionRetour=" Description complémentaire" RubriqueBlocRetour="S21.G00.62" LibelRubBlocRetour="Fin du contrat" DateEvt="15032020">
+			<ContexteRetourMetier Rubrique="S21.G00.15.001" Libelle="Référence du contrat de Prévoyance" Valeur="C123"/>
+			<ContexteRetourMetier Rubrique="S21.G00.15.002" Libelle="Code organisme de Prévoyance" Valeur="P9999" LibelVal="Raison sociale organisme"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.001" Libelle="Numéro d'inscription au répertoire" Valeur="1550575999888"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.002" Libelle="Nom de famille" Valeur="DUPONT"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.003" Libelle="Nom d'usage" Valeur="DUPONT"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.004" Libelle="Prénoms" Valeur="Charles Emile"/>
+			<ContexteRetourMetier Rubrique="S21.G00.30.019" Libelle="Matricule" Valeur="123456"/>
+			<ContexteRetourMetier Rubrique="S21.G00.40.001" Libelle="Date de début du contrat" Valeur="01012019"/>
+			<ContexteRetourMetier Rubrique="S21.G00.40.009" Libelle="Numéro du contrat" Valeur="11111"/>
+			<ContexteRetourMetier Rubrique="S21.G00.70.004" Libelle="Code option retenue par le salarié" Valeur="OPT1"/>
+			<ContexteRetourMetier Rubrique="S21.G00.70.005" Libelle="Code population de rattachement" Valeur="POP1"/>
+		</RetourMetier>
+	</Declaration>
+</Fichier>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Exemple de CRM DSN complet (CRT) V8.31 -->
+<Fichier IdEnvoi="ABCDEFGHIJKLMNOPQRSTUVWXYZ" TypCRM="4" ModeDepot="MtoM" SiteDeposant="12345678901234" PointDepot="01" TailleFichier="999" DateHeureReceptionDep="20120530092354" SiretEmetteur="12345678912345" NomEmetteur="nom-émetteur" SiretDeposant="12345678912345" NomDeposant="nom-déposant" PrenomDeposant="prénom-déposant" TypeEnvoi="01" VersionNorme="PHASE1V1" CodeEnvoi="01" DateHeureReceptionOC="20120601185234" NbreDeclaration="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CRM-DSN-OC-V8.31.xsd">
+	<Declaration IdDec="4" NatureDecla="01" TypeDecla="01" FractionDecla="11" NoOrdreDecla="123456" IdDecAR="9999999999999999999999999999999999999" DateMoisDec="01012013" DateConstitution="05012013" ChampDec="01" SirenDecla="123456789" NicSiegeDecla="12345" NicAffectation="12345" CodeOC="P9999" CodeDELEG="DFIL01" CodeProducteurCRM="P9999" NomProducteurCRM="Institution de prévoyance" DateHeureProductionCRM="20120530092354" NbreSal="999" NbreEvtFCT="2" NbreEvtEntree="2" NbreEvtDCT="2" NbreEvtOK="4" NbreEvtKO="0" NomContact="nom-contact-IP" TelContact="0102030405" MailContact="mail@ip.fr" CodeRetourDecla="2">
+		<Diagnostic CodeRetourDetail="040" ComplementRetourDetail="complément40"/>
+		<Diagnostic CodeRetourDetail="050" ComplementRetourDetail="complément50"/>
+		<Salarie NirSal="1999999999999" NomSal="nom-un" PrenomSal="prénom-un" NomUsageSal="usage-un" MatriculeSal="matricule-un" RefContrat="refcontrat1" RefContratAtt="xrefcontrat1" RefContratAj="xrefcontrat2" CodeOption="opt1" CodeOptionAtt="xopt1" CodeOptionAj="xopt2" CodePopulation="pop1" CodePopulationAtt="xpop1" CodePopulationAj="xpop2" CodeRetourSal="00" ComplementRetourSal="xxx" CoderetourEvts="0">
+			<Evt CodeEvt="02" DateEvt="01012012" SrcEvt="03" CodeRetourEvt="00" ComplementRetourEvt="complément1"/>
+			<Evt CodeEvt="04" DateEvt="01012012" SrcEvt="03" CodeRetourEvt="00" ComplementRetourEvt="complément1"/>
+		</Salarie>
+		<Salarie NirSal="2999999999999" NomSal="nom-deux" PrenomSal="prénom-deux" NomUsageSal="usage-deux" MatriculeSal="matricule-deux" RefContrat="refcontrat2" RefContratAtt="xrefcontrat2" CodeOption="opt2" CodeOptionAtt="xopt2" CodePopulation="pop2" CodePopulationAtt="xpop2" CodeRetourSal="00" ComplementRetourSal="xxx" CoderetourEvts="0">
+			<Evt CodeEvt="10" DateEvt="01012013" SrcEvt="01" CodeRetourEvt="10" ComplementRetourEvt="complément2"/>
+		</Salarie>
+	</Declaration>
+</Fichier>

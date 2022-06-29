@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (x64) (http://www.altova.com) by Gerard Chauvineau (CTIP) -->
+<!--Schéma XSD du CRM (compte-rendu de traitement métier OC d'une DSN phase 2 ou 3)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:element name="Fichier">
+		<xs:annotation>
+			<xs:documentation>Données descriptives du fichier reçu</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="2">
+				<xs:element name="Declaration">
+					<xs:annotation>
+						<xs:documentation>Données descriptives d'une déclaration DSN</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="1">
+							<xs:element name="RetourMetier" minOccurs="0" maxOccurs="2000">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ContexteRetourMetier" minOccurs="0" maxOccurs="15">
+											<xs:annotation>
+												<xs:documentation>Rubriques déclarées associées au retour métier</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="Rubrique" use="required">
+													<xs:annotation>
+														<xs:documentation>Code de la rubrique de contexte associée au retour</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="(S10[.]G00[.](00|01|02|03|95)[.][0-9]{3}|S20[.]G00[.](05|07|96)[.][0-9]{3}|S21[.]G00[.](06|11|15|16|20|30|31|40|41|50|51|52|53|54|55|60|62|64|65|70|71|72|73|78|79|81|82|85|86)[.][0-9]{3})"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="Libelle" use="required">
+													<xs:annotation>
+														<xs:documentation>Libellé de la rubrique de contexte associée au retour</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="120"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="Valeur" use="required">
+													<xs:annotation>
+														<xs:documentation>Valeur de la rubrique de contexte associée au retour</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="120"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="LibelVal">
+													<xs:annotation>
+														<xs:documentation>Libellé correspondant à la valeur de la rubrique de contexte associée au retour</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="120"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="IdRetour" use="required">
+										<xs:annotation>
+											<xs:documentation>Numéro d'ordre du retour</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:integer">
+												<xs:minInclusive value="1"/>
+												<xs:maxInclusive value="999999"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="NbErreursSimilaires">
+										<xs:annotation>
+											<xs:documentation>Valorisé à une valeur supérieure à 1 si plusieurs retours similaires de type "E" (erreur) ont été regroupés. Les données de contexte sont alors celles de la première erreur rencontrée.
+Donnée absente ou valorisée à 1 en l'absence de regroupement.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:integer">
+												<xs:minInclusive value="1"/>
+												<xs:maxInclusive value="999999"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="CodeRetourMetier" use="required">
+										<xs:annotation>
+											<xs:documentation>Renseigné sous la forme
+SXXX99 
+avec S = nature du retour
+- E erreur
+- I information
+avec XXX = domaine
+- DEC déclaration
+- ENT entreprise
+- ETB établissement
+- ADH adhésion
+- CET cotisation établ.
+- VER versement
+- CVE composant versement
+- SAL salarié
+- TRA contrat de travail
+- ATR arrêt de travail
+- FCT fin de contrat
+- AFF affiliation
+- AYD ayant-droit
+- CIN cotisation individuelle
+- ANC ancienneté
+- LIT lieu de travail
+- EVT événement</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="EDEC01"/>
+												<xs:enumeration value="EDEC02"/>
+												<xs:enumeration value="EDEC98"/>
+												<xs:enumeration value="IDEC99"/>
+												<xs:enumeration value="EENT01"/>
+												<xs:enumeration value="EENT98"/>
+												<xs:enumeration value="IENT99"/>
+												<xs:enumeration value="EETB01"/>
+												<xs:enumeration value="EETB98"/>
+												<xs:enumeration value="IETB99"/>
+												<xs:enumeration value="EADH01"/>
+												<xs:enumeration value="EADH02"/>
+												<xs:enumeration value="EADH03"/>
+												<xs:enumeration value="EADH04"/>
+												<xs:enumeration value="EADH05"/>
+												<xs:enumeration value="EADH06"/>
+												<xs:enumeration value="EADH98"/>
+												<xs:enumeration value="IADH99"/>
+												<xs:enumeration value="ECET01"/>
+												<xs:enumeration value="ECET02"/>
+												<xs:enumeration value="ECET03"/>
+												<xs:enumeration value="ECET04"/>
+												<xs:enumeration value="ECET05"/>
+												<xs:enumeration value="ECET06"/>
+												<xs:enumeration value="ECET98"/>
+												<xs:enumeration value="ICET99"/>
+												<xs:enumeration value="EVER01"/>
+												<xs:enumeration value="EVER02"/>
+												<xs:enumeration value="EVER03"/>
+												<xs:enumeration value="EVER04"/>
+												<xs:enumeration value="EVER05"/>
+												<xs:enumeration value="EVER06"/>
+												<xs:enumeration value="EVER07"/>
+												<xs:enumeration value="EVER08"/>
+												<xs:enumeration value="EVER09"/>
+												<xs:enumeration value="EVER10"/>
+												<xs:enumeration value="EVER11"/>
+												<xs:enumeration value="EVER12"/>
+												<xs:enumeration value="EVER13"/>
+												<xs:enumeration value="EVER14"/>
+												<xs:enumeration value="EVER15"/>
+												<xs:enumeration value="EVER16"/>
+												<xs:enumeration value="EVER17"/>
+												<xs:enumeration value="EVER98"/>
+												<xs:enumeration value="IVER99"/>
+												<xs:enumeration value="ECVE01"/>
+												<xs:enumeration value="ECVE02"/>
+												<xs:enumeration value="ECVE03"/>
+												<xs:enumeration value="ECVE04"/>
+												<xs:enumeration value="ECVE05"/>
+												<xs:enumeration value="ECVE06"/>
+												<xs:enumeration value="ECVE98"/>
+												<xs:enumeration value="ICVE99"/>
+												<xs:enumeration value="ESAL98"/>
+												<xs:enumeration value="ISAL99"/>
+												<xs:enumeration value="ETRA98"/>
+												<xs:enumeration value="ITRA99"/>
+												<xs:enumeration value="EATR98"/>
+												<xs:enumeration value="IATR99"/>
+												<xs:enumeration value="EFCT98"/>
+												<xs:enumeration value="IFCT99"/>
+												<xs:enumeration value="EAFF01"/>
+												<xs:enumeration value="EAFF02"/>
+												<xs:enumeration value="EAFF03"/>
+												<xs:enumeration value="EAFF04"/>
+												<xs:enumeration value="EAFF05"/>
+												<xs:enumeration value="EAFF06"/>
+												<xs:enumeration value="EAFF07"/>
+												<xs:enumeration value="EAFF08"/>
+												<xs:enumeration value="EAFF09"/>
+												<xs:enumeration value="EAFF10"/>
+												<xs:enumeration value="EAFF11"/>
+												<xs:enumeration value="EAFF12"/>
+												<xs:enumeration value="EAFF13"/>
+												<xs:enumeration value="EAFF14"/>
+												<xs:enumeration value="EAFF15"/>
+												<xs:enumeration value="EAFF16"/>
+												<xs:enumeration value="EAFF17"/>
+												<xs:enumeration value="EAFF18"/>
+												<xs:enumeration value="EAFF52"/>
+												<xs:enumeration value="EAFF53"/>
+												<xs:enumeration value="EAFF54"/>
+												<xs:enumeration value="EAFF55"/>
+												<xs:enumeration value="EAFF56"/>
+												<xs:enumeration value="EAFF98"/>
+												<xs:enumeration value="IAFF99"/>
+												<xs:enumeration value="EAYD01"/>
+												<xs:enumeration value="EAYD02"/>
+												<xs:enumeration value="EAYD03"/>
+												<xs:enumeration value="EAYD04"/>
+												<xs:enumeration value="EAYD05"/>
+												<xs:enumeration value="EAYD06"/>
+												<xs:enumeration value="EAYD07"/>
+												<xs:enumeration value="EAYD08"/>
+												<xs:enumeration value="EAYD09"/>
+												<xs:enumeration value="EAYD10"/>
+												<xs:enumeration value="EAYD11"/>
+												<xs:enumeration value="EAYD12"/>
+												<xs:enumeration value="EAYD13"/>
+												<xs:enumeration value="EAYD14"/>
+												<xs:enumeration value="EAYD15"/>
+												<xs:enumeration value="EAYD98"/>
+												<xs:enumeration value="IAYD99"/>
+												<xs:enumeration value="ECIN01"/>
+												<xs:enumeration value="ECIN02"/>
+												<xs:enumeration value="ECIN03"/>
+												<xs:enumeration value="ECIN04"/>
+												<xs:enumeration value="ECIN05"/>
+												<xs:enumeration value="ECIN06"/>
+												<xs:enumeration value="ECIN07"/>
+												<xs:enumeration value="ECIN08"/>
+												<xs:enumeration value="ECIN98"/>
+												<xs:enumeration value="ICIN99"/>
+												<xs:enumeration value="EANC01"/>
+												<xs:enumeration value="EANC02"/>
+												<xs:enumeration value="EANC03"/>
+												<xs:enumeration value="EANC04"/>
+												<xs:enumeration value="EANC05"/>
+												<xs:enumeration value="EANC98"/>
+												<xs:enumeration value="IANC99"/>
+												<xs:enumeration value="ELIT98"/>
+												<xs:enumeration value="ILIT99"/>
+												<xs:enumeration value="EEVT01"/>
+												<xs:enumeration value="IEVT02"/>
+												<xs:enumeration value="EEVT03"/>
+												<xs:enumeration value="IEVT04"/>
+												<xs:enumeration value="EEVT05"/>
+												<xs:enumeration value="IEVT06"/>
+												<xs:enumeration value="IEVT07"/>
+												<xs:enumeration value="IEVT08"/>
+												<xs:enumeration value="IEVT09"/>
+												<xs:enumeration value="EEVT98"/>
+												<xs:enumeration value="IEVT99"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="LibelCodeRetourMetier" use="required">
+										<xs:annotation>
+											<xs:documentation>Libellé correspondant au code retour métier :
+EDEC01 Anomalie grave de structure ou de contenu
+EDEC02 Déclaration en double ou annule et remplace inexploitable
+EDEC98 Erreur globale relative à la déclaration
+IDEC99 Information relative à la déclaration
+EENT01 Entreprise inconnue
+EENT98 Erreur globale relative à l'entreprise
+IENT99 Information relative à l'entreprise
+EETB01 Etablissement inconnu
+EETB98 Erreur globale relative à l'établissement
+IETB99 Information relative à l'établissement
+EADH01 Adhésion manquante
+EADH02 Référence Contrat de l'adhésion erronée
+EADH03 Code OC de l'adhésion erroné
+EADH04 Code DELEG de l'adhésion erroné
+EADH05 Code DELEG de l'adhésion présent à tort
+EADH06 Code DELEG de l'adhésion absent
+EADH98 Erreur adhésion
+IADH99 Information adhésion
+ECET01 Cotisation établissement manquante
+ECET02 Code de cotisation établissement erroné
+ECET03 Reference contractuelle erronée
+ECET04 Date de début de rattachement erronée
+ECET05 Date de fin de rattachement erronée
+ECET06 Montant cotisation établissement erroné
+ECET98 Erreur cotisation établissement
+ICET99 Information cotisation établissement
+EVER01 Versement manquant
+EVER02 Identifiant OPS erroné
+EVER03 Code délégataire erroné
+EVER04 Code délégataire absent
+EVER05 Code délégataire  présent à tort
+EVER06 SIRET payeur erroné
+EVER07 SIRET payeur présent à tort
+EVER08 SIRET payeur absent
+EVER09 BIC présent à tort 
+EVER10 IBAN présent à tort 
+EVER11 BIC absent 
+EVER12 IBAN absent 
+EVER13 Montant de versement erroné
+EVER14 Montant non nul présent à tort
+EVER15 Mode de paiement erroné
+EVER16 Date de paiement par télérèglement absente
+EVER17 Absence de mandat SEPA 
+EVER98 Erreur versement
+IVER99 Information versement
+ECVE01 Composant Versement  manquant
+ECVE02 Période d'affectation erronée
+ECVE03 Code d'affectation erroné
+ECVE04 Type de population erroné
+ECVE05 Type de population présent à tort
+ECVE06 Type de population absent
+ECVE98 Erreur composant de versement
+ICVE99 Information composant de versement
+ESAL98 Erreur salarié
+ISAL99 Information salarié
+ETRA98 Erreur contrat de travail
+ITRA99 Information salarié
+EATR98 Erreur arrêt de travail
+IATR99 Information arrêt de travail
+EFCT98 Erreur fin de contrat
+IFCT99 Information fin de contrat
+EAFF01 Affiliation manquante
+EAFF02 Identifiant technique Adhésion erroné
+EAFF03 Code option erroné
+EAFF04 Code option absent
+EAFF05 Code option présent à tort
+EAFF06 Code population erroné
+EAFF07 Code population absent
+EAFF08 Code population présent à tort
+EAFF09 Nb d'enfants à charge erroné
+EAFF10 Nb d'enfants à charge absent
+EAFF11 Nb d'ayant droit erroné
+EAFF12 Nb d'ayant droit absent
+EAFF13 Nb d'adultes ayants-droit erroné
+EAFF14 Nb d'adultes ayants-droit absent
+EAFF15 Nb d'ayants-droit autres erroné
+EAFF16 Nb d'ayants-droit autres absent
+EAFF17 Nb d'enfants ayants-droit erroné
+EAFF18 Nb d'enfants ayants-droit absent
+EAFF52 Référence Contrat de l'affiliation erronée
+EAFF53 Code OC de l'adhésion erroné
+EAFF54 Code DELEG de l'adhésion erroné
+EAFF55 Code DELEG de l'adhésion présent à tort
+EAFF56 Code DELEG de l'adhésion absent
+EAFF98 Erreur affiliation
+IAFF99 Information affiliation
+EAYD01 Ayant-droit manquant
+EAYD02 Code option présent à tort
+EAYD03 Code option erroné
+EAYD04 Type d'ayant droit erroné
+EAYD05 Date de début de rattachement à l'ouvrant droit absente
+EAYD06 Date de début de rattachement à l'ouvrant droit erronée
+EAYD07 Date de naissance erronée
+EAYD08 Nom de famille erroné
+EAYD09 NIR ayant droit erroné
+EAYD10 NIR ouvrant droit régime base maladie erroné
+EAYD11 Prénoms erronés
+EAYD12 Code organisme d'affiliation à l'AM erroné
+EAYD13 Date de fin de rattachement à l'ouvrant droit absente
+EAYD14 Date de fin de rattachement à l'ouvrant droit présente à tort
+EAYD15 Date de fin de rattachement à l'ouvrant droit erronée
+EAYD98 Erreur ayant-droit
+IAYD99 Information ayant-droit
+ECIN01 Base assujettie manquante
+ECIN02 Identifiant technique Affiliation erroné
+ECIN03 Date de début de rattachement erronée
+ECIN04 Date de fin de rattachement erronée
+ECIN05 Composant base assujettie manquant
+ECIN06 Type de composant erroné
+ECIN07 Montant de composant erroné
+ECIN08 Montant de cotisation individuelle erroné
+ECIN98 Erreur base ou cotisation individuelle
+ICIN99 Information base ou cotisation individuelle
+EANC01 Ancienneté  manquante
+EANC02 Type d'ancienneté erroné
+EANC03 Unité de mesure erronée
+EANC04 Valeur ancienneté erronée
+EANC05 Numéro contrat erroné
+EANC98 Erreur ancienneté
+IANC99 Information ancienneté
+ELIT98 Erreur lieu de travail
+ILIT99 Information lieu de travail
+EEVT01 Affiliation rejetée
+IEVT02 Affiliation à prendre en compte
+EEVT03 Changement d'option erroné
+IEVT04 Changement d'option pris en compte
+EEVT05 Changement de population erroné
+IEVT06 Changement de population pris en compte
+IEVT07 Radiation prise en compte suite à fin de contrat
+IEVT08 Radiation prise en compte suite à modifications affectant le salarié ou son conrat de travail
+IEVT09 Radiation suite à mutation présumée du salarié
+EEVT98 Erreur événement
+IEVT99 Information événement</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="5"/>
+												<xs:maxLength value="120"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="DescriptionRetour">
+										<xs:annotation>
+											<xs:documentation>Message complémentaire libre, obligatoire pour toutes les erreurs ou informations génériques 98 et 99</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="3"/>
+												<xs:maxLength value="250"/>
+												<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="RubriqueBlocRetour" use="required">
+										<xs:annotation>
+											<xs:documentation>Snn.Gnn.nn.nnn (Rubrique à l'origine du retour)
+Snn.Gnn.nn (Bloc concerné par le retour)</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:pattern value="(S20[.]G00[.]05|S21[.]G00[.](06|11|15|16|82|20|55|30|31|40|41|60|62|70|73|78|79|81|86|85))"/>
+												<xs:pattern value="(S20[.]G00[.]05[.][0-9]{3}|S21[.]G00[.](06|11|15|16|82|20|55|30|31|40|41|60|62|70|73|78|79|81|86|85)[.][0-9]{3})"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="LibelRubBlocRetour" use="required">
+										<xs:annotation>
+											<xs:documentation>Libellé de la rubrique ou du bloc à l'origine du retour</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="120"/>
+												<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ValeurRubriqueErreur">
+										<xs:annotation>
+											<xs:documentation>Valeur de la rubrique à l'origine du retour</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="120"/>
+												<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="LibelValRubriqueErreur">
+										<xs:annotation>
+											<xs:documentation>Libellé de valeur présente dans la rubrique en erreur</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="120"/>
+												<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ValeurCorrigeeAjoutee">
+										<xs:annotation>
+											<xs:documentation>Valeur corrigée de la rubrique en erreur ou valeur attendue de la rubrique absente</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="120"/>
+												<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="LibelValCorrigeeAjoutee">
+										<xs:annotation>
+											<xs:documentation>Libellé de la valeur corrigée ou ajoutée</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="120"/>
+												<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="DateEvt">
+										<xs:annotation>
+											<xs:documentation>Date événement (explicite ou implicite)</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:length value="8"/>
+												<xs:pattern value="(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])(19|20)\d\d"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+								<xs:unique name="rubriquecontextedifferente">
+									<xs:selector xpath="ContexteRetourMetier"/>
+									<xs:field xpath="@Rubrique"/>
+								</xs:unique>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="IdDec" use="required">
+							<xs:annotation>
+								<xs:documentation>Numéro relatif à  la déclaration dans le fichier déposé - S20.G00.96.902</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1"/>
+									<xs:maxInclusive value="999999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NatureDecla" use="required">
+							<xs:annotation>
+								<xs:documentation>Nature de la déclaration - S20.G00.05.001</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="01"/>
+									<xs:enumeration value="02"/>
+									<xs:enumeration value="04"/>
+									<xs:enumeration value="05"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="TypeDecla" use="required">
+							<xs:annotation>
+								<xs:documentation>Type de la déclaration S20.G00.05.002</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="01"/>
+									<xs:enumeration value="02"/>
+									<xs:enumeration value="03"/>
+									<xs:enumeration value="04"/>
+									<xs:enumeration value="05"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="FractionDecla" use="required">
+							<xs:annotation>
+								<xs:documentation>Numéro de fraction de la déclaration - S20.G00.05.003</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="11"/>
+									<xs:enumeration value="12"/>
+									<xs:enumeration value="22"/>
+									<xs:enumeration value="13"/>
+									<xs:enumeration value="23"/>
+									<xs:enumeration value="33"/>
+									<xs:enumeration value="14"/>
+									<xs:enumeration value="24"/>
+									<xs:enumeration value="34"/>
+									<xs:enumeration value="44"/>
+									<xs:enumeration value="15"/>
+									<xs:enumeration value="25"/>
+									<xs:enumeration value="35"/>
+									<xs:enumeration value="45"/>
+									<xs:enumeration value="55"/>
+									<xs:enumeration value="16"/>
+									<xs:enumeration value="26"/>
+									<xs:enumeration value="36"/>
+									<xs:enumeration value="46"/>
+									<xs:enumeration value="56"/>
+									<xs:enumeration value="66"/>
+									<xs:enumeration value="17"/>
+									<xs:enumeration value="27"/>
+									<xs:enumeration value="37"/>
+									<xs:enumeration value="47"/>
+									<xs:enumeration value="57"/>
+									<xs:enumeration value="67"/>
+									<xs:enumeration value="77"/>
+									<xs:enumeration value="18"/>
+									<xs:enumeration value="28"/>
+									<xs:enumeration value="38"/>
+									<xs:enumeration value="48"/>
+									<xs:enumeration value="58"/>
+									<xs:enumeration value="68"/>
+									<xs:enumeration value="78"/>
+									<xs:enumeration value="88"/>
+									<xs:enumeration value="19"/>
+									<xs:enumeration value="29"/>
+									<xs:enumeration value="39"/>
+									<xs:enumeration value="49"/>
+									<xs:enumeration value="59"/>
+									<xs:enumeration value="69"/>
+									<xs:enumeration value="79"/>
+									<xs:enumeration value="89"/>
+									<xs:enumeration value="99"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NoOrdreDecla" use="required">
+							<xs:annotation>
+								<xs:documentation>Numéro d'ordre de la déclaration - S20.G00.05.004</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="15"/>
+									<xs:pattern value="0|[1-9][0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="IdDecAR" use="optional">
+							<xs:annotation>
+								<xs:documentation>Identifiant de la déclaration initiale annulée ou remplacée  - S20.G00.05.006</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="9"/>
+									<xs:maxLength value="51"/>
+									<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="DateMoisDec">
+							<xs:annotation>
+								<xs:documentation>Date du mois principal déclaré au format JJMMAAAA - S20.G00.05.005</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="8"/>
+									<xs:pattern value="(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])(20)\d\d"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="DateConstitution">
+							<xs:annotation>
+								<xs:documentation>Date de constitution du fichier - S20.G00.05.007</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="8"/>
+									<xs:pattern value="(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])(20)\d\d"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="IdEvt">
+							<xs:annotation>
+								<xs:documentation>Identifiant métier- S20.G00.05.009 </xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="15"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ChampDec">
+							<xs:annotation>
+								<xs:documentation>Champ de la déclaration -  S20.G00.05.008</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="01"/>
+									<xs:enumeration value="02"/>
+									<xs:enumeration value="03"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="SirenDecla" use="required">
+							<xs:annotation>
+								<xs:documentation>SIREN de l'entreprise - S21.G00.06.001</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="9"/>
+									<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NicSiegeDecla" use="optional">
+							<xs:annotation>
+								<xs:documentation>NIC établissement siège - S21.G00.06.002</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="5"/>
+									<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NicAffectation" use="required">
+							<xs:annotation>
+								<xs:documentation>NIC établissement d'affectation - S21.G00.11.001</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="5"/>
+									<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="CodeOC" use="required">
+							<xs:annotation>
+								<xs:documentation>Code organisme - S21.G00.15.002</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="5"/>
+									<xs:maxLength value="9"/>
+									<xs:pattern value="[P][0-9]{4}"/>
+									<xs:pattern value="[A][0-9A-Z]{5}"/>
+									<xs:pattern value="[0-9]{9}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="CodeDELEG" use="optional">
+							<xs:annotation>
+								<xs:documentation>Code délégataire de gestion - S21.G00.15.003</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="6"/>
+									<xs:pattern value="[D][0-9A-Z]{5}"/>
+									<xs:pattern value="[G][0-9A-Z]{5}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="CodeProducteurCRM" use="required">
+							<xs:annotation>
+								<xs:documentation>Code organisme ou délégataire producteur du CRM</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="5"/>
+									<xs:maxLength value="9"/>
+									<xs:pattern value="[P][0-9]{4}"/>
+									<xs:pattern value="[A][0-9A-Z]{5}"/>
+									<xs:pattern value="[0-9]{9}"/>
+									<xs:pattern value="[G][0-9A-Z]{5}"/>
+									<xs:pattern value="[D][0-9A-Z]{5}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NomProducteurCRM" use="required">
+							<xs:annotation>
+								<xs:documentation>Raison sociale du producteur du CRM</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="3"/>
+									<xs:maxLength value="60"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="DateHeureProductionCRM" use="required">
+							<xs:annotation>
+								<xs:documentation>Date heure de production du CRM au format AAAAMMJJHHMMSS</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="14"/>
+									<xs:pattern value="(20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([0-1]\d|2[0-3])[0-5]\d[0-5]\d"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NbreSal">
+							<xs:annotation>
+								<xs:documentation>Nombre de salariés (S21.G00.30) présents dans la déclaration</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="999999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NbreErreur">
+							<xs:annotation>
+								<xs:documentation>Nombre d'erreurs de code Exxxnn dans la déclaration, obligatoire si CRM de type 3 (CRC)</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="999999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NbreAff">
+							<xs:annotation>
+								<xs:documentation>Nombre total d'affiliations à prendre en compte</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="999999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NbreRad">
+							<xs:annotation>
+								<xs:documentation>Nombre total de radiations prises en compte</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="999999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NomContact" use="optional">
+							<xs:annotation>
+								<xs:documentation>Nom du service ou du gestionnaire en charge du dossier, obligatoire si CRM de type 2 (CRT) ou 3 (CRC)</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="3"/>
+									<xs:maxLength value="60"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="TelContact" use="optional">
+							<xs:annotation>
+								<xs:documentation>Téléphone du service ou du gestionnnaire en charge du dossier</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="10"/>
+									<xs:pattern value="[0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="MailContact" use="optional">
+							<xs:annotation>
+								<xs:documentation>Adresse mail du service ou du gestionnaire en charge du dossier, obligatoire si CRM de type 2 (CRT) ou 3 (CRC)</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="3"/>
+									<xs:maxLength value="60"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+									<xs:pattern value="\w+([\.\-_]\w+)*@(\w+[\.\-_])+[a-zA-Z]{2,4}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="CodeRetourDecla" use="optional">
+							<xs:annotation>
+								<xs:documentation>Code retour global de niveau déclaration (peut-être absent seulement dans le cas d'un CRM de type 1, simple AR sans valeur ajoutée)
+0 = DSN acceptée
+1 = DSN acceptée, avec corrections à apporter (présence d'erreurs non bloquantes)
+2 = DSN partiellement prise en compte (présence d'anomalies interdisant seulement la prise en compte de certains salariés ou certaines données, cas applicable seulement aux déclarations mensuelles)
+3 = DSN non prise en compte par l'organisme (présence d'anomalies bloquantes)</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="0"/>
+									<xs:enumeration value="1"/>
+									<xs:enumeration value="2"/>
+									<xs:enumeration value="3"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ComplementRetourDecla">
+							<xs:annotation>
+								<xs:documentation>Complément explicatif libre du code retour détlaration</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="3"/>
+									<xs:maxLength value="500"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+					<xs:unique name="differentIDretourmetier">
+						<xs:selector xpath="RetourMetier"/>
+						<xs:field xpath="@IdRetour"/>
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="VersionCRM" use="required">
+				<xs:annotation>
+					<xs:documentation>Numéro de version du modèle de CRM</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="112"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="IdEnvoi" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifiant de flux DSN - S10.G00.95.900</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="50"/>
+						<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TypCRM" use="required">
+				<xs:annotation>
+					<xs:documentation>Type de CRM :
+1 (AR simple accusé de réception)
+2 (CRT compte-rendu basique)
+3 (CRC compte-rendu complet)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ModeDepot" use="optional">
+				<xs:annotation>
+					<xs:documentation>Mode de dépôt  (upload ou Upload ou MtoM ou mtom)  - S10.G00.95.006</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="6"/>
+						<xs:enumeration value="Upload"/>
+						<xs:enumeration value="upload"/>
+						<xs:enumeration value="MtoM"/>
+						<xs:enumeration value="mtom"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="SiteDeposant" use="optional">
+				<xs:annotation>
+					<xs:documentation>SIRET déposant dans le cas du MtoM - S10.G00.95.007</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="14"/>
+						<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="PointDepot" use="required">
+				<xs:annotation>
+					<xs:documentation>Identification du point de dépôt - S10.G00.00.007</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="01"/>
+						<xs:enumeration value="02"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TailleFichier" type="xs:int" use="optional">
+				<xs:annotation>
+					<xs:documentation>Taille du fichier en Ko</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="DateHeureReceptionDep" use="required">
+				<xs:annotation>
+					<xs:documentation>Date heure de réception du fichier sur le point de dépôt au format AAAAMMJJHHMMSS - S10.G00.95.008</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="14"/>
+						<xs:pattern value="(20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([0-1]\d|2[0-3])[0-5]\d[0-5]\d"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="SiretEmetteur" use="required">
+				<xs:annotation>
+					<xs:documentation>SIRET de l'émetteur du fichier - S10.G00.01.001/002</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="14"/>
+						<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NomEmetteur" use="required">
+				<xs:annotation>
+					<xs:documentation>Nom ou raison sociale de l'émetteur du fichier - S10.G00.01.003 </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="60"/>
+						<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="SiretDeposant">
+				<xs:annotation>
+					<xs:documentation>SIRET du déclarant inscrit - S10.G00.95.003</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="14"/>
+						<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NomDeposant">
+				<xs:annotation>
+					<xs:documentation>Nom du déclarant inscrit - S10.G00.95.001</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="65"/>
+						<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="PrenomDeposant">
+				<xs:annotation>
+					<xs:documentation>Prénom  du déclarant inscrit - S10.G00.95.002</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="40"/>
+						<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TypeEnvoi" use="required">
+				<xs:annotation>
+					<xs:documentation>Type de l'envoi - S10.G00.00.008</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="01"/>
+						<xs:enumeration value="02"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="VersionNorme" use="required">
+				<xs:annotation>
+					<xs:documentation>Version de la norme (P02V00, P02V01 ou P03V01) - S10.G00.00.006 
+P02V00 pour une DSN phase 1 lot 3bis convertie en DSN phase 2, P02V01 pour une DSN native phase 2, P03V01 pour une DSN phase 3.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="P02V00"/>
+						<xs:enumeration value="P02V01"/>
+						<xs:enumeration value="P03V01"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="CodeEnvoi" use="required">
+				<xs:annotation>
+					<xs:documentation>Code de l'envoi (test/réel) - S10.G00.00.005</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="01"/>
+						<xs:enumeration value="02"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DateHeureReceptionOC">
+				<xs:annotation>
+					<xs:documentation>Date heure de réception par l'organisme au format AAAAMMJJHHMMSS), obligatoire si le CRM est émis par un porteur de risques</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="14"/>
+						<xs:pattern value="(20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([0-1]\d|2[0-3])[0-5]\d[0-5]\d"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DateHeureReceptionDELEG" use="optional">
+				<xs:annotation>
+					<xs:documentation>Date heure de réception éventuelle par le délégataire de gestion au format AAAMMJJHHMMSS, obligatoire si le CRM est émis par un délégataire de gestion</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="14"/>
+						<xs:pattern value="(20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([0-1]\d|2[0-3])[0-5]\d[0-5]\d"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NbreDeclaration">
+				<xs:annotation>
+					<xs:documentation>Inutilisé, attribut conservé pour compatibilité avec les précédentes versions de CRM.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int"/>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+		<xs:unique name="producteur">
+			<xs:selector xpath="Declaration"/>
+			<xs:field xpath="@CodeProducteurCRM"/>
+		</xs:unique>
+	</xs:element>
+</xs:schema>

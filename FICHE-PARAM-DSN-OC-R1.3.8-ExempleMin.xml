@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Exemple complet de fiche de paramétrage DSN OC - version 1.3.8 du 13/07/2018 -->
+<FICHE IdentifiantFiche="numero1" DateHeureCreation="2001-12-17T09:30:47Z" Version="138" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FICHE-PARAM-DSN-OC-R1.3.8.xsd">
+	<Entreprise SIREN="123456789" RaisonSociale="Raison Sociale de l'Entreprise" NIC="12345"/>
+	<ProducteurFiche CodeProducteur="P0000" RaisonSocialeProducteur="Raison Sociale de l'IP"/>
+	<ContactTechniqueFiche Nom="Nom du contact technique" Tel="0101010101" Mail="contact@technique.fr"/>
+	<ContactGestionnaireFiche Nom="Nom du gestionnaire" Tel="0606060606" Mail="contact@gestionnaire.fr"/>
+	<Message>Message à l'attention du déclarant</Message>
+	<GROUPE NumeroGrp="1" LibelleGrp="Contrats NON CADRE de plus de 6 mois ">
+		<ParametresContrats Changement="11" Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001 " LibelleContrat="Contrat Prévoyance NON CADRE"/>
+			<CotisationEtablissement CodeCotisation="001" LibelleCotisation="Cotisation établissement trimestrielle" PeriodiciteDeclaration="T">
+				<Montant TypeMontant="02" Montant="35" DetailMontant="Montant forfaitaire trimestriel par établissement"/>
+				<Taux Taux="0.01" TypeBase="02" DetailTaux="Taux appliqué sur la masse salariale plafonnée TA"/>
+			</CotisationEtablissement>
+		</ParametresContrats>
+		<ParametresContrats Changement="11" Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001 " LibelleContrat="Contrat Prévoyance NON CADRE"/>
+			<ElementsDeCalculAttendus>
+				<TAPrev>
+					<Taux>0.5</Taux>
+				</TAPrev>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="11" Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000001 " LibelleContrat="Contrat Santé NON CADRE"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Fomule Isolé (assuré seul) ">
+					<Montant>50.00</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Formule Famille">
+					<Montant>95.00</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+	</GROUPE>
+	<GROUPE NumeroGrp="2" LibelleGrp="Contrats CADRE de plus de 6 mois ">
+		<ParametresContrats Changement="11" Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000002 " LibelleContrat="Contrat Prévoyance CADRE"/>
+			<CotisationEtablissement CodeCotisation="001" LibelleCotisation="Cotisation établissement trimestrielle" PeriodiciteDeclaration="T">
+				<Montant TypeMontant="02" Montant="35" DetailMontant="Montant forfaitaire trimestriel par établissement"/>
+				<Taux Taux="0.01" TypeBase="02" DetailTaux="Taux appliqué sur la masse salariale plafonnée TA"/>
+			</CotisationEtablissement>
+		</ParametresContrats>
+		<ParametresContrats Changement="11" Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000002 " LibelleContrat="Contrat Prévoyance CADRE"/>
+			<ElementsDeCalculAttendus>
+				<TAPrev>
+					<Taux>1.5</Taux>
+				</TAPrev>
+				<TBPrev>
+					<Taux>0.1</Taux>
+				</TBPrev>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="11" Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002 " LibelleContrat="Contrat Santé CADRE"/>
+			<Option CodeOption="FAM" LibelleOption="Couverture Famille"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="18" LibelleCodeNature="Formule Famille">
+					<Taux>3.5</Taux>
+					<Montant>3269</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="11" Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002 " LibelleContrat="Contrat Santé CADRE"/>
+			<Option CodeOption="MENU" LibelleOption="Couverture à la carte"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif assuré ouvrant droit">
+					<Montant>55</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif conjoint">
+					<Montant>35</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif pour chaque enfant (dans la limite de deux enfants)">
+					<Montant>20</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Gratuité à partir du troisième enfant">
+					<Montant>20</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+	</GROUPE>
+</FICHE>

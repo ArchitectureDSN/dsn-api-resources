@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+	<RO>
+		<RO_R001>2022V1.3</RO_R001>
+		<RO_B000>
+			<RO_B000_R001>A1fv3vWBFANqq6Rc4M69OHQ</RO_B000_R001>
+			<!-- Identifiant S10_G00_95_900 Information alimentée dans la DSN par le bloc 1-->
+			<RO_B000_R002>1</RO_B000_R002>
+			<!-- RangDéclaration S20.G00.96.010 Information alimentée dans la DSN par le bloc 1-->
+			<RO_B000_R003>792835993XXXXX</RO_B000_R003>
+			<!-- SIRET Emetteur : Concaténation S10.G00.01.001 et S10.G00.01.002-->
+			<RO_B000_R004>792835993XXXXX</RO_B000_R004>
+			<!-- SIRET Declare : Concaténation S10_G00.06.001 et S10.G00.11.001-->
+			<RO_B000_R005>11</RO_B000_R005>
+			<!-- Numéro de fraction de déclaration - S21.G00.05.003 -->
+			<RO_B000_R006>2022-01-01</RO_B000_R006>
+			<!-- Date du mois principal déclaré - S21.G00.05.005 -->
+			<RO_B000_R007>01</RO_B000_R007>
+			<!-- Point de dépôt - S21.G00.00.007 -->
+			<RO_B000_R008>NOMLOGICIEL</RO_B000_R008>
+			<!-- Nom du logiciel utilisé - S21.G00.00.001 -->
+			<RO_B000_R009>NOMEDITEUR</RO_B000_R009>
+			<!--  Nom de l'éditeur - S21.G00.00.002 -->
+			<RO_B000_R010>NUMVERSION</RO_B000_R010>
+			<!-- Numéro de version du logiciel utilisé - S21.G00.00.003 -->
+			<RO_B000_R011>01</RO_B000_R011>
+			<!-- Type de la déclaration - S21.G00.05.002 -->
+			<RO_B000_R012>1</RO_B000_R012>
+			<!-- Numéro d'ordre de la déclaration - S21.G00.05.004 -->
+			<RO_B000_R013>02</RO_B000_R013>
+			<!-- Code envoi du fichier d'essai ou réel - S21.G00.00.005 -->
+			<RO_B000_R014>P22V01</RO_B000_R014>
+			<!-- Numéro de version de la norme utilisée - S21.G00.00.006 -->
+		</RO_B000>
+		<RO_B001>
+			<RO_B001_R001>01</RO_B001_R001>
+			<!-- Retour organisme sur une DSN mensuelle -->
+			<RO_B002>
+				<RO_B002_R001>1A26942cwqqwQ2</RO_B002_R001>
+				<RO_B002_R002>119</RO_B002_R002>
+				<RO_B002_R003>CRM pour accompagner la résolution des anomalies</RO_B002_R003>
+				<RO_B002_R004>01</RO_B002_R004>
+				<!-- Retour organisme normal -->
+				<RO_B002_R005>URSSAF Caisse Nationnale</RO_B002_R005>
+				<RO_B002_R006>18003501600054</RO_B002_R006>
+				<RO_B002_R007>18003501600054</RO_B002_R007>
+				<RO_B002_R008>2022-01-01</RO_B002_R008>
+				<RO_B002_R009>2022-01-31</RO_B002_R009>
+				<RO_B002_R010>2022-02-02T01:01:01</RO_B002_R010>
+				<RO_B002_R011>2022-02-03T01:01:01</RO_B002_R011>
+				<RO_B003>
+					<RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
+					<RO_B003_R002>KO</RO_B003_R002>
+					<!-- Ecarts ne permettant pas de réaliser l'intégralité des traitements métiers -->
+				</RO_B003>
+				<RO_B004>
+					<RO_B004_R001>ACO_ANO_COT_ECA_0263</RO_B004_R001>
+					<!-- DA_263 -->
+					<RO_B004_R002>Contrôle de cohérence entre le montant déclaré et le montant calculé à partir des informations déclarées</RO_B004_R002>
+					<RO_B004_R003>01</RO_B004_R003>
+					<RO_B004_R004>02</RO_B004_R004>
+					<RO_B004_R005>16</RO_B004_R005>
+					<RO_B004_R006>01</RO_B004_R006>
+					<RO_B004_R011>Si la différence entre le montant déclaré de la déclaration (S21.G00.22.005) et le montant calculé à partir des informations déclarées > Seuil paramétré dans la V2 (KONSEUIL) alors anomalie
+						Avec
+						Montant calculé à partir des informations déclarées = somme des montants des CTP de cotisations (CTP de format différent de F et R) - sommes des montants des CTP de déductions (CTP de format F ou R)
+						Montant de CTP = montant de la cotisation (S21.G00.22.005)
+						Ou
+						Montant de CTP = taux (S21.G00.23.003) * Montant de l'assiette totale (S21.G00.23.004 pour un qualifiant S21.G00.23.002 = 920) + taux déplafonné du CTP * Montant de l'assiette totale (S21.G00.23.004 pour un qualifiant S21.G00.23.002 = 920) (arrondi à l'euro près)
+						Ou
+						Montant de CTP = taux déplafonné du CTP * Montant de l'assiette plafonnée (S21.G00.23.004) pour un qualifiant S21.G00.23.002 = 921) (arrondi à l'euro près)</RO_B004_R011>
+					<RO_B004_R012>Référence réglementaire</RO_B004_R012>
+					<RO_B004_R013>L'anomalie est associée à un autre motif: le mode opératoire à appliquer est par principe celui qui est associé à l'autre anomalie; sa présence suppose toutefois que le cotisant soit informé des conséquences comptables constatées (mise en recouvrement ou reprise de crédit). Si après traitement de l’autre anomalie, une divergence déclaré/calculé subsiste : A) Le cotisant a appliqué un taux erroné pour un CTP donné: la correction est opérée par l’Urssaf/CGSS; notifier au cotisant la nature de son erreur et l'inviter selon le cas à payer par retour la différence ou à se reprendre du crédit lors de la prochaine déclaration. Inviter également le cotisant à procéder aux corrections nécessaires pour la prochaine exigibilité. B) Le cotisant a fait une erreur sur le qualifiant d'assiette: la correction est opérée par l’Urssaf/CGSS qui doit notifier au cotisant la nature de son erreur et l'inviter à procéder aux corrections nécessaires lors de la prochaine exigibilité. C) L’image de la déclaration agrégée dans GESUR ne permet pas de déterminer l’erreur: S’il s’agit d’un problème de cumul des montants de cotisations, contacter le cotisant pour l’inviter à procéder aux corrections nécessaires ; l'anomalie vient d'une erreur de CTP : faire un courrier au cotisant pour lui notifier le problème rencontré et l'inviter à adresser une correction dans sa DSN de M+1; rentrer un parcours arrêt si un débit résulte de cette seule anomalie.</RO_B004_R013>
+					<RO_B004_R014>En cas de difficulté, vous pouvez vous référer au guide « Comment déclarer les cotisations Urssaf en DSN » accessible sur le site DSN-info ou prendre contact avec votre éditeur de logiciel de paie.</RO_B004_R014>
+					<RO_B004_R015>Conséquences en l'absence de mise à jour de la paie</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>La différence détectée entre le montant déclaré (2864.00 €) et le montant calculé (2769.00 €)</RO_B005_R001>
+						<RO_B005_R002>2022-01-01</RO_B005_R002>
+						<RO_B005_R003>2022-01-31</RO_B005_R003>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.22.005</RO_B007_R001>
+							<RO_B007_R002>2864.00</RO_B007_R002>
+							<RO_B007_R003>2769.00</RO_B007_R003>
+							<RO_B007_R009>01</RO_B007_R009>
+						</RO_B007>
+					</RO_B005>
+				</RO_B004>
+				<RO_B004>
+					<RO_B004_R001>UR_ANO_EXO_REDG_DIEXO04</RO_B004_R001>
+					<RO_B004_R002>Réduction générale des cotisations patronales non autorisée pour ce salarié</RO_B004_R002>
+					<RO_B004_R003>01</RO_B004_R003>
+					<RO_B004_R004>05</RO_B004_R004>
+					<RO_B004_R005>12</RO_B004_R005>
+					<RO_B004_R006>05</RO_B004_R006>
+					<RO_B004_R007>03</RO_B004_R007>
+					<RO_B004_R008>01</RO_B004_R008>
+					<RO_B004_R009>1</RO_B004_R009>
+					<RO_B004_R010>1</RO_B004_R010>
+					<RO_B004_R011>Ce contrôle vérifie l'éligibilité d'un individu à la réduction générale des cotisations patronales de Sécurité sociale, d'Assurance Chômage et de retraite complémentaire
+						Pour rappel, un salarié relevant d'un régime spécial (dont la déclaration en DSN en rubrique 020 du bloc 40 correspond à une certaine valeur) n'est pas éligible à la réduction générale. C'est le cas des salariés de SNCF (valeur 134), RATP (valeur 135), Marins (valeur 136), Mines (valeur 137), Banque de France (valeur 139), EDF - Engie (valeur 147), Comédie Française (valeur 159), Opéra de Paris (valeur 160).</RO_B004_R011>
+					<RO_B004_R012>Article L 241-13 CSS (réduction générale) </RO_B004_R012>
+					<RO_B004_R013>Si le salarié relève du régime général de vieillesse, effectuez un bloc changement dans votre prochaine DSN sur le code régime vieillesse (rubrique S21.G00.40.020) du salarié depuis l'origine de l'anomalie.
+						Si le salarié relève d'un régime spécial, effectuez un bloc de régularisation dans votre prochaine DSN pour chaque mois concerné afin de déduire du bloc Cotisation agrégée S21.G00.23 la réduction générale déclarée pour ce salarié.
+						Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.
+						Vérifiez que les données demeurent cohérentes entre celles déclarées au bloc Cotisation agrégée (S21.G00.23) et celles déclarées aux blocs Cotisation individuelle (S21.G00.81).</RO_B004_R013>
+					<RO_B004_R014>Pour plus d’information, consultez urssaf.fr [lien : https://www.urssaf.fr/portail/home/employeur/beneficier-dune-exoneration/exonerations-generales/la-reduction-generale/les-employeurs-concernes.html]</RO_B004_R014>
+					<RO_B004_R015>Votre compte Urssaf présente un débit de cotisations à régler.</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>Vous avez appliqué une réduction générale des cotisations patronales pour Yang Sally (1850659418608) qui n'appartient pas au régime général, c’est-à-dire dont le code régime de base risque vieillesse au bloc S21.G00.40.020 est égal au code 136 (Marins).</RO_B005_R001>
+						<RO_B005_R002>2022-03-01</RO_B005_R002>
+						<RO_B005_R003>2022-03-31</RO_B005_R003>
+						<RO_B006>
+							<RO_B006_R001>1850659418608</RO_B006_R001>
+							<RO_B006_R003>Yang</RO_B006_R003>
+							<RO_B006_R004>Sally</RO_B006_R004>
+							<RO_B006_R005>9</RO_B006_R005>
+							<RO_B006_R006>2014-11-12</RO_B006_R006>
+							<RO_B006_R007>00000</RO_B006_R007>
+							<RO_B006_R008>1975-09-25</RO_B006_R008>
+						</RO_B006>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.40.020</RO_B007_R001>
+							<RO_B007_R002>136</RO_B007_R002>
+						</RO_B007>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+							<RO_B007_R002>18</RO_B007_R002>
+							<RO_B007_R009>05</RO_B007_R009>
+						</RO_B007>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.81.004</RO_B007_R001>
+							<RO_B007_R002>100</RO_B007_R002>
+							<RO_B007_R009>05</RO_B007_R009>
+						</RO_B007>
+					</RO_B005>
+				</RO_B004>
+				<RO_B004>
+					<RO_B004_R001>UR_ANO_CTR_APPR_DIDAEXO09b</RO_B004_R001>
+					<RO_B004_R002>Déclaration d'assiettes agrégées au titre de l'exonération apprenti du secteur privé en absence de contrat apprenti</RO_B004_R002>
+					<RO_B004_R003>01</RO_B004_R003>
+					<RO_B004_R004>02</RO_B004_R004>
+					<RO_B004_R005>06</RO_B004_R005>
+					<RO_B004_R006>04</RO_B004_R006>
+					<RO_B004_R011>Ce contrôle vérifie si la déclaration d'exonérations applicables à des apprentis de secteur privé à maille agrégée est cohérente avec la déclaration de blocs Contrat - S21.G00.40 pour lesquels des codes relatifs à un contrat d'apprentissage de secteur privé sont renseignés.</RO_B004_R011>
+					<RO_B004_R012>Article L6243-2 CT (exonération apprenti secteur privé des cotisations salariales pour la part de rémunération inférieure ou égale à un plafond fixé par décret)
+						Article D6243-5 CT (plafond de l'exonération apprenti= 79%SMIC)</RO_B004_R012>
+					<RO_B004_R013>Si un salarié est en contrat d'apprentissage, effectuez un bloc changement dans votre prochaine DSN en renseignant le code 64 (Contrat d'apprentissage entreprises artisanales ou de moins de 11 salariés - loi du 3 janvier 1979) ou 65 (Contrat d’apprentissage entreprises non inscrites au répertoire des métiers d’au moins 11 salariés - loi de 1987) dans la rubrique Dispositif de politique publique et conventionnel (S21.G00.40.008).
+						Si aucun des salariés n'est en contrat d'apprentissage, effectuez un bloc de régularisation dans votre prochaine DSN en supprimant l'assiette des codes de cotisation Apprenti (CTP 726 ou 727) puis en la reportant sur le code de cotisation correspondant aux taux pleins en vigueur dans la rubrique S21.G00.23.001 du bloc Cotisation agrégée. Versez auprès de votre Urssaf le complément de cotisations généré.
+						Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.
+						Vérifiez que les données demeurent cohérentes entre celles déclarées au bloc Cotisation agrégée (S21.G00.23) et celles déclarées aux blocs Cotisation individuelle (S21.G00.81).</RO_B004_R013>
+					<RO_B004_R014>Pour plus d’information, consultez urssaf.fr [https://www.urssaf.fr/portail/home/employeur/beneficier-dune-exoneration/exonerations-ou-aides-liees-a-la/le-contrat-dapprentissage/contrat-et-remuneration-de-lappr.html]</RO_B004_R014>
+					<RO_B004_R015>Votre déclaration est erronée et peut entrainer des sanctions à la suite d'un contrôle.</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>Vous avez déclaré au bloc Cotisation agrégée (S21.G00.23) une assiette au titre de l'exonération apprenti (CTP 726 ou 727) mais vous n'avez pas déclaré de contrat d'apprentissage au bloc Contrat (S21.G00.40).</RO_B005_R001>
+						<RO_B005_R002>2022-01-01</RO_B005_R002>
+						<RO_B005_R003>2022-01-31</RO_B005_R003>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+							<RO_B007_R002>726</RO_B007_R002>
+						</RO_B007>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.23.004</RO_B007_R001>
+							<RO_B007_R002>1925.00</RO_B007_R002>
+						</RO_B007>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.40.008</RO_B007_R001>
+							<RO_B007_R009>04</RO_B007_R009>
+							<RO_B010>
+								<RO_B010_R001>64</RO_B010_R001>
+							</RO_B010>
+							<RO_B010>
+								<RO_B010_R001>65</RO_B010_R001>
+							</RO_B010>
+						</RO_B007>
+					</RO_B005>
+				</RO_B004>
+			</RO_B002>
+		</RO_B001>
+	</RO>
+</GIPMDS>

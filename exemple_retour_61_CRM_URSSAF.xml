@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gipmds:rapport version="v01r06" profil="DSN" type="CRACOSS" xmlns:gipmds="http://www.gip-mds.fr/">
+	<envoi>
+		<envoi_identification>
+			<declarant>
+				<siret>13555555500014</siret>
+				<nom>MARIAMA</nom>
+				<prenom>MARIAMA</prenom>
+			</declarant>
+			<idflux>F1tmbhAQlUPca5Rg.c0zd1Y</idflux>
+			<identifiant></identifiant>
+			<version_norme>P03V01</version_norme>
+			<point_de_depot>01</point_de_depot>
+			<type_envoi>01</type_envoi>
+			<emetteur_siret>13555555500014</emetteur_siret>
+			<nom_logiciel>cnv75xm</nom_logiciel>
+			<editeur_logiciel>GENIELOG</editeur_logiciel>
+			<version_logiciel>v0.1</version_logiciel>
+			<date_reception>2015-10-16</date_reception>
+			<heure_reception>11:33:05</heure_reception>
+			<date_enregistrement>2015-10-16</date_enregistrement>
+			<heure_enregistrement>11:33:30</heure_enregistrement>
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>OK</envoi_etat>
+			<envoi_contenu><declarations>1</declarations></envoi_contenu>  </envoi_bilan>
+	</envoi>
+	<declaration>
+		<declaration_identification>
+			<rang>1</rang>
+			<nature>01</nature>
+			<type>03</type>
+			<fraction>11</fraction>
+			<ordre>4</ordre>
+			<mois>2015-11-01</mois>
+			<SIREN>135555555</SIREN>
+			<nic_siege>00014</nic_siege>
+			<nic_affectation>00014</nic_affectation>
+		</declaration_identification>
+		<declaration_bilan>
+			<etat>OK</etat>
+			<declaration_contenu>
+				<salaries>0</salaries>
+			</declaration_contenu>
+			<declaration_compteurs>
+				<categorie>non-bloquant</categorie>
+				<nombre>3</nombre>
+			</declaration_compteurs>
+			<niveau_conformite>
+				<etat_conformite>OK</etat_conformite>
+				<certificat_conformite>La télédéclaration pour un montant de 3001 euros et le télépaiement pour un montant de 3345 euros que vous avez transmis le 16/10/2015 à 11:33 pour le cotisant de Siret 13555555500014 et de compte 727013555555500014 ont bien été enregistrés pour la période de rattachement de novembre 2015 sous le numéro de certificat 38785135. </certificat_conformite>
+			</niveau_conformite>
+		</declaration_bilan>
+		<declaration_anomalie>
+			<description>
+				<code>BA-209-09</code>
+				<categorie>non-bloquant</categorie>
+				<message>La déclaration que vous avez transmise a un montant global de 3001 euros alors que nous avons calculé 2899 euros. </message>
+				<nombre>1</nombre>
+			</description>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>BA-210-01</code>
+				<categorie>non-bloquant</categorie>
+				<message>Nous avons pris en compte l'inscription au prélèvement Sepa interentreprises pour le compte bancaire 10107-00735-87564231789-70. Votre prélèvement est accepté sous réserve que vous validiez en ligne le mandat correspondant et que vous transmettiez ce dernier dans les plus brefs délais à votre banque. Et au plus tard à la présentation du prélèvement, c'est à dire, le 07/12/2015 à 12:00. </message>
+				<nombre>1</nombre>
+			</description>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>BA-210-01</code>
+				<categorie>non-bloquant</categorie>
+				<message>Nous avons pris en compte l'inscription au prélèvement Sepa interentreprises pour le compte bancaire 10107-00075-76563548444-71. Votre prélèvement est accepté sous réserve que vous validiez en ligne le mandat correspondant et que vous transmettiez ce dernier dans les plus brefs délais à votre banque. Et au plus tard à la présentation du prélèvement, c'est à dire, le 07/12/2015 à 12:00. </message>
+				<nombre>1</nombre>
+			</description>
+		</declaration_anomalie>
+	</declaration>
+</gipmds:rapport>

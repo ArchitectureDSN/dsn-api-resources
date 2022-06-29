@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by GIP-MDS (GIP-MDS) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gipmds="http://www.gip-mds.fr/" targetNamespace="http://www.gip-mds.fr/" elementFormDefault="unqualified">
+	<annotation>
+		<documentation/>
+	</annotation>
+	<element name="rapport">
+		<annotation>
+			<documentation>Element racine du bilan DSN</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="gipmds:rapport_comp_type">
+					<attribute name="identifiant" type="string" use="optional"/>
+					<attribute name="type" type="string" use="required"/>
+					<attribute name="profil" type="string" use="required"/>
+					<attribute name="version" type="string" use="optional" default="v02r01"/>
+					<attribute name="message" type="string" use="optional"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<complexType name="rapport_comp_type">
+		<sequence>
+			<choice>
+				<element name="bordereau" type="gipmds:bordereau_type">
+					<annotation>
+						<documentation>Description du bordereau</documentation>
+					</annotation>
+				</element>
+				<element name="envoi" type="gipmds:envoi_type">
+					<annotation>
+						<documentation>Description de l'envoi</documentation>
+					</annotation>
+				</element>
+			</choice>
+			<element name="declaration" type="gipmds:declaration_type" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation> Description de la declaration </documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="bordereau_type">
+		<sequence>
+			<element name="bordereau_identification" type="gipmds:bordereau_identification_type"/>
+		</sequence>
+	</complexType>
+	<complexType name="envoi_type">
+		<sequence>
+			<element name="envoi_identification" type="gipmds:envoi_identification_type"/>
+			<element name="envoi_bilan" type="gipmds:envoi_resultat_type">
+				<annotation>
+					<documentation>bilan  des controles niveau envoi (anomalies generales)</documentation>
+				</annotation>
+			</element>
+			<element name="envoi_anomalie" type="gipmds:envoi_anomalie_type" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="declaration_type">
+		<sequence>
+			<element name="declaration_identification" type="gipmds:declaration_identification_type"/>
+			<element name="declaration_bilan" type="gipmds:declaration_resultat_type">
+				<annotation>
+					<documentation>bilan  des controles niveau declaration</documentation>
+				</annotation>
+			</element>
+			<element name="declaration_anomalie" type="gipmds:declaration_anomalie_type" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<!-- debut types complexes -->
+	<complexType name="bordereau_identification_type">
+		<annotation>
+			<documentation>
+				Identification du bordereau
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="point_de_depot" type="string">
+				<annotation>
+					<documentation>S10.G00.00.007</documentation>
+				</annotation>
+			</element>
+			<element name="essai_reel" type="string">
+				<annotation>
+					<documentation>01 (essai) ou 02 (reel), en S10.G00.00.005
+					</documentation>
+				</annotation>
+			</element>
+			<element name="nature" type="string">
+				<annotation>
+					<documentation>S20.G00.05.001</documentation>
+				</annotation>
+			</element>
+			<element name="mois" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.005</documentation>
+				</annotation>
+			</element>
+			<element name="emetteur_siret" type="gipmds:SIRET_type">
+				<annotation>
+					<documentation>SIRET de l'emetteur, S10.G00.01.001, S10.G00.01.002
+					</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="environnement_anomalie_type">
+		<sequence>
+			<element name="salarie" type="gipmds:salarie_identification_diff_type" minOccurs="0" maxOccurs="2"/>
+			<element name="individu_non_salarie" type="gipmds:individu_non_salarie_identification_diff_type" minOccurs="0" maxOccurs="2"/>
+			<element name="contrat" type="gipmds:contrat_identification_type" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="envoi_resultat_type">
+		<sequence>
+			<element name="envoi_etat" type="gipmds:envoi_etat_type"/>
+			<element name="envoi_contenu" type="gipmds:envoi_nombre_type" minOccurs="0">
+				<annotation>
+					<documentation>Nombre de declarations et de salaries dans l'envoi</documentation>
+				</annotation>
+			</element>
+			<element name="envoi_compteurs" type="gipmds:envoi_categorie_type" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Nombre d'anomalies par categorie, nombre superieur a zero seulement</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="declaration_resultat_type">
+		<sequence>
+			<element name="etat" type="gipmds:etat_type"/>
+			<element name="declaration_contenu" type="gipmds:declaration_nombre_type" minOccurs="0">
+				<annotation>
+					<documentation>Nombre de salaries par declaration</documentation>
+				</annotation>
+			</element>
+			<element name="declaration_reconstituee" minOccurs="0" maxOccurs="unbounded">
+				<complexType>
+					<sequence>
+						<element name="type"/>
+						<element name="etat" type="gipmds:etat_type"/>
+						<element name="nombre" type="integer"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="declaration_compteurs" type="gipmds:declaration_categorie_type" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Nombre d'anomalies par categorie, nombre superieur a zero seulement</documentation>
+				</annotation>
+			</element>
+			<element name="niveau_conformite" type="gipmds:niveau_conformite_type" minOccurs="0">
+				<annotation>
+					<documentation>certificat de conformite de la declaration ou rejet</documentation>
+				</annotation>
+			</element>
+			<element name="salarie" type="gipmds:salarie_identification_type" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="contrat" type="gipmds:contrat_identification_type" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="taux_AT" type="gipmds:taux_AT_identification_type" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="mois" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.005 - Date du mois principal déclaré</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="envoi_nombre_type">
+		<sequence>
+			<element name="declarations" type="integer" minOccurs="0"/>
+			<element name="salaries" type="integer" minOccurs="0"/>
+			<element name="individus_non_salaries" type="integer" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="envoi_categorie_type">
+		<sequence>
+			<element name="envoi_categorie" type="gipmds:envoi_anomalie_categorie_type">
+				<annotation>
+					<documentation>Les categories pour un envoi portent le nombre d'anomalies niveau envoi, le nombre d'anomalies niveau déclaration, le nombre d'anomalies total </documentation>
+				</annotation>
+			</element>
+			<element name="nombre" type="integer"/>
+		</sequence>
+	</complexType>
+	<complexType name="declaration_nombre_type">
+		<sequence>
+			<element name="salaries" type="integer" minOccurs="0"/>
+			<element name="individus_non_salaries" type="integer" minOccurs="0"/>
+			<element name="contrats" type="integer" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="declaration_categorie_type">
+		<sequence>
+			<element name="categorie" type="gipmds:categorie_anomalie_type"/>
+			<element name="nombre" type="integer"/>
+		</sequence>
+	</complexType>
+	<complexType name="niveau_conformite_type">
+		<sequence>
+			<element name="etat_conformite" type="gipmds:ok_ko">
+				<annotation>
+					<documentation>ok: déclaration conforme et prise en compte, ko: déclaration rejetée</documentation>
+				</annotation>
+			</element>
+			<element name="certificat_conformite" type="string" minOccurs="0">
+				<annotation>
+					<documentation>chaîne de certification de la prise en compte de la déclaration (+ de 165 caractères)</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="envoi_anomalie_type">
+		<complexContent>
+			<extension base="gipmds:base_anomalie_type"/>
+		</complexContent>
+	</complexType>
+	<complexType name="declaration_anomalie_type">
+		<complexContent>
+			<extension base="gipmds:base_anomalie_type">
+				<sequence>
+					<element name="environnement" type="gipmds:environnement_anomalie_type" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="declarant_type">
+		<annotation>
+			<documentation>Personne physique identifiée par un nom, un prénom, un siret et une adresse mail, inscrite au service DSN.</documentation>
+		</annotation>
+		<sequence>
+			<element name="siret" type="gipmds:SIRET_type">
+				<annotation>
+					<documentation>S10.G00.95.003 - SIRET de l’utilisateur identifié</documentation>
+				</annotation>
+			</element>
+			<element name="nom" type="string">
+				<annotation>
+					<documentation>S10.G00.95.001 - Nom de l’utilisateur identifié</documentation>
+				</annotation>
+			</element>
+			<element name="prenom" type="string">
+				<annotation>
+					<documentation>S10.G00.95.002 - Prénom de l’utilisateur identifié</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="envoi_identification_type">
+		<annotation>
+			<documentation>Identification de l'envoi au sens du fichier physique portant les DSN</documentation>
+		</annotation>
+		<sequence>
+			<element name="declarant" type="gipmds:declarant_type" minOccurs="0"/>
+			<element name="idflux" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.95.900 - Identification du flux par le point de dépôt, uniquement requis dans le retour fait au déclarant</documentation>
+				</annotation>
+			</element>
+			<element name="identifiant_archive" type="gipmds:identifiant_envoi_type" minOccurs="0">
+				<annotation>
+					<documentation>Nom de l'archive qui contenait le fichier physique</documentation>
+				</annotation>
+			</element>
+			<element name="identifiant" type="gipmds:identifiant_envoi_type" minOccurs="0">
+				<annotation>
+					<documentation>Nom du fichier physique pour le traitement generant ce bilan (peut différer du nom en sortie du système de l'émetteur)</documentation>
+				</annotation>
+			</element>
+			<element name="version_norme" type="gipmds:norme_type" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.00.006 - Numéro de version de la norme utilisée</documentation>
+				</annotation>
+			</element>
+			<element name="point_de_depot" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.00.007 - Point de dépôt</documentation>
+				</annotation>
+			</element>
+			<element name="type_envoi" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.00.008 - Type de l'envoi</documentation>
+				</annotation>
+			</element>
+			<element name="essai_reel" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.00.005 - Code envoi du fichier d'essai ou réel : 01 (essai) ou 02 (reel)</documentation>
+				</annotation>
+			</element>
+			<element name="emetteur_siret" type="gipmds:SIRET_type">
+				<annotation>
+					<documentation>SIRET de l'emetteur : S10.G00.01.001 - Siren de l'émetteur de l'envoi, S10.G00.01.002 - Nic de l'émetteur de l'envoi</documentation>
+				</annotation>
+			</element>
+			<element name="raison_sociale" type="string" minOccurs="0">
+				<annotation>
+					<documentation>Raison sociale ou nom de l'emetteur : S10.G00.01.003</documentation>
+				</annotation>
+			</element>
+			<element name="nom_logiciel" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.00.001 - Nom du logiciel utilisé</documentation>
+				</annotation>
+			</element>
+			<element name="editeur_logiciel" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.00.002 - Nom de l'éditeur</documentation>
+				</annotation>
+			</element>
+			<element name="version_logiciel" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.00.003 - Numéro de version du logiciel utilisé</documentation>
+				</annotation>
+			</element>
+			<element name="code_conformite" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S10.G00.00.004 - Code de conformité en pré-contrôle</documentation>
+				</annotation>
+			</element>
+			<element name="date_reception" type="date" minOccurs="0">
+				<annotation>
+					<documentation>date de réception du fichier sur le point de dépôt de la DSN (bloc 1)</documentation>
+				</annotation>
+			</element>
+			<element name="heure_reception" type="time" minOccurs="0">
+				<annotation>
+					<documentation>heure date de réception du fichier sur le point de dépôt de la DSN (bloc 1)</documentation>
+				</annotation>
+			</element>
+			<element name="date_enregistrement" type="date" minOccurs="0">
+				<annotation>
+					<documentation>date d'enregistrement électonique</documentation>
+				</annotation>
+			</element>
+			<element name="heure_enregistrement" type="time" minOccurs="0">
+				<annotation>
+					<documentation>heure d'enregistrement électonique</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="declaration_identification_type">
+		<annotation>
+			<documentation>Identification d'une DSN dans l'envoi au sens fichier physique</documentation>
+		</annotation>
+		<sequence>
+			<element name="rang" type="integer">
+				<annotation>
+					<documentation>Rang de la declaration dans le fichier</documentation>
+				</annotation>
+			</element>
+			<element name="nature" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.001 - Nature de la déclaration</documentation>
+				</annotation>
+			</element>
+			<element name="type" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.002 - Type de la déclaration</documentation>
+				</annotation>
+			</element>
+			<element name="fraction" type="integer" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.003 - Numéro de fraction de déclaration</documentation>
+				</annotation>
+			</element>
+			<element name="ordre" type="decimal" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.004 - Numéro d'ordre de la déclaration</documentation>
+				</annotation>
+			</element>
+			<element name="mois" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.005 - Date du mois principal déclaré</documentation>
+				</annotation>
+			</element>
+			<element name="identifiant_metier" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.009 - Identifiant métier </documentation>
+				</annotation>
+			</element>
+			<element name="id_annulation" type="integer" minOccurs="0">
+				<annotation>
+					<documentation>S20.G00.05.006 - Identifiant de la déclaration initiale annulée ou remplacée</documentation>
+				</annotation>
+			</element>
+			<element name="SIREN" type="gipmds:SIREN_type">
+				<annotation>
+					<documentation>S21.G00.06.001 - SIREN</documentation>
+				</annotation>
+			</element>
+			<element name="nic_siege" type="gipmds:raison_sociale_type" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.06.002</documentation>
+				</annotation>
+			</element>
+			<element name="nic_affectation" type="string">
+				<annotation>
+					<documentation>S21.G00.11.001 - NIC</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="salarie_identification_type">
+		<annotation>
+			<documentation>Identification d'un salarié au sein d'une DSN</documentation>
+		</annotation>
+		<sequence>
+			<choice maxOccurs="2">
+				<element name="NIR" type="string">
+					<annotation>
+						<documentation>S21.G00.30.001 - Numéro d'inscription au répertoire</documentation>
+					</annotation>
+				</element>
+				<element name="NTT" type="string">
+					<annotation>
+						<documentation/>
+					</annotation>
+				</element>
+			</choice>
+			<element name="nom_famille" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.30.002 - Nom de famille</documentation>
+				</annotation>
+			</element>
+			<element name="nom_usage" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.30.003 - Nom d'usage</documentation>
+				</annotation>
+			</element>
+			<element name="prenoms" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.30.004 - Prénoms</documentation>
+				</annotation>
+			</element>
+			<element name="sexe" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.30.005 - Sexe</documentation>
+				</annotation>
+			</element>
+			<element name="date_naissance" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.30.006 - Date de naissance</documentation>
+				</annotation>
+			</element>
+			<element name="lieu_naissance" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.30.007 - Lieu de naissance</documentation>
+				</annotation>
+			</element>
+			<element name="code_pays" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.30.011 - Code pays</documentation>
+				</annotation>
+			</element>
+			<element name="matricule" type="gipmds:matricule_salarie_type" minOccurs="0">
+				<annotation>
+					<documentation>S21.G00.80.003 - Matricule dans l'entreprise</documentation>
+				</annotation>
+			</element>
+			<element name="rang" type="integer" minOccurs="0">
+				<annotation>
+					<documentation>Rang du salarié dans la declaration</documentation>
+				</annotation>
+			</element>
+			<element name="taux_imposition_PAS" type="decimal" minOccurs="0">
+				<annotation>
+					<documentation>Taux d'imposition</documentation>
+				</annotation>
+			</element>
+			<element name="future_imposition_PAS" type="gipmds:future_imposition_PAS_type" minOccurs="0">
+				<annotation>
+					<documentation>Futur taux d'imposition applicable</documentation>
+				</annotation>
+			</element>																							
+		</sequence>
+	</complexType>
+	<complexType name="salarie_identification_diff_type">
+		<annotation>
+			<documentation>Identification d'un salarié en fonction de l'origine des informations</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gipmds:salarie_identification_type">
+				<attribute name="origine" type="gipmds:origine_type">
+					<annotation>
+						<documentation>Origine des informations concernant le salarié (déclaration DSN, déclaration PASRAU, référentiel SNGI).</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="individu_non_salarie_identification_type">
+		<annotation>
+			<documentation>Identification d'un individu non salarié au sein d'une DSN</documentation>
+		</annotation>
+		<sequence>
+			<choice maxOccurs="2">
+				<element name="NIR" type="string">
+					<annotation>
+						<documentation>S89.G00.91.001 - Numéro d'inscription au répertoire</documentation>
+					</annotation>
+				</element>
+				<element name="NTT" type="string">
+					<annotation>
+						<documentation/>
+					</annotation>
+				</element>
+			</choice>
+			<element name="nom_famille" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S89.G00.91.002 - Nom de famille</documentation>
+				</annotation>
+			</element>
+			<element name="nom_usage" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S89.G00.91.003 - Nom d'usage</documentation>
+				</annotation>
+			</element>
+			<element name="prenoms" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S89.G00.91.004 - Prénoms</documentation>
+				</annotation>
+			</element>
+			<element name="sexe" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S89.G00.91.005 - Sexe</documentation>
+				</annotation>
+			</element>
+			<element name="date_naissance" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S89.G00.91.006 - Date de naissance</documentation>
+				</annotation>
+			</element>
+			<element name="lieu_naissance" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S89.G00.91.007 - Lieu de naissance</documentation>
+				</annotation>
+			</element>
+			<element name="code_pays" type="string" minOccurs="0">
+				<annotation>
+					<documentation>S89.G00.91.011 - Code pays</documentation>
+				</annotation>
+			</element>
+			<element name="matricule" type="gipmds:matricule_salarie_type" minOccurs="0">
+				<annotation>
+					<documentation>S89.G00.91.016 - Matricule de l'individu_non_salarie dans l'entreprise</documentation>
+				</annotation>
+			</element>
+			<element name="rang" type="integer" minOccurs="0">
+				<annotation>
+					<documentation>Rang de l'individu non salarié dans la declaration</documentation>
+				</annotation>
+			</element>
+			<element name="taux_imposition_PAS" type="decimal" minOccurs="0">
+				<annotation>
+					<documentation>Taux d'imposition</documentation>
+				</annotation>
+			</element>
+			<element name="future_imposition_PAS" type="gipmds:future_imposition_PAS_type" minOccurs="0">
+				<annotation>
+					<documentation>Futur taux d'imposition applicable</documentation>
+				</annotation>
+			</element>																							
+		</sequence>
+	</complexType>
+	<complexType name="individu_non_salarie_identification_diff_type">
+		<annotation>
+			<documentation>Identification d'un individu non salarié en fonction de l'origine des informations</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gipmds:individu_non_salarie_identification_type">
+				<attribute name="origine" type="gipmds:origine_type">
+					<annotation>
+						<documentation>Origine des informations concernant l'individu non salarié (déclaration DSN, déclaration PASRAU, référentiel SNGI).</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="contrat_identification_type">
+		<sequence>
+			<element name="date_debut_contrat" type="string">
+				<annotation>
+					<documentation>S21.G00.40.001 - Date de début du contrat de travail</documentation>
+				</annotation>
+			</element>
+			<element name="num_contrat" type="string">
+				<annotation>
+					<documentation> S21.G00.40.009 - Numéro du contrat de travail</documentation>
+				</annotation>
+			</element>
+			<element name="nature_contrat" type="string" minOccurs="0">
+				<annotation>
+					<documentation> S21.G00.40.007 - Nature du contrat de travail</documentation>
+				</annotation>
+			</element>
+			<element name="statut_conventionnel_contrat" type="string" minOccurs="0">
+				<annotation>
+					<documentation> S21.G00.40.002 - Statut conventionnel du contrat de travail</documentation>
+				</annotation>
+			</element>
+			<element name="libelle_emploi_contrat" type="string" minOccurs="0">
+				<annotation>
+					<documentation> S21.G00.40.006 - Libelle emploi du contrat de travail</documentation>
+				</annotation>
+			</element>
+			<element name="code_regime_maladie_contrat" type="string" minOccurs="0">
+				<annotation>
+					<documentation> S21.G00.40.018 - Code régime de base risque maladie du contrat de travail</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="taux_AT_identification_type">
+		<sequence>
+			<element name="code_ctn" type="string">
+				<annotation>
+					<documentation> Code CTN sur 2 caractères maximum </documentation>
+				</annotation>
+			</element>
+			<element name="section" type="string">
+				<annotation>
+					<documentation> Section sur 2 caractères maximum </documentation>
+				</annotation>
+			</element>
+			<element name="code_risque" type="string">
+				<annotation>
+					<documentation> Code risque sur 5 caractères maximum </documentation>
+				</annotation>
+			</element>
+			<element name="temoin_bureau" type="string" minOccurs="0">
+				<annotation>
+					<documentation> Témoin de modulation bureau sur 1 caractère maximum, optionnel </documentation>
+				</annotation>
+			</element>
+			<element name="taux" type="decimal">
+				<annotation>
+					<documentation> Taux AT </documentation>
+				</annotation>
+			</element>
+			<element name="date_effet" type="date">
+				<annotation>
+					<documentation> Date d'effet du taux AT, au format YYYY-MM-DD </documentation>
+				</annotation>
+			</element>
+			<element name="date_calcul" type="date">
+				<annotation>
+					<documentation> Date de calcul du taux AT, au format YYYY-MM-DD </documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="future_imposition_PAS_type">
+		<sequence>
+			<element name="taux" type="decimal" minOccurs="0">
+				<annotation>
+					<documentation>Futur taux d'imposition PAS qui sera en vigueur à partir de la date d'effet</documentation>
+				</annotation>
+			</element>
+			<element name="date_effet" type="date">
+				<annotation>
+					<documentation>Date d'effet d'application du futur taux PAS, au format YYYY-MM-DD</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>													
+	<complexType name="base_anomalie_type">
+		<sequence>
+			<element name="description" type="gipmds:description_anomalie_type"/>
+			<element name="valeurs" type="gipmds:valeurs_anomalie_type" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="description_anomalie_type">
+		<sequence>
+			<element name="code" type="gipmds:code_anomalie_type">
+				<annotation>
+					<documentation>Sous la forme Sxx.Gyy.aa.bb.ccc-CXX22 par exemple</documentation>
+				</annotation>
+			</element>
+			<element name="categorie" type="gipmds:categorie_anomalie_type" minOccurs="0">
+				<annotation>
+					<documentation>Contenu a definir ulterieurement, a priori un niveau de gravite</documentation>
+				</annotation>
+			</element>
+			<element name="message" type="string">
+				<annotation>
+					<documentation>Message d'erreur</documentation>
+				</annotation>
+			</element>
+			<element name="numero_ligne" type="integer" minOccurs="0">
+				<annotation>
+					<documentation>Numero de ligne dans le fichier d'entree (texte, et non XML)</documentation>
+				</annotation>
+			</element>
+			<element name="nombre" type="integer" minOccurs="0">
+				<annotation>
+					<documentation>Nombre d'anomalies identiques dans le fichier (pour cet ID de contrôle au sens code = rubrique/regle)</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="valeurs_anomalie_type">
+		<sequence>
+			<element name="rubrique_declenchante" type="gipmds:rubrique_type"/>
+			<element name="rubrique_associee" type="gipmds:rubrique_type" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="rubrique_type">
+		<sequence>
+			<element name="identifiant" type="gipmds:identifiant_rubrique_type"/>
+			<element name="libelle" type="string" minOccurs="0"/>
+			<element name="valeur" type="string"/>
+		</sequence>
+	</complexType>
+	<!-- fin types complexes -->
+	<!-- début types simples -->
+	<!-- début types simples autres que string -->
+	<simpleType name="ok_ko">
+		<restriction base="string">
+			<enumeration value="OK"/>
+			<enumeration value="KO"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="envoi_etat_type">
+		<restriction base="string">
+			<enumeration value="OK">
+				<annotation>
+					<appinfo>
+						<label>envoi valide</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="KO">
+				<annotation>
+					<appinfo>
+						<label>envoi invalide</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="ANO">
+				<annotation>
+					<appinfo>
+						<label>anomalie détectée</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<simpleType name="etat_type">
+		<restriction base="string">
+			<enumeration value="OK">
+				<annotation>
+					<appinfo>
+						<label>declaration valide</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="KO">
+				<annotation>
+					<appinfo>
+						<label>declaration invalide</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="ANO">
+				<annotation>
+					<appinfo>
+						<label>anomalie détectée</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<simpleType name="envoi_anomalie_categorie_type">
+		<restriction base="string">
+			<enumeration value="generale">
+				<annotation>
+					<appinfo>
+						<label>nombre des anomalies generales dans l'envoi</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="declaration">
+				<annotation>
+					<appinfo>
+						<label>nombre des anomalies declaration dans l'envoi</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="nominative">
+				<annotation>
+					<appinfo>
+						<label>nombre des anomalies sur les donnees nominatives dans l'envoi</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="total">
+				<annotation>
+					<appinfo>
+						<label>nombre total d'anomalies dans l'envoi</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<!-- fin types simples autres que string -->
+	<!-- début types simples egaux a string -->
+	<simpleType name="identifiant_envoi_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="SIRET_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="SIREN_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="NIR_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="NIC_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="code_anomalie_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="norme_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="nom_fichier_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="raison_sociale_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="identifiant_rubrique_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="matricule_salarie_type">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="categorie_anomalie_type">
+		<restriction base="string">
+			<enumeration value="bloquant">
+				<annotation>
+					<appinfo>
+						<label>anomalie bloquante</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="non-bloquant">
+				<annotation>
+					<appinfo>
+						<label>anomalie non-bloquante</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<simpleType name="origine_type">
+		<restriction base="string">
+			<enumeration value="DSN">
+				<annotation>
+					<appinfo>
+						<label>déclaration</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="PASRAU">
+				<annotation>
+					<appinfo>
+						<label>déclaration</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="SNGI">
+				<annotation>
+					<appinfo>
+						<label>référentiel</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<simpleType name="declaration_reconstituee_type">
+		<restriction base="string">
+			<enumeration value="AED">
+				<annotation>
+					<appinfo>
+						<label>Attestation Employeur Dématérialisée</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="DSIJ">
+				<annotation>
+					<appinfo>
+						<label>Déclaration de Salaires pour le versement des Indemnités Journalières</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+			<enumeration value="A6M">
+				<annotation>
+					<appinfo>
+						<label>Arrêt de plus de six mois</label>
+					</appinfo>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<!-- début types simples egaux a string -->
+	<!-- fin types simples -->
+</schema>

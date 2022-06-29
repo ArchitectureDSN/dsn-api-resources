@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+	<RO>
+		<RO_R001>2022V1.3</RO_R001>
+		<RO_B000>
+			<RO_B000_R001>WSa30vWBFA3Ao6RUOeqAiaf</RO_B000_R001>
+			<!-- Identifiant S10_G00_95_900 Information alimentée dans la DSN par le bloc 1-->
+			<RO_B000_R002>1</RO_B000_R002>
+			<!-- RangDéclaration S20.G00.96.010 Information alimentée dans la DSN par le bloc 1-->
+			<RO_B000_R003>432631109XXXXX</RO_B000_R003>
+			<!-- SIRET Emetteur : Concaténation S10.G00.01.001 et S10.G00.01.002-->
+			<RO_B000_R004>440630556XXXXX</RO_B000_R004>
+			<!-- SIRET Declare : Concaténation S10_G00.06.001 et S10.G00.11.001-->
+			<RO_B000_R005>11</RO_B000_R005>
+			<!-- Numéro de fraction de déclaration - S21.G00.05.003 -->
+			<RO_B000_R006>2022-02-01</RO_B000_R006>
+			<!-- Date du mois principal déclaré - S21.G00.05.005 -->
+			<RO_B000_R007>01</RO_B000_R007>
+			<!-- Point de dépôt - S21.G00.00.007 -->
+			<RO_B000_R008>NOMDULOGICIEL</RO_B000_R008>
+			<!-- Nom du logiciel utilisé - S21.G00.00.001 -->
+			<RO_B000_R009>NOMEDITEUR</RO_B000_R009>
+			<!--  Nom de l'éditeur - S21.G00.00.002 -->
+			<RO_B000_R010>NUMVERSION</RO_B000_R010>
+			<!-- Numéro de version du logiciel utilisé - S21.G00.00.003 -->
+			<RO_B000_R011>01</RO_B000_R011>
+			<!-- Type de la déclaration - S21.G00.05.002 -->
+			<RO_B000_R012>0</RO_B000_R012>
+			<!-- Numéro d'ordre de la déclaration - S21.G00.05.004 -->
+			<RO_B000_R013>02</RO_B000_R013>
+			<!-- Code envoi du fichier d'essai ou réel - S21.G00.00.005 -->
+			<RO_B000_R014>P22V01</RO_B000_R014>
+			<!-- Numéro de version de la norme utilisée - S21.G00.00.006 -->
+		</RO_B000>
+		<RO_B001>
+			<RO_B001_R001>01</RO_B001_R001>
+			<!-- Retour organisme sur une DSN mensuelle -->
+			<RO_B002>
+				<RO_B002_R001>3B7767dddk2432xc</RO_B002_R001>
+				<RO_B002_R002>119</RO_B002_R002>
+				<RO_B002_R003>CRM pour accompagner la résolution des anomalies</RO_B002_R003>
+				<RO_B002_R004>01</RO_B002_R004>
+				<!-- Retour organisme normal -->
+				<RO_B002_R005>URSSAF Caisse Nationnale</RO_B002_R005>
+				<RO_B002_R006>18003501600054</RO_B002_R006>
+				<RO_B002_R007>18003501600054</RO_B002_R007>
+				<RO_B002_R008>2022-02-01</RO_B002_R008>
+				<RO_B002_R009>2022-02-28</RO_B002_R009>
+				<RO_B002_R010>2022-03-02T01:01:01</RO_B002_R010>
+				<RO_B002_R011>2022-03-02T01:01:01</RO_B002_R011>
+				<RO_B003>
+					<RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
+					<RO_B003_R002>OK</RO_B003_R002>
+					<!-- Données DSN permettant d'assurer les traitements métiers -->
+				</RO_B003>
+			</RO_B002>
+		</RO_B001>
+	</RO>
+</GIPMDS>

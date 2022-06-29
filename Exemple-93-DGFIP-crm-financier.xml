@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gipmds:rapport xmlns:gipmds="http://www.gip-mds.fr/" profil="DSN" type="CRM financier" version="v01r08">
+   <envoi>
+      <envoi_identification>
+         <idflux>41358177C5AD6C0000000000</idflux>
+         <version_norme>201710</version_norme>
+         <emetteur_siret>12345678912345</emetteur_siret>
+      </envoi_identification>
+      <envoi_bilan>
+         <envoi_etat>KO</envoi_etat>
+      </envoi_bilan>
+   </envoi>
+   <declaration>
+      <declaration_identification>
+         <rang>23</rang>
+         <type>01</type>
+		 <identifiant_metier>DECEMBRE-2018</identifiant_metier>
+         <SIREN>456789123</SIREN>
+         <nic_affectation>54321</nic_affectation>
+      </declaration_identification>
+      <declaration_bilan>
+         <etat>KO</etat>
+      </declaration_bilan>
+      <declaration_anomalie>
+         <description>
+            <code>CBS03</code>
+            <categorie>bloquant</categorie>
+            <message>La DGFiP ne peut pas prendre en compte votre paiement du prélèvement à la source pour le motif suivant : Compte bancaire non autorisé au télépaiement SEPA B2B (mandat non signé ou absence de Référence Unique de Mandat) : prélèvement SEPA invalide. Pour régulariser votre situation vous pouvez : Jusqu’à la date d’échéance déposer une déclaration « annule et remplace intégral », comportant un bloc de versement PAS enrichi de données bancaires BIC/IBAN enregistrées dans votre espace abonné professionnel. Un mandat SEPA interentreprises signé devra être transmis par vos soins à votre banque. Après la date d’échéance et jusqu'à la fin du mois de l'échéance, vous pouvez également, à titre exceptionnel, effectuer un télépaiement à partir de votre espace abonné professionnel, après y avoir préalablement mis à jour vos données bancaires BIC/IBAN et transmis un mandat SEPA interentreprises signé à votre banque. Dans cette hypothèse, vous vous exposez à l’application d’une sanction.</message>
+         </description>
+         <valeurs>
+            <rubrique_declenchante>
+               <identifiant>S21.G00.20.004</identifiant>
+               <valeur>FR90 3029 4000 0154 6329 1G03 065</valeur>
+            </rubrique_declenchante>
+         </valeurs>
+      </declaration_anomalie>
+   </declaration>
+</gipmds:rapport>

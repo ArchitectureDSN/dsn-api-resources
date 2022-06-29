@@ -1,0 +1,407 @@
+/**
+ * 2012-07-20 18:00
+ * 
+ * 
+ */
+@charset "utf-8";
+
+html,body,div,span,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+abbr,address,cite,code,
+del,dfn,em,img,ins,kbd,q,samp,
+small,strong,sub,sup,var,
+b,i,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,figure,footer,header,
+hgroup,menu,nav,section,menu,
+time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+article, aside, figure, footer, header,hgroup, nav, section { display:block;} 
+nav ul { list-style:none;} 
+blockquote, q { quotes:none;} 
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none;} 
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent;} 
+ins { background-color:#ff9; color:#000; text-decoration:none;} 
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold;} 
+del { text-decoration: line-through;} 
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help;} 
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0;} 
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0;} 
+input, select { vertical-align:middle;}
+/* END RESET CSS */ 
+ 
+/*
+fonts.css from the YUI Library: developer.yahoo.com/yui/
+          Please refer to developer.yahoo.com/yui/fonts/ for font sizing percentages
+ 
+There are three custom edits:
+ * remove arial, helvetica from explicit font stack
+ * make the line-height relative and unit-less
+ * remove the pre, code styles
+*/
+body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22;} 
+table { font-size:inherit; font:100%;} 
+select, input, textarea { font:99% sans-serif;}
+/* normalize monospace sizing
+ * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
+ */
+pre, code, kbd, samp { font-family: monospace, sans-serif;}
+
+/*
+ * minimal base styles
+ */
+
+/* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+body, select, input, textarea { color:#444;}
+
+/* Headers (h1,h2,etc) have no default font-size or margin,
+   you'll want to define those yourself. */
+
+/**
+* Typographie
+* @section Typographie
+* @see http://www.pompage.net/pompe/definir-des-tailles-de-polices-en-CSS/
+* @see http://www.alistapart.com/articles/howtosizetextincss
+*
+* La taille de base sera de 10px avec les valeurs par dfaut de police du navigateur :soit 16px
+* formule :10px/16 = 0.625em 11px/16 = 0.6875em 12px/16 = 0.75em
+* Pour fixer une hauteur de ligne par dfaut de 18px (valeur par dfaut sur la plus part des navigateurs)
+* il faut modifier la hauteur de ligne par défaut en fonction de la taille de police par defaut
+* 18/10 = 1.8em 18/11 = 1.6363em 18/12 = 1.5em
+*/
+html{font-size:100%;}
+body{font:12px Arial,Helvetica,sans-serif;line-height:1.2;}
+input,select,textarea{font-size:100%;}
+/**
+* Ainsi pour afficher une taille par dfaut de 20 px pour les titres H1 si la taille de police est de 10 px
+* la formule est :20/ 10 = 2em
+* l'attribut de font se lit ainsi font:taille-du-titre / hauteur-de-ligne-du-titre Liste des police et ordre d'application;*/
+h1{font:1.5em/1.125 Arial,Helvetica,sans-serif;font-weight:bold;margin:0 0 1.111em 0; color:#e95a12;}
+h2{font:1.25em/1.125 Arial,Helvetica,sans-serif;text-transform: inherit;margin:0 0 0.533em 0; color:#e95a12;}
+h3{font:1.083em/1.125 Arial,Helvetica,sans-serif;text-transform:uppercase;margin:1.154em 0 0.538em 0;}
+h4{font:1.4em/1.125 Arial,Helvetica,sans-serif;}
+h5{font:1.2em/1.125 Arial,Helvetica,sans-serif;}
+h6{font:1.1em/1.125 Arial,Helvetica,sans-serif;}
+h7{font:1.8em/1.125 Arial,Helvetica,sans-serif;font-weight:bold;margin:0 0 1.111em 0;}
+  
+/* www.aestheticallyloyal.com/public/optimize-legibility/ */
+h1,h2,h3,h4,h5,h6 { text-rendering: optimizeLegibility;}
+ 
+/* maxvoltar.com/archive/-webkit-font-smoothing */
+html { -webkit-font-smoothing: antialiased;} 
+  
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+cite,em,dfn{font-style:italic;}
+code,kbd,samp,pre,tt,var,input[type='text'],input[type='password'],textarea{font-size:100%;font-family:mono-space,monospace;}
+pre{white-space:pre;}
+pre *{font-size:100%;white-space:pre;}
+del{text-decoration:line-through;}
+ins,dfn{border-bottom:1px solid black;}
+small,sup,sub{font-size:85%;}
+big{font-size:125%;line-height:80%;}
+abbr,acronym{text-transform:uppercase;font-size:85%;letter-spacing:.1em;}
+abbr[title],acronym[title],dfn[title]{cursor:help;border-bottom:1px dotted black;}
+sup{vertical-align:super;}
+sub{vertical-align:sub;}
+blockquote{padding-left:2.2em;font-style:italic;}
+:lang(af),:lang(nl),:lang(pl){quotes:'\201E' '\201D' '\201A' '\2019';}
+:lang(bg),:lang(cs),:lang(de),:lang(is),:lang(lt),:lang(sk),:lang(sr),:lang(ro){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(da),:lang(hr){quotes:'\00BB' '\00AB' '\203A' '\2039';}
+:lang(el),:lang(es),:lang(sq),:lang(tr){quotes:'\00AB' '\00BB' '\2039' '\203A';}
+:lang(en-GB){quotes:'\2018' '\2019' '\201C' '\201D';}
+:lang(fi),:lang(sv){quotes:'\201D' '\201D' '\2019' '\2019';}
+:lang(fr){quotes:'\ab\2005' '\2005\bb' '\2039\2005' '\2005\203a';}
+*[lang|='en'] q:before{content:'\201C';}
+*[lang|='en'] q:after{content:'\201D';}
+*[lang|='en'] q q:before{content:'\2018';}
+*[lang|='en'] q q:after{content:'\2019';}
+input,select,button{cursor:pointer;}
+input[type='text'],input[type='password']{cursor:text;}
+input[type='hidden']{display:none;}
+
+a {text-decoration:none;color:#e50040;}
+a:hover {text-decoration:underline;}
+p {margin:0 0 0.5em 0;}
+p+h2, ul+h2, ol+h2 {margin:1em 0 0.533em 0;}
+p+h1, ul+h1, ol+h1 {margin:1.5em 0 1.111em 0;}
+ol, ul {list-style:outside square;margin:0 0 0.667em 2em;}
+ol li, ul li {margin:0 0 0.333em 0;}
+ 
+/* make buttons play nice in IE:   
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible;}
+
+/* Styles Google */
+.gsc-control-cse { font-family: Verdana, sans-serif; border-color: #FFFFFF; background-color: #FFFFFF;}
+.gsc-control-cse .gsc-table-result{font-family:Verdana,sans-serif;}
+input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#D9D9D9;}
+input.gsc-search-button,input.gsc-search-button:hover,input.gsc-search-button:focus{border-color:#2F5BB7;background-color:#357AE8;background-image:none;filter:none;}
+.gsc-tabHeader.gsc-tabhInactive{border-color:#CCCCCC;background-color:#FFFFFF;}
+.gsc-tabHeader.gsc-tabhActive{border-color:#CCCCCC;border-bottom-color:#FFFFFF;background-color:#FFFFFF;}
+.gsc-tabsArea{border-color:#CCCCCC;}
+.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF;}
+.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF;}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b{color:#1155CC;}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b{color:#1155CC;}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b{color:#1155CC;}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b{color:#1155CC;}
+.gsc-cursor-page{color:#1155CC;}
+a.gsc-trailing-more-results:link{color:#1155CC;}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType{color:#333333;}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl{color:#009933;}
+.gs-webResult div.gs-visibleUrl-short{color:#009933;}
+.gs-webResult div.gs-visibleUrl-short{display:none;}
+.gs-webResult div.gs-visibleUrl-long{display:block;}
+.gs-promotion div.gs-visibleUrl-short{display:none;}
+.gs-promotion div.gs-visibleUrl-long{display:block;}
+.gsc-cursor-box{border-color:#FFFFFF;}
+.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#1155CC;}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#1155CC;}
+.gsc-webResult.gsc-result.gsc-promotion{border-color:#F6F6F6;background-color:#F6F6F6;}
+.gsc-completion-title{color:#1155CC;}
+.gsc-completion-snippet{color:#333333;}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link{color:#1155CC;}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited{color:#1155CC;}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover{color:#1155CC;}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active{color:#1155CC;}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right *{color:#333333;}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short{color:#009933;}
+
+/* 
+	Styles du site
+*/
+body{background-color:#e5e5e5;font-family:verdana,sans-serif;color:#004372;}
+.orange {color:#e95a12; font-weight:lighter;}
+a {color:#004372;}
+a.txt{color:#444444;}
+a.souligne{color:#e95a12;text-decoration:underline;}
+.souligne1 {color:#004372; font-size:16px;}
+h1{text-transform:uppercase;}
+ul{list-style-image:url(../img/puce.png);margin-left:13px;}
+.ceinture{width:965px;margin:0 auto;position:relative;}
+.soulignement{border:0;outline:0;border-bottom:1px solid #d9d9e0;display:block;width:184px;height:1px;margin: 10px 0;}
+/* La tête */
+#tete{position:relative;margin-bottom:45px;}
+	#tete .ceinture{padding-top:85px;padding-left:0px;width:810px;position:static}
+	.filet_decoratif{display:block;position:absolute;top:85px;left:0;width:100%;height:30px;background-color:#f99d1c;}
+	#logo{display:block;position:absolute;top:20px;left:0;margin:0;padding:0;}
+	#baseline{line-height:30px;font-size:13px;color:#ffffff;text-transform:uppercase;margin:0;}
+	#slogan{margin-top:5px;font-size:20px;color:#205072;text-transform:uppercase;}
+	#recherche{width:236px;height:28px;position:absolute;right:0;top:85px;padding-top:2px;}
+/* Colonne centrale */
+#principale{width:800px;float:left;}
+	#contenu{position:relative;margin-bottom:-5px;background: #ffffff 0 0 repeat-y;}
+		#contenu .avec_decoration{display:block;padding:17px 25px 35px;}
+		#contenu .bord_haut,#contenu .bord_bas{display:block;width:635px;height:8px;position:absolute;top:-8px;left:0;background: transparent url(../img/habillage-colonne_centrale-article-haut.png) 0 0 no-repeat;}
+		#contenu .bord_bas{top:auto;bottom:-8px;background: transparent url(../img/habillage-colonne_centrale-article-bas.png) 0 0 no-repeat;}
+		#contenu p,#contenu li{margin-bottom:20px;width:380px;text-align:left;line-height:16px;}
+/* Liens centraux */
+#menu_principal{position:relative;}
+#menu_principal ul{clear:both;overflow:hidden;margin:0;padding:0;margin-bottom:20px;list-style-type:none}
+#menu_principal ul#questions{margin-bottom:5px;margin-left:25px;}
+#menu_principal li{padding:0;margin:0;list-style-type:none}
+	#questions li a,#qui_suis_je li a,#lien_questions{display:block;float:left;width:181px;height:56px;margin-left:25px;text-indent:-9999px;}
+		#questions li #lien_pourquoi{background: transparent url(../img/btn-lien-pourquoi.png) 0 0 no-repeat;margin-left:0;}
+		#questions li #lien_pourqui{background: transparent url(../img/btn-lien-pourqui.png) 0 0 no-repeat;}
+		#questions li #lien_comment{background: transparent url(../img/btn-lien-comment.png) 0 0 no-repeat;}
+	#qui_suis_je li a{width:309px;height:67px;margin-left:0px;}
+		#qui_suis_je li #lien_developpe{background: transparent url(../img/btn-lien-developpe.png) 0 0 no-repeat;}
+		#qui_suis_je li #lien_demarre{margin-left:17px;background: transparent url(../img/btn-lien-demarrer.png) 0 0 no-repeat;}
+	#lien_questions{width:634px;height:69px;margin-left:0px;margin-bottom:20px;background: transparent url(../img/bt-lien-question.png) 0 0 no-repeat;}
+#principale #menu_principal a:hover{background-position:0 bottom;}
+
+/* Colonnes latérales */
+#colonne_laterale{width:314px;float:right;}
+	#colonne_laterale .section{position:relative;padding:17px 25px;background: transparent url(../img/habillage-colonne_droite-section-centre.png) 0 0 repeat-y;margin-bottom:35px;line-height:16px}
+		#colonne_laterale .section .bord_haut,#colonne_laterale .section .bord_bas{display:block;width:314px;height:8px;position:absolute;top:-8px;left:0;background: transparent url(../img/habillage-colonne_droite-section-haut.png) 0 0 no-repeat;}
+		#colonne_laterale .section .bord_bas{top:auto;bottom:-8px;background: transparent url(../img/habillage-colonne_droite-section-bas.png) 0 0 no-repeat;}
+		#colonne_laterale .section .titre{margin-bottom:5px;font-size:12px; color:#e95a12;}
+		#colonne_laterale .section .voir_tous{text-align:right;margin:0;}
+		
+#colonne_gauche{width:222px;float:left;}
+#colonne_gauche .section{position:relative;padding:17px 25px;background: transparent url(../img/habillage-colonne_gauche-section-centre.png) 0 0 repeat-y;margin-bottom:35px;line-height:16px}
+		#colonne_gauche .section .bord_haut,#colonne_gauche .section .bord_bas{display:block;width:222px;height:8px;position:absolute;top:-8px;left:0;background: transparent url(../img/habillage-colonne_gauche-section-haut.png) 0 0 no-repeat;}
+		#colonne_gauche .section .bord_bas{top:auto;bottom:-8px;background: transparent url(../img/habillage-colonne_gauche-section-bas.png) 0 0 no-repeat;}
+		#colonne_gauche .section .titre{margin-bottom:5px;font-size:12px;background: transparent url(../img/puce.png) 0 0 no-repeat;padding-left:21px;}
+		#colonne_gauche .section ul{list-style-image:none;list-style-type:none;margin-left:0px;}
+		#colonne_gauche .section ul li{background-color:#f8f8f8;padding:8px 10px 8px 12px;}
+		#colonne_gauche .section ul li a:hover{text-decoration:none;}
+		#colonne_gauche .section ul li:hover{background-color:#e3e3e3;cursor:pointer;}
+		#colonne_gauche .section ul li.on_active{background-color:#e3e3e3;}
+		#colonne_gauche .section ul li.on-active{background-color:#e3e3e3;}
+		#colonne_gauche .section ul li.on-active:hover{background-color:#cfcece;}
+		#colonne_gauche .section .voir_tous{text-align:right;margin:0;}
+
+#pied{clear:both;margin-top:28px;}
+	#pied p{text-align:center;width:750px;margin:0 auto;}
+	#pied a{margin:0 5px;font-size:10px;}
+		#pied a#twitter img{margin-bottom:-9px;}
+		#pied a#net img{margin-bottom:-5px;}
+#date{	float: right; width: 180px; background: #f7f7f7 url(theme/img/outils-sep.gif) no-repeat 10px; font-size: 11px; color: #666666; padding: 0 0 0 25px;}
+/* Surcharges des styles Google de base */
+#recherche .cse .gsc-control-cse, #recherche .gsc-control-cse{padding:0;margin:0;}
+#gsc-iw-id1,.gsc-input-box{height:22px;}
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2{padding:3px 10px !important;margin-top:0 !important;}
+form.gsc-search-box,table.gsc-search-box{margin-bottom:0 !important;}
+.gsib_a{padding-top:2px !important}
+
+/* Styles pour IE7 */
+.ie7 #contenu{padding-bottom:20px; position: fixed;}
+.ie7 #menu_principal li a{position:absolute;left:80px;top:0;}
+.ie7 #menu_principal ul, .ie7 #menu_principal li,.ie7 #menu_principal li a{overflow:hidden;list-style-image:none}
+
+.ie7 #questions{display:block;height:56px;overflow:hidden}
+	.ie7 #lien_pourquoi{margin-left:25px !important;overflow:hidden}
+	.ie7 #lien_pourqui{margin-left:231px !important;}
+	.ie7 #lien_comment{margin-left:437px !important;}
+.ie7 #qui_suis_je{display:block;height:67px;overflow:hidden}
+	.ie7 #qui_suis_je li a{margin-top:61px!important}
+	.ie7 #lien_demarre{margin-left:326px !important;}
+	
+.ie7 #colonne_laterale .section ul{overflow:hidden}
+
+/*
+Page Interieur
+*/
+#nav{height:62px;margin-bottom:20px;}
+#nav div{float:left;font-weight:bold;cursor:pointer;text-align:center;width:162px;}
+#onglet1 a{display:block;background:url(../img/onglet1.png) no-repeat left top;height:37px;padding-top:25px;}
+#onglet1 a:hover{background:url(../img/onglet1.png) no-repeat left -62px;color:#FFFFFF;}
+#onglet1 a.active{background:url(../img/onglet1.png) no-repeat left -62px;color:#FFFFFF;text-decoration:underline;}
+.onglet2 a{display:block;background:url(../img/onglet2.png) no-repeat left top;height:37px;padding-top:25px;}
+#nav div.onglet2.twolines{}
+#nav div.onglet2.twolines a{padding-top:18px;height:44px;}
+.onglet2 a:hover{background:url(../img/onglet2.png) no-repeat left -62px;color:#FFFFFF;}
+.onglet2 a.active{background:url(../img/onglet2.png) no-repeat left -62px;color:#FFFFFF;text-decoration:underline;}
+#nav div#onglet6 a{display:block;background:url(../img/onglet6.png) no-repeat left top;height:37px;padding-top:25px;}
+#nav div#onglet6{width:155px;}
+#nav div#onglet6 a:hover{background:url(../img/onglet6.png) no-repeat left -62px;color:#FFFFFF;}
+#nav div#onglet6 a.active{background:url(../img/onglet6.png) no-repeat left -62px;color:#FFFFFF;text-decoration:underline;}
+#ariane{font-size:11px;height:15px;margin-bottom:20px;text-align:left;padding:0px;}
+.active{font-weight:bold;}
+.ceinture{}
+#bloc_info{width:724px;margin-left:18px;float:left;}
+#title{margin-bottom:17px;font-size:14px;background: transparent url(../img/centre-titre.png) repeat-y;width:666px;position:relative;padding:9px 0px 16px 60px;line-height:16px;display:block;}
+#title #title_illust{position:absolute;left:20px;}
+#title span{font-size:17px;font-weight:bold;}
+.title_haut{display:block;width:726px;height:7px;position:absolute;top:-7px;left:0;background: transparent url(../img/haut-titre.png) 0 0 no-repeat;}
+.title_bas{
+	top: 90px;
+	bottom: 6px;
+	height: 6px;
+	left: -175px;
+	position: absolute;
+	display: block;
+	font-size:16px;
+	color:##ff9;
+	width: 726px;
+}
+.title_tete {}
+#texte{background:#FFFFFF;padding-left:11px;padding-right:11px;border-left:1px solid #D4D4D4;border-right:1px solid #D4D4D4;}
+#texte .illust{float:left;margin-right:20px;margin-bottom:15px;}
+.upper{text-transform:uppercase;}
+.body_text{line-height:16px;}
+#nav_int{margin-top:18px;}
+.nav_button{background:url(../img/nav_int.jpg) no-repeat;height:22px;width:51px;padding-left:12px;padding-top:7px;}
+#nav_print {margin-top:18px;}
+.print{background:url(../img/nav_print.jpg) no-repeat;height:22px;width:51px;padding-left:12px; padding:10px 0px 20px 5px;}
+.nav_button:hover{background:url(../img/nav_int_over.jpg) no-repeat;color:#FFFFFF;text-decoration:none;cursor:pointer;}
+.right{float:right;}
+.left{float:left;}
+.clear{clear:both;}
+/*
+ * print styles
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none;} 
+  a, a:visited { color: #444 !important; text-decoration: underline;} 
+  a:after { content: " (" attr(href) ")";font-size: 90%;} 
+  abbr:after { content: " (" attr(title) ")"; font-size: 90%;}   
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid;}   
+  img { page-break-inside: avoid;} 
+  @page { margin: 0.5cm;} 
+  p, h2, h3 { orphans: 3; widows: 3;} 
+  h2, h3{ page-break-after: avoid;}
+}
+ 
+/*
+ * Media queries for responsive design
+ */
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome) 
+   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+  /* Prevent iOS, WinMobile from adjusting font size */
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none;}
+}
+
+#top_center{background:url(../img/top_center.jpg) no-repeat;width:726px;height:9px;}
+#bt_center{background:url(../img/bt_center.jpg) no-repeat;width:726px;height:12px;}
+
+
+
+/********Ajout concernant le tableau***********/
+#tabla{line-height: 14px;}
+#tabla td img{display:block;}
+
+#tabla td{}
+.v_align{vertical-align:middle;}
+.vt_align{vertical-align:top;}
+.padd_17{padding-left:17px;padding-right:17px;width:76px;}
+.padd_border { border: 1px solid #999;} 
+.padd_left{padding-top:8px;padding-left:6px;padding-bottom:8px;width:253px;}
+.padd_right{padding-top:8px;padding-left:18px;padding-bottom:8px;width:312px;}
+.padd_top_left{padding-left:120px;padding-top:8px;width:252px;}
+.padd_top_right{padding-left:18px;padding-top:8px;width:312px;}
+.td_pair { border: solid 1px #e95a12; text-align: center; width: 15px;}
+.td_pair.active {background-color:#e95a12; font-weight:bold; color:#FFF; }
+.td_pair.off {background-color:#BBB; font-weight: lighter; color:#e95a12; }
+#tabla a{color:#e95a12;text-decoration:underline;}
+#tabla a:hover{text-decoration:none;}
+#tabla a.follow{background:url(../img/puce.png) no-repeat left 3px;padding-left:12px;}
+#tabla a.follow:hover{text-decoration:none;}
+
+
+/**typo********/
+.p_bleu{font-size:14px;font-weight:bold;color:#205072;}
+.t_bleu{font-size:10px;color:#205072;}
+/*****cell************/
+.s_cell{background-color:#eccc9f;}
+.g_cell{background-color:#dadada;vertical-align:top;text-align:left;}
+.p_cell{background-color:#ebe3e1;vertical-align:top;text-align:left;}
+
+#retrait { padding: 0 0 0 15px; font-size: 12px;	color: #004372;}
+#retrait ul { padding: 5px 0 5px 18px;  list-style: disc; color: #004372; line-height: 12pt;}
+#retrait li { padding: 0 0 7px 0;}
+
+ul.ret  { padding: 5px 0 5px 18px;list-style-type:disc;  color: #004372; line-height: 12pt;}
+ul.ret li.ret { padding: 0 0 7px 0; list-style-type:disc;  }

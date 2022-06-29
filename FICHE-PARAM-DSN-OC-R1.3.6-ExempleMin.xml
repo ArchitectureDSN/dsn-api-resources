@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Exemple réduit de fiche de paramétrage DSN OC - version 1.3.6-->
+<FICHE IdentifiantFiche="numero1" DateHeureCreation="2001-12-17T09:30:47Z" Version="136" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FICHE-PARAM-DSN-OC-R1.3.6.xsd">
+	<Entreprise SIREN="123456789" RaisonSociale="Raison Sociale de l'Entreprise" NIC="12345"/>
+	<ProducteurFiche CodeProducteur="P0000" RaisonSocialeProducteur="Raison Sociale de l'IP"/>
+	<ContactTechniqueFiche Nom="Nom du contact technique" Tel="0101010101" Mail="contact@technique.fr"/>
+	<ContactGestionnaireFiche Nom="Nom du gestionnaire" Tel="0606060606" Mail="contact@gestionnaire.fr"/>
+	<GROUPE NumeroGrp="1" LibelleGrp="Un seul groupe de contrats">
+		<ParametresContrats DateDebutValidite="01092014" DateFinValidite="31122015" Periodicite="Trimestriel">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001 " LibelleContrat="Contrat Prévoyance"/>
+		</ParametresContrats>
+		<ParametresContrats DateDebutValidite="01092014" DateFinValidite="31122015" Periodicite="Trimestriel">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE00000000001 " LibelleContrat="Contrat Santé Isolé délégué sur les prestations"/>
+			<Option CodeOption="ISOLE" LibelleOption="Option isolé"/>
+		</ParametresContrats>
+		<ParametresContrats DateDebutValidite="01092014" DateFinValidite="31122015" Periodicite="Trimestriel">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE00000000001 " LibelleContrat="Contrat Santé Famille délégué sur les prestations"/>
+			<Option CodeOption="FAMILLE" LibelleOption="Option famille"/>
+		</ParametresContrats>
+	</GROUPE>
+</FICHE>

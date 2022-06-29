@@ -1,0 +1,2248 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2013 (x64) (http://www.altova.com) by Gerard Chauvineau (CTIP) -->
+<!--Schéma XSD de la fiche de paramétrage DSN OC - R1.3.7 - 29/08/2017  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="FICHE">
+		<xs:annotation>
+			<xs:documentation>Socle</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Entreprise">
+					<xs:complexType>
+						<xs:attribute name="SIREN" use="required">
+							<xs:annotation>
+								<xs:documentation>S21.G00.06.001
+SIREN de l'entreprise concernée par la fiche de paramétrage. Si le NIC et l'EnsembleEtab ne sont pas renseignés, la fiche s'applique à tous les établissements de l'entreprise.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="9"/>
+									<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="RaisonSociale" use="required">
+							<xs:annotation>
+								<xs:documentation>Raison Sociale de l'entreprise concernée par la fiche de paramétrage.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="60"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NIC" use="optional">
+							<xs:annotation>
+								<xs:documentation>S21.G00.11.001
+NIC d'affectation de la fiche de paramétrage à ne préciser que lorsque la fiche de paramétrage ne concerne qu'un seul établissement de l'entreprise.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="[0-9]{5}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="EnsembleEtab" use="optional">
+							<xs:annotation>
+								<xs:documentation>Ensemble d'établissements de la fiche de paramétrage à ne préciser que si la fiche de paramétrage ne concerne qu'un ensemble d'établissements dont la liste est connue de l'entreprise, mais pas de l'organisme, et dont la codification a été préalablement convenue entre l'organisme et l'entreprise.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="[0-9A-Z]{5}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ProducteurFiche">
+					<xs:complexType>
+						<xs:attribute name="CodeProducteur" use="required">
+							<xs:annotation>
+								<xs:documentation>S21.G00.15.002  ou S21.G00.15.003 
+Code du producteur de la fiche de paramétrage correspondant soit à un Code OC, soit à un Code délégataire de gestion. Si le producteur est un OC, tous les contrats de la fiche relèvent de cet OC. Si le producteur est un délégataire, tous les contrats de la fiche pour lesquels un délégataire est renseigné, relèvent de ce délégataire.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="5"/>
+									<xs:maxLength value="9"/>
+									<xs:pattern value="[P][0-9]{4}"/>
+									<xs:pattern value="[A][0-9A-Z]{5}"/>
+									<xs:pattern value="[0-9]{9}"/>
+									<xs:pattern value="[D][0-9A-Z]{5}"/>
+									<xs:pattern value="[G][0-9A-Z]{5}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="RaisonSocialeProducteur" use="required">
+							<xs:annotation>
+								<xs:documentation>Raison sociale du producteur de la fiche de paramétrage.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="60"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="CodePorteurDeRisque" use="optional">
+							<xs:annotation>
+								<xs:documentation>S21.G00.15.002
+Code du porteur de risques de la fiche de paramétrage, à ne renseigner avec le Code OC que si le producteur de la fiche est un délégataire de gestion. Si le Code OC du porteur de risques est renseigné, tous les contrats de la fiche relèvent de cet OC.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="5"/>
+									<xs:maxLength value="9"/>
+									<xs:pattern value="[P][0-9]{4}"/>
+									<xs:pattern value="[A][0-9A-Z]{5}"/>
+									<xs:pattern value="[0-9]{9}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ContactTechniqueFiche">
+					<xs:complexType>
+						<xs:attribute name="Nom" use="required">
+							<xs:annotation>
+								<xs:documentation>Nom du contact technique (personne ou nom d'un service de préférence).</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="80"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Tel" use="required">
+							<xs:annotation>
+								<xs:documentation>Numéro de téléphone du contact technique.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="10"/>
+									<xs:maxLength value="20"/>
+									<xs:pattern value="[0-9]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="TelComp">
+							<xs:annotation>
+								<xs:documentation>Complément du numéro de téléphone du contact technique.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="80"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Fax">
+							<xs:annotation>
+								<xs:documentation>Numéro de Fax du contact technique.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="10"/>
+									<xs:maxLength value="20"/>
+									<xs:pattern value="[0-9]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Mail" use="required">
+							<xs:annotation>
+								<xs:documentation>Adresse Email du contact technique.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="100"/>
+									<xs:pattern value="\w+([\.\-_]\w+)*@(\w+[\.\-_])+[a-zA-Z]{2,4}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ContactGestionnaireFiche">
+					<xs:complexType>
+						<xs:attribute name="Nom" use="required">
+							<xs:annotation>
+								<xs:documentation>Nom du gestionnaire (personne ou nom d'un service de préférence).</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="80"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Tel" use="required">
+							<xs:annotation>
+								<xs:documentation>Numéro de téléphone du gestionnaire.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="10"/>
+									<xs:maxLength value="20"/>
+									<xs:pattern value="[0-9]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="TelComp">
+							<xs:annotation>
+								<xs:documentation>Complément du numéro de téléphone du gestionnaire.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="80"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Fax">
+							<xs:annotation>
+								<xs:documentation>Numéro de Fax du gestionnaire.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="10"/>
+									<xs:maxLength value="20"/>
+									<xs:pattern value="[0-9]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Mail" use="required">
+							<xs:annotation>
+								<xs:documentation>Adresse Email du gestionnaire.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="100"/>
+									<xs:pattern value="\w+([\.\-_]\w+)*@(\w+[\.\-_])+[a-zA-Z]{2,4}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Message" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Message "libre" adressé par le Producteur de la fiche au déclarant.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="255"/>
+							<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="GROUPE" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Niveau 1- Groupe de paramètres contrats </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ParametresContrats" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Niveau 1- Parametres contrats 
+du Groupe </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Organisme">
+											<xs:complexType>
+												<xs:attribute name="CodeOC" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.15.002
+Code organisme de Prévoyance.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="5"/>
+															<xs:maxLength value="9"/>
+															<xs:pattern value="[P][0-9]{4}"/>
+															<xs:pattern value="[A][0-9A-Z]{5}"/>
+															<xs:pattern value="[0-9]{9}"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="CodeDELEG" use="optional">
+													<xs:annotation>
+														<xs:documentation>S21.G00.15.003
+Code délégataire de gestion, à ne renseigner que si le déclarant doit faire figurer cette donnée dans sa DSN.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="6"/>
+															<xs:pattern value="[G][0-9A-Z]{5}"/>
+															<xs:pattern value="[D][0-9A-Z]{5}"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="AncienCodeOC" use="optional">
+													<xs:annotation>
+														<xs:documentation>Ancien code organisme de Prévoyance, à ne renseigner que si l'ancien organisme a été absorbé par le nouveau sans effet sur le contrat.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="5"/>
+															<xs:maxLength value="9"/>
+															<xs:pattern value="[P][0-9]{4}"/>
+															<xs:pattern value="[A][0-9A-Z]{5}"/>
+															<xs:pattern value="[0-9]{9}"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="AncienCodeDELEG" use="optional">
+													<xs:annotation>
+														<xs:documentation>Ancien code délégataire de gestion, à ne renseigner que si l'ancien délégataire a été absorbé par le nouveau sans effet sur le contrat.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="6"/>
+															<xs:pattern value="[G][0-9A-Z]{5}"/>
+															<xs:pattern value="[D][0-9A-Z]{5}"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Contrat">
+											<xs:complexType>
+												<xs:attribute name="ReferenceContrat" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.15.001
+Reference du contrat de Prévoyance</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="30"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="LibelleContrat" use="required">
+													<xs:annotation>
+														<xs:documentation>Libellé du contrat - Désignation.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="60"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="AncienneReferenceContrat" use="optional">
+													<xs:annotation>
+														<xs:documentation>Ancienne référence du contrat, à ne renseigner qu'en cas de renumérotation technique de la référence du contrat</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="30"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Option" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="CodeOption" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.70.004
+Code option retenue par le salarié.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="30"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="LibelleOption" use="required">
+													<xs:annotation>
+														<xs:documentation>Libellé du code option donné à titre d'information.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="60"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="AncienCodeOption" use="optional">
+													<xs:annotation>
+														<xs:documentation>Ancien code option, à ne renseigner qu'en cas de renumérotation technique.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="30"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Population" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="CodePopulation" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.70.005
+Code population de rattachement du salarié.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="30"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="LibellePopulation" use="required">
+													<xs:annotation>
+														<xs:documentation>Libellé du code population donné à titre d'information.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="60"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="AncienCodePopulation" use="optional">
+													<xs:annotation>
+														<xs:documentation>Ancien Code population , à ne renseigner qu'en cas de renumérotation technique.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="30"/>
+															<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:choice>
+											<xs:element name="ElementsDeCalculAttendus">
+												<xs:annotation>
+													<xs:documentation>Niveau 2A - Tranches et/ou Bases Spécifiques distinctes, 
+relatives au calcul de cotisations nominatives</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:choice maxOccurs="30">
+														<xs:element name="BrutPrev">
+															<xs:annotation>
+																<xs:documentation>S21.G00.79.001 = "10" 
+Salaire ou traitement brut prévoyance 
+Renseigné avec le taux applicable si nécessaire au calcul de la cotisation. </xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Taux">
+																		<xs:annotation>
+																			<xs:documentation>Taux applicable </xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:maxExclusive value="100"/>
+																				<xs:minInclusive value="0"/>
+																				<xs:fractionDigits value="4"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="TAPrev">
+															<xs:annotation>
+																<xs:documentation>S21.G00.79.001 = "11"
+Tranche A prévoyance 
+Tranche du salaire brut comprise entre 0 et 1 PMSS
+Renseigné avec le taux applicable si nécessaire au calcul de la cotisation. </xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Taux">
+																		<xs:annotation>
+																			<xs:documentation>Taux applicable </xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:maxExclusive value="100"/>
+																				<xs:minInclusive value="0"/>
+																				<xs:fractionDigits value="4"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="T2Prev">
+															<xs:annotation>
+																<xs:documentation>S21.G00.79.001 = "12"
+Tranche 2 prévoyance 
+si nécessaire au calcul de la cotisation.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Taux">
+																		<xs:annotation>
+																			<xs:documentation>Taux applicable</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:maxExclusive value="100"/>
+																				<xs:minInclusive value="0"/>
+																				<xs:fractionDigits value="4"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="TBPrev">
+															<xs:annotation>
+																<xs:documentation>S21.G00.79.001 = "13"
+Tranche B prévoyance 
+si nécessaire au calcul de la cotisation.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Taux">
+																		<xs:annotation>
+																			<xs:documentation>Taux applicable</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:maxExclusive value="100"/>
+																				<xs:minInclusive value="0"/>
+																				<xs:fractionDigits value="4"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="TCPrev">
+															<xs:annotation>
+																<xs:documentation>S21.G00.79.001 = "14"
+Tranche C prévoyance 
+si nécessaire au calcul de la cotisation.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Taux">
+																		<xs:annotation>
+																			<xs:documentation>Taux applicable </xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:maxExclusive value="100"/>
+																				<xs:minInclusive value="0"/>
+																				<xs:fractionDigits value="4"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="TDPrev">
+															<xs:annotation>
+																<xs:documentation>S21.G00.79.001 = "15"
+Tranche D prévoyance 
+si nécessaire au calcul de la cotisation.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Taux">
+																		<xs:annotation>
+																			<xs:documentation>Taux applicable </xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:maxExclusive value="100"/>
+																				<xs:minInclusive value="0"/>
+																				<xs:fractionDigits value="4"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="TD1Prev">
+															<xs:annotation>
+																<xs:documentation>S21.G00.79.001 = "16"
+Tranche D1 prévoyance 
+si nécessaire au calcul de la cotisation.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Taux">
+																		<xs:annotation>
+																			<xs:documentation>Taux applicable</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:maxExclusive value="100"/>
+																				<xs:minInclusive value="0"/>
+																				<xs:fractionDigits value="4"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="BaseMontantSpecifique">
+															<xs:annotation>
+																<xs:documentation>Base ou montant spécifique de cotisation.
+Pour chaque Base ou montant spécifique, 
+on renseigne soit un taux, soit un montant, soit les deux.</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Taux" minOccurs="0">
+																		<xs:annotation>
+																			<xs:documentation>Taux applicable </xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:maxExclusive value="100"/>
+																				<xs:minInclusive value="0"/>
+																				<xs:fractionDigits value="4"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:choice minOccurs="0">
+																		<xs:sequence>
+																			<xs:element name="Coef">
+																				<xs:annotation>
+																					<xs:documentation>Coefficient compris entre 
+0 exclu et 10 inclus et avec
+deux décimales maximum </xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:minExclusive value="0"/>
+																						<xs:fractionDigits value="2"/>
+																						<xs:maxInclusive value="10"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="Assiette">
+																				<xs:annotation>
+																					<xs:documentation>valeurs prédéfinies : 
+PMSS ou SALREF</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="PMSS"/>
+																						<xs:enumeration value="SALREF"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:element name="Montant">
+																			<xs:annotation>
+																				<xs:documentation>Montant applicable</xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:decimal">
+																					<xs:maxExclusive value="1000000000"/>
+																					<xs:fractionDigits value="2"/>
+																					<xs:minInclusive value="0"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:element>
+																	</xs:choice>
+																</xs:sequence>
+																<xs:attribute name="ValeurCodeNature" use="required">
+																	<xs:annotation>
+																		<xs:documentation>S21.G00.79.001
+Valeur du code nature de la base ou montant spécifique utile pour le calcul de la cotisation. 
+17= Base spécifique Prévoyance
+18= Base forfaitaire Prévoyance (exemple PMSS ...) 
+19= Base fictive Prévoyance reconstituée
+20= Montant forfaitaire Prévoyance
+21 = Montant Libre</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="17"/>
+																			<xs:enumeration value="18"/>
+																			<xs:enumeration value="19"/>
+																			<xs:enumeration value="20"/>
+																			<xs:enumeration value="21"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="LibelleCodeNature" use="optional">
+																	<xs:annotation>
+																		<xs:documentation>Libellé de la base ou montant spécifique de cotisation pour information. </xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:minLength value="1"/>
+																			<xs:maxLength value="60"/>
+																			<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="Condition" use="optional">
+																	<xs:annotation>
+																		<xs:documentation>Condition d'application du Taux ou du Montant 
+par Assuré et ou Ayant droit
+Tarif unique valable pour une affiliation
+01 = tarif  Assuré avec tous ses Ayants droit 
+02 = tarif  Assuré seul
+03 = tarif  Assuré et 1 Ayant droit Adulte 
+04 = tarif  Assuré et 1 Ayant droit Enfant
+05 = tarif  Assuré et 1 Ayant droit
+06 = tarif  Assuré et 2 Ayants droit
+07 = tarif  Assuré et 2 Ayants droit ou plus
+08 = tarif  Assuré et 3 Ayants droit
+09 = tarif  Assuré et 3 Ayants droit ou plus
+Tarifs à composer pour une affiliation
+90 = tarif pour l'Assuré ouvrant droit
+91 = tarif pour l'Ayant droit Conjoint
+92 = tarif pour chaque Ayant droit 
+93 = tarif pour chaque Ayant droit Adulte 
+94 = tarif pour chaque Ayant droit Enfant 
+95 = tarif pour chaque Ayant droit Autre </xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="01"/>
+																			<xs:enumeration value="02"/>
+																			<xs:enumeration value="03"/>
+																			<xs:enumeration value="04"/>
+																			<xs:enumeration value="05"/>
+																			<xs:enumeration value="06"/>
+																			<xs:enumeration value="07"/>
+																			<xs:enumeration value="08"/>
+																			<xs:enumeration value="09"/>
+																			<xs:enumeration value="90"/>
+																			<xs:enumeration value="91"/>
+																			<xs:enumeration value="92"/>
+																			<xs:enumeration value="93"/>
+																			<xs:enumeration value="94"/>
+																			<xs:enumeration value="95"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="CotisationPlancher">
+															<xs:complexType>
+																<xs:choice>
+																	<xs:element name="MontantPlancher">
+																		<xs:annotation>
+																			<xs:documentation>Montant de la cotisation Plancher
+Nombre</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:minInclusive value="0"/>
+																				<xs:maxExclusive value="1000000000"/>
+																				<xs:fractionDigits value="2"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:sequence>
+																		<xs:element name="TauxPlancher">
+																			<xs:annotation>
+																				<xs:documentation>Taux de la cotisation Plancher</xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:decimal">
+																					<xs:maxExclusive value="100"/>
+																					<xs:minInclusive value="0"/>
+																					<xs:fractionDigits value="4"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:element>
+																		<xs:element name="CoefPlancher">
+																			<xs:annotation>
+																				<xs:documentation>Coefficient compris entre 
+0 exclu et 10 inclus et avec
+deux décimales maximum </xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:decimal">
+																					<xs:minExclusive value="0"/>
+																					<xs:fractionDigits value="2"/>
+																					<xs:maxInclusive value="10"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:element>
+																		<xs:element name="AssiettePlancher">
+																			<xs:annotation>
+																				<xs:documentation>valeurs prédéfinies : 
+PMSS ou SALREF</xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:string">
+																					<xs:pattern value="PMSS"/>
+																					<xs:pattern value="SALREF"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:choice>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="CotisationPlafond">
+															<xs:complexType>
+																<xs:choice>
+																	<xs:element name="MontantPlafond">
+																		<xs:annotation>
+																			<xs:documentation>Montant de la cotisation Plafond
+Nombre</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:minInclusive value="0"/>
+																				<xs:maxExclusive value="1000000000"/>
+																				<xs:fractionDigits value="2"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:sequence>
+																		<xs:element name="TauxPlafond">
+																			<xs:annotation>
+																				<xs:documentation>Taux de la cotisation Plafond</xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:decimal">
+																					<xs:maxExclusive value="100"/>
+																					<xs:minInclusive value="0"/>
+																					<xs:fractionDigits value="4"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:element>
+																		<xs:element name="CoefPlafond">
+																			<xs:annotation>
+																				<xs:documentation>Coefficient compris entre 
+0 exclu et 10 inclus et avec
+deux décimales maximum </xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:decimal">
+																					<xs:minExclusive value="0"/>
+																					<xs:fractionDigits value="2"/>
+																					<xs:maxInclusive value="10"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:element>
+																		<xs:element name="AssiettePlafond">
+																			<xs:annotation>
+																				<xs:documentation>valeurs prédéfinies : 
+PMSS ou SALREF</xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:string">
+																					<xs:pattern value="PMSS"/>
+																					<xs:pattern value="SALREF"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:choice>
+															</xs:complexType>
+														</xs:element>
+													</xs:choice>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="CotisationEtablissement" maxOccurs="6">
+												<xs:annotation>
+													<xs:documentation>Niveau 2A -Cotisations établissement </xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:choice minOccurs="0" maxOccurs="20">
+														<xs:element name="Montant">
+															<xs:complexType>
+																<xs:attribute name="TypeMontant" use="required">
+																	<xs:annotation>
+																		<xs:documentation>Type de  Montant : 
+01 : Montant forfaitaire pour l'entreprise
+02 : Montant forfaitaire pour l'établissement
+03 : Montant forfaitaire pour la population concernée
+91 : Plancher (montant minimal)
+92 : Plafond (montant maximal)</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="01"/>
+																			<xs:enumeration value="02"/>
+																			<xs:enumeration value="03"/>
+																			<xs:enumeration value="91"/>
+																			<xs:enumeration value="92"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="Montant" use="required">
+																	<xs:annotation>
+																		<xs:documentation>Montant applicable
+Obligatoirement exprimé pour une période 
+correspondant à la périodicité de déclaration demandée 
+pour la cotisation établissement</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:minInclusive value="0"/>
+																			<xs:maxExclusive value="1000000000"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="DetailMontant">
+																	<xs:annotation>
+																		<xs:documentation>Description du contenu et des conditions d'application</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:minLength value="1"/>
+																			<xs:maxLength value="160"/>
+																			<xs:pattern value="[&#x20;&#x22;&#x25;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="Taux">
+															<xs:complexType>
+																<xs:attribute name="Taux" use="required">
+																	<xs:annotation>
+																		<xs:documentation>Taux applicable sur la base mentionnée dans l'élément</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:minInclusive value="0"/>
+																			<xs:maxExclusive value="100"/>
+																			<xs:fractionDigits value="4"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="TypeBase" use="required">
+																	<xs:annotation>
+																		<xs:documentation>Type de base applicable :
+01 : Masse salariale brute non plafonnée
+02 : Masse salariale brute plafonnée (TA)
+03 : Masse salariale brute limitée à la tranche B (TA+TB)
+04 : Masse salariale brute limitée à la tranche C (TA+TB+TC)
+50 : Masse salariale brute non plafonnée intégrant les ICP
+51 : Masse salariale brute non plafonnée sans intégration des ICP 
+20 : PMSS
+90 : Autre base précisée dans les conditions</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="01"/>
+																			<xs:enumeration value="02"/>
+																			<xs:enumeration value="03"/>
+																			<xs:enumeration value="04"/>
+																			<xs:enumeration value="20"/>
+																			<xs:enumeration value="50"/>
+																			<xs:enumeration value="51"/>
+																			<xs:enumeration value="90"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="DetailTaux">
+																	<xs:annotation>
+																		<xs:documentation>Description du contenu et des conditions d'application</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:minLength value="1"/>
+																			<xs:maxLength value="160"/>
+																			<xs:pattern value="[&#x20;&#x22;&#x25;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+															</xs:complexType>
+														</xs:element>
+													</xs:choice>
+													<xs:attribute name="CodeCotisation" use="required">
+														<xs:annotation>
+															<xs:documentation>S21.G00.82.002
+Valeur du code nature de la cotisation établissement
+001 - Cotisation ADPFA (Association pour le Développement du Paritarisme des Fleuristes et Animaliers)
+002 - Cotisation APNAB (Association Paritaire Nationale pour le développement de la négociation collective dans l'Artisanat du Bâtiment)
+003 - Cotisation sur assiette avec congés payés CCCA-BTP (Comité de Concertation et de Coordination de l'apprentissage du Bâtiment et des Travaux Publics)
+004 - Cotisation CPPNTT (Commission Paritaire Professionnelle Nationale du Travail Temporaire)
+005 - Cotisation Développement du paritarisme
+006 - Cotisation Dialogue social
+007 - Cotisation FAF (Fonds d'Assurance formation)
+009 - Cotisation FAPS (Fonds d'action professionnelle et sociale)
+010 - Cotisation FASTT (Fonds d'Action Sociale du Travail Temporaire)
+011 - Cotisation Fonds de péréquation
+012 - Cotisation IFC (Indemnités de fin de carrière)
+017 - Cotisation ORGA (Organisations Syndicales du Travail Temporaire)
+018 - Cotisation Promotion et recrutement
+019 - Cotisations attachées à une population de non salariés ayants-droit
+020 - Cotisations attachées à une population de non salariés retraités
+036 - Cotisation TTC sur assiette CDD avec congés payés pour le secteur du BTP (Constructys Organisme Paritaire Collecteur Agréé pour le BTP)
+037 - Cotisation TTC sur assiette avec congés payés pour le secteur du BTP (Constructys Organisme Paritaire Collecteur Agréé pour le BTP)
+038 - Cotisation TTC sur assiette sans congés payés (Constructys Organisme Paritaire Collecteur Agréé pour le BTP)
+039 - Cotisation TTC sur assiette avec congés payés pour les salariés non soumis à la cotisation CCCABTP (Constructys Organisme Paritaire Collecteur Agréé pour le BTP)
+040 - Cotisation TTC sur assiette hors congés payés pour les salariés non soumis à la cotisation CCCABTP (Constructys Organisme Paritaire Collecteur Agréé pour le BTP)
+046 - Cotisations organismes ou syndicats professionnels recouvrées par Audiens (Culture Communication Médias)
+090 - Cotisation spécifique Prévoyance</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="001"/>
+																<xs:enumeration value="002"/>
+																<xs:enumeration value="003"/>
+																<xs:enumeration value="004"/>
+																<xs:enumeration value="005"/>
+																<xs:enumeration value="006"/>
+																<xs:enumeration value="007"/>
+																<xs:enumeration value="009"/>
+																<xs:enumeration value="010"/>
+																<xs:enumeration value="011"/>
+																<xs:enumeration value="012"/>
+																<xs:enumeration value="017"/>
+																<xs:enumeration value="018"/>
+																<xs:enumeration value="019"/>
+																<xs:enumeration value="020"/>
+																<xs:enumeration value="036"/>
+																<xs:enumeration value="037"/>
+																<xs:enumeration value="038"/>
+																<xs:enumeration value="039"/>
+																<xs:enumeration value="040"/>
+																<xs:enumeration value="046"/>
+																<xs:enumeration value="090"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="LibelleCotisation">
+														<xs:annotation>
+															<xs:documentation>Libellé de la cotisation établissement pour information. </xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="160"/>
+																<xs:pattern value="[&#x20;&#x22;&#x25;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="PeriodiciteDeclaration">
+														<xs:annotation>
+															<xs:documentation>Code indiquant la périodicité déclarative demandée pour ces cotisations établissement. 
+Liste de valeurs : "A" (annuel), "S" (semestriel), "T" (trimestriel), "M" (mensuel)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="A"/>
+																<xs:enumeration value="S"/>
+																<xs:enumeration value="T"/>
+																<xs:enumeration value="M"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
+									</xs:sequence>
+									<xs:attribute name="Changement" use="optional">
+										<xs:annotation>
+											<xs:documentation>Indicateur de changement du paramètre contrat : 
+00 - aucun changement (paramètre contrat identique à celui présenté dans la précédente fiche)
+01 - changement des conditions du contrat existant (soit des éléments de calcul, soit des taux / montants)
+02 - fermeture du contrat à la date de fin de validité
+03 - ouverture d'un nouveau contrat à partir de la date de début de validité
+04 - renumérotation technique du contrat existant (référence, option, population) sans effet sur le contrat
+05 - changement de porteur de risque (suite absorption par un autre porteur) ou du délégataire de gestion sans effet sur le contrat existant
+10 - changement des éléments de calcul du contrat existant
+11 - changement des taux et montants du contrat existant (sans changement des éléments de calcul)
+12 - prolongation des dates de validité (sans autre changement sur le contrat existant)
+99 - autres cas (dont correction technique du paramètre contrat)</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="00"/>
+												<xs:enumeration value="01"/>
+												<xs:enumeration value="02"/>
+												<xs:enumeration value="03"/>
+												<xs:enumeration value="04"/>
+												<xs:enumeration value="05"/>
+												<xs:enumeration value="10"/>
+												<xs:enumeration value="11"/>
+												<xs:enumeration value="12"/>
+												<xs:enumeration value="99"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="Periodicite" use="optional">
+										<xs:annotation>
+											<xs:documentation>Code indiquant la périodicité du paiement des cotisations relative au paramètre contrat. 
+Liste de valeurs : "Annuel", "Semestriel", "Trimestriel", "Mensuel"</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Annuel"/>
+												<xs:enumeration value="Semestriel"/>
+												<xs:enumeration value="Trimestriel"/>
+												<xs:enumeration value="Mensuel"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="Aechoir" use="optional">
+										<xs:annotation>
+											<xs:documentation>Code valorisé à 1 si le paiement des cotisations associciées à ce paramètre est à échoir (par défaut, en l'absence de ce paramètre, les cotisations sont à terme échu).</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="DateDebutValidite" use="required">
+										<xs:annotation>
+											<xs:documentation>Date de début de validité du paramètre contrat</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:length value="8"/>
+												<xs:pattern value="((31(0[13578]|1[02])(20\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])(20\d{2}))|((0[1-9]|1\d|2[0-8])02(20\d{2}))|(290220((0[048]|[2468][048]|[13579][26]))))"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="DateFinValidite" use="optional">
+										<xs:annotation>
+											<xs:documentation>Date de fin de validité du paramètre contrat, à ne renseigner qu'en cas de fin de contrat donnant lieu à radiation sous réserve de la réouverture sur une nouvelle période transmise via un Paramètre Contrat de la même Fiche ou d'une nouvelle Fiche.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:length value="8"/>
+												<xs:pattern value="((31(0[13578]|1[02])(20\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])(20\d{2}))|((0[1-9]|1\d|2[0-8])02(20\d{2}))|(290220((0[048]|[2468][048]|[13579][26]))))"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+								<xs:unique name="uniqueCodeCotisparCotEtab">
+									<xs:selector xpath="CotisationEtablissement"/>
+									<xs:field xpath="@CodeCotisation"/>
+								</xs:unique>
+								<xs:unique name="uniqueBRUT">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="BrutPrev/*"/>
+								</xs:unique>
+								<xs:unique name="uniqueTA">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="TAPrev/*"/>
+								</xs:unique>
+								<xs:unique name="uniqueT2">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="T2Prev/*"/>
+								</xs:unique>
+								<xs:unique name="uniqueTB">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="TBPrev/*"/>
+								</xs:unique>
+								<xs:unique name="uniqueTC">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="TCPrev/*"/>
+								</xs:unique>
+								<xs:unique name="uniqueTD">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="TDPrev/*"/>
+								</xs:unique>
+								<xs:unique name="uniqueTD1">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="TD1Prev/*"/>
+								</xs:unique>
+								<xs:unique name="uniquePlancher">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="CotisationPlancher/MontantPlancher"/>
+									<xs:field xpath="CotisationPlancher/TauxPlancher"/>
+									<xs:field xpath="CotisationPlancher/AssiettePlancher"/>
+									<xs:field xpath="CotisationPlancher/CoefPlancher"/>
+								</xs:unique>
+								<xs:unique name="uniquePlafond">
+									<xs:selector xpath="ElementsDeCalculAttendus"/>
+									<xs:field xpath="CotisationPlafond/MontantPlafond"/>
+									<xs:field xpath="CotisationPlafond/TauxPlafond"/>
+									<xs:field xpath="CotisationPlafond/AssiettePlafond"/>
+									<xs:field xpath="CotisationPlafond/CoefPlafond"/>
+								</xs:unique>
+							</xs:element>
+							<xs:element name="CriteresSalaries" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Niveau 2B -Critères définissant la population du groupe
+Si un critère à valeurs discrètes est présent, alors il comporte soit une liste de valeurs incluses, soit une liste de valeurs exclues, mais pas les deux.
+Si un critère à valeurs continues est présent, alors il comporte au moins une borne inférieure ou bien une borne supérieure ou bien les deux.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NICAffectation" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.11.001
+Nic de l'établissement d'affectation du salarié </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses du Nic d'affectation [1,*] sans répétition possible. </xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="[0-9]{5}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues du Nic d'affectation [1,*] sans répétition possible.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="[0-9]{5}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu1">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu1">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="NatureContrat" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.007
+Code nature du contrat de travail </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="15">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Nature du contrat de travail [1,15] sans répétition possible. 
+Liste de valeurs :
+01 - Contrat de travail à durée indéterminée de droit privé
+02 - Contrat de travail à durée déterminée de droit privé
+03 - Contrat de mission (contrat de travail temporaire)
+07 - Contrat à durée indéterminée intermittent
+08 - Contrat à durée indéterminée intérimaire
+09 - Contrat de travail à durée indéterminée de droit public
+10 - Contrat de travail à durée déterminée de droit public 
+29 - Convention de stage (hors formation professionnelle)
+32 - Contrat d'appui au projet d'entreprise
+50 - Nomination dans la fonction publique (par arrêté, par décision, ...)
+60 - Contrat d'engagement éducatif
+70 - Contrat de soutien et d'aide par le travail
+80 - Mandat social
+81 - Mandat d'élu
+89 - Volontariat de service civique
+90 - Autre nature de contrat, convention, mandat</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|07|08|09|10|29|32|50|60|70|80|81|89|90)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="15">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Nature du contrat de travail [1,15] sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|07|08|09|10|29|32|50|60|70|80|81|89|90)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu2">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu2">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="ModaliteExercice" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.014 
+Code Modalité d'exercice du temps de travail</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="3">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Modalité d'exercice [1,3] sans répétition possible. 
+Liste de valeurs : 
+10-temps plein 
+20-temps partiel 
+21-temps partiel thérapeutique
+99-salarié non concerné</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(10|20|21|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="3">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Modalité d'exercice [1,3] sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(10|20|21|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu3">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu3">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="MotifDeRecours" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.021
+Code Motif de recours</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="12">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Motif de recours [1,12] sans répétition possible.  
+Liste de valeurs : 
+01 - Remplacement d'un salarié
+02 - Accroissement temporaire de l'activité de l'entreprise
+03 - Emplois à caractère saisonnier
+04 - Contrat vendanges
+05 - Contrat d'usage
+06 - Contrat à durée déterminée à objet défini
+07 - Remplacement d'un chef d'entreprise 
+08 - Remplacement du chef d'une exploitation agricole
+09 - Recrutement de personnes sans emploi rencontrant des difficultés sociales et professionnelles particulières
+10 - Complément de formation professionnelle au salarié
+11 - Formation professionnelle au salarié par la voie de l'apprentissage
+12 - Remplacement d'un salarié passé provisoirement à temps partiel
+13 - Attente de la suppression définitive du poste du salarié ayant quitté définitivement l'entreprise</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|04|05|06|07|08|09|10|11|12|13)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="12">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Motif de recours [1,12] sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|04|05|06|07|08|09|10|11|12|13)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu4">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu4">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="StatutConventionnel" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.002
+Code Statut salarié conventionnel </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="9">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Statut salarié conventionnel [1,9] sans répétition possible. 
+Liste de valeurs : 
+01=agriculteur salarié de son exploitation
+02=artisan ou commerçant salarié de son entreprise
+03=cadre dirigeant (votant au collège employeur des élections prud'hommales)
+04=autres cadres au sens de la convention collective (ou du statut pour les régimes spéciaux)
+05=profession intermédiaire (technicien, contremaître, agent de maîtrise, clergé)
+06=employé administratif d'entreprise, de commerce, agent de service
+07=ouvriers qualifiés et non qualifiés y compris ouvriers agricoles
+08=agent de la fonction publique d'Etat
+09=agent de la fonction publique hospitalière
+10=agent de la fonction publique territoriale</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|04|05|06|07|08|09|10)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="9">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Statut conventionnel [1,9] sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|04|05|06|07|08|09|10)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu5">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu5">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="StatutCategoriel" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.003
+Code statut catégoriel Retraite Complémentaire obligatoire</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="4">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Statut catégoriel Retraite Complémentaire obligatoire [1,4] sans répétition possible.
+Liste de valeurs : 
+01=cadre (article 4 et 4bis)
+02=extension cadre pour retraite complémentaire
+04=non cadre
+98=retraite complémentaire ne définissant pas de statut cadre ou non-cadre
+99=pas de retraite complémentaire</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|04|98|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="4">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Statut catégoriel Retraite Complémentaire obligatoire [1,4] sans répétition possible.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|04|98|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu6">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu6">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="RegimeMaladie" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.018
+Code régime de base risque maladie</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="17">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Régime de base risque maladie [1,17] sans répétition possible.
+Liste de valeurs : 
+134=régime spécial de la SNCF
+135=régime spécial de la RATP
+136=établissement des invalides de la marine (ENIM)
+137=mineurs ou assimilés (CANSSM)
+138=militaires de carrière (CNMSS)
+140=clercs et employés de notaires (CRPCEN)
+141= chambre de commerce et d'industrie de Paris
+144= Assemblée Nationale
+145=Sénat
+146= port autonome de Bordeaux
+147=régime spécial des IEG (CAMIEG)
+149=régimes des cultes (CAVIMAC)
+200=régime général (CNAM)
+300=régime agricole (MSA)
+400=régime spécial Banque de France
+900=autre régime (réservé Polynésie Française, Nouvelle Calédonie)
+909= travailleur étranger non assujetti à un régime de base risque maladie en France
+999= sans régime obligatoire</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(134|135|136|137|138|140|141|144|145|146|147|149|200|300|400|900|909|999)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="17">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Régime obligatoire maladie [1,17] sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(134|135|136|137|138|140|141|144|145|146|147|149|200|300|400|900|909|999)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu7">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu7">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="RegimeVieillesse" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.020
+Code régime de base risque vieillesse</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="23">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Régime de base risque vieillesse [1,23] sans répétition possible.
+Liste de valeurs : 
+120 - retraite des agents des collectivités locales (CNRACL)
+121 - pensions des ouvriers des établissements industriels de l'Etat (FSPOEIE)
+122 - pensions civiles et militaires de retraite de l'Etat (SRE)
+134 - régime spécial de la SNCF
+135 - régime spécial de la RATP
+136 - établissement des invalides de la marine (ENIM)
+137 - mineurs ou assimilés (fonds Caisse des Dépôts)
+139 - Banque de France
+140 - clercs et employés de notaires (CRPCEN)
+141 - chambre de commerce et d'industrie de Paris
+144 - Assemblée Nationale
+145 - Sénat
+147 - régime spécial des industries électriques et gazières (CNIEG)
+149 - régime des cultes (CAVIMAC)
+157 - régime de retraite des avocats (CNBF)
+158 - SEITA
+159 - Comédie Française
+160 - Opéra de Paris
+200 - régime général (CNAV)
+300 - régime agricole (MSA)
+900 - autre régime (réservé Polynésie Française, Nouvelle Calédonie)
+904 - principauté de Monaco
+909 - travailleur étranger non assujetti à un régime de base risque vieillesse en France
+999 - cas particuliers d'affiliation</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(120|121|122|134|135|136|137|139|140|141|144|145|147|149|157|158|159|160|200|300|900|904|909|999)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="23">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Régime de base risque vieillesse  [1,23] sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(120|121|122|134|135|136|137|139|140|141|144|145|147|149|157|158|159|160|200|300|900|904|909|999)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu7b">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu7b">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="ComplementRegimeBase" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.016
+Code complément de base au régime obligatoire </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="3">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Code complément de base au régime obligatoire [1,3] sans répétition possible.
+Liste de valeurs : 
+01 - régime local Alsace Moselle
+02 - complémentaire CAMIEG
+03 - régime Alsace-Moselle et Complémentaire CAMIEG
+99 - non applicable</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="3">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Code complément de base au régime obligatoire  [1,3] sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu8">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu8">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="CodePCSESE" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.004
+Code profession et catégorie socioprofessionnelle(PCS-ESE) </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Code PCS-ESE [1,*] sans répétition possible.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="([0-9]{3}[a-z])"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Code PCS-ESE [1,*] sans répétition possible.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="([0-9]{3}[a-z])"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu9">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu9">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="ComplementPCSESE" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.005
+Code complément PCS-ESE </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Code complément PCS-ESE sans répétition possible.
+Liste de valeurs : 
+06 - représentant exclusif
+07 - représentant multicarte
+08 - autre représentant
+37 - cadet de golf
+38 - agent immobilier rémunéré à la commission
+39 - maîtres et documentalistes de l'enseignement privé
+40 - colporteurs de presse
+49 - dockers avec carte G
+50 - mannequin
+51 - artiste de corrida
+52 - chauffeur de taxi locataire de son véhicule
+53 - interprète de conférence
+C643 - coursier
+L643 - chauffeurs livreurs
+NP352 - journaliste non professionnel (sans carte de presse)
+P352 - journaliste professionnel (avec carte de presse)
+C389M - cadres navigants commerciaux taux majoré
+C389N - cadres navigants commerciaux taux normal
+T389M - cadres navigants techniques taux majoré
+T389N - cadres navigants techniques taux normal
+546dM - hôtesses ou stewards taux majoré
+546dN - hôtesses ou stewards taux normal
+Autres valeurs autorisées dans la DSN phase 3 pour cette rubrique</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="[A-Z]{3}[0-9]{3}"/>
+																<xs:pattern value="[0-9]{3}[A-Z0-9]"/>
+																<xs:pattern value="(06|07|08|37|38|39|40|49|50|51|52|53|C643|L643|NP352|P352|C389M|C389N|T389M|T389N|546dM|546dN)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Code complément PCS-ESE sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="[A-Z]{3}[0-9]{3}"/>
+																<xs:pattern value="[0-9]{3}[A-Z0-9]"/>
+																<xs:pattern value="(06|07|08|37|38|39|40|49|50|51|52|53|C643|L643|NP352|P352|C389M|C389N|T389M|T389N|546dM|546dN)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu10">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu10">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="ConventionCollective" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.017
+Code convention collective applicable</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Code convention collective applicable [1,*] sans répétition possible.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="([0-9]{4})"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Code convention collective applicable [1,*] sans répétition possible.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="([0-9]{4})"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu11">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu11">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="StatutEmploiSalarie" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.026 
+Statut d'emploi du salarié</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="6">
+														<xs:annotation>
+															<xs:documentation>Valeurs incluses Statut d'emploi du Salarié [1,6] sans répétition possible. 
+Liste de valeurs :
+01 - Titulaire de la Fonction publique
+02 - Non titulaire de la Fonction publique
+03 - Statutaire
+04 - Non statutaire
+06 - Personnel médical hospitalier
+07 - Médecin sans statut hospitalier
+99 - Non concerné </xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|04|06|07|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="6">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Statut d'emploi du Salarié [1,6] sans répétition possible. Liste de valeurs identique à la ligne précédente.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|04|06|07|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu12">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu12">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="DetacheExpatrieFrontalier" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.024 
+Salariés détachés, expatriés, frontaliers</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="ValeursIncluses" maxOccurs="3">
+														<xs:annotation>
+															<xs:documentation>Valeurs inclues Salariés détachés, expatriés, frontaliers [1,3] sans répétition possible. 
+Liste de valeurs :
+01 - Détaché
+02 - Expatrié
+03 - Frontalier 
+99 - Non concerné</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|99)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ValeursExclues" maxOccurs="3">
+														<xs:annotation>
+															<xs:documentation>Valeurs exclues Salariés détachés, expatriés, frontaliers [1,3] sans répétition possible. </xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="(01|02|03|04)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+											<xs:unique name="UN1inclu13">
+												<xs:selector xpath="ValeursIncluses"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+											<xs:unique name="UN1exclu13">
+												<xs:selector xpath="ValeursExclues"/>
+												<xs:field xpath="."/>
+											</xs:unique>
+										</xs:element>
+										<xs:element name="QuotiteDeTravail" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.40.013
+Quotite de travail</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="UniteTempsDeTravail" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.40.011 
+Code unité d'expression du temps de travail. 
+Liste de valeurs : 
+10 - heure
+12 - journée
+20 - forfait jour
+21 - forfait heure
+31 - à la pige
+32 - à la vacation
+33 - à la tâche
+90 - salarié sans unité de mesure définie au contrat
+99 - salarié non concerné</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="(10|12|20|21|31|32|33|90|99)"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneINF" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="4"/>
+															<xs:maxLength value="7"/>
+															<xs:pattern value="[0]*([1-9][0-9]*\.[0-9]{2}|0\.[0-9]{2})"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneSUP" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="4"/>
+															<xs:maxLength value="7"/>
+															<xs:pattern value="[0]*([1-9][0-9]*\.[0-9]{2}|0\.[0-9]{2})"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="DateAffiliation" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Non présente en DSN phase 3
+Date d'affiliation</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="BorneINF" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="8"/>
+															<xs:pattern value="((31(0[13578]|1[02])((19|20)\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((19|20)\d{2}))|((0[1-9]|1\d|2[0-8])02((19|20)\d{2}))|(290220((0[048]|[2468][048]|[13579][26])))|(290219((0[48]|[2468][048]|[13579][26]))))"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneSUP" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="8"/>
+															<xs:pattern value="((31(0[13578]|1[02])((19|20)\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((19|20)\d{2}))|((0[1-9]|1\d|2[0-8])02((19|20)\d{2}))|(290220((0[048]|[2468][048]|[13579][26])))|(290219((0[48]|[2468][048]|[13579][26]))))"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="AncienneteEntrepriseGroupe" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.86.003 
+avec S21.G00.86.001 = "01"
+Ancienneté dans l'entreprise ou le groupe</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="UniteAnciennete" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.86.002
+Code unité d'expression de l'ancienneté
+Liste de valeurs : 01-jours, 02-mois, 03-années.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="(01|02|03)"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneINF" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneSUP" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="AncienneteBrancheSecteur" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.86.003
+avec S21.G00.86.001 = "02"
+Ancienneté dans  la branche ou le secteur </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="UniteAnciennete" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.86.002
+Code unité d'expression de l'ancienneté
+Liste de valeurs : 01-jours, 02-mois, 03-années.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="(01|02|03)"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneINF" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneSUP" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="AncienneteCollegeCategorie" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.86.003
+avec S21.G00.86.001 = "03"
+Ancienneté dans le collège ou la catégorie</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="UniteAnciennete" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.86.002
+Code unité d'expression de l'ancienneté
+Liste de valeurs : 01-jours, 02-mois, 03-années.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="(01|02|03)"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneINF" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneSUP" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="AncienneteDansLePoste" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.86.003
+avec S21.G00.86.001 = "04"
+Ancienneté dans le poste</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="UniteAnciennete" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.86.002
+Code unité d'expression de l'ancienneté
+Liste de valeurs : 01-jours, 02-mois, 03-années.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="(01|02|03)"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneINF" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneSUP" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="AncienneteProfessionBTP" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.86.003
+avec S21.G00.86.001 = "05"
+Ancienneté dans la profession du BTP</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="UniteAnciennete" use="required">
+													<xs:annotation>
+														<xs:documentation>S21.G00.86.002
+Code unité d'expression de l'ancienneté
+Liste de valeurs : 01-jours, 02-mois, 03-années.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="(01|02|03)"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneINF" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneSUP" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="5"/>
+															<xs:pattern value="[0]*[1-9][0-9]*"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="DateNaissance" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>S21.G00.30.006
+Date de naissance du salarié
+(sans jour inconnu à 99 et 
+sans  mois inconnu à 99)</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="BorneINF" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="8"/>
+															<xs:pattern value="((31(0[13578]|1[02])((19|20)\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((19|20)\d{2}))|((0[1-9]|1\d|2[0-8])02((19|20)\d{2}))|(290220((0[048]|[2468][048]|[13579][26])))|(290219((0[48]|[2468][048]|[13579][26]))))"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="BorneSUP" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="8"/>
+															<xs:pattern value="((31(0[13578]|1[02])((19|20)\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((19|20)\d{2}))|((0[1-9]|1\d|2[0-8])02((19|20)\d{2}))|(290220((0[048]|[2468][048]|[13579][26])))|(290219((0[48]|[2468][048]|[13579][26]))))"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Compatibilites" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Niveau 2C -Combinaisons de parametres 
+contrats autorisées dans le groupe
+Combinaisons binaires des Paramètres contrats du Groupe compatibles, pris dans l'ordre, sans répétition possible. La présence d'un paramètre contrat est signalée par une valeur 1 et son absence par une valeur 0, en respectant l'ordre des paramètres contrats du groupe.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:pattern value="[0|1]*"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="NumeroGrp" use="required">
+							<xs:annotation>
+								<xs:documentation>Numero unique du groupe de paramètres contrats.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="6"/>
+									<xs:pattern value="[0-9A-Za-z]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="LibelleGrp" use="required">
+							<xs:annotation>
+								<xs:documentation>Libellé du groupe de paramètres contrats.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="60"/>
+									<xs:pattern value="[&#x20;&#x22;&#x26;-&#x3A;&#x3D;&#x40;-&#x5A;&#x5F;-&#x7A;&#xAB;&#xB0;&#xBB;&#xC0;-&#xC5;&#xC7;-&#xCF;&#xD1;-&#xD6;&#xD9;-&#xDD;&#xE0;-&#xE5;&#xE7;-&#xEF;&#xF1;-&#xF6;&#xF9;-&#xFD;&#xFF;]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+					<xs:unique name="UNbinaire">
+						<xs:selector xpath="Compatibilites"/>
+						<xs:field xpath="."/>
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="IdentifiantFiche" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifiant de la fiche de paramétrage.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="12"/>
+						<xs:pattern value="[0-9A-Za-z]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DateHeureCreation" use="required">
+				<xs:annotation>
+					<xs:documentation>Date Heure de création de la fiche de paramétrage.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:dateTime"/>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Version" use="required">
+				<xs:annotation>
+					<xs:documentation>Numéro de version du modèle de fiche de paramétrage</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="137"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+		<xs:unique name="DifferentNumeroGrpSurChaqueFiche">
+			<xs:selector xpath="GROUPE"/>
+			<xs:field xpath="@NumeroGrp"/>
+		</xs:unique>
+	</xs:element>
+</xs:schema>

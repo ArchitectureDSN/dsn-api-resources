@@ -1,0 +1,81 @@
+<gipmds:rapport type="21" profil="DSN" version="v01r06"
+	message="[Les données déclarées pour ce salarié n&apos;ont pas permis la constitution de l&apos;attestation employeur, nous vous invitons à utiliser l&apos;ancienne procédure.]"
+	xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v01r06.xsd ">
+	<envoi>
+		<envoi_identification>
+			<declarant>
+				<siret>12377777701234</siret>
+				<nom>NOMDECLARANT3</nom>
+				<prenom>PRENOMDECLARANT</prenom>
+			</declarant>
+			<idflux>IdrNumFlux</idflux>
+			<identifiant>NomFichierOrigine</identifiant>
+			<version_norme>Phase2</version_norme>
+			<point_de_depot>01</point_de_depot>
+			<type_envoi>01</type_envoi>
+			<essai_reel>01</essai_reel>
+			<emetteur_siret>12312100723456</emetteur_siret>
+			<nom_logiciel>Mapaie</nom_logiciel>
+			<editeur_logiciel>CarsatR</editeur_logiciel>
+			<version_logiciel>V00</version_logiciel>
+			<code_conformite>AA</code_conformite>
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>OK</envoi_etat>
+		</envoi_bilan>
+	</envoi>
+	<declaration>
+		<declaration_identification>
+			<rang>11</rang>
+			<nature>02</nature>
+			<type>01</type>
+			<fraction>11</fraction>
+			<ordre>1</ordre>
+			<mois>01052014</mois>
+			<identifiant_metier>IdtEvt</identifiant_metier>
+			<id_annulation>20</id_annulation>
+			<SIREN>123121007</SIREN>
+			<nic_siege>34567</nic_siege>
+			<nic_affectation>02922</nic_affectation>
+		</declaration_identification>
+		<declaration_bilan>
+			<etat>KO</etat>
+			<declaration_contenu>
+				<salaries>3</salaries>
+			</declaration_contenu>
+		</declaration_bilan>
+		<declaration_anomalie>
+			<description>
+				<code>Flux Dsn</code>
+				<categorie>bloquant</categorie>
+				<message>Absence de la mensuelle 1405 : Mise en attente.</message>
+				<nombre>3</nombre>
+			</description>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>Flux Dsn</code>
+				<categorie>bloquant</categorie>
+				<message>Absence de la mensuelle 1401 : Mise en attente.</message>
+				<nombre>3</nombre>
+			</description>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>Flux Dsn</code>
+				<categorie>bloquant</categorie>
+				<message>Absence de la mensuelle 1403 : Mise en attente.</message>
+				<nombre>3</nombre>
+			</description>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>Rémunération</code>
+				<categorie>bloquant</categorie>
+				<message>Changement de contrat (du type 007) à une date autres que les extrémités d&apos;une période 51.</message>
+				<nombre>1</nombre>
+			</description>
+		</declaration_anomalie>
+	</declaration>
+</gipmds:rapport>

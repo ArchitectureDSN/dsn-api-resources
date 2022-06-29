@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gipmds:rapport profil="DSN" type="CCO" version="v01r06"
+	xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v01r06.xsd"
+	xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<envoi>
+		<envoi_identification>
+			<declarant>
+				<siret>99999106200019</siret>
+				<nom>TEST</nom>
+				<prenom>MICHEL</prenom>
+			</declarant>
+			<idflux>UR5WJEBAhi54RcZN8Lur71F</idflux>
+			<identifiant>OK.dsn</identifiant>
+			<version_norme>PHASE1V1</version_norme>
+			<point_de_depot>01</point_de_depot>
+			<type_envoi>01</type_envoi>
+			<essai_reel>01</essai_reel>
+			<emetteur_siret>73282932001691</emetteur_siret>
+			<nom_logiciel>superpaie</nom_logiciel>
+			<editeur_logiciel>génielog</editeur_logiciel>
+			<version_logiciel>v99</version_logiciel>
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>OK</envoi_etat>
+			<envoi_contenu>
+				<declarations>1</declarations>
+				<salaries>1</salaries>
+			</envoi_contenu>
+		</envoi_bilan>
+	</envoi>
+	<declaration>
+		<declaration_identification>
+			<rang>1</rang>
+			<nature>01</nature>
+			<type>01</type>
+			<fraction>32</fraction>
+			<ordre>1</ordre>
+			<SIREN>732829320</SIREN>
+			<nic_siege>01691</nic_siege>
+			<nic_affectation>01691</nic_affectation>
+		</declaration_identification>
+		<declaration_bilan>
+			<etat>OK</etat>
+			<declaration_contenu>
+				<salaries>1</salaries>
+			</declaration_contenu>
+			<niveau_conformite>
+				<etat_conformite>OK</etat_conformite>
+			</niveau_conformite>
+		</declaration_bilan>
+	</declaration>
+</gipmds:rapport>

@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+  <xs:element name="enveloppeRoot">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="enveloppe" minOccurs="1" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+  </xs:element>
+
+  <xs:element name="enveloppe">
+  	<xs:complexType >
+    	<xs:sequence>
+    		<xs:element name="enveloppeContenu" type="EnveloppeContenuType" minOccurs="1" maxOccurs="1"/>
+    		<xs:element name="enveloppeMetaDonnees" type="EnveloppeMetaDonneesType" minOccurs="1" maxOccurs="1"/>
+    		<xs:element name="objetGestion" type="ObjetGestionType" minOccurs="1" maxOccurs="1"/>
+    	</xs:sequence>
+  	</xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="ObjetGestionType">
+    <xs:sequence>
+    	<xs:element name="codeTypeObjetGestion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    	<xs:element name="designation" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    	<xs:element name="identifiantExterne" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    	<xs:element name="identifiantTechnique" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+    	<xs:element name="identifiantInterlocution" type="xs:long" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+   <xs:complexType name="EnveloppeMetaDonneesType">
+    <xs:sequence>
+    	<xs:element name="codeTypeEnveloppe" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    	<xs:element name="identifiantSystemeCommuniquant" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="numeroVersionStructure" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    	<xs:element name="timestampConstitution" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+   <xs:complexType name="EnveloppeContenuType">
+    <xs:sequence>
+    	<xs:element name="crm" type="CRMType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+   <xs:complexType name="CRMType">
+    <xs:sequence>
+      <xs:element name="crmContenu" type="CRMContenuType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="crmMetaDonnees" type="CRMMetaDonneesType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+   <xs:complexType name="CRMMetaDonneesType">
+    <xs:sequence>
+      <xs:element name="codeTypeCRM" type="CodeTypeCRMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="dateDebutEffet" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="dateFinEffet" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="identifiantTechniqueDocument" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="numeroVersionStructure" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="timestampCreation" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="zoneAutoDecrite" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+   <xs:complexType name="CRMContenuType">
+    <xs:sequence>
+    	<xs:element name="contenu" type="xs:token" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+	<!-- Les valeurs possibles pour un code type de CRM -->
+	<xs:simpleType name="CodeTypeCRMType">
+       <xs:restriction base="xs:string">
+           <xs:enumeration value="CRE" />
+           <xs:enumeration value="NOT" />
+       </xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gipmds:rapport xmlns:gipmds="http://www.gip-mds.fr/" profil="DSN" type="CRM nominatif" version="v01r08" identifiant="123456789123456789" message="En cas d’absence de taux communiqué par la DGFIP, le taux applicable est le taux issu des grilles de taux par défaut définies par la loi de finances">
+   <envoi>
+      <envoi_identification>
+         <idflux>41358177C5AD6C0000000000</idflux>
+         <version_norme>201710</version_norme>
+         <emetteur_siret>12345678912345</emetteur_siret>
+      </envoi_identification>
+      <envoi_bilan>
+         <envoi_etat>OK</envoi_etat>
+      </envoi_bilan>
+   </envoi>
+   <declaration>
+      <declaration_identification>
+         <rang>7</rang>
+         <type>03</type>
+		 <identifiant_metier>DECEMBRE-2018</identifiant_metier>
+         <SIREN>456789123</SIREN>
+         <nic_affectation>54321</nic_affectation>
+      </declaration_identification>
+      <declaration_bilan>
+         <etat>OK</etat>
+		 <declaration_contenu>
+            <salaries>35672</salaries>
+         </declaration_contenu>
+		 <salarie>
+		 <NIR>9999999999999</NIR>
+		 <matricule>MAT00009825</matricule>
+		 <taux_imposition_PAS>14.00</taux_imposition_PAS>
+		 </salarie>
+      </declaration_bilan>
+      <declaration_anomalie>
+         <description>
+            <code>ADR05</code>
+            <categorie>non-bloquant</categorie>
+            <message>Échec de reconnaissance de la personne par la DGFiP : la localité n'est pas reconnue par la DGFiP. Veuillez vérifier son exactitude.</message>
+         </description>
+         <valeurs>
+            <rubrique_declenchante>
+               <identifiant>S21.G00.30.010</identifiant>
+               <valeur>Bordeau</valeur>
+            </rubrique_declenchante>
+         </valeurs>
+		 <environnement>
+            <salarie origine="DSN">
+               <NIR>9999999999999</NIR>
+               <matricule>MAT00029643</matricule>
+            </salarie>
+         </environnement>
+      </declaration_anomalie>
+   </declaration>
+</gipmds:rapport>

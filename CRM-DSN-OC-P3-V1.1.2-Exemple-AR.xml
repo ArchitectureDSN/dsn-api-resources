@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Exemple CRM OC phases 2/3 - AR minimal-->
+<Fichier VersionCRM="112" IdEnvoi=" " TypCRM="1" PointDepot="01" DateHeureReceptionDep="20150424102458" SiretEmetteur="12345678912345" NomEmetteur="BOUCHERIE SANZOT" TypeEnvoi="01" VersionNorme="P03V01" CodeEnvoi="01" DateHeureReceptionOC="20150424102458"  xsi:noNamespaceSchemaLocation="CRM-DSN-OC-P3-V1.1.2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Declaration IdDec="1" NatureDecla="01" TypeDecla="01" FractionDecla="11" NoOrdreDecla="1" SirenDecla="123456789" NicAffectation="12345" CodeOC="P9999" CodeProducteurCRM="P9999" NomProducteurCRM="Raison sociale Organisme" DateHeureProductionCRM="20150424112458"/>
+</Fichier>

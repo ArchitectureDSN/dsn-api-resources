@@ -1,0 +1,184 @@
+﻿<gipmds:rapport type="20" profil="DSN" version="v01r06"
+	message="Pour les salariés non identifiés, risque d&apos;échec sur les déclarations d&apos;arrêt / reprise maladie et de fin de contrat si l&apos;identité n&apos;est pas corrigée."
+	xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v01r06.xsd ">
+	<envoi>
+		<envoi_identification>
+			<declarant>
+				<siret>12345678912345</siret>
+				<nom>CHERIFI</nom>
+				<prenom>SAMIR</prenom>
+			</declarant>
+			<idflux>identifiant-du-flux</idflux>
+			<identifiant>CRM M- 1 inc 3 rec 1 inc 1 con.xml</identifiant>
+			<version_norme>P02V01</version_norme>
+			<point_de_depot>01</point_de_depot>
+			<type_envoi>01</type_envoi>
+			<essai_reel>02</essai_reel>
+			<emetteur_siret>55201802001691</emetteur_siret>
+			<nom_logiciel>superpaie</nom_logiciel>
+			<editeur_logiciel>génielog</editeur_logiciel>
+			<version_logiciel>v99</version_logiciel>
+			<code_conformite>code conformite pre ctrl</code_conformite>
+		</envoi_identification>
+		<envoi_bilan>
+			<envoi_etat>OK</envoi_etat>
+		</envoi_bilan>
+	</envoi>
+	<declaration>
+		<declaration_identification>
+			<rang>123450</rang>
+			<nature>01</nature>
+			<type>01</type>
+			<fraction>11</fraction>
+			<ordre>1</ordre>
+			<mois>01012014</mois>
+			<identifiant_metier>Identmétier</identifiant_metier>
+			<SIREN>333000180</SIREN>
+			<nic_siege>50000</nic_siege>
+			<nic_affectation>50000</nic_affectation>
+		</declaration_identification>
+		<declaration_bilan>
+			<etat>OK</etat>
+			<declaration_contenu>
+				<salaries>6</salaries>
+			</declaration_contenu>
+		</declaration_bilan>
+		<declaration_anomalie>
+			<description>
+				<code>I0310</code>
+				<categorie>non-bloquant</categorie>
+				<message>SALARIE_RECONNU</message>
+				<nombre>4</nombre>
+			</description>
+			<environnement>
+				<salarie origine="DSN">
+					<NIR>1200125463001</NIR>
+					<NTT>23330001809</NTT>
+					<nom_famille>FRANHUIT</nom_famille>
+					<nom_usage>NON USAGE</nom_usage>
+					<prenoms>RAYMOND</prenoms>
+					<date_naissance>20011920</date_naissance>
+					<lieu_naissance>Paris</lieu_naissance>
+					<code_pays>FR</code_pays>
+					<matricule>15373</matricule>
+					<rang>1</rang>
+				</salarie>
+				<salarie origine="SNGI">
+					<NIR>1200125463006</NIR>
+					<nom_famille>FRANHUIT</nom_famille>
+					<nom_usage>NON USAGE</nom_usage>
+					<prenoms>RAYMOND</prenoms>
+					<date_naissance>20011920</date_naissance>
+					<lieu_naissance>PONT DE ROIDE</lieu_naissance>
+					<code_pays>FR</code_pays>
+				</salarie>
+			</environnement>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>I0310</code>
+				<categorie>non-bloquant</categorie>
+				<message>SALARIE_RECONNU</message>
+				<nombre>4</nombre>
+			</description>
+			<environnement>
+				<salarie origine="DSN">
+					<NIR>2500104070029</NIR>
+					<nom_famille>ILSOIXANTEDIXSEPT</nom_famille>
+					<nom_usage>ILSOIXANTEDIXSEPT</nom_usage>
+					<prenoms>EVELYNE</prenoms>
+					<date_naissance>17011950</date_naissance>
+					<lieu_naissance>Paris</lieu_naissance>
+					<code_pays>FR</code_pays>
+					<matricule>15373</matricule>
+					<rang>2</rang>
+				</salarie>
+				<salarie origine="SNGI">
+					<NIR>2500104070028</NIR>
+					<nom_famille>ILSOIXANTEDIXSEPT</nom_famille>
+					<prenoms>EVELYNE</prenoms>
+					<date_naissance>17011950</date_naissance>
+					<lieu_naissance>DIGNE</lieu_naissance>
+				</salarie>
+			</environnement>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>I0310</code>
+				<categorie>non-bloquant</categorie>
+				<message>SALARIE_RECONNU</message>
+				<nombre>4</nombre>
+			</description>
+			<environnement>
+				<salarie origine="DSN">
+					<NIR>2500105061099</NIR>
+					<nom_famille>NADINSOIXANTEDIXNEUF</nom_famille>
+					<nom_usage>NADINSOIXANTEDIXNEUF</nom_usage>
+					<prenoms>DANIELE</prenoms>
+					<date_naissance>07011950</date_naissance>
+					<lieu_naissance>Paris</lieu_naissance>
+					<code_pays>FR</code_pays>
+					<matricule>15373</matricule>
+					<rang>3</rang>
+				</salarie>
+				<salarie origine="SNGI">
+					<NIR>2500105061012</NIR>
+					<nom_famille>NADINSOIXANTEDIXNEUF</nom_famille>
+					<prenoms>DANIELE</prenoms>
+					<date_naissance>07011950</date_naissance>
+					<lieu_naissance>GAP</lieu_naissance>
+				</salarie>
+			</environnement>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>I0310</code>
+				<categorie>non-bloquant</categorie>
+				<message>SALARIE_RECONNU</message>
+				<nombre>4</nombre>
+			</description>
+			<environnement>
+				<salarie origine="DSN">
+					<NIR>2500106088293</NIR>
+					<nom_famille>ILSOIXANTETUN</nom_famille>
+					<prenoms>YVETTE</prenoms>
+					<date_naissance>24011950</date_naissance>
+					<lieu_naissance>Paris</lieu_naissance>
+					<code_pays>FR</code_pays>
+					<matricule>15373</matricule>
+					<rang>4</rang>
+				</salarie>
+				<salarie origine="SNGI">
+					<NIR>2500106088263</NIR>
+					<nom_famille>ILSOIXANTETUN</nom_famille>
+					<prenoms>YVETTE</prenoms>
+					<date_naissance>24011950</date_naissance>
+					<lieu_naissance>NICE</lieu_naissance>
+				</salarie>
+			</environnement>
+		</declaration_anomalie>
+		<declaration_anomalie>
+			<description>
+				<code>I0320</code>
+				<categorie>non-bloquant</categorie>
+				<message>SALARIE_INCONNU</message>
+				<nombre>1</nombre>
+			</description>
+			<environnement>
+				<salarie origine="DSN">
+					<NIR>1700475090101</NIR>
+					<NTT>1700475099099</NTT>
+					<nom_famille>NADINSOIXANTEDIXNEUF</nom_famille>
+					<nom_usage>NADINSOIXANTEDIXNEUF</nom_usage>
+					<prenoms>HUBERT</prenoms>
+					<date_naissance>07011950</date_naissance>
+					<lieu_naissance>Paris</lieu_naissance>
+					<code_pays>FR</code_pays>
+					<matricule>15373</matricule>
+					<rang>5</rang>
+				</salarie>
+			</environnement>
+		</declaration_anomalie>
+	</declaration>
+</gipmds:rapport>

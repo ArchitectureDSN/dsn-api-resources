@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Exemple complet de fiche de paramétrage DSN OC - version 1.3.6-->
+<FICHE IdentifiantFiche="numero1" DateHeureCreation="2001-12-17T09:30:47Z" Version="136" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FICHE-PARAM-DSN-OC-R1.3.6.xsd">
+	<Entreprise SIREN="123456789" RaisonSociale="Raison Sociale de l'Entreprise" NIC="12345"/>
+	<ProducteurFiche CodeProducteur="P0000" RaisonSocialeProducteur="Raison Sociale de l'IP"/>
+	<ContactTechniqueFiche Nom="Nom du contact technique" Tel="0101010101" Mail="contact@technique.fr"/>
+	<ContactGestionnaireFiche Nom="Nom du gestionnaire" Tel="0606060606" Mail="contact@gestionnaire.fr"/>
+	<Message>Message à l'attention du déclarant</Message>
+	<GROUPE NumeroGrp="1" LibelleGrp="Contrats NON CADRE de plus de 6 mois ">
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001 " LibelleContrat="Contrat Prévoyance NON CADRE"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="17" LibelleCodeNature="Base spécifique Prévoyance">
+					<Taux>0.15</Taux>
+					<Montant>3170.00</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Annuel" Aechoir="1" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001 " LibelleContrat="Contrat Prévoyance NON CADRE"/>
+			<CotisationEtablissement CodeCotisation="001" LibelleCotisation="Cotisation établissement 001">
+			</CotisationEtablissement>
+			<CotisationEtablissement CodeCotisation="002" LibelleCotisation="Cotisation établissement 002">
+			</CotisationEtablissement>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000001 " LibelleContrat="Contrat Santé NON CADRE"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Forfait Adulte">
+					<Montant>29.00</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Forfait Enfant">
+					<Montant>15.00</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<CriteresSalaries>
+			<StatutCategoriel>
+				<ValeursExclues>01</ValeursExclues>
+				<ValeursExclues>02</ValeursExclues>
+			</StatutCategoriel>
+			<AncienneteEntrepriseGroupe UniteAnciennete="02" BorneINF="6"/>
+		</CriteresSalaries>
+		<Compatibilites>00</Compatibilites>
+		<Compatibilites>10</Compatibilites>
+		<Compatibilites>11</Compatibilites>
+	</GROUPE>
+	<GROUPE NumeroGrp="2" LibelleGrp="Contrats CADRE de plus de 6 mois ">
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000002 " LibelleContrat="Contrat Prévoyance CADRE"/>
+			<ElementsDeCalculAttendus>
+				<TAPrev>
+					<Taux>0.1</Taux>
+				</TAPrev>
+				<TBPrev>
+					<Taux>0.2</Taux>
+				</TBPrev>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01092014" DateFinValidite="30122015">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002 " LibelleContrat="Contrat Santé CADRE"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Forfait Adulte">
+					<Montant>39.00</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Forfait Enfant">
+					<Montant>25.00</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<CriteresSalaries>
+			<StatutCategoriel>
+				<ValeursIncluses>01</ValeursIncluses>
+				<ValeursIncluses>02</ValeursIncluses>
+			</StatutCategoriel>
+			<AncienneteEntrepriseGroupe UniteAnciennete="02" BorneINF="6"/>
+		</CriteresSalaries>
+		<Compatibilites>00</Compatibilites>
+		<Compatibilites>11</Compatibilites>
+	</GROUPE>
+</FICHE>
