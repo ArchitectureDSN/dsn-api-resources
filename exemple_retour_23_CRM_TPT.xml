@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gipmds:rapport type="23" profil="DSN" version="v02r01" message="Les données déclarées pour ce salarié n&apos;ont pas permis la constitution de la déclaration du temps partiel thérapeutique." xmlns:gipmds="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v02r01.xsd">
+  <envoi>
+    <envoi_identification>
+      <declarant>
+        <siret>33331123100034</siret>
+        <nom>TEST</nom>
+        <prenom>DSN</prenom>
+      </declarant>
+      <idflux>WSqV2WmuhqMAZGG1PGi7PIF</idflux>
+      <version_norme>P22V01</version_norme>
+      <point_de_depot>01</point_de_depot>
+      <type_envoi>01</type_envoi>
+      <essai_reel>02</essai_reel>
+      <emetteur_siret>88336106500013</emetteur_siret>
+      <nom_logiciel>GIPMDS</nom_logiciel>
+      <editeur_logiciel>NETCRM-288732</editeur_logiciel>
+    </envoi_identification>
+    <envoi_bilan>
+      <envoi_etat>OK</envoi_etat>
+    </envoi_bilan>
+  </envoi>
+  <declaration>
+    <declaration_identification>
+      <rang>1</rang>
+      <nature>01</nature>
+      <type>01</type>
+      <fraction>19</fraction>
+      <ordre>1</ordre>
+      <mois>01012022</mois>
+      <SIREN>883361065</SIREN>
+      <nic_siege>00013</nic_siege>
+      <nic_affectation>00013</nic_affectation>
+    </declaration_identification>
+    <declaration_bilan>
+      <etat>ANO</etat>
+      <declaration_contenu>
+        <salaries>5</salaries>
+        <contrats>0</contrats>
+      </declaration_contenu>
+    </declaration_bilan>
+    <declaration_anomalie>
+      <description>
+        <code>D00T4</code>
+        <categorie>bloquant</categorie>
+        <message>Nous ne pouvons pas traiter la demande, les contrats d’engagement détenu ne sont pas gérés par la CNAM ou la MSA.</message>
+        <nombre>1</nombre>
+      </description>
+    </declaration_anomalie>
+  </declaration>
+</gipmds:rapport>

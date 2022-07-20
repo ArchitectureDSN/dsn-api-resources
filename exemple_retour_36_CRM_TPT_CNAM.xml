@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:rapport xmlns:ns2="http://www.gip-mds.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="36" profil="DSN" version="v01r06" xsi:schemaLocation="http://www.gip-mds.fr/dsn_bilans_v01r06.xsd">
+    <envoi>
+        <envoi_identification>
+            <idflux>F1xezhPdwibsL3FF7nYvTPn</idflux>
+            <essai_reel>02</essai_reel>
+            <emetteur_siret>82489601300029</emetteur_siret>
+        </envoi_identification>
+        <envoi_bilan>
+            <envoi_etat>KO</envoi_etat>
+        </envoi_bilan>
+    </envoi>
+    <declaration>
+        <declaration_identification>
+            <rang>1</rang>
+            <nature>4</nature>
+            <SIREN>824896013</SIREN>
+            <nic_affectation>00029</nic_affectation>
+        </declaration_identification>
+        <declaration_bilan>
+            <etat>KO</etat>
+            <declaration_contenu>
+                <salaries>1</salaries>
+            </declaration_contenu>
+        </declaration_bilan>
+        <declaration_anomalie>
+            <description>
+                <code>PRF</code>
+                <message>L'attestation que vous avez transmise ne s'est pas injectée correctement dans nos systèmes informatiques pour être traitée. Je vous invite à faire refaire cette attestation en vous connectant sur net-entreprises.fr</message>
+            </description>
+            <environnement>
+                <salarie>
+                    <NIR>233126085029860</NIR>
+                    <nom_famille>TARMO</nom_famille>
+                    <prenoms>NARCISSE</prenoms>
+                </salarie>
+            </environnement>
+        </declaration_anomalie>
+    </declaration>
+</ns2:rapport>
