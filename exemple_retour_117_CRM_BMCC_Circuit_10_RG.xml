@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gipmds:rapport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gipmds="http://www.gip-mds.fr/" type="117" profil="DSN" version="v02r02" xsi:schemaLocation="http://www.gip-mds.fr/dsn_bilans_v02r02.xsd">
+    <envoi>
+        <envoi_identification>
+            <idflux>F16rXTkzWrWko-A9f5PHijJ</idflux>
+            <emetteur_siret>12347095000014</emetteur_siret>
+            <date_reception>2022-05-31</date_reception>
+            <heure_reception>14:28:59</heure_reception>
+        </envoi_identification>
+        <envoi_bilan>
+            <envoi_etat>OK</envoi_etat>
+        </envoi_bilan>
+    </envoi>
+    <declaration>
+        <declaration_identification>
+            <rang>1</rang>
+            <SIREN>999581494</SIREN>
+            <nic_affectation>00029</nic_affectation>
+        </declaration_identification>
+        <declaration_bilan>
+            <etat>OK</etat>
+        </declaration_bilan>
+    </declaration>
+    <communication>
+        <information_collective type="bmcc">
+            <calcul date_calcul="2022-04-27T11:00:34" phase="10">
+                <information>
+                    <donnees_clefs>
+                        <rubriques>
+                            <rubrique_date name="dateDebutEffet">2022-09-01</rubrique_date>
+                            <rubrique_date name="dateFinEffet">2023-08-31</rubrique_date>
+                        </rubriques>
+                    </donnees_clefs>
+                    <donnees_paie>
+                        <taux part="patronale">3.66</taux>
+                    </donnees_paie>
+                    <donnees_declaration>
+                        <rubriques>
+                            <rubrique_string name="identifiantTaux">999581494_10_2022_20220426</rubrique_string>
+                            <rubrique_date name="dateCalculTauxContribution">2022-04-26</rubrique_date>
+                        </rubriques>
+                    </donnees_declaration>
+                    <donnees_complement>
+                        <rubriques>
+                            <rubrique_date name="infoDateDebut">2021-07-01</rubrique_date>
+                            <rubrique_date name="infoDateFin">2022-06-30</rubrique_date>
+                            <rubrique_integer name="infoNombreSeparations">699</rubrique_integer>
+                        </rubriques>
+                    </donnees_complement>
+                </information>
+            </calcul>
+        </information_collective>
+    </communication>
+</gipmds:rapport>
