@@ -4,7 +4,7 @@
 	xmlns:gipmds="https://gipmds/1.0" xmlns:map="xalan://java.util.Map"
 	extension-element-prefixes="map"
 	xpath-default-namespace="https://gipmds/1.0">
-	<xsl:output method="xml" media-type="text/xml"
+	<xsl:output method="html" media-type="text/html"
 		encoding="UTF-8" indent="no" />
 
 	<xsl:param name="path_fichier_transcos" />
@@ -15,6 +15,11 @@
 
 	<xsl:template match="/">
 		<html>
+		
+			<head>
+				<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+			</head>
+		
 			<body>
 				<div id="blocRO">
 					<div>
@@ -748,8 +753,10 @@
 																		</xsl:call-template>
 																	</div>
 																</span>
+																
 																<a class="cursor-pointer afficher-plus-moins"
 																	id="afficherPlusMoinsControleBlocAction{$i}">Afficher plus</a>
+																
 															</td>
 														</tr>
 													</xsl:if>
@@ -782,8 +789,8 @@
 																	</xsl:call-template>
 																</div>
 															</span>
-															<a class="cursor-pointer afficher-plus-moins"
-																id="afficherPlusMoinsActionAttendueBlocAction{$i}">Afficher plus</a>
+																<a class="cursor-pointer afficher-plus-moins"
+																	id="afficherPlusMoinsActionAttendueBlocAction{$i}">Afficher plus</a>
 														</td>
 													</tr>
 													<xsl:if test="RO_B004_R014/text()">
@@ -850,8 +857,8 @@
 																					</xsl:call-template>
 																				</div>
 																			</span>
-																			<a class="cursor-pointer afficher-plus-moins"
-																				id="afficherPlusMoinsDetailAtypieBlocDetailAction{$i}{$j}">Afficher plus</a>
+																				<a class="cursor-pointer afficher-plus-moins"
+																					id="afficherPlusMoinsDetailAtypieBlocDetailAction{$i}{$j}">Afficher plus</a>
 																		</td>
 																	</tr>
 																	<xsl:if test="RO_B005_R002/text()">
@@ -1376,191 +1383,222 @@
 					</div>
 				</div>
 			</body>
-		</html>
 
-		<script type="text/javascript">
-			<xsl:text disable-output-escaping="yes">
-				$(document)
-					.ready(
-							function() {
-			
-								var isIE = /* @cc_on!@ */false || !!document.documentMode;
-								var afficherPlus = 'Afficher plus';
-								var afficherMoins = 'Afficher moins';
-			
-								function getRows(selector) {
-									selector.hide();
-									selector.css('display', 'block');
-									var height = $(selector).height();
-									var line_height = $(selector).css('line-height');
-									line_height = parseFloat(line_height)
-									var rows = height / line_height;
-									selector.css('display', 'none');
-									selector.show();
-									return Math.round(rows);
-								}
-			
-								$('.afficher-moins')
-										.each(
-												function() {
-													var texte = $('#' + this.id);
-													var position = this.id.match(/(\d+)/);
-			
-													if (getRows(texte) > 2) {
-			
+			<script type="text/javascript">
+				<xsl:text disable-output-escaping="yes">
+					$(document)
+						.ready(
+								function() {
+				
+									var isIE = /* @cc_on!@ */false || !!document.documentMode;
+									var afficherPlus = 'Afficher plus';
+									var afficherMoins = 'Afficher moins';
+									
+									function getRows(selector) {
+										selector.hide();
+										selector.css('display', 'block');
+										const defaultLineHeight = 1.2;
+										selector.css('line-height', defaultLineHeight);
+										var height = $(selector).height();
+										var line_height = $(selector).css('line-height');
+										line_height = parseFloat(line_height)
+										var rows = height / line_height;
+										selector.css('display', 'none');
+										selector.show();
+										return Math.round(rows);
+									}
+											
+									$('.afficher-moins')
+											.each(
+													function() {
+														var texte = $('#' + this.id);
+														var position = this.id.match(/(\d+)/);
+				
+														if (getRows(texte) > 3) {
+															if (this.id
+																	.indexOf("ControleBlocAction") != -1) {
+																var lienAfficher = document
+																		.getElementById('afficherPlusMoinsControleBlocAction'
+																				+ position[0]);
+																if (isIE) {
+																	var id = "texteControleBlocAction"
+																			+ position[0];
+																	var container = document
+																			.querySelector('#'
+																					+ id);
+																	var div = container
+																			.querySelector('div');
+																	var fullText = document
+																			.createElement('div');
+																	fullText.style.cssText = 'display: none';
+																	fullText.textContent = div.textContent;
+																	container
+																			.appendChild(fullText);
+																	fullText.id = id + 'full';
+																	while (div.offsetHeight > 60) {
+																		div.textContent = div.textContent
+																				.replace(
+																						/\W*\s(\S)*$/,
+																						'...');
+																		div.id = id + 'clamped';
+																	}
+																} else {
+																	texte.css('overflow', 'hidden');
+																	texte.css('display',
+																			'-webkit-box');
+																	texte.css('-webkit-line-clamp',
+																			'2');
+																	texte.css('-webkit-box-orient',
+																			'vertical');
+																	}
+															} else if (this.id
+																	.indexOf("ActionAttendueBlocAction") != -1) {
+																var lienAfficher = document
+																		.getElementById('afficherPlusMoinsActionAttendueBlocAction'
+																				+ position[0]);
+																if (isIE) {
+																	var id = "texteActionAttendueBlocAction"
+																			+ position[0];
+																	var container = document
+																			.querySelector('#'
+																					+ id);
+																	var div = container
+																			.querySelector('div');
+																	var fullText = document
+																			.createElement('div');
+																	fullText.style.cssText = 'display: none';
+																	fullText.textContent = div.textContent;
+																	fullText.id = id + 'full';
+																	container
+																			.appendChild(fullText);
+																	while (div.offsetHeight > 60) {
+																		div.textContent = div.textContent
+																				.replace(
+																						/\W*\s(\S)*$/,
+																						'...');
+																		div.id = id + 'clamped';
+																	} 
+																}
+																else {
+																	texte.css('overflow', 'hidden');
+																	texte.css('display',
+																			'-webkit-box');
+																	texte.css('-webkit-line-clamp',
+																			'2');
+																	texte.css('-webkit-box-orient',
+																			'vertical');
+																	}
+															} else if (this.id
+																	.indexOf("DetailAtypieBlocDetailAction") != -1) {
+																var lienAfficher = document
+																		.getElementById('afficherPlusMoinsDetailAtypieBlocDetailAction'
+																				+ position[0]);
+																						
+																if (isIE) {
+																	var id = "texteDetailAtypieBlocDetailAction"
+																			+ position[0];
+																	var container = document
+																			.querySelector('#'
+																					+ id);
+																	var div = container
+																			.querySelector('div');
+																	var fullText = document
+																			.createElement('div');
+																	fullText.style.cssText = 'display: none';
+																	fullText.textContent = div.textContent;
+																	fullText.id = id + 'full';
+																	container
+																			.appendChild(fullText);
+																	while (div.offsetHeight > 60) {
+																		div.textContent = div.textContent
+																				.replace(
+																						/\W*\s(\S)*$/,
+																						'...');
+																		div.id = id + 'clamped';
+																	}
+																} else {
+																	texte.css('overflow', 'hidden');
+																	texte.css('display',
+																			'-webkit-box');
+																	texte.css('-webkit-line-clamp',
+																			'2');
+																	texte.css('-webkit-box-orient',
+																			'vertical');
+																	}
+															}
+				
+															lienAfficher.style.display = 'block';
+														} else {
+															texte.next().css('display','none');
+														}
+													});
+													
+				
+									$(".afficher-plus-moins")
+											.click(
+													function() {
+				
+														var position = this.id.match(/(\d+)/);
+														var lienAfficher = document
+																.getElementById(this.id);
+				
 														if (this.id
 																.indexOf("ControleBlocAction") != -1) {
-															var lienAfficher = document
-																	.getElementById('afficherPlusMoinsControleBlocAction'
-																			+ position[0]);
-															if (isIE) {
-																var id = "texteControleBlocAction"
-																		+ position[0];
-																var container = document
-																		.querySelector('#'
-																				+ id);
-																var div = container
-																		.querySelector('div');
-																var fullText = document
-																		.createElement('div');
-																fullText.style.cssText = 'display: none';
-																fullText.textContent = div.textContent;
-																container
-																		.appendChild(fullText);
-																fullText.id = id + 'full';
-																while (div.offsetHeight > 60) {
-																	div.textContent = div.textContent
-																			.replace(
-																					/\W*\s(\S)*$/,
-																					'...');
-																	div.id = id + 'clamped';
-																}
-															}
+															var idTexte = 'texteControleBlocAction'
+																	+ position[0];
+															var texte = $('#' + idTexte);
 														} else if (this.id
 																.indexOf("ActionAttendueBlocAction") != -1) {
-															var lienAfficher = document
-																	.getElementById('afficherPlusMoinsActionAttendueBlocAction'
-																			+ position[0]);
-															if (isIE) {
-																var id = "texteActionAttendueBlocAction"
-																		+ position[0];
-																var container = document
-																		.querySelector('#'
-																				+ id);
-																var div = container
-																		.querySelector('div');
-																var fullText = document
-																		.createElement('div');
-																fullText.style.cssText = 'display: none';
-																fullText.textContent = div.textContent;
-																fullText.id = id + 'full';
-																container
-																		.appendChild(fullText);
-																while (div.offsetHeight > 60) {
-																	div.textContent = div.textContent
-																			.replace(
-																					/\W*\s(\S)*$/,
-																					'...');
-																	div.id = id + 'clamped';
-																}
-															}
+															var idTexte = 'texteActionAttendueBlocAction'
+																	+ position[0];
+															var texte = $('#' + idTexte);
 														} else if (this.id
 																.indexOf("DetailAtypieBlocDetailAction") != -1) {
-															var lienAfficher = document
-																	.getElementById('afficherPlusMoinsDetailAtypieBlocDetailAction'
-																			+ position[0]);
+															var idTexte = 'texteDetailAtypieBlocDetailAction'
+																	+ position[0];
+															var texte = $('#' + idTexte);
+														}
+				
+														if (lienAfficher.innerHTML == afficherMoins) {
 															if (isIE) {
-																var id = "texteDetailAtypieBlocDetailAction"
-																		+ position[0];
-																var container = document
-																		.querySelector('#'
-																				+ id);
-																var div = container
-																		.querySelector('div');
-																var fullText = document
-																		.createElement('div');
-																fullText.style.cssText = 'display: none';
-																fullText.textContent = div.textContent;
-																fullText.id = id + 'full';
-																container
-																		.appendChild(fullText);
-																while (div.offsetHeight > 60) {
-																	div.textContent = div.textContent
-																			.replace(
-																					/\W*\s(\S)*$/,
-																					'...');
-																	div.id = id + 'clamped';
-																}
+																var clampedText = $('#'
+																		+ idTexte + 'clamped');
+																var fullText = $('#' + idTexte
+																		+ 'full');
+																fullText.css('display', 'none');
+																clampedText.css('display',
+																		'block');
+															} else {
+																texte.css('overflow', 'hidden');
+																texte.css('display',
+																		'-webkit-box');
+																texte.css('-webkit-line-clamp',
+																		'2');
+																texte.css('-webkit-box-orient',
+																		'vertical');
 															}
-														}
-			
-														lienAfficher.style.display = 'block';
-													}
-												});
-			
-								$(".afficher-plus-moins")
-										.click(
-												function() {
-			
-													var position = this.id.match(/(\d+)/);
-													var lienAfficher = document
-															.getElementById(this.id);
-			
-													if (this.id
-															.indexOf("ControleBlocAction") != -1) {
-														var idTexte = 'texteControleBlocAction'
-																+ position[0];
-														var texte = $('#' + idTexte);
-													} else if (this.id
-															.indexOf("ActionAttendueBlocAction") != -1) {
-														var idTexte = 'texteActionAttendueBlocAction'
-																+ position[0];
-														var texte = $('#' + idTexte);
-													} else if (this.id
-															.indexOf("DetailAtypieBlocDetailAction") != -1) {
-														var idTexte = 'texteDetailAtypieBlocDetailAction'
-																+ position[0];
-														var texte = $('#' + idTexte);
-													}
-			
-													if (lienAfficher.innerHTML == afficherMoins) {
-														if (isIE) {
-															var clampedText = $('#'
-																	+ idTexte + 'clamped');
-															var fullText = $('#' + idTexte
-																	+ 'full');
-															fullText.css('display', 'none');
-															clampedText.css('display',
-																	'block');
+															lienAfficher.innerHTML = afficherPlus;
 														} else {
-															texte.css('overflow', 'hidden');
-															texte.css('display',
-																	'-webkit-box');
-															texte.css('-webkit-line-clamp',
-																	'2');
-															texte.css('-webkit-box-orient',
-																	'vertical');
+															if (isIE) {
+																var clampedText = $('#'
+																		+ idTexte + 'clamped');
+																var fullText = $('#' + idTexte
+																		+ 'full');
+																clampedText.css('display',
+																		'none');
+																fullText
+																		.css('display', 'block');
+															} else {
+																texte.css('display', 'block');
+															}
+															lienAfficher.innerHTML = afficherMoins;
 														}
-														lienAfficher.innerHTML = afficherPlus;
-													} else {
-														if (isIE) {
-															var clampedText = $('#'
-																	+ idTexte + 'clamped');
-															var fullText = $('#' + idTexte
-																	+ 'full');
-															clampedText.css('display',
-																	'none');
-															fullText
-																	.css('display', 'block');
-														} else {
-															texte.css('display', 'block');
-														}
-														lienAfficher.innerHTML = afficherMoins;
-													}
-												});
-							});
-				</xsl:text>
-		</script>
+													});
+								});
+					</xsl:text>
+			</script>
+		</html>
+
 
 	</xsl:template>
 

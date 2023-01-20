@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<balises 
+	xmlns="https://gipmds/1.0" 
+	xpath-default-namespace="https://gipmds/1.0">
+	<point_de_depot>
+		<transco code="01">Net-entreprises</transco>
+		<transco code="02">MSA</transco>
+	</point_de_depot>
+	<type_declaration>
+		<transco code="01">déclaration normale</transco>
+		<transco code="02">déclaration normale sans individu</transco>
+		<transco code="03">déclaration annule et remplace intégral</transco>
+		<transco code="04">déclaration annule</transco>
+		<transco code="05">annule et remplace sans individu</transco>
+	</type_declaration>
+	<nature_declaration>
+		<transco code="01">DSN mensuelle</transco>
+		<transco code="02">Signalement Fin du contrat de travail</transco>
+		<transco code="04">Signalement Arrêt de travail</transco>
+		<transco code="05">Signalement Reprise suite à arrêt de travail</transco>
+		<transco code="07">Signalement Fin du contrat de travail Unique</transco>
+		<transco code="08">Signalement Amorçage des données variables</transco>
+	</nature_declaration>
+	<nature_contrat>
+		<transco code="01">Contrat de travail à durée indéterminée de droit privé</transco>
+		<transco code="02">Contrat de travail à durée déterminée de droit privé</transco>
+		<transco code="03">Contrat de mission (contrat de travail temporaire)</transco>
+		<transco code="07">Contrat à durée indéterminée intermittent</transco>
+		<transco code="08">Contrat à durée indéterminée intérimaire</transco>
+		<transco code="09">Contrat de travail à durée indéterminée de droit public</transco>
+		<transco code="10">Contrat de travail à durée déterminée de droit public</transco>
+		<transco code="20">[FP] Détachement d'un agent d'une Fonction Publique donnant lieu à pension (ECP)</transco>
+		<transco code="21">[FP] Détachement d'un agent d'une Fonction Publique ne donnant pas lieu à pension (ENCP)</transco>
+		<transco code="29">Convention de stage (hors formation professionnelle)</transco>
+		<transco code="32">Contrat d'appui au projet d'entreprise</transco>
+		<transco code="50">Nomination dans la fonction publique (par arrêté, par décision,...)</transco>
+		<transco code="60">Contrat d'engagement éducatif</transco>
+		<transco code="70">Contrat de soutien et d'aide par le travail</transco>
+		<transco code="80">Mandat social</transco>
+		<transco code="81">Mandat d'élu</transco>
+		<transco code="82">Contrat de travail à durée indéterminée de Chantier ou d'opération</transco>
+		<transco code="89">Volontariat de service civique</transco>
+		<transco code="90">Autre nature de contrat, convention, mandat</transco>
+		<transco code="91">Contrat d'engagement maritime à durée indéterminée</transco>
+		<transco code="92">Contrat d'engagement maritime à durée déterminée</transco>
+		<transco code="93">Ligne de service</transco>
+	</nature_contrat>
+	<statut_conventionnel_contrat>
+		<transco code="01">agriculteur salarié de son exploitation</transco>
+		<transco code="02">artisan ou commerçant salarié de son entreprise</transco>
+		<transco code="03">cadre dirigeant (votant au collège employeur des élections prud'homales)</transco>
+		<transco code="04">autres cadres au sens de la convention collective (ou du statut pour les régimes spéciaux)</transco>
+		<transco code="05">profession intermédiaire (technicien, contremaître, agent de maîtrise, clergé)</transco>
+		<transco code="06">employé administratif d'entreprise, de commerce, agent de service</transco>
+		<transco code="07">ouvriers qualifiés et non qualifiés y compris ouvriers agricoles</transco>
+		<transco code="08">agent de la fonction publique d'Etat</transco>
+		<transco code="09">agent de la fonction publique hospitalière</transco>
+		<transco code="10">agent de la fonction publique territoriale</transco>
+	</statut_conventionnel_contrat>	
+	<code_regime_maladie_contrat>
+		<transco code="134">régime spécial de la SNCF</transco>
+		<transco code="135">régime spécial de la RATP</transco>
+		<transco code="136">établissement des invalides de la marine (ENIM)</transco>
+		<transco code="137">mineurs ou assimilés (CANSSM)</transco>
+		<transco code="138">militaires de carrière (CNMSS)</transco>
+		<transco code="140">clercs et employés de notaires (CRPCEN)</transco>
+		<transco code="141">chambre de commerce et d'industrie de Paris</transco>
+		<transco code="144">Assemblée Nationale</transco>
+		<transco code="145">Sénat</transco>
+		<transco code="146">port autonome de Bordeaux</transco>
+		<transco code="147">régime spécial des industries électriques et gazières (CAMIEG)</transco>
+		<transco code="149">régimes des cultes (CAVIMAC)</transco>
+		<transco code="200">régime général (CNAM)</transco>
+		<transco code="300">régime agricole (MSA)</transco>
+		<transco code="400">régime spécial Banque de France</transco>
+		<transco code="900">autre régime (réservé Polynésie Française, Nouvelle Calédonie)</transco>
+		<transco code="909">travailleur étranger non assujetti à un régime de base risque maladie en France</transco>
+		<transco code="999">sans régime obligatoire</transco>
+	</code_regime_maladie_contrat>
+	<code_envoi>
+		<transco code="01">envoi fichier essai</transco>
+		<transco code="02">envoi fichier réel</transco>
+	</code_envoi>
+	<RO_B000_R007>
+		<transco code="01">Net-entreprises</transco>
+		<transco code="02">MSA</transco>
+	</RO_B000_R007>
+	<RO_B000_R011>
+		<transco code="01">déclaration normale</transco>
+		<transco code="02">déclaration normale sans individu</transco>
+		<transco code="03">déclaration annule et remplace intégral</transco>
+		<transco code="05">annule et remplace sans individu</transco>
+	</RO_B000_R011>
+	<RO_B000_R013>
+		<transco code="01">envoi fichier test</transco>
+		<transco code="02">envoi fichier réel</transco>
+	</RO_B000_R013>
+	<RO_B001_R001>
+		<transco code="01">Retour organisme sur une DSN mensuelle</transco>
+		<transco code="02">Retour organisme en fin d'exercice</transco>
+		<transco code="03">Retour organisme pour rappel d'actions non réalisées</transco>
+		<transco code="04">Retour organisme pour signaler un paramètre utile en paie</transco>
+	</RO_B001_R001>
+	<RO_B002_R004>
+		<transco code="01">Retour organisme normal</transco>
+		<transco code="02">Retour organisme annule et remplace</transco>
+	</RO_B002_R004>
+	<RO_B003_R002>
+		<transco code="OK">OK - Données DSN permettant d'assurer les traitements métiers</transco>
+		<transco code="KO">KO - Ecarts ne permettant pas de réaliser l'intégralité des traitements métier</transco>
+	</RO_B003_R002>
+	<RO_B004_R003>
+		<transco code="01">Correction de données DSN précédemment déclarées</transco>
+		<transco code="02">Correction de données d'identification d'individus</transco>
+		<transco code="03">Emission de l'ensemble des données attendues par l'organisme pour un mois principal déclaré</transco>
+		<transco code="04">Prise en compte d'un paramètre</transco>
+		<transco code="05">Régularisation d'un paramètre</transco>
+	</RO_B004_R003>
+	<RO_B004_R004>
+		<transco code="01">Entreprise</transco>
+		<transco code="02">Etablissement</transco>
+		<transco code="03">Section d'établissement</transco>
+		<transco code="04">Individu</transco>
+		<transco code="05">Contrat</transco>
+	</RO_B004_R004>
+	<RO_B004_R005>
+		<transco code="01">Entreprise</transco>
+		<transco code="02">Etablissement</transco>
+		<transco code="03">Coordonnées bancaires</transco>
+		<transco code="04">Versement organisme</transco>
+		<transco code="05">Individu</transco>
+		<transco code="06">Contrat</transco>
+		<transco code="07">Dates de la vie du contrat</transco>
+		<transco code="08">Rémunérations</transco>
+		<transco code="09">Primes, gratifications et indemnités</transco>
+		<transco code="10">Autre élément de revenu brut</transco>
+		<transco code="11">Versement</transco>
+		<transco code="12">Cotisations, contributions et bases assujetties</transco>
+		<transco code="13">Adhésion prévoyance</transco>
+		<transco code="14">Affiliation prévoyance</transco>
+		<transco code="15">Base individu non salarié</transco>
+		<transco code="16">Bordereau</transco>
+		<transco code="17">Cotisation agrégée</transco>
+		<transco code="18">Ancienneté</transco>
+		<transco code="19">Lieu de travail</transco>
+		<transco code="20">Ayant-droit</transco>
+	</RO_B004_R005>
+	<RO_B004_R006>
+		<transco code="01">Valeur incohérente</transco>
+		<transco code="02">Rubrique absente</transco>
+		<transco code="03">Rubrique présente à tort</transco>
+		<transco code="04">Bloc absent</transco>
+		<transco code="05">Bloc présent à tort</transco>
+		<transco code="06">Cumul incohérent</transco>
+		<transco code="07">Ensemble des données attendues par l'organisme pour un mois principal déclaré absente</transco>
+	</RO_B004_R006>
+	<RO_B004_R007>
+		<transco code="01">Erreur généralisée</transco>
+		<transco code="02">Erreur sur plusieurs individus ou contrats</transco>
+		<transco code="03">Erreur sur un seul individu ou un seul contrat</transco>
+	</RO_B004_R007>
+	<RO_B004_R008>
+		<transco code="01">Individus et/ou contrats nominativement précisés</transco>
+		<transco code="02">Individus et/ou contrats concernés non précisés</transco>
+	</RO_B004_R008>
+	<RO_B007_R004>
+		<transco code="01">Montant cumulé</transco>
+	</RO_B007_R004>
+	<RO_B007_R009>
+		<transco code="01">Valeur incohérente</transco>
+		<transco code="02">Rubrique absente</transco>
+		<transco code="03">Rubrique présente à tort</transco>
+		<transco code="04">Bloc absent</transco>
+		<transco code="05">Bloc présent à tort</transco>
+		<transco code="06">Cumul incohérent</transco>
+	</RO_B007_R009>
+	<RO_B008_R001>
+		<transco code="M01">M01 (Effectif moyen mensuel)</transco>
+		<transco code="M02">M02 (Effectif BOETH mensuel)</transco>
+		<transco code="M03">M03 (Effectif ECAP mensuel)</transco>
+		<transco code="M04">M04 (Effectif d’assujettissement OETH mensuel)</transco>
+		<transco code="M05">M05 (Effectif CSA CFIP mensuel)</transco>
+		<transco code="M07">M07 (Effectif CSA mensuel)</transco>
+		<transco code="A01">A01 (Effectif moyen annuel)</transco>
+		<transco code="A02">A02 (Effectif BOETH annuel)</transco>
+		<transco code="A03">A03 (Effectif ECAP annuel)</transco>
+		<transco code="A04">A04 (Effectif d’assujettissement OETH annuel)</transco>
+		<transco code="A05">A05 (Effectif CSA CFIP annuel)</transco>
+		<transco code="A07">A07 (Effectif CSA annuel)</transco>
+	</RO_B008_R001>
+</balises>
