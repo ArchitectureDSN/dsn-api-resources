@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gipmds:rapport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gipmds="http://www.gip-mds.fr/" type="117" profil="DSN" version="v02r02" xsi:schemaLocation="http://www.gip-mds.fr/dsn_bilans_v02r02.xsd">
+<gipmds:rapport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gipmds="http://www.gip-mds.fr/" type="117" profil="DSN" version="v02r02" xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v02r02.xsd">
     <envoi>
         <envoi_identification>
             <idflux>G10EOJeyYl8-ZJH5DN2qXcO</idflux>
             <emetteur_siret>12345095000014</emetteur_siret>
-            <date_reception>2022-05-01</date_reception>
+            <date_reception>2023-05-01</date_reception>
             <heure_reception>09:18:22</heure_reception>
         </envoi_identification>
         <envoi_bilan>
@@ -23,52 +23,54 @@
     </declaration>
     <communication>
         <information_collective type="bmcc">
-            <calcul date_calcul="2022-04-27T10:32:31" phase="10">
+            <calcul date_calcul="2023-04-27T10:32:31" phase="10">
                 <information>
                     <donnees_clefs>
                         <rubriques>
-                            <rubrique_date name="dateDebutEffet">2022-09-01</rubrique_date>
-                            <rubrique_date name="dateFinEffet">2023-08-31</rubrique_date>
+                            <rubrique_date name="dateDebutEffet">2023-09-01</rubrique_date>
+                            <rubrique_date name="dateFinEffet">2024-08-31</rubrique_date>
                         </rubriques>
                     </donnees_clefs>
                     <donnees_paie>
                         <taux part="patronale">3</taux>
+                        <taux part="CCP">3</taux>
                     </donnees_paie>
                     <donnees_declaration>
                         <rubriques>
-                            <rubrique_string name="identifiantTaux">999820788_10_2022_20220426</rubrique_string>
-                            <rubrique_date name="dateCalculTauxContribution">2022-04-26</rubrique_date>
+                            <rubrique_string name="identifiantTaux">999820788_10_2023_20230426</rubrique_string>
+                            <rubrique_date name="dateCalculTauxContribution">2023-04-26</rubrique_date>
                         </rubriques>
                     </donnees_declaration>
                     <donnees_complement>
                         <rubriques>
-                            <rubrique_date name="infoDateDebut">2021-07-01</rubrique_date>
-                            <rubrique_date name="infoDateFin">2022-06-30</rubrique_date>
+                            <rubrique_date name="infoDateDebut">2022-07-01</rubrique_date>
+                            <rubrique_date name="infoDateFin">2023-06-30</rubrique_date>
                         </rubriques>
                     </donnees_complement>
                 </information>
             </calcul>
-            <calcul date_calcul="2022-04-30T16:03:29" phase="30">
+            <calcul date_calcul="2023-04-30T16:03:29" phase="30">
                 <information>
                     <donnees_clefs>
                         <rubriques>
-                            <rubrique_date name="dateDebutEffet">2022-09-01</rubrique_date>
-                            <rubrique_date name="dateFinEffet">2023-08-31</rubrique_date>
+                            <rubrique_date name="dateDebutEffet">2023-09-01</rubrique_date>
+                            <rubrique_date name="dateFinEffet">2024-08-31</rubrique_date>
                         </rubriques>
                     </donnees_clefs>
                     <donnees_paie>
                         <taux part="patronale">3.14</taux>
+                        <taux part="CCP">3.12</taux>
                     </donnees_paie>
                     <donnees_declaration>
                         <rubriques>
-                            <rubrique_string name="identifiantTaux">999820788_30_2022_20220430</rubrique_string>
-                            <rubrique_date name="dateCalculTauxContribution">2022-04-30</rubrique_date>
+                            <rubrique_string name="identifiantTaux">999820788_30_2023_20230430</rubrique_string>
+                            <rubrique_date name="dateCalculTauxContribution">2023-04-30</rubrique_date>
                         </rubriques>
                     </donnees_declaration>
                     <donnees_complement>
                         <rubriques>
-                            <rubrique_date name="infoDateDebut">2021-07-01</rubrique_date>
-                            <rubrique_date name="infoDateFin">2022-06-30</rubrique_date>
+                            <rubrique_date name="infoDateDebut">2022-07-01</rubrique_date>
+                            <rubrique_date name="infoDateFin">2023-06-30</rubrique_date>
                             <rubrique_integer name="infoNombreSeparations">4</rubrique_integer>
                             <rubrique_string name="identifiantRegularisation">020000000050</rubrique_string>
                             <rubrique_string name="codeMotifRegularisation">03</rubrique_string>

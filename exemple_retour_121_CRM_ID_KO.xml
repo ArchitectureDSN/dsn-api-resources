@@ -1,0 +1,64 @@
+<gipmds:GIPMDS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gipmds="https://gipmds/1.0">
+  <gipmds:RO>
+    <gipmds:RO_R001>2023V1.2</gipmds:RO_R001>
+    <gipmds:RO_B000>
+      <gipmds:RO_B000_R001>F1-FZAISzwDr7yPNKYDwsrx</gipmds:RO_B000_R001>
+      <gipmds:RO_B000_R002>1</gipmds:RO_B000_R002>
+      <gipmds:RO_B000_R003>12345678901234</gipmds:RO_B000_R003>
+      <gipmds:RO_B000_R004>12345678901234</gipmds:RO_B000_R004>
+      <gipmds:RO_B000_R005>49</gipmds:RO_B000_R005>
+      <gipmds:RO_B000_R006>2022-05-01</gipmds:RO_B000_R006>
+      <gipmds:RO_B000_R007>01</gipmds:RO_B000_R007>
+      <gipmds:RO_B000_R008>GIPMDS</gipmds:RO_B000_R008>
+      <gipmds:RO_B000_R009>DSN-20220501</gipmds:RO_B000_R009>
+      <gipmds:RO_B000_R010>v99</gipmds:RO_B000_R010>
+      <gipmds:RO_B000_R011>01</gipmds:RO_B000_R011>
+      <gipmds:RO_B000_R012>26</gipmds:RO_B000_R012>
+      <gipmds:RO_B000_R013>02</gipmds:RO_B000_R013>
+      <gipmds:RO_B000_R014>P23V01</gipmds:RO_B000_R014>
+    </gipmds:RO_B000>
+    <gipmds:RO_B001>
+      <gipmds:RO_B001_R001>01</gipmds:RO_B001_R001>
+      <gipmds:RO_B002>
+        <gipmds:RO_B002_R001>558867</gipmds:RO_B002_R001>
+        <gipmds:RO_B002_R002>121</gipmds:RO_B002_R002>
+        <gipmds:RO_B002_R003>CRM_ID</gipmds:RO_B002_R003>
+        <gipmds:RO_B002_R004>01</gipmds:RO_B002_R004>
+        <gipmds:RO_B002_R005>Bloc 3 CNAV</gipmds:RO_B002_R005>
+        <gipmds:RO_B002_R006>12345678901234</gipmds:RO_B002_R006>
+        <gipmds:RO_B002_R007>12345678901234</gipmds:RO_B002_R007>
+        <gipmds:RO_B002_R008>2022-05-01</gipmds:RO_B002_R008>
+        <gipmds:RO_B002_R009>2022-05-01</gipmds:RO_B002_R009>
+        <gipmds:RO_B002_R011>2023-02-14T16:47:43</gipmds:RO_B002_R011>
+        <gipmds:RO_B003>
+          <gipmds:RO_B003_R001>Identification des personnes physiques par le SNGI</gipmds:RO_B003_R001>
+          <gipmds:RO_B003_R002>KO</gipmds:RO_B003_R002>
+        </gipmds:RO_B003>
+        <gipmds:RO_B004>
+          <gipmds:RO_B004_R001>CNVANOIDE9A</gipmds:RO_B004_R001>
+          <gipmds:RO_B004_R002>Individu trouvé au SNGI mais écart par rapport au nom de famille, au NIR et à la date de naissance déclarés</gipmds:RO_B004_R002>
+          <gipmds:RO_B004_R003>02</gipmds:RO_B004_R003>
+          <gipmds:RO_B004_R009>2</gipmds:RO_B004_R009>
+          <gipmds:RO_B004_R011>L&apos;individu a été reconnu au SNGI mais un écart existe entre le nom de famille, le NIR et la date de naissance déclarés et de références</gipmds:RO_B004_R011>
+          <gipmds:RO_B004_R013>Il vous faut vous rapprocher du salarié afin de vérifier les informations d&apos;identification à votre disposition, avant d&apos;effectuer la déclaration du changement de nom de famille, de NIR et de date de naissance</gipmds:RO_B004_R013>
+          <gipmds:RO_B004_R014>Vous pouvez vous référer à la base de connaisance du site Net Entreprise</gipmds:RO_B004_R014>
+          <gipmds:RO_B004_R015>L&apos;ouverture de droits à prestations sur la base des données DSN peut être rendu impossible tant que l&apos;individu présentera des écarts avec son identité certifiée.</gipmds:RO_B004_R015>
+          <gipmds:RO_B009>
+            <gipmds:RO_B009_R001>1232067090123</gipmds:RO_B009_R001>
+            <gipmds:RO_B009_R004>XXX</gipmds:RO_B009_R004>
+            <gipmds:RO_B009_R006>XXX</gipmds:RO_B009_R006>
+            <gipmds:RO_B009_R008>1969-11-22</gipmds:RO_B009_R008>
+            <gipmds:RO_B009_R010>mat123</gipmds:RO_B009_R010>
+          </gipmds:RO_B009>
+          <gipmds:RO_B009>
+            <gipmds:RO_B009_R001>1232067090124</gipmds:RO_B009_R001>
+            <gipmds:RO_B009_R004>YYY</gipmds:RO_B009_R004>
+            <gipmds:RO_B009_R006>YYY</gipmds:RO_B009_R006>
+            <gipmds:RO_B009_R008>1925-11-16</gipmds:RO_B009_R008>
+            <gipmds:RO_B009_R010>mat345</gipmds:RO_B009_R010>
+          </gipmds:RO_B009>
+        </gipmds:RO_B004>
+      </gipmds:RO_B002>
+    </gipmds:RO_B001>
+  </gipmds:RO>
+</gipmds:GIPMDS>

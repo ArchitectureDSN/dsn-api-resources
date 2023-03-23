@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:doc="http://www.cnav.fr/rgcu/documentation" xmlns:gipmds="https://gipmds/1.0" xmlns:gipmds_dt="https://gipmds/1.0/datatypes" targetNamespace="https://gipmds/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="https://gipmds/1.0/datatypes" schemaLocation="datatypes_2023.1.2.xsd"/>
+	<xs:element name="GIPMDS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RO" type="gipmds:RO" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RO">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Envoi
+			</doc:name>
+				<doc:description>
+				Le bloc Envoi - RO débute et contient le retour organisme.
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_R001" type="gipmds_dt:Alphanumeric_8-8" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro de version de la norme NEOReS
+					</doc:name>
+						<doc:description>
+						2023V1.2 - Année 2023 Version 1.2
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000" type="gipmds:RO_B000" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RO_B001" type="gipmds:Compte_Rendu_Métier" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B000">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Flux DSN de rattachement
+			</doc:name>
+				<doc:description>
+				Le bloc Flux DSN de rattachement permet d'identifier précisément la DSN à laquelle le retour organisme est techniquement rattaché.
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B000_R001" type="gipmds_dt:Alphanumeric_1-40" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Identifiant du flux DSN
+					</doc:name>
+						<doc:description>
+						Il s'agit du numéro du flux DSN (idflux) auquel se rattache techniquement le retour organisme.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R002" type="gipmds_dt:Numeric_1-6" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Rang de la déclaration
+					</doc:name>
+						<doc:description>
+						Le rang du flux DSN est le rang du flux DSN auquel se rattache techniquement le retour organisme. L'information est présente au niveau de la rubrique DSN "Rang de la declaration dans le fichier" (rubrique de la norme DSN enrichie - hors cahier technique).
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R003" type="gipmds_dt:Alphanum_Identifiant_Siret_Regex_14-14" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						SIRET de l'émetteur de la DSN
+					</doc:name>
+						<doc:description>
+						Il s'agit du SIRET de l'établissement ayant effectivement émis la DSN à laquelle est rattaché le retour organisme. L'information est présente au niveau de la rubrique DSN "Siret de l’utilisateur identifié" (rubrique de la norme DSN enrichie - hors cahier technique).
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R004" type="gipmds_dt:Alphanum_Identifiant_Siret_Regex_14-14" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						SIRET du déclaré de la DSN
+					</doc:name>
+						<doc:description>
+						Il s'agit du SIRET de l'établissement déclaré via la DSN à laquelle est rattaché le retour organisme. L'information est présente au niveau des rubriques DSN "Siren - S21.G00.06.001" et "Nic - S21.G00.11.001".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R005" type="gipmds_dt:Numeric_Regex_2-2" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro de fraction de la déclaration
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au numéro de la fraction de la déclaration à laquelle est rattaché le retour organisme. Ce numéro est déclaré au niveau de la rubrique DSN "Numéro de fraction de déclaration - S20.G00.05.003", avec le format "nd" où : 
+		n = numéro de la fraction 
+		d = nombre total de fractions
+		n doit être inférieur ou égal à d
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R006" type="gipmds_dt:GenericXMLDate_AAAA-MM-01" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date du mois principal déclaré
+					</doc:name>
+						<doc:description>
+						La date du mois principal déclaré est le premier jour du mois de paie sur la base duquel a été établie la DSN à laquelle est rattaché le retour organisme. L'information est présente au niveau de la rubrique DSN "Date du mois principal déclaré - S20.G00.05.005".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R007" type="gipmds_dt:Enum_Point_Depot" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Point de dépôt
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au point de dépôt de la DSN à laquelle est rattaché le retour organisme. L'information est présente au niveau de la rubrique DSN "Point de dépôt - S10.G00.00.007".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R008" type="gipmds_dt:Alphanumeric_1-20" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Nom du logiciel de paie
+					</doc:name>
+						<doc:description>
+						Il convient d'indiquer au niveau de cette rubrique le nom du logiciel de paie ayant servi à établir la DSN à laquelle est rattaché le retour organisme. L'information est présente au niveau de la rubrique DSN "Nom du logiciel utilisé - S10.G00.00.001". La mention peut être 'Logiciel maison' dans le cas où l'émetteur de la DSN utilise un logiciel de constitution de la DSN non acheté mais développé en interne.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R009" type="gipmds_dt:Alphanumeric_1-20" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Nom de l'éditeur
+					</doc:name>
+						<doc:description>
+						Cette rubrique permet de préciser le nom de l'éditeur du logiciel de paie ayant servi à établir la DSN à laquelle est rattaché le retour organisme. L'information est présente au niveau de la rubrique DSN "Nom de l'éditeur - S10.G00.00.002".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R010" type="gipmds_dt:Alphanumeric_1-10" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro de version du logiciel de paie
+					</doc:name>
+						<doc:description>
+						Pour compléter les informations relatives au logiciel de paie, cette rubrique permet d'indiquer le numéro de version du logiciel de paie ayant servi à établir la DSN à laquelle est rattaché le retour organisme. L'information est présente au niveau de la rubrique DSN "Numéro de version du logiciel utilisé - S10.G00.00.003".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R011" type="gipmds_dt:Enum_Type_DSN" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Type de la déclaration DSN
+					</doc:name>
+						<doc:description>
+						Le type de la déclaration DSN correspond au type associé au flux DSN de rattachement du retour organisme dans le cadre de la cinématique DSN de déclarations normales et "annule et remplace". L'information est présente au niveau de la rubrique DSN "Type de la déclaration - S20.G00.05.002".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R012" type="gipmds_dt:Numeric_1-15_regex" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro d'ordre de la déclaration
+					</doc:name>
+						<doc:description>
+						Le numéro d'ordre de la déclaration DSN correspond au numéro attribué par le déclarant pour le flux DSN de rattachement. Il s'agit de la référence qui permet d'identifier le rang de constitution d'une déclaration au cours du mois courant. L'information est présente au niveau de la rubrique DSN "Numéro d'ordre de la déclaration - S20.G00.05.004".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R013" type="gipmds_dt:Enum_TypeEnvoie" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Code envoi du fichier d'essai ou réel DSN
+					</doc:name>
+						<doc:description>
+						L'information est présente au niveau de la rubrique DSN "Code envoi du fichier d'essai ou réel - S10.G00.00.005".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B000_R014" type="gipmds_dt:Alphanumeric_6-6" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro de version de la norme utilisée par le déclarant DSN
+					</doc:name>
+						<doc:description>
+						Le numéro de version de la norme utilisée par le déclarant DSN correspond au numéro de version NEODeS inscrit au cahier technique sur lequel s'est fondé le déclarant du flux DSN. L'information est présente au niveau de la rubrique DSN "Numéro de version de la norme utilisée - S10.G00.00.006".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B001" abstract="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Profil du retour organisme
+			</doc:name>
+				<doc:description>
+				Ce profil permet de déterminer la catégorie générale du retour organisme et conditionne les informations à y faire figurer.
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B001_R001" type="gipmds_dt:Enum_Nature_CRM" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+				 				Déclencheur du retour organisme
+				 			</doc:name>
+						<doc:description>
+				 				Le déclencheur est l'événement à l'origine de l'établissement du retour organisme, en lien avec les données DSN déclarées.
+				 			</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Compte_Rendu_Métier">
+		<xs:complexContent>
+			<xs:extension base="gipmds:RO_B001">
+				<xs:sequence>
+					<xs:element name="RO_B002" type="gipmds:RO_B002" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RO_B002">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Contexte
+			</doc:name>
+				<doc:description>
+				Le bloc Contexte permet de détailler les conditions de production et d'émission du retour organisme. 
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B002_R001" type="gipmds_dt:Alphanumeric_1-256" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Identifiant du retour organisme
+					</doc:name>
+						<doc:description>
+						L'identifiant du retour organisme est un numéro unique attribué par l'émetteur spécifiquement à ce retour organisme. 
+		Il permet la constitution d'une clé d'identification unique du retour organisme en étant associé à l'identifiant de l'organisme émetteur et à l'identifiant de l'organisme producteur.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R002" type="gipmds_dt:Numeric_1-3" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Code du retour organisme
+					</doc:name>
+						<doc:description>
+						Le code du retour organisme est le code identifiant la nature précise du retour organisme : compte rendu métier opposable d'un organisme particulier sur la DSN du dernier mois principal déclaré, transmission du taux ATMP à appliquer en paie, retour annuel d'un organisme particulier sur les DSN d'un exercice complet, etc. 
+		Tous les codes des retours organismes sont répertoriés au sein du guide API, disponible sur Net-entreprises.fr. Ils permettent de gérer au niveau des solutions de paie une "check-list" des retours attendus sur chaque période.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R003" type="gipmds_dt:Alphanumeric_1-120" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Libellé du retour organisme
+					</doc:name>
+						<doc:description>
+						Le libellé du retour organisme est associé au code du retour organisme. Il s'agit d'un texte court explicitant la nature du retour organisme, qui doit permettre au déclarant DSN d'identifier rapidement la nature du retour et le type d'action à engager en conséquence (vérification de paie, application d'un paramètre métier, etc.).
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R004" type="gipmds_dt:Enum_TypeRetour_2-2" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Type de retour organisme
+					</doc:name>
+						<doc:description>
+						Le type de retour organisme permet au destinataire de savoir s'il s'agit du retour organisme initial ou d'une version annule et remplace.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R005" type="gipmds_dt:Alphanumeric_1-80" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Organisme émetteur
+					</doc:name>
+						<doc:description>
+						Cette rubrique doit être complétée du nom de l'organisme émetteur du retour, habituellement communiqué dans le cadre de l'interlocution entre l'organisme et le déclarant.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R006" type="gipmds_dt:Alphanum_Identifiant_Siret_Regex_14-14" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Identifiant de l'organisme émetteur
+					</doc:name>
+						<doc:description>
+						Cet identifiant correspond au Siret de l'organisme émetteur du retour. Il en est le responsable et, à ce titre, l'interlocuteur du destinataire en cas de problème ou de question.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R007" type="gipmds_dt:Alphanum_Identifiant_Siret_Regex_14-14" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Identifiant du producteur
+					</doc:name>
+						<doc:description>
+						Cet identifiant correspond au Siret du producteur du retour.  
+		Le producteur peut être différent de l'émetteur dans certains cas, par exemple lorsque l'organisme émetteur délègue le calcul d'un paramètre métier à un autre acteur. L'organisme émetteur reste néanmoins le porteur du retour et le point de contact privilégié du destinataire du paramètre.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R008" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Début de la période associée
+					</doc:name>
+						<doc:description>
+						La période associée correspond aux mois principaux déclarés associés au déclencheur du retour organisme. Il peut s'agir d'un mois principal déclaré spécifique ou d'une période de plusieurs mois principaux déclarés consécutifs, par exemple en cas d'analyse rétrospective sur une année civile complète. Le début de la période correspond au premier jour du premier mois principal déclaré.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R009" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Fin de la période associée
+					</doc:name>
+						<doc:description>
+						La période associée correspond aux mois principaux déclarés associés au déclencheur du retour organisme. Il peut s'agir d'un mois principal déclaré spécifique ou d'une période de plusieurs mois principaux déclarés consécutifs, par exemple en cas d'analyse rétrospective sur une année civile complète. La fin de la période correspond au dernier jour du dernier mois principal déclaré.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R010" type="gipmds_dt:Alphanumeric_Date_XML_TimeStamp" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de réalisation des traitements
+					</doc:name>
+						<doc:description>
+						La date de réalisation des traitements correspond à la date à laquelle les contrôles ont été appliqués ou la date à laquelle les calculs ont été réalisés. Cette date permet au déclarant de déterminer si d'éventuelles corrections ou régularisations ont été réalisées de son côté a posteriori.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B002_R011" type="gipmds_dt:Alphanumeric_Date_XML_TimeStamp" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de production du retour organisme
+					</doc:name>
+						<doc:description>
+						Il s'agit de la date à laquelle le retour organisme est établi par le producteur.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B003" type="gipmds:RO_B003" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RO_B004" type="gipmds:RO_B004" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B003">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Validation des données DSN
+			</doc:name>
+				<doc:description>
+				Le bloc Validation des données DSN synthétise le niveau de qualité des données DSN du point de vue du besoin métier de l'organisme émetteur du retour. Autrement dit, il indique au déclarant si ses données DSN permettent de réaliser les traitements métiers de l'organisme sans difficulté ou bien si des corrections sont à apporter pour cela (OK/KO).
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B003_R001" type="gipmds_dt:Alphanumeric_1-120" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Type de métier
+					</doc:name>
+						<doc:description>
+						Le type de métier correspond au besoin métier spécifique de l'organisme émetteur, du point de vue duquel est analysé le niveau de qualité global des données DSN. Le niveau de conformité des données DSN indiqué dans le retour n'est donc valide que pour ce seul métier et ne présume pas des retours d'autres organismes sur ces mêmes données.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B003_R002" type="gipmds_dt:Enum_OK_KO_2-2" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Conformité métier des données analysées
+					</doc:name>
+						<doc:description>
+						Cette rubrique synthétise le niveau de qualité des données DSN analysées et permet au déclarant de savoir rapidement si des actions sont à engager quant à ses données de paie. 
+		Un "OK" signifie que l'ensemble des traitements métiers de l'organisme peuvent être réalisés sur la base des données DSN reçues. 
+		A l'inverse, un "KO" signifie qu'une ou des actions sur les données DSN reçues sont impérativement nécessaires pour que l'organisme soit en capacité de réaliser ses traitements métiers.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B004">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Cible d'action
+			</doc:name>
+				<doc:description>
+				La cible de l'action est le cœur du modèle NEOReS : elle précise la nature d'une action attendue du déclarant au niveau de sa paie. Ce bloc doit permettre au déclarant de comprendre le périmètre de l'action à mener (tout l'établissement, quelques contrats, etc.) et son contenu (type d'action, contrôle appliqué, etc.).
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B004_R001" type="gipmds_dt:Alphanumeric_1-30" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Code du traitement
+					</doc:name>
+						<doc:description>
+						Le code du traitement est une rubrique permettant d'identifier via un code le contrôle ou l'opération appliqué.
+		Un même traitement doit toujours être identifié par le même code au niveau de l'organisme. Ce dernier doit assurer la maintenance des codes de sorte à ne pas réattribuer le code d'un traitement obsolète à un autre traitement.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R002" type="gipmds_dt:Alphanumeric_1-256" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Libellé
+					</doc:name>
+						<doc:description>
+						Cette rubrique désigne le traitement appliqué par un libellé court, associé au code.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R003" type="gipmds_dt:Enum_TypeAction_2-2" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Type d'action
+					</doc:name>
+						<doc:description>
+						Le type est la catégorie d'ensemble de l'action attendue de la part du déclarant au niveau de sa paie : correction de données DSN, application d'un paramètre, régularisation d'un paramètre, etc.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R004" type="gipmds_dt:Enum_NiveauAction" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Niveau
+					</doc:name>
+						<doc:description>
+						Il s'agit de la maille à laquelle l'action attendue doit être réalisée.
+		Si l'action porte sur les données nominatives de tous les individus ou tous les contrats d'un établissement ou d'une entreprise, c'est le niveau "Individu" ou "Contrat" qui doit être renseigné et non le niveau "Etablissement".
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R005" type="gipmds_dt:Enum_Categorie_data_2-2" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Catégorie de données
+					</doc:name>
+						<doc:description>
+						La catégorie de données permet de préciser l'objet de la paie concerné par l'action attendue.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R006" type="gipmds_dt:Enum_TypeErreur_2-2" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Résultat du contrôle
+					</doc:name>
+						<doc:description>
+						Cette rubrique permet de préciser le type de résultat obtenu après l'application du contrôle et ainsi de catégoriser l'anomalie à corriger (incohérence, absence ou présence à tort d'un élément).
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R007" type="gipmds_dt:Enum_PerimetreErreur" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Périmètre de l'erreur
+					</doc:name>
+						<doc:description>
+						Le périmètre de l'erreur donne une estimation générale de la proportion d'individus ou de contrats concernés par l'anomalie détectée. C'est un premier indice pour le déclarant DSN quant à l'ampleur et la nature de l'action à engager. Elle n'est donc utile que dans le cas où le niveau correspond à l'individu ou au contrat.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R008" type="gipmds_dt:Enum_DetailIndividuContrat" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Détail des individus et des contrats
+					</doc:name>
+						<doc:description>
+						Dans le cas où l'erreur est généralisée à tous les individus ou tous les contrats avec les mêmes caractéristiques, cette rubrique permet de préciser si tous les individus et contrats concernés sont référencés dans le retour organisme via des blocs Identifiant ou bien si seules leurs caractéristiques sont décrites à travers des blocs "Donnée DSN" sans bloc "Identifiants" associé. 
+		Cette seconde option est le principe de la factorisation, qui permet de faire l'économie d'informations nominatives dans les cas où le destinataire doit appliquer une correction en masse sur de nombreux individus ou contrats. L'organisme émetteur peut choisir l'une ou l'autre option dans cet unique cas de figure.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R009" type="gipmds_dt:Numeric_Regex_1-6" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Nombre des individus concernés
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au nombre d'individus concernés par l'action attendue sur la période. En complément du périmètre, il permet au déclarant de déterminer rapidement si l'action attendue est une action d'ampleur ou une action plus spécifique.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R010" type="gipmds_dt:Numeric_Regex_1-7" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Nombre des contrats (contrat de travail, convention, mandat) concernés
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au nombre de contrats (contrat de travail, convention, mandat) concernés par l'action attendue sur la période. En complément du périmètre, il permet au déclarant de déterminer rapidement si l'action attendue est une action en masse ou une action plus spécifique.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R011" type="gipmds_dt:Alphanumeric_1-3000" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Contrôle
+					</doc:name>
+						<doc:description>
+						La rubrique Contrôle permet à l'émetteur d'intégrer au retour organisme un texte libre à destination du déclarant. Ce texte a pour objectif d'éclairer le déclarant sur le contrôle qui a été appliqué. La rédaction doit être claire et univoque.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R012" type="gipmds_dt:Alphanumeric_1-256" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Référence réglementaire
+					</doc:name>
+						<doc:description>
+						La rubrique Référence réglementaire permet de compléter l'exposé du contrôle avec l'ensemble des références des textes en appui, dans une visée coercitive et pédagogique.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R013" type="gipmds_dt:Alphanumeric_1-3000" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Action attendue
+					</doc:name>
+						<doc:description>
+						La rubrique Action attendue permet à l'émetteur d'intégrer au retour organisme un texte libre à destination du déclarant. Ce texte a pour objectif d'éclairer le déclarant sur l'action attendue de sa part (type d'action, données à corriger ou à vérifier, démarche complémentaire à entreprendre, etc.). La rédaction doit être claire et univoque.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R014" type="gipmds_dt:Alphanumeric_1-3000" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Aide à l'utilisateur
+					</doc:name>
+						<doc:description>
+						La rubrique Aide à l'utilisateur permet de compléter l'Action attendue avec des références de ressources externes aidant à la résolution des erreurs identifiées ou à la réalisation de l'action (par exemple, un guide utilisateur, un arbre de décisions en ligne, une foire aux questions, etc.). Cette rubrique est préférentiellement complétée avec des URL pour guider au mieux le déclarant.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B004_R015" type="gipmds_dt:Alphanumeric_1-256" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Conséquences en l'absence de mise à jour de la paie
+					</doc:name>
+						<doc:description>
+						Cette rubrique permet de détailler ce qu'entraîne l'absence d'action du déclarant dans les délais souhaités, notamment en termes de rupture des droits des salariés.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B005" type="gipmds:RO_B005" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RO_B008" type="gipmds:RO_B008" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RO_B009" type="gipmds:RO_B009" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B005">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Détail de l'action
+			</doc:name>
+				<doc:description>
+				Le bloc Détail de l'action sert à grouper des blocs Donnée DSN et/ou des blocs Identifiants pour former des sous-ensembles cohérents en regard d'une Cible d'action. Il permet de rapprocher chaque individu et contrat des données DSN qui leur sont spécifiquement associées, mais aussi de distinguer des blocs Données DSN en fonction de leurs périodes de rattachement.
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B005_R001" type="gipmds_dt:Alphanumeric_1-3000" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Détail de l'atypie
+					</doc:name>
+						<doc:description>
+						Le Détail de l'atypie permet d'expliciter la situation constatée au niveau des blocs Identifiants et Donnée DSN enfants du bloc Détail de l'action, d'apporter des précisions en complément des éléments génériques renseignés au niveau du bloc Cible de l'action tant au niveau du résultat du contrôle que de l'action à mener.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B005_R002" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Début de la période associée
+					</doc:name>
+						<doc:description>
+						Les rubriques de début et de fin de la période associée permettent de définir la période à laquelle se rattachent les données DSN des blocs enfants. Il peut s'agir de mois principaux déclarés, dans le cas d'une erreur répétée dans plusieurs DSN successives, auquel cas les dates sont le premier jour du premier mois principal déclaré et le dernier jour du dernier mois principal déclaré, ou bien d'une période de rattachement bornée par des dates de début et de fin.
+		Si l'erreur concerne strictement le mois principal déclaré désigné en tête du retour organisme, il est inutile de valoriser ces rubriques de période.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B005_R003" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Fin de la période associée
+					</doc:name>
+						<doc:description>
+						Les rubriques de début et de fin de la période associée permettent de définir la période à laquelle se rattachent les données DSN des blocs enfants. Il peut s'agir de mois principaux déclarés, dans le cas d'une erreur répétée dans plusieurs DSN successives auquel cas les dates sont le premier jour du premier mois principal déclaré et le dernier jour du dernier mois principal déclaré, ou bien d'une période de rattachement bornée par des dates de début et de fin. Si l'erreur concerne strictement le mois principal déclaré désigné en tête du retour organisme, il est inutile de valoriser ces rubriques de période.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B006" type="gipmds:RO_B006" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RO_B007" type="gipmds:RO_B007" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B006">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Identifiants
+			</doc:name>
+				<doc:description>
+				Le bloc Identifiants permet de recenser chaque individu et chaque contrat concerné par l'action attendue. Chaque bloc intègre les données déclarées en DSN permettant l'identification rapide d'un individu ou d'un contrat.
+Le matricule doit être indiqué par l'organisme dans la mesure du possible pour faciliter l'identification de l'individu.
+La date de début du contrat et le numéro du contrat sont à renseigner impérativement pour tout écart relatif à un contrat.
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B006_R001" type="gipmds_dt:Alphanumeric_Nir_13-13" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro d'inscription au répertoire
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au numéro d'inscription au répertoire (NIR) de l'individu déclaré en DSN.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B006_R002" type="gipmds_dt:Alphanumeric_11-40" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro technique temporaire
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au numéro technique temporaire (NTT) de l'individu déclaré en DSN, lorsqu'aucun NIR n'a été déclaré pour cet individu.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B006_R003" type="gipmds_dt:Alphanumeric_1-80" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Nom de famille
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au nom de famille de l'individu déclaré en DSN.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B006_R004" type="gipmds_dt:Alphanumeric_1-80" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Prénom
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au prénom de l'individu déclaré en DSN.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B006_R005" type="gipmds_dt:Alphanumeric_1-30" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Matricule de l'individu dans l'entreprise
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au matricule de l'individu dans l'entreprise déclaré en DSN.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B006_R006" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de début du contrat
+					</doc:name>
+						<doc:description>
+						Cette rubrique doit être valorisée avec la date de début du contrat concerné qui a été déclarée dans la DSN.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B006_R007" type="gipmds_dt:Alphanumeric_5-20" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro du contrat
+					</doc:name>
+						<doc:description>
+						Cette rubrique est à valoriser avec le numéro du contrat qui a été déclaré dans la DSN.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B006_R008" type="gipmds_dt:Alphanumeric_Date_DDN_AAAA-MM-YY-99" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de naissance
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond à la date de naissance déclarée pour l'individu dans la DSN. Renseigner la date de naissance du salarié sous la forme AAAA-MM-JJ. 
+		- L'année de naissance est obligatoire, 
+		- Jour de naissance inconnu : AAAA-MM-99,
+		- Mois de naissance inconnu : AAAA-99-JJ,
+		- Si jour et mois inconnus : AAAA-99-99.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B007">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Données DSN
+			</doc:name>
+				<doc:description>
+				Ce bloc permet de recenser chaque donnée DSN en jeu pour aider le déclarant à identifier les données de sa paie nécessitant une action.
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B007_R001" type="gipmds_dt:Alphanumeric_RUB_14-14_regex" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Code de la rubrique DSN
+					</doc:name>
+						<doc:description>
+						Le code est l'identifiant de la rubrique DSN impliquée dans le contrôle réalisé par l'émetteur du retour organisme.
+		Le format NEODeS est à respecter : SXX.G00.XX.XXX.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B007_R002" type="gipmds_dt:Alphanumeric_1-120" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Valeur déclarée
+					</doc:name>
+						<doc:description>
+						Il s'agit de la valeur déclarée au niveau de la rubrique DSN désignée. 
+		Si la rubrique correspond à un montant, la rubrique "Nature du montant - RO.B007.R004" permet de savoir si la valeur déclarée est le cumul des montants déclarés sur la période désignée avec les mêmes caractéristiques associés (code de cotisation, type de rémunération, etc.).
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B007_R003" type="gipmds_dt:Alphanumeric_1-120" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Valeur préconisée ou corrigée
+					</doc:name>
+						<doc:description>
+						Il s'agit de la valeur attendue ou préconisée par l'émetteur du retour organisme pour la rubrique DSN désignée, compte tenu des autres données DSN déclarées et/ou des caractéristiques de l'établissement déclaré. 
+		Si le type de donnée est un montant, la valeur proposée résulte d'un calcul de fiabilisation au niveau de l'organisme.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B007_R004" type="gipmds_dt:Enum_Boolean_2-2" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Nature du montant
+					</doc:name>
+						<doc:description>
+						La nature du montant permet d'indiquer que les valeurs associées au code de la rubrique DSN correspondent à un cumul de tous les montants de mêmes caractéristiques, décrites via les blocs Donnée DSN et Identifiants qui lui sont liés.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B007_R005" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Début de la période associée
+					</doc:name>
+						<doc:description>
+						Les rubriques de début et de fin de la période associée permettent de définir la période à laquelle se rattache la valeur déclarée. Il peut s'agir de mois principaux déclarés, dans le cas d'une erreur répétée dans plusieurs DSN successives, auquel cas les dates sont le premier jour du premier mois principal déclaré et le dernier jour du dernier mois principal déclaré, ou bien d'une période de rattachement bornée par des dates de début et de fin.
+		Si l'erreur concerne strictement le mois principal déclaré désigné en tête du retour organisme, il est inutile de valoriser ces rubriques de période.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B007_R006" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Fin de la période associée
+					</doc:name>
+						<doc:description>
+						Les rubriques de début et de fin de la période associée permettent de définir la période à laquelle se rattache la valeur déclarée. Il peut s'agir de mois principaux déclarés, dans le cas d'une erreur répétée dans plusieurs DSN successives auquel cas les dates sont le premier jour du premier mois principal déclaré et le dernier jour du dernier mois principal déclaré, ou bien d'une période de rattachement bornée par des dates de début et de fin.
+		Si l'erreur concerne strictement le mois principal déclaré désigné en tête du CRM, il est inutile de valoriser ces rubriques de période.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B007_R007" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date d'effet
+					</doc:name>
+						<doc:description>
+						La date d'effet est la date à partir de laquelle l'application du paramètre métier associé à la rubrique DSN désignée est attendue en paie. Ces dates peuvent être valorisées par exemple dans le cas d'une inadéquation entre les dates d'effet du paramètre et la période de rattachement déclarée dans la DSN afin d'éclairer le déclarant sur l'erreur constatée.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B007_R008" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de fin d'effet
+					</doc:name>
+						<doc:description>
+						La date de fin d'effet est la date à partir de laquelle l'application du paramètre métier associé à la rubrique DSN désignée n'est plus attendue en paie. Ces dates peuvent être valorisées par exemple dans le cas d'une inadéquation entre les dates d'effet du paramètre et la période de rattachement déclarée dans la DSN afin d'éclairer le déclarant sur l'erreur constatée.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B007_R009" type="gipmds_dt:Enum_ResCTRL_2-2" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Résultat du contrôle
+					</doc:name>
+						<doc:description>
+						Cette rubrique précise la difficulté liée à la rubrique et constatée lors du contrôle. Elle fait le lien avec la rubrique "Type d'erreur constatée" au bloc "Cible d'action" et permet ainsi de comprendre quelles sont les rubriques problématiques d'après le contrôle appliqué.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B010" type="gipmds:RO_B010" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B010">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Valeur acceptée
+			</doc:name>
+				<doc:description>
+				Les blocs Valeur acceptée enfants d'un bloc Donnée DSN permettent de lister toutes les valeurs acceptées pour la rubrique DSN désignée compte tenu des autres données déclarées et du contrôle en jeu.
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B010_R001" type="gipmds_dt:Alphanumeric_1-120" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Valeur acceptée
+					</doc:name>
+						<doc:description>
+						La rubrique "Valeur acceptée" est valorisée avec une des valeurs acceptées pour la rubrique DSN désignée dans le bloc Donnée DSN parent.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B008">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Paramètre à prendre en compte en paie
+			</doc:name>
+				<doc:description>
+				Ce bloc permet de communiquer un paramètre à intégrer à la paie de l'établissement déclaré en DSN, par exemple un taux. Ce paramètre est calculé spécifiquement pour l'établissement compte tenu de ses caractéristiques et de ses précédentes données DSN connues de l'organisme émetteur.
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B008_R001" type="gipmds_dt:TableROPARAM" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Type de paramètre
+					</doc:name>
+						<doc:description>
+						Le type de paramètre permet de préciser quel paramètre précis est communiqué (taux ATMP, taux Bonus Malus, etc.).
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B008_R002" type="gipmds_dt:Alphanumeric_1-40" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Valeur du paramètre
+					</doc:name>
+						<doc:description>
+						Il s'agit de la valeur du paramètre à intégrer à la paie de l'établissement déclaré en DSN.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B008_R003" type="gipmds_dt:GenericXMLDate" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date d'effet
+					</doc:name>
+						<doc:description>
+						La date d'effet est la date à partir de laquelle l'application du paramètre métier est attendue en paie.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B008_R004" type="gipmds_dt:GenericXMLDate" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de fin d'effet
+					</doc:name>
+						<doc:description>
+						La date de fin d'effet est la date à partir de laquelle l'application du paramètre métier n'est plus attendue en paie.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B008_R005" type="gipmds_dt:Alphanumeric_RUB_14-14_regex" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Code de la rubrique DSN
+					</doc:name>
+						<doc:description>
+						Le code est l'identifiant de la rubrique DSN à valoriser avec la valeur du paramètre transmise sur la période d'effet désignée. Il n'est évidemment à renseigner que pour les paramètres auxquels correspond une rubrique DSN.
+		Le format NEODeS est à respecter : SXX.G00.XX.XXX.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B008_R006" type="gipmds_dt:Alphanumeric_Date_XML_TimeStamp" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de calcul du paramètre
+					</doc:name>
+						<doc:description>
+						La date de calcul du paramètre permet de déterminer la date exacte à laquelle le paramètre transmis a été établi, qu'il s'agisse d'un calcul initial ou d'une régularisation.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RO_B009">
+		<xs:annotation>
+			<xs:documentation xml:lang="fr">
+				<doc:name>
+				Données d'identification d'un individu en écart
+			</doc:name>
+				<doc:description>
+				Ce bloc permet de faire état des écarts concernant l’identité des individus déclarés par rapport aux identités de référence enregistrées au système national de gestion des identifiants (SNGI).
+			</doc:description>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RO_B009_R001" type="gipmds_dt:Alphanumeric_Nir_13-13" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro d'inscription au répertoire déclaré
+					</doc:name>
+						<doc:description>
+						Numéro d'inscription au répertoire (NIR) déclaré dans la DSN pour l'individu en écart.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R002" type="gipmds_dt:Alphanumeric_11-40" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro technique temporaire déclaré
+					</doc:name>
+						<doc:description>
+						Numéro technique temporaire (NTT) déclaré dans la DSN pour l'individu en écart.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R003" type="gipmds_dt:Alphanumeric_Nir_13-13" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Numéro d'inscription au répertoire de référence
+					</doc:name>
+						<doc:description>
+						Numéro d'inscription au répertoire (NIR) enregistré au SNGI pour l'individu en écart.
+		En cas d'écart avec le NIR ou NTT déclaré, les données de l'individu sont à mettre à jour avec ce numéro.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R004" type="gipmds_dt:Alphanumeric_1-80" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Nom de famille déclaré
+					</doc:name>
+						<doc:description>
+						Nom de famille déclaré dans la DSN pour l'individu en écart.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R005" type="gipmds_dt:Alphanumeric_1-80" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Nom de famille de référence
+					</doc:name>
+						<doc:description>
+						Nom de famille enregistré au SNGI pour l'individu en écart.
+		En cas d'écart avec le nom de famille déclaré, les données de l'individu sont à mettre à jour avec ce nom de famille de référence.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R006" type="gipmds_dt:Alphanumeric_1-80" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Prénom déclaré
+					</doc:name>
+						<doc:description>
+						Prénom déclaré dans la DSN pour l'individu en écart.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R007" type="gipmds_dt:Alphanumeric_1-80" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Prénom de référence
+					</doc:name>
+						<doc:description>
+						Prénom enregistré au SNGI pour l'individu en écart.
+		En cas d'écart avec le prénom déclaré, les données de l'individu sont à mettre à jour avec ce prénom de référence.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R008" type="gipmds_dt:Alphanumeric_Date_DDN_AAAA-MM-YY-99" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de naissance déclarée
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond à la date de naissance déclarée pour l'individu dans la DSN. Renseigner la date de naissance du salarié sous la forme AAAA-MM-JJ. 
+		- L'année de naissance est obligatoire, 
+		- Jour de naissance inconnu : AAAA-MM-99,
+		- Mois de naissance inconnu : AAAA-99-JJ,
+		- Si jour et mois inconnus : AAAA-99-99.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R009" type="gipmds_dt:Alphanumeric_Date_DDN" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Date de naissance de référence
+					</doc:name>
+						<doc:description>
+						Date de naissance enregistrée au SNGI pour l'individu en écart, sous la forme AAAA-MM-JJ.
+		- L'année de naissance est obligatoire,
+		- Jour de naissance inconnu : AAAA-MM-99,
+		- Mois de naissance inconnu : AAAA-99-JJ,
+		- Si jour et mois inconnus : AAAA-99-99.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RO_B009_R010" type="gipmds_dt:Alphanumeric_1-30" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="fr">
+						<doc:name>
+						Matricule de l'individu dans l'entreprise
+					</doc:name>
+						<doc:description>
+						Cette rubrique correspond au matricule de l'individu dans l'entreprise déclaré en DSN. Cette rubrique permet de faciliter l'identification de l'invidu désigné par le déclarant DSN.
+					</doc:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

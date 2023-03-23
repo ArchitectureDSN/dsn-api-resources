@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gipmds="https://gipmds/1.0/datatypes" targetNamespace="https://gipmds/1.0/datatypes" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:attributeGroup name="originInformationGroup">
+		<xs:attribute name="originLineNumber" type="xs:positiveInteger" use="optional"/>
+		<xs:attribute name="originalValue" type="xs:string" use="optional"/>
+	</xs:attributeGroup>
+	<xs:complexType name="Alphanumeric">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="gipmds:originInformationGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Numeric">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attributeGroup ref="gipmds:originInformationGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Date">
+		<xs:simpleContent>
+			<xs:extension base="xs:date">
+				<xs:attributeGroup ref="gipmds:originInformationGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Token">
+		<xs:simpleContent>
+			<xs:extension base="xs:NMTOKEN">
+				<xs:attributeGroup ref="gipmds:originInformationGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="GenericXMLDate">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Date">
+				<xs:pattern value="\d{4}\-(0[1-9]|1[0-2])\-(0[1-9]|[12][0-9]|3[01])"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_Nature_CRM">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Retour organisme sur une DSN mensuelle
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Retour organisme en fin d'exercice
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="03">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Retour organisme pour rappel d'actions non réalisées
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="04">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Retour organisme pour signaler un paramètre utile en paie
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_1-40">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="40"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Numeric_1-3">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Numeric"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Numeric_Regex_2-2">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Numeric">
+				<xs:pattern value="[1-9]{2}"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_Point_Depot">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Net-entreprises
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							MSA
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_1-20">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="20"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_1-10">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="10"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_TypeRetour_2-2">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Retour organisme normal
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Retour organisme annule et remplace
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_1-80">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="80"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_OK_KO_2-2">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="OK">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Données DSN permettant d'assurer les traitements métiers
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="KO">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Ecarts ne permettant pas de réaliser l'intégralité des traitements métiers
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_TypeAction_2-2">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Correction de données DSN précédemment déclarées
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Correction de données d'identification d'individus
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="03">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Emission de l'ensemble des données attendues par l'organisme pour un mois principal déclaré
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="04">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Prise en compte d'un paramètre
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="05">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Régularisation d'un paramètre
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_NiveauAction">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Entreprise
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Etablissement
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="03">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Section d'établissement
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="04">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Individu
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="05">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Contrat
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_Categorie_data_2-2">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Entreprise
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Etablissement
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="03">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Coordonnées bancaires
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="04">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Versement organisme
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="05">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Individu
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="06">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Contrat
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="07">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Dates de la vie du contrat
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="08">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Rémunérations
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="09">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Primes, gratifications et indemnités
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="10">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Autre élément de revenu brut
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="11">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Versement
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="12">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Cotisations, contributions et bases assujetties
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="13">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Adhésion prévoyance
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="14">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Affiliation prévoyance
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="15">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Base individu non salarié
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="16">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Bordereau
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="17">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Cotisation agrégée
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="18">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Ancienneté
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="19">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Lieu de travail
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="20">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Ayant-droit
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="21">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Cotisation établissement
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="22">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Retraite complémentaire
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="23">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Activité
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_TypeErreur_2-2">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Valeur incohérente
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Rubrique absente
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="03">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Rubrique présente à tort
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="04">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Bloc absent
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="05">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Bloc présent à tort
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="06">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Cumul incohérent
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="07">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Ensemble des données attendues par l'organisme pour un mois principal déclaré absentes
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_PerimetreErreur">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Erreur généralisée
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Erreur sur plusieurs individus ou contrats
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="03">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Erreur sur un seul individu ou un seul contrat
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_DetailIndividuContrat">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Individus et/ou contrats nominativement précisés
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Individus et/ou contrats concernés non précisés
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Numeric_Regex_1-6">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Numeric">
+				<xs:pattern value="\d+"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Numeric_Regex_1-7">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Numeric">
+				<xs:pattern value="\d+"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_1-256">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="256"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_1-30">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="30"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_5-20">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="5"/>
+				<xs:maxLength value="20"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_RUB_14-14_regex">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="14"/>
+				<xs:maxLength value="14"/>
+				<xs:pattern value="S(\d{2})\.G00\.(\d{2})\.(\d{3})"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_1-120">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="120"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TableROPARAM">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="3"/>
+				<xs:maxLength value="3"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_11-40">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="11"/>
+				<xs:maxLength value="40"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Numeric_1-6">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Numeric"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_1-3000">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="3000"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Date_DDN">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Date">
+				<xs:pattern value="(18|19|20)[0-9]{2}\-(0[1-9]|1[0-2]|99)\-(0[1-9]|[1-2][0-9]|3[0-1]|99)"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_Boolean_2-2">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Montant cumulé
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_ResCTRL_2-2">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Valeur incohérente
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Rubrique absente
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="03">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Rubrique présente à tort
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="04">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Bloc absent
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="05">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Bloc présent à tort
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="06">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							Cumul incohérent
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_Type_DSN">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							déclaration normale
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							déclaration normale sans individu
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="03">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							déclaration annule et remplace intégral
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="05">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							annule et remplace sans individu
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Numeric_1-15_regex">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Numeric">
+				<xs:pattern value="0|[1-9][0-9]*"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Enum_TypeEnvoie">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:enumeration value="01">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							envoi fichier test
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="02">
+					<xs:annotation>
+						<xs:appinfo>
+							<label>
+							envoi fichier réel
+						</label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_6-6">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="6"/>
+				<xs:maxLength value="6"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="GenericXMLDate_AAAA-MM-01">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Date">
+				<xs:pattern value="\d{4}\-(0[1-9]|1[0-2])\-(01)"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_Nir_13-13">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="13"/>
+				<xs:maxLength value="13"/>
+				<xs:pattern value="[1-2][0-9]{2}(0[1-9]|1[0-2]|20|3[0-9]|4[0-2]|[5-9][0-9])(0[1-9]|[1-9][0-9]|2A|2B)([0]{2}[1-9]|0[1-9][0-9]|[1-9][0-9]{2})([0]{2}[1-9]|0[1-9][0-9]|[1-9][0-9]{2})|([1-2][9]{12})"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_Date_DDN_AAAA-MM-YY-99">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="10"/>
+				<xs:maxLength value="10"/>
+				<xs:pattern value="(\d{4})\-(0[1-9]|1[0-2]|99)\-(0[1-9]|[12][0-9]|3[01]|99)"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_Date_XML_TimeStamp">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="19"/>
+				<xs:maxLength value="19"/>
+				<xs:pattern value="(19|20)\d\d-(0[1-9]|1[012])-([012]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_8-8">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="8"/>
+				<xs:maxLength value="8"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanum_Identifiant_Siret_Regex_14-14">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="14"/>
+				<xs:maxLength value="14"/>
+				<xs:pattern value="[0-9]*[1-9][0-9]*"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Alphanumeric_Date_DDN">
+		<xs:simpleContent>
+			<xs:restriction base="gipmds:Alphanumeric">
+				<xs:minLength value="10"/>
+				<xs:maxLength value="10"/>
+				<xs:pattern value="(18|19|20)[0-9]{2}\-(0[1-9]|1[0-2]|99)\-(0[1-9]|[1-2][0-9]|3[0-1]|99)"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>
