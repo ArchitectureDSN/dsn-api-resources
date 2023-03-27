@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gipmds:rapport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gipmds="http://www.gip-mds.fr/" type="117" profil="DSN" version="v02r02" xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v02r02.xsd">
+<gipmds:rapport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gipmds="http://www.gip-mds.fr/" type="117" profil="DSN" version="v02r03" xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v02r03.xsd">
     <envoi>
         <envoi_identification>
             <idflux>G1JEaetDIz7F6YF5GWPEMUY</idflux>
