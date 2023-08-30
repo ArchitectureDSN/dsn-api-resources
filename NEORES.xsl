@@ -1281,13 +1281,25 @@
 																<xsl:if test="RO_B009/RO_B009_R002/text()">
 																	<th>Numéro technique temporaire déclaré</th>
 																</xsl:if>
-																<th>Numéro d'inscription au répertoire de référence</th>
+																<!-- NETCRM 2023.1.0.0 GDA40053 Passage en conditionnées des balises Référence -->
+																<xsl:if test="RO_B009/RO_B009_R003/text()">
+																	<th>Numéro d'inscription au répertoire de référence</th>
+																</xsl:if>
 																<th>Nom de famille déclaré</th>
-																<th>Nom de famille de référence</th>
+																<!-- NETCRM 2023.1.0.0 GDA40053 Passage en conditionnées des balises Référence -->
+																<xsl:if test="RO_B009/RO_B009_R005/text()">
+																	<th>Nom de famille de référence</th>
+																</xsl:if>
 																<th>Prénom déclaré</th>
-																<th>Prénom de référence</th>
+																<!-- NETCRM 2023.1.0.0 GDA40053 Passage en conditionnées des balises Référence -->
+																<xsl:if test="RO_B009/RO_B009_R007/text()">
+																	<th>Prénom de référence</th>
+																</xsl:if>
 																<th>Date de naissance déclarée</th>
-																<th>Date de naissance de référence</th>
+																<!-- NETCRM 2023.1.0.0 GDA40053 Passage en conditionnées des balises Référence -->
+																<xsl:if test="RO_B009/RO_B009_R009/text()">
+																	<th>Date de naissance de référence</th>
+																</xsl:if>
 															</thead>
 															<xsl:for-each select="RO_B009">
 																<tr>
@@ -1309,13 +1321,13 @@
 																			<xsl:value-of select="RO_B009_R002" />
 																		</td>
 																	</xsl:if>
-																	<td>
-																		<xsl:call-template name="valoriser">
-																			<xsl:with-param name="value">
-																				<xsl:value-of select="RO_B009_R003" />
-																			</xsl:with-param>
-																		</xsl:call-template>
-																	</td>
+																	<!-- NETCRM 2023.1.0.0 GDA40053 Passage en conditionnées des balises Référence -->
+																	<xsl:if
+																		test="ancestor::RO_B004/RO_B009/RO_B009_R003/text()">
+																		<td>
+																			<xsl:value-of select="RO_B009_R003" />
+																		</td>
+																	</xsl:if>																	
 																	<td>
 																		<xsl:call-template name="valoriser">
 																			<xsl:with-param name="value">
@@ -1323,13 +1335,13 @@
 																			</xsl:with-param>
 																		</xsl:call-template>
 																	</td>
-																	<td>
-																		<xsl:call-template name="valoriser">
-																			<xsl:with-param name="value">
-																				<xsl:value-of select="RO_B009_R005" />
-																			</xsl:with-param>
-																		</xsl:call-template>
-																	</td>
+																	<!-- NETCRM 2023.1.0.0 GDA40053 Passage en conditionnées des balises Référence -->
+																	<xsl:if
+																		test="ancestor::RO_B004/RO_B009/RO_B009_R005/text()">
+																		<td>
+																			<xsl:value-of select="RO_B009_R005" />
+																		</td>
+																	</xsl:if>																	
 																	<td>
 																		<xsl:call-template name="valoriser">
 																			<xsl:with-param name="value">
@@ -1337,13 +1349,13 @@
 																			</xsl:with-param>
 																		</xsl:call-template>
 																	</td>
-																	<td>
-																		<xsl:call-template name="valoriser">
-																			<xsl:with-param name="value">
-																				<xsl:value-of select="RO_B009_R007" />
-																			</xsl:with-param>
-																		</xsl:call-template>
-																	</td>
+																	<!-- NETCRM 2023.1.0.0 GDA40053 Passage en conditionnées des balises Référence -->
+																	<xsl:if
+																		test="ancestor::RO_B004/RO_B009/RO_B009_R007/text()">
+																		<td>
+																			<xsl:value-of select="RO_B009_R007" />
+																		</td>
+																	</xsl:if>
 																	<td>
 																		<xsl:call-template name="valoriser">
 																			<xsl:with-param name="value">
@@ -1356,18 +1368,18 @@
 																			</xsl:with-param>
 																		</xsl:call-template>
 																	</td>
-																	<td>
-																		<xsl:call-template name="valoriser">
-																			<xsl:with-param name="value">
-																				<xsl:call-template
+																	<!-- NETCRM 2023.1.0.0 GDA40053 Passage en conditionnées des balises Référence -->
+																	<xsl:if
+																		test="ancestor::RO_B004/RO_B009/RO_B009_R007/text()">
+																		<td>
+																			<xsl:call-template
 																					name="formatDate">
 																					<xsl:with-param name="date">
 																						<xsl:value-of select="RO_B009_R009" />
 																					</xsl:with-param>
-																				</xsl:call-template>
-																			</xsl:with-param>
-																		</xsl:call-template>
-																	</td>
+																			</xsl:call-template>															
+																		</td>
+																	</xsl:if>	
 																</tr>
 															</xsl:for-each>
 														</table>
@@ -1414,7 +1426,7 @@
 														var texte = $('#' + this.id);
 														var position = this.id.match(/(\d+)/);
 				
-														if (getRows(texte) > 3) {
+														if (getRows(texte) > 2) {
 															if (this.id
 																	.indexOf("ControleBlocAction") != -1) {
 																var lienAfficher = document
