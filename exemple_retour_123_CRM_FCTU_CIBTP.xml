@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="dsn_bilans_v02r02.xsl"?>
+<gipmds:rapport xmlns:gipmds="http://www.gip-mds.fr/" identifiant="DSN" message="Bilan de traitement CIBTP TRAVAUX PUBLICS - CNETP" profil="profil-123" type="123" version="v02r02">
+  <envoi>
+    <envoi_identification>
+      <declarant>
+        <siret>11111111100001</siret>
+        <nom>Nom-Déclarant</nom>
+        <prenom>Prénom_Déclarant</prenom>
+      </declarant>
+      <idflux>F1EWJK3Ej8stJ0M1HCHQSJR</idflux>
+      <version_norme>P24V01</version_norme>
+      <point_de_depot>01</point_de_depot>
+      <type_envoi>01</type_envoi>
+      <essai_reel>02</essai_reel>
+      <emetteur_siret>22222222200002</emetteur_siret>
+      <raison_sociale>Mon entreprise du BTP</raison_sociale>
+      <nom_logiciel>NOMLOGICIEL</nom_logiciel>
+      <editeur_logiciel>NOMEDITEUR</editeur_logiciel>
+      <version_logiciel>v1.0</version_logiciel>
+      <code_conformite>CODE_1234</code_conformite>
+      <date_reception>2022-04-30</date_reception>
+      <heure_reception>21:40:59</heure_reception>
+    </envoi_identification>
+    <envoi_bilan>
+      <envoi_etat>ANO</envoi_etat>
+      <envoi_contenu>
+        <declarations>1</declarations>
+        <salaries>1</salaries>
+      </envoi_contenu>
+      <envoi_compteurs>
+        <envoi_categorie>declaration</envoi_categorie>
+        <nombre>1</nombre>
+      </envoi_compteurs>
+      <envoi_compteurs>
+        <envoi_categorie>nominative</envoi_categorie>
+        <nombre>1</nombre>
+      </envoi_compteurs>
+      <envoi_compteurs>
+        <envoi_categorie>total</envoi_categorie>
+        <nombre>1</nombre>
+      </envoi_compteurs>
+    </envoi_bilan>
+  </envoi>
+  <declaration>
+    <declaration_identification>
+      <rang>1</rang>
+      <nature>01</nature>
+      <type>01</type>
+      <fraction>11</fraction>
+      <ordre>0</ordre>
+      <mois>2022-02-01</mois>
+      <SIREN>567123122</SIREN>
+      <nic_siege>00011</nic_siege>
+      <nic_affectation>00011</nic_affectation>
+    </declaration_identification>
+    <declaration_bilan>
+      <etat>ANO</etat>
+      <declaration_contenu>
+        <salaries>1</salaries>
+        <contrats>1</contrats>
+      </declaration_contenu>
+      <declaration_compteurs>
+        <categorie>non-bloquant</categorie>
+        <nombre>1</nombre>
+      </declaration_compteurs>
+      <niveau_conformite>
+        <etat_conformite>OK</etat_conformite>
+      </niveau_conformite>
+      <mois>2022-02-01</mois>
+    </declaration_bilan>
+<declaration_anomalie>
+<description>
+<code>CCD0001</code>
+<categorie>non-bloquant</categorie>
+<message>Le volume d'activité (S21.G00.53.002 - type 01) doit être égal à la quotité de travail du contrat (S21.G00.40.013) plus les heures supplémentaires aléatoires (S21.G00.51.012 - type 017) moins le volume d'absences non rémunérées (S21.G00.53.002 - type 02).</message>
+<numero_ligne>12</numero_ligne>
+<nombre>1</nombre>
+</description>
+<valeurs>
+<rubrique_declenchante>
+<identifiant>S21.G00.53.002</identifiant>
+<libelle>Mesure</libelle>
+<valeur>151.67</valeur>
+</rubrique_declenchante>
+<rubrique_associee>
+<identifiant>S21.G00.40.013</identifiant>
+<libelle>Quotité de travail du contrat</libelle>
+<valeur>151.67</valeur>
+</rubrique_associee>
+<rubrique_associee>
+<identifiant>S21.G00.51.001</identifiant>
+<libelle>Date de début de période de paie</libelle>
+<valeur>2022-02-14</valeur>
+</rubrique_associee>
+<rubrique_associee>
+<identifiant>S21.G00.51.002</identifiant>
+<libelle>Date de fin de période de paie</libelle>
+<valeur>2022-02-28</valeur>
+</rubrique_associee>
+</valeurs>
+<environnement>
+<salarie>
+<NIR>1621175111034</NIR>
+<nom_famille>DUPONT</nom_famille>
+<nom_usage>DUPONT</nom_usage>
+<prenoms>Philippe</prenoms>
+<sexe>01</sexe>
+<date_naissance>12111962</date_naissance>
+<lieu_naissance>PARIS</lieu_naissance>
+<code_pays>FR</code_pays>
+<matricule></matricule>
+<rang>1</rang>
+</salarie>
+</environnement>
+</declaration_anomalie>
+</declaration>
+</gipmds:rapport>
