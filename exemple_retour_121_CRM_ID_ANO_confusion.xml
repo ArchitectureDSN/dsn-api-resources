@@ -1,0 +1,56 @@
+<gipmds:GIPMDS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gipmds="https://gipmds/1.0">
+  <gipmds:RO>
+    <gipmds:RO_R001>P24V01</gipmds:RO_R001>
+    <gipmds:RO_B000>
+      <gipmds:RO_B000_R001>F1gnCiUaP58NKSHZMt7yPel</gipmds:RO_B000_R001>
+      <gipmds:RO_B000_R002>1</gipmds:RO_B000_R002>
+      <gipmds:RO_B000_R003>33331123100034</gipmds:RO_B000_R003>
+      <gipmds:RO_B000_R004>88361817500011</gipmds:RO_B000_R004>
+      <gipmds:RO_B000_R005>11</gipmds:RO_B000_R005>
+      <gipmds:RO_B000_R006>2023-08-01</gipmds:RO_B000_R006>
+      <gipmds:RO_B000_R007>01</gipmds:RO_B000_R007>
+      <gipmds:RO_B000_R008>NOMLOGICIEL</gipmds:RO_B000_R008>
+      <gipmds:RO_B000_R009>NOMEDITEUR</gipmds:RO_B000_R009>
+      <gipmds:RO_B000_R010>NUMVERSION</gipmds:RO_B000_R010>
+      <gipmds:RO_B000_R011>01</gipmds:RO_B000_R011>
+      <gipmds:RO_B000_R012>25</gipmds:RO_B000_R012>
+      <gipmds:RO_B000_R013>02</gipmds:RO_B000_R013>
+      <gipmds:RO_B000_R014>P24V01</gipmds:RO_B000_R014>
+    </gipmds:RO_B000>
+    <gipmds:RO_B001>
+      <gipmds:RO_B001_R001>01</gipmds:RO_B001_R001>
+      <gipmds:RO_B002>
+        <gipmds:RO_B002_R001>615534</gipmds:RO_B002_R001>
+        <gipmds:RO_B002_R002>121</gipmds:RO_B002_R002>
+        <gipmds:RO_B002_R003>CRM_ID</gipmds:RO_B002_R003>
+        <gipmds:RO_B002_R004>01</gipmds:RO_B002_R004>
+        <gipmds:RO_B002_R005>Bloc 3 CNAV</gipmds:RO_B002_R005>
+        <gipmds:RO_B002_R006>18003503200010</gipmds:RO_B002_R006>
+        <gipmds:RO_B002_R007>18003503200010</gipmds:RO_B002_R007>
+        <gipmds:RO_B002_R008>2023-08-01</gipmds:RO_B002_R008>
+        <gipmds:RO_B002_R009>2023-08-01</gipmds:RO_B002_R009>
+        <gipmds:RO_B002_R011>2023-12-08T14:55:12</gipmds:RO_B002_R011>
+        <gipmds:RO_B003>
+          <gipmds:RO_B003_R001>Identification des personnes physiques par le SNGI</gipmds:RO_B003_R001>
+          <gipmds:RO_B003_R002>ANO</gipmds:RO_B003_R002>
+        </gipmds:RO_B003>
+        <gipmds:RO_B004>
+          <gipmds:RO_B004_R001>CNVANOIDE2E</gipmds:RO_B004_R001>
+          <gipmds:RO_B004_R002>Individu non identifié. Fort risque de confusion avec un individu dont la date de naissance est différente de 100 ans ou plus</gipmds:RO_B004_R002>
+          <gipmds:RO_B004_R003>02</gipmds:RO_B004_R003>
+          <gipmds:RO_B004_R009>1</gipmds:RO_B004_R009>
+          <gipmds:RO_B004_R011>L&apos;individu n&apos;a pas pu être identifié car le SNGI associe les données déclarées à un individu né 100 ans ou plus avant ou après la date de naissance déclarée.</gipmds:RO_B004_R011>
+          <gipmds:RO_B004_R013>Veuillez vérifier les données d&apos;identité enregistrées à votre niveau et corriger la date de naissance de l&apos;individu.</gipmds:RO_B004_R013>
+          <gipmds:RO_B004_R014>Vous pouvez vous référer à la base de connaissances du site Net Entreprises</gipmds:RO_B004_R014>
+          <gipmds:RO_B004_R015>L&apos;ouverture de droits à prestations sur la base des données DSN peut être rendue impossible tant que l&apos;individu ne peut être identifié.</gipmds:RO_B004_R015>
+          <gipmds:RO_B009>
+            <gipmds:RO_B009_R001>1761113117596</gipmds:RO_B009_R001>
+            <gipmds:RO_B009_R004>WOJTEK</gipmds:RO_B009_R004>
+            <gipmds:RO_B009_R006>MAHA</gipmds:RO_B009_R006>
+            <gipmds:RO_B009_R008>1976-11-12</gipmds:RO_B009_R008>
+          </gipmds:RO_B009>
+        </gipmds:RO_B004>
+      </gipmds:RO_B002>
+    </gipmds:RO_B001>
+  </gipmds:RO>
+</gipmds:GIPMDS>
