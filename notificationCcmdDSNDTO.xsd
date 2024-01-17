@@ -1,0 +1,288 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="notificationNCDDSNDTO" type="notificationNCDDSNDTO" />
+
+    <xs:complexType name="declarationDTO">
+        <xs:all>
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="dateDebut" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateFin" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="nombreIndividusDeclares" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codetypedeclaration" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libellecodetypedeclaration" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="numerofraction" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="nombrefractionattendue" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codedevise" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libellecodedevise" type="xs:string" minOccurs="1" maxOccurs="1" />
+
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="entrepriseDeclareeDTO">
+        <xs:all>
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="idInterneAdherent" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="idPublicEntreprise" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeTypeIdPublicEntreprise" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeFormeJuridique" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="categorieJuridique" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="raisonSociale" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="raisonSocialeAbregee" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="sigle" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indicateurSensibilite" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indicateurGdCompte" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="adresse" type="adresseDTO" minOccurs="0" maxOccurs="1" />
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="etablissementDeclareDTO">
+        <xs:all>
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="idInterneEtablissement" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="idPublicEtablissement" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeIdPublicEtablissement" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libelleEnseigne" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeNaf" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libelleConvCollectApplicable" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="dateCreation" type="xs:date" minOccurs="0" maxOccurs="1" />
+            <xs:element name="dateFermeture" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="indicateurSiegeSocial" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeSyndicatPro" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libelleSyndicatPro" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeConvCollectApplicable" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeConvCollectAppliquee" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="adresse" type="adresseDTO" minOccurs="0" maxOccurs="1" />
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="editiqueGPSDTO">
+        <xs:sequence>
+            <xs:element name="version" type="xs:string" minOccurs="1" />
+            <xs:element name="codeTypeOrganisme" type="xs:string" minOccurs="1" />
+            <xs:element name="numeroCSN" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="organismeDisparu" type="xs:boolean" minOccurs="0" />
+            <xs:element name="dateDisparition" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="numeroCSNGroupe" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="totalcotisations" type="TotalcotisationsDTO" minOccurs="1" maxOccurs="1" />
+            <xs:element name="numeroCSNInstitutionRepreneuse" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="nomOrganisme" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="destinataire" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne2" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne3" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne4" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne5" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne6" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="pays" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="adresseMail" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="siteInternet" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="numeroOrdreAdresse" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="typeAdresse" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="phrasePromoRPE" type="xs:string" minOccurs="0" maxOccurs="1" />
+
+
+            <xs:element name="detailsInstitutions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="detailInstitution" type="detailInstitutionDTO" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="notificationDTO">
+        <xs:all>
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="timestampCreation" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateDebutEffetNotification" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateFinEffetNotification" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="typeParticulariteMetaDeclaration" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateDebutEffetCCC" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateSuiviCommGrappe" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateFinEffetCCC" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="editiquesGPS" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="gps" type="editiqueGPSDTO" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="adresseDTO">
+        <xs:all>
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="numeroNatureLibelleVoie" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codePostal" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libelleLocalite" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libellecomplementLocalisationVoie" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libellecomplementLocalisationCstr" type="xs:string" minOccurs="0" maxOccurs="1" />
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="detailInstitutionDTO">
+        <xs:all>
+            <xs:element name="version" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="destinataire" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne2" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne3" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne4" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne5" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ligne6" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="pays" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="numeroTelephone1" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="totalcotisations" type="TotalcotisationsDTO" minOccurs="1" maxOccurs="1" />
+            <xs:element name="numeroFax1" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="adresseMail" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="siteInternet" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="numeroCSN" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="organismeId" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="numeroGps" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="numeroInstitution" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libelleInstitution" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="numeroOrdreAdresse" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="typeAdresse" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="numeroOrdreCoordonnee" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="categoriesProfessionnelles" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="categorieProfessionnelle" type="categorieProfessionnelleDTO" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="categorieProfessionnelleDTO">
+        <xs:all>
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleCategoriePro" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeCpnCatPro" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="idRCCatPro" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeCpiCatPro" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeCpiLibreCatPro" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeParticulariteGroupe" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateDebutEffetCatPro" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateFinEffetCatPro" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeMotifFin" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeCategorieReglementaire" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libelleCategorieReglementaire" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="garanties" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="garantie" type="garantieDTO" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="cotisationCalculeeUnitaireDTO">
+        <xs:sequence>
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleGarantie" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="idLienCatPro" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeTypeCotisation" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libelleTypeCotisation" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeNatureVentilation" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libelleNatureVentilation" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeAssiettePrincipale" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="montantAssiettePrincipale" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="tauxCotisationPrincipale" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indValiditeTauxCotisPrin" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indValiditeMontantAssPrin" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="signeMontantAssPrin" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeAssietteSecondaire" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="montantAssietteSecondaire" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="tauxCotisSecondaire" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indValiditeTauxCotisSec" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indValiditeMontantAssSec" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="signeMontantAssSecondaire" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="tauxAppele" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="montantsPeriodeCalcul" type="xs:double" minOccurs="1" maxOccurs="1" />
+            <xs:element name="signeMontantsPeriodeCalcul" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="montantsPeriodeNotifiee" type="xs:double" minOccurs="1" maxOccurs="1" />
+            <xs:element name="signeMontantsPeriodeNotifiee" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="garantieDTO">
+        <xs:sequence>
+            <xs:element name="version" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="idRCGarantie" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libelleGarantie" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateDebutEffetGarantie" type="xs:date" minOccurs="0" maxOccurs="1" />
+            <xs:element name="dateFinEffetGarantie" type="xs:date" minOccurs="0" maxOccurs="1" />
+            <xs:element name="modeCalculGarantie" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeNatureGarantie" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeObligatoireSupplGarantie" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codePRC" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeTermeAppel" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeTypeCalculGarantie" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indicateurAttrPoint" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indicateurSommeIsole" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="indicateurSalaireFictifGarantie" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeAssietteProportionnel" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeUniteForfaitaire" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeDevise" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codePlafond" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codePeriodiciteForfaitaire" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="dateAppelForfaitaire" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="tauxCotisationProportionnel" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="nombreValeurForfaitaire" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="tauxOuMontantAppele" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="tauxPartSalariale" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="tauxPartPatronale" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="nombrePointForfaitaire" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="numeroOrdreRegroupGaranties" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libelleRegroupGaranties" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="numeroOrdreGarantieRegroupee" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libelleCourtAssiette" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libelleTauxOuMontantContractuel" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="libelleTauxOuMontantAppele" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="valeurPartPatronale" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="valeurPartSalariale" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codeRegime" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="numeroInstitution" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="totalcotisations" type="TotalcotisationsDTO" minOccurs="1" maxOccurs="1" />
+            <xs:element name="cotisationsCalculeeUnitaire" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="cotisationCalculeeUnitaire" type="cotisationCalculeeUnitaireDTO" minOccurs="0"
+                            maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="notificationNCDDSNDTO">
+        <xs:sequence>
+            <xs:element name="declaration" type="declarationDTO" minOccurs="1" />
+            <xs:element name="entrepriseRNE" type="entrepriseDeclareeDTO" minOccurs="1" />
+            <xs:element name="etablissementRNE" type="etablissementDeclareDTO" minOccurs="1" />
+            <xs:element name="notification" type="notificationDTO" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TotalcotisationsDTO">
+        <xs:all>
+            <xs:element name="montantsPeriodeCalcul" type="xs:double" minOccurs="1" maxOccurs="1" />
+            <xs:element name="signeMontantsPeriodeCalcul" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="montantsPeriodeNotifiee" type="xs:double" minOccurs="1" maxOccurs="1" />
+            <xs:element name="signeMontantsPeriodeNotifiee" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeTypeCotisation" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libelleTypeCotisation" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="codeNatureVentilation" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="libelleNatureVentilation" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="tauxAppele" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="montantAssiettePrincipale" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="montantAssietteSecondaire" type="xs:double" minOccurs="0" maxOccurs="1" />
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>

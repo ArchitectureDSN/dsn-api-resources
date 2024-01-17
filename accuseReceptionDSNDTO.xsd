@@ -2,127 +2,125 @@
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 
-  <xs:element name="accuseReceptionDSNDTO" type="accuseReceptionDSNDTO" />
+    <xs:element name="accuseReceptionDSNDTO" type="accuseReceptionDSNDTO" />
 
-  <xs:complexType name="etablissementDeclareDTO">
-    <xs:sequence>
-      <xs:element name="codeNAF" type="xs:string" minOccurs="0"/>
-      <xs:element name="codePostal" type="xs:string" minOccurs="0"/>
-      <xs:element name="codeTypeRemunerationExpatrie" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleComplementLocalisation" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleComplementLocalisationVoie" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleLocalite" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleNic" type="xs:string" minOccurs="0"/>
-      <xs:element name="numeroNatureLibelleVoie" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleEnseigneEtablissement" type="xs:string" minOccurs="0"/>
-      <xs:element name="version" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="etablissementDeclareDTO">
+        <xs:sequence>
+            <xs:element name="codeNAF" type="xs:string" minOccurs="0" />
+            <xs:element name="codePostal" type="xs:string" minOccurs="0" />
+            <xs:element name="codeTypeRemunerationExpatrie" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleComplementLocalisation" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleComplementLocalisationVoie" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleLocalite" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleNic" type="xs:string" minOccurs="0" />
+            <xs:element name="numeroNatureLibelleVoie" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleEnseigneEtablissement" type="xs:string" minOccurs="0" />
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="creDsnDTO">
-    <xs:sequence>
-      <xs:element name="mtTotalAgirc" type="xs:double" minOccurs="0"/>
-      <xs:element name="mtTotalArrco" type="xs:double" minOccurs="0"/>
-      <xs:element name="nombreIndividusDeclares" type="xs:int" minOccurs="0"/>
-      <xs:element name="version" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="creDsnDTO">
+        <xs:sequence>
+            <xs:element name="mtTotalAgirc" type="xs:double" minOccurs="0" />
+            <xs:element name="mtTotalArrco" type="xs:double" minOccurs="0" />
+            <xs:element name="mtTotalRF" type="xs:double" minOccurs="0" />
+            <xs:element name="mtAllegAA" type="xs:double" minOccurs="0" />
+            <xs:element name="dateDemarrageRF" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateDemarrageAG" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="indAssocCotDcla" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+            <xs:element name="indAllgGenEcart" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+            <xs:element name="anoRegulAnt" type="xs:boolean" minOccurs="1" maxOccurs="1" default="false" />
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="mtExoLODEOM" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="mtExoAideDom" type="xs:double" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="contratDTO">
-    <xs:sequence>
-      <xs:element name="codeStatutCategoriel" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleStatutCategoriel" type="xs:string" minOccurs="0"/>
-      <xs:element name="nombreContratTravail" type="xs:int" minOccurs="0"/>
-      <xs:element name="version" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="contratDTO">
+        <xs:sequence>
+            <xs:element name="codeStatutCategoriel" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleStatutCategoriel" type="xs:string" minOccurs="0" />
+            <xs:element name="nombreContratTravail" type="xs:int" minOccurs="0" />
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="editiqueGPSDTO">
-    <xs:sequence>
-      <xs:element name="adresseMail" type="xs:string" minOccurs="0"/>
-      <xs:element name="adresseTelephonique" type="xs:string" minOccurs="0"/>
-      <xs:element name="codeGPS" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleGPS" type="xs:string" minOccurs="0"/>
-      <xs:element name="siteInternet" type="xs:string" minOccurs="0"/>
-      <xs:element name="version" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="declarationDTO">
+        <xs:sequence>
+            <xs:element name="dateDebut" type="xs:date" minOccurs="0" />
+            <xs:element name="dateFin" type="xs:date" minOccurs="0" />
+            <xs:element name="nombreIndividusDeclares" type="xs:int" minOccurs="0" />
+            <xs:element name="codeTypeDeclaration" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleCodeTypeDeclaration" type="xs:string" minOccurs="0" />
+            <xs:element name="numeroFraction" type="xs:int" minOccurs="0" />
+            <xs:element name="nombreFractionAttendue" type="xs:int" minOccurs="0" />
+            <xs:element name="codeDevise" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleCodeDevise" type="xs:string" minOccurs="0" />
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+            <xs:element name="dateEffetStatutCourant" type="xs:date" minOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="declarationDTO">
-    <xs:sequence>
-      <xs:element name="dateDebut" type="xs:date" minOccurs="0"/>
-      <xs:element name="dateFin" type="xs:date" minOccurs="0"/>
-      <xs:element name="nombreIndividusDeclares" type="xs:int" minOccurs="0"/>
-      <xs:element name="codeTypeDeclaration" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleCodeTypeDeclaration" type="xs:string" minOccurs="0"/>
-      <xs:element name="numeroFraction" type="xs:int" minOccurs="0"/>
-      <xs:element name="nombreFractionAttendue" type="xs:int" minOccurs="0"/>
-      <xs:element name="codeDevise" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleCodeDevise" type="xs:string" minOccurs="0"/>
-      <xs:element name="version" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="entrepriseDeclareeDTO">
+        <xs:sequence>
+            <xs:element name="codeAPE" type="xs:string" minOccurs="0" />
+            <xs:element name="codePostal" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleComplementLocalisation" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleComplementLocalisationVoie" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleLocalite" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleNic" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleSiren" type="xs:string" minOccurs="0" />
+            <xs:element name="nombreEffectifMoyen" type="xs:int" minOccurs="0" />
+            <xs:element name="numeroNatureLibelleVoie" type="xs:string" minOccurs="0" />
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="entrepriseDeclareeDTO">
-    <xs:sequence>
-      <xs:element name="codeAPE" type="xs:string" minOccurs="0"/>
-      <xs:element name="codePostal" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleComplementLocalisation" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleComplementLocalisationVoie" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleLocalite" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleNic" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleSiren" type="xs:string" minOccurs="0"/>
-      <xs:element name="nombreEffectifMoyen" type="xs:int" minOccurs="0"/>
-      <xs:element name="numeroNatureLibelleVoie" type="xs:string" minOccurs="0"/>
-      <xs:element name="version" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="paiementDeclareDTO">
+        <xs:sequence>
+            <xs:element name="dateDebutPeriodeRattachement" type="xs:date" minOccurs="0" />
+            <xs:element name="dateFinPeriodeRattachement" type="xs:date" minOccurs="0" />
+            <xs:element name="datePaiement" type="xs:date" minOccurs="0" />
+            <xs:element name="idOrganismeProtectionSociale" type="xs:string" minOccurs="0" />
+            <xs:element name="identifiantEntiteAffectationOperation" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleBIC" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleIBAN" type="xs:string" minOccurs="0" />
+            <xs:element name="modePaiement" type="xs:string" minOccurs="0" />
+            <xs:element name="montantVersement" type="xs:double" minOccurs="0" />
+            <xs:element name="siretPayeur" type="xs:string" minOccurs="0" />
+            <xs:element name="libelleGPS" type="xs:string" minOccurs="0" />
+            <xs:element name="version" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="paiementDeclareDTO">
-    <xs:sequence>
-      <xs:element name="dateDebutPeriodeRattachement" type="xs:date" minOccurs="0"/>
-      <xs:element name="dateFinPeriodeRattachement" type="xs:date" minOccurs="0"/>
-      <xs:element name="datePaiement" type="xs:date" minOccurs="0"/>
-      <xs:element name="idOrganismeProtectionSociale" type="xs:string" minOccurs="0"/>
-      <xs:element name="identifiantEntiteAffectationOperation" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleBIC" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleIBAN" type="xs:string" minOccurs="0"/>
-      <xs:element name="modePaiement" type="xs:string" minOccurs="0"/>
-      <xs:element name="montantVersement" type="xs:double" minOccurs="0"/>
-      <xs:element name="siretPayeur" type="xs:string" minOccurs="0"/>
-      <xs:element name="libelleGPS" type="xs:string" minOccurs="0"/>
-      <xs:element name="version" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="libelleComplementaireDTO">
+        <xs:sequence>
+            <xs:element name="libelleComplement" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="accuseReceptionDSNDTO">
-    <xs:sequence>
-      <xs:element name="declaration" type="declarationDTO" minOccurs="0"/>
-      <xs:element name="entrepriseDeclaree" type="entrepriseDeclareeDTO" minOccurs="0"/>
-      <xs:element name="etablissementDeclare" type="etablissementDeclareDTO" minOccurs="0"/>
-      <xs:element name="creDsn" type="creDsnDTO" minOccurs="0"/>
-      <xs:element name="paiementsDeclare" minOccurs="0">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="paiementDeclare" type="paiementDeclareDTO" minOccurs="0" maxOccurs="unbounded"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="contrats" minOccurs="0">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="contrat" type="contratDTO" minOccurs="0" maxOccurs="unbounded"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="editiquesGPS" minOccurs="0">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="editiqueGPS" type="editiqueGPSDTO" minOccurs="0" maxOccurs="unbounded"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="accuseReceptionDSNDTO">
+        <xs:sequence>
+            <xs:element name="declaration" type="declarationDTO" minOccurs="0" />
+            <xs:element name="entrepriseDeclaree" type="entrepriseDeclareeDTO" minOccurs="0" />
+            <xs:element name="etablissementDeclare" type="etablissementDeclareDTO" minOccurs="0" />
+            <xs:element name="creDsn" type="creDsnDTO" minOccurs="0" />
+            <xs:element name="paiementsDeclare" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="paiementDeclare" type="paiementDeclareDTO" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="contrats" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contrat" type="contratDTO" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="libelleComplementaire" type="libelleComplementaireDTO" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>
 
