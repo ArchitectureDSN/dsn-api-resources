@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+    <RO>
+        <RO_R001>P24V01</RO_R001>
+        <RO_B000>
+            <RO_B000_R001>F1zdjimlO3TQYIC5aNEs5Sd</RO_B000_R001>
+            <RO_B000_R002>19</RO_B000_R002>
+            <RO_B000_R003>43399935600028</RO_B000_R003>
+            <RO_B000_R004>30438137900607</RO_B000_R004>
+            <RO_B000_R005>22</RO_B000_R005>
+            <RO_B000_R006>2023-12-01</RO_B000_R006>
+            <RO_B000_R007>01</RO_B000_R007>
+            <RO_B000_R008>Logiciel maison</RO_B000_R008>
+            <RO_B000_R009>Logiciel maison</RO_B000_R009>
+            <RO_B000_R010>34.0.3.0</RO_B000_R010>
+            <RO_B000_R011>02</RO_B000_R011>
+            <RO_B000_R012>8245</RO_B000_R012>
+            <RO_B000_R013>01</RO_B000_R013>
+            <RO_B000_R014>P23V01</RO_B000_R014>
+        </RO_B000>
+        <RO_B001>
+            <RO_B001_R001>01</RO_B001_R001>
+            <RO_B002>
+                <RO_B002_R001>886087</RO_B002_R001>
+                <RO_B002_R002>119</RO_B002_R002>
+                <RO_B002_R003>Accompagnement à la résolution des anomalies</RO_B002_R003>
+                <RO_B002_R004>01</RO_B002_R004>
+                <RO_B002_R005>URSSAF Caisse Nationale</RO_B002_R005>
+                <RO_B002_R006>18003501600054</RO_B002_R006>
+                <RO_B002_R007>18003501600054</RO_B002_R007>
+                <RO_B002_R008>2023-12-01</RO_B002_R008>
+                <RO_B002_R009>2023-12-31</RO_B002_R009>
+                <RO_B002_R010>2024-01-08T18:34:38</RO_B002_R010>
+                <RO_B002_R011>2024-01-08T21:15:14</RO_B002_R011>
+                <RO_B003>
+                    <RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
+                    <RO_B003_R002>OK</RO_B003_R002>
+                </RO_B003>
+            </RO_B002>
+        </RO_B001>
+    </RO>
+</GIPMDS>

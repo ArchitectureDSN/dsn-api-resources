@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+    <RO>
+        <RO_R001>P24V01</RO_R001>
+        <RO_B000>
+            <RO_B000_R001>F1owqgaAjmJM4qEtlbXgknR</RO_B000_R001>
+            <RO_B000_R002>1</RO_B000_R002>
+            <RO_B000_R003>30247464800888</RO_B000_R003>
+            <RO_B000_R004>84088347400016</RO_B000_R004>
+            <RO_B000_R005>11</RO_B000_R005>
+            <RO_B000_R006>2024-01-01</RO_B000_R006>
+            <RO_B000_R007>01</RO_B000_R007>
+            <RO_B000_R008>SILAEXPERT</RO_B000_R008>
+            <RO_B000_R009>SILAE</RO_B000_R009>
+            <RO_B000_R010>101290002</RO_B000_R010>
+            <RO_B000_R011>03</RO_B000_R011>
+            <RO_B000_R012>4</RO_B000_R012>
+            <RO_B000_R013>02</RO_B000_R013>
+            <RO_B000_R014>P23V01</RO_B000_R014>
+        </RO_B000>
+        <RO_B001>
+            <RO_B001_R001>01</RO_B001_R001>
+            <RO_B002>
+                <RO_B002_R001>63808</RO_B002_R001>
+                <RO_B002_R002>119</RO_B002_R002>
+                <RO_B002_R003>Accompagnement à la résolution des anomalies</RO_B002_R003>
+                <RO_B002_R004>01</RO_B002_R004>
+                <RO_B002_R005>URSSAF Caisse Nationale</RO_B002_R005>
+                <RO_B002_R006>18003501600054</RO_B002_R006>
+                <RO_B002_R007>18003501600054</RO_B002_R007>
+                <RO_B002_R008>2024-01-01</RO_B002_R008>
+                <RO_B002_R009>2024-01-31</RO_B002_R009>
+                <RO_B002_R010>2023-12-28T15:11:18</RO_B002_R010>
+                <RO_B002_R011>2023-12-28T17:17:41</RO_B002_R011>
+                <RO_B003>
+                    <RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
+                    <RO_B003_R002>ANO</RO_B003_R002>
+                </RO_B003>
+                <RO_B004>
+                    <RO_B004_R001>UR_ANO_ASS_DIPA01a</RO_B004_R001>
+                    <RO_B004_R002>Absence des assiettes plafonnées et déplafonnées salarié</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>04</RO_B004_R004>
+                    <RO_B004_R005>12</RO_B004_R005>
+                    <RO_B004_R006>04</RO_B004_R006>
+                    <RO_B004_R007>03</RO_B004_R007>
+                    <RO_B004_R008>01</RO_B004_R008>
+                    <RO_B004_R009>1</RO_B004_R009>
+                    <RO_B004_R010>1</RO_B004_R010>
+                    <RO_B004_R011>Ce contrôle détecte l'absence de la base plafonnée et de la base déplafonnée - S21.G00.78.001 pour les codes 02 et 03 - pour les salariés relevant du régime de base Risque vieillesse (CNAV) avec une rémunération déclarée au niveau du bloc - S21.G00.51.</RO_B004_R011>
+                    <RO_B004_R012>Article L241-3 CSS (cotisation Assurance vieillesse plafonnée)
+L 242-1 CSS (assiette)</RO_B004_R012>
+                    <RO_B004_R013>Si le salarié relève du code Régime général CNAV (valeur 200 de la rubrique Code régime de base risque vieillesse (S21.G00.40.020), effectuez un bloc de régularisation dans votre prochaine DSN en saisissant au bloc Base assujettie (S21.G00.78) le montant de l'assiette plafonnée et de l'assiette déplafonnée.
+Si le salarié ne relève pas du code régime de base Risque vieillesse Régime général CNAV (valeur 200), modifiez cette codification au bloc Contrat (S21.G00.40.020) et effectuez un bloc Changements Contrat (S21.G00.41) N'effectuez pas de modification si l'anomalie concerne un salarié en arrêt de travail.</RO_B004_R013>
+                    <RO_B004_R014>[Pour plus d’information, consultez le guide Urssaf] (https://www.urssaf.fr/portail/files/live/sites/urssaf/files/documents/DSN-Guide-declaration-regularisation-cotisations-sociales-Urssaf.pdf)</RO_B004_R014>
+                    <RO_B004_R015>Cette anomalie est susceptible d'affecter le calcul des droits à la retraite et le montant de la pension du salarié.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>Les assiettes plafonnées et déplafonnées (S21.G00.78.001 codes 02 - Assiette brute plafonnée et 03 - Assiette brute déplafonnée) pour Santiago Danny (80000053) relevant du régime général (CNAV) sont absentes de votre déclaration alors qu'une rémunération a été déclarée sur le code Rémunération brute non plafonnée (valeur 001) de la rubrique Type (S21.G00.51.011).</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>1780675932379</RO_B006_R001>
+                            <RO_B006_R003>Santiago</RO_B006_R003>
+                            <RO_B006_R004>Danny</RO_B006_R004>
+                            <RO_B006_R005>80000053</RO_B006_R005>
+                            <RO_B006_R006>2007-01-01</RO_B006_R006>
+                            <RO_B006_R007>00001</RO_B006_R007>
+                            <RO_B006_R008>1978-06-15</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.020</RO_B007_R001>
+                            <RO_B007_R002>200</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.51.013</RO_B007_R001>
+                            <RO_B007_R002>9221.95</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.78.001</RO_B007_R001>
+                            <RO_B007_R003>02</RO_B007_R003>
+                            <RO_B007_R009>04</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.78.001</RO_B007_R001>
+                            <RO_B007_R003>03</RO_B007_R003>
+                            <RO_B007_R009>04</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.007</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+                <RO_B004>
+                    <RO_B004_R001>UR_ANO_ASS_CAM_DIDAPA15a</RO_B004_R001>
+                    <RO_B004_R002>Incohérence entre les données agrégées et individuelles des assiettes pour le complément cotisation assurance maladie</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>02</RO_B004_R004>
+                    <RO_B004_R005>17</RO_B004_R005>
+                    <RO_B004_R006>06</RO_B004_R006>
+                    <RO_B004_R011>Ce contrôle vérifie la cohérence entre la somme des assiettes des CTP Complément maladie 635 et 636 et des CTP avec maladie à taux plein déclarées en bloc Cotisation agrégée – S21.G00.23 et la somme des assiettes positives des individus ayant un code de cotisation individuelle 907 - Complément de cotisation Assurance Maladie en bloc Cotisation individuelle – S21.G00.81.</RO_B004_R011>
+                    <RO_B004_R012>Article L241-2-1 CSS (cotisation maladie, réduction de cotisation)</RO_B004_R012>
+                    <RO_B004_R013>Si la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 est exacte, effectuez un bloc de régularisation dans votre prochaine DSN afin que les montants d'assiette individuelles (rubrique Cotisation individuelle S21.G00.81.003 - Montant d'assiette) associés à la valeur 907 - Complément de cotisation Assurance Maladie en rubrique S21.G00.81.001 - Code de cotisation soit conforme à la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23.
+
+Si la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 n'est pas exacte, effectuez un bloc de régularisation dans votre prochaine DSN pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 (CTP 635 et CTP 636). Versez, le cas échéant, auprès de votre Urssaf le complément de cotisations généré.
+
+Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.</RO_B004_R013>
+                    <RO_B004_R014>[Pour plus d’information, consultez le guide Urssaf](https://www.urssaf.fr/portail/files/live/sites/urssaf/files/documents/DSN-Guide-declaration-regularisation-cotisations-sociales-Urssaf.pdf)</RO_B004_R014>
+                    <RO_B004_R015>Votre déclaration est prise en compte et cela entraîne, pour des données agrégées erronées, un débit de cotisations à régler.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>Une incohérence est constatée entre les montants d'assiette individuelle pour le code S21.G00.81.001 = 907 - Complément de cotisation Assurance Maladie, et la somme des montants d'assiette en données agrégées (S21.G00.23.004) pour le complément cotisation maladie (CTP 635 et/ou 636) et les codes de cotisations avec maladie à taux plein.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+                            <RO_B007_R002>023,150,285,330,331,404,585,592,635,636,712,714,715,804,823,850,852,854,861,863,864,866,886,892,894</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.002</RO_B007_R001>
+                            <RO_B007_R002>920 - Autre assiette</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.004</RO_B007_R001>
+                            <RO_B007_R002>1214056.00</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>06</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+                            <RO_B007_R002>907</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.003</RO_B007_R001>
+                            <RO_B007_R002>0</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>06</RO_B007_R009>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+            </RO_B002>
+        </RO_B001>
+    </RO>
+</GIPMDS>

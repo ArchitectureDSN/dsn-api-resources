@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+    <RO>
+        <RO_R001>P24V01</RO_R001>
+        <RO_B000>
+            <RO_B000_R001>F1pMPByX9rE56BJNHfdUs6z</RO_B000_R001>
+            <RO_B000_R002>1</RO_B000_R002>
+            <RO_B000_R003>30247464800888</RO_B000_R003>
+            <RO_B000_R004>20005375900011</RO_B000_R004>
+            <RO_B000_R005>11</RO_B000_R005>
+            <RO_B000_R006>2024-01-01</RO_B000_R006>
+            <RO_B000_R007>01</RO_B000_R007>
+            <RO_B000_R008>SILAEXPERT</RO_B000_R008>
+            <RO_B000_R009>SILAE</RO_B000_R009>
+            <RO_B000_R010>101290002</RO_B000_R010>
+            <RO_B000_R011>01</RO_B000_R011>
+            <RO_B000_R012>1</RO_B000_R012>
+            <RO_B000_R013>02</RO_B000_R013>
+            <RO_B000_R014>P23V01</RO_B000_R014>
+        </RO_B000>
+        <RO_B001>
+            <RO_B001_R001>01</RO_B001_R001>
+            <RO_B002>
+                <RO_B002_R001>886007</RO_B002_R001>
+                <RO_B002_R002>120</RO_B002_R002>
+                <RO_B002_R003>Bilan mensuel d’accompagnement à la résolution des anomalies</RO_B002_R003>
+                <RO_B002_R004>01</RO_B002_R004>
+                <RO_B002_R005>URSSAF Caisse Nationale</RO_B002_R005>
+                <RO_B002_R006>18003501600054</RO_B002_R006>
+                <RO_B002_R007>18003501600054</RO_B002_R007>
+                <RO_B002_R008>2024-01-01</RO_B002_R008>
+                <RO_B002_R009>2024-01-31</RO_B002_R009>
+                <RO_B002_R010>2024-01-05T12:33:26</RO_B002_R010>
+                <RO_B002_R011>2024-01-05T12:45:05</RO_B002_R011>
+                <RO_B003>
+                    <RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
+                    <RO_B003_R002>OK</RO_B003_R002>
+                </RO_B003>
+            </RO_B002>
+        </RO_B001>
+    </RO>
+</GIPMDS>
