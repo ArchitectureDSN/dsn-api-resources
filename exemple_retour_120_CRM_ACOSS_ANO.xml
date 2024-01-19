@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+    <RO>
+        <RO_R001>P24V01</RO_R001>
+        <RO_B000>
+            <RO_B000_R001>F1eEneO4q7nD5EFJQiU6KZC</RO_B000_R001>
+            <RO_B000_R002>1</RO_B000_R002>
+            <RO_B000_R003>30247464800888</RO_B000_R003>
+            <RO_B000_R004>43279609200030</RO_B000_R004>
+            <RO_B000_R005>11</RO_B000_R005>
+            <RO_B000_R006>2024-01-01</RO_B000_R006>
+            <RO_B000_R007>01</RO_B000_R007>
+            <RO_B000_R008>Logiciel maison</RO_B000_R008>
+            <RO_B000_R009>Logiciel maison</RO_B000_R009>
+            <RO_B000_R010>2022.23</RO_B000_R010>
+            <RO_B000_R011>01</RO_B000_R011>
+            <RO_B000_R012>1</RO_B000_R012>
+            <RO_B000_R013>02</RO_B000_R013>
+            <RO_B000_R014>P24V01</RO_B000_R014>
+        </RO_B000>
+        <RO_B001>
+            <RO_B001_R001>01</RO_B001_R001>
+            <RO_B002>
+                <RO_B002_R001>886806</RO_B002_R001>
+                <RO_B002_R002>120</RO_B002_R002>
+                <RO_B002_R003>Bilan mensuel d’accompagnement à la résolution des anomalies</RO_B002_R003>
+                <RO_B002_R004>01</RO_B002_R004>
+                <RO_B002_R005>URSSAF Caisse Nationale</RO_B002_R005>
+                <RO_B002_R006>18003501600054</RO_B002_R006>
+                <RO_B002_R007>18003501600054</RO_B002_R007>
+                <RO_B002_R008>2024-01-01</RO_B002_R008>
+                <RO_B002_R009>2024-01-31</RO_B002_R009>
+                <RO_B002_R010>2024-01-17T23:00:59</RO_B002_R010>
+                <RO_B002_R011>2024-01-18T09:30:23</RO_B002_R011>
+                <RO_B003>
+                    <RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
+                    <RO_B003_R002>ANO</RO_B003_R002>
+                </RO_B003>
+                <RO_B004>
+                    <RO_B004_R001>UR_ANO_CTP_DACFP05</RO_B004_R001>
+                    <RO_B004_R002>Présence incohérente de plusieurs CTP CFP</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>02</RO_B004_R004>
+                    <RO_B004_R005>12</RO_B004_R005>
+                    <RO_B004_R006>05</RO_B004_R006>
+                    <RO_B004_R011>Une anomalie est détectée si la Contribution à la  formation professionnelle (CFP) est déclarée simultanément via les CTP 959 et 971 (S21.G00.23.001).</RO_B004_R011>
+                    <RO_B004_R012>article L130-1 du CSS article L133-5-3-1 CSS</RO_B004_R012>
+                    <RO_B004_R013>Vérifiez, en fonction de l'effectif de votre entreprise, que la CFP est déclarée avec le CTP adéquat (S21.G00.23.001) à savoir CTP 959 si votre entreprise emploie moins de 11 salariés ou CTP 971 si votre entreprise emploie 11 salariés et plus.    Pour corriger les données en anomalie effectuez avant l'exigibilité, une DSN annule et remplace. Après l'exigibilité, effectuez un bloc de régularisation pour corriger les données en anomalie.  En cas de difficulté, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne plus reproduire cette anomalie.</RO_B004_R013>
+                    <RO_B004_R014>https://www.urssaf.fr/portail/home/espaces-dedies/contributions-de-formation-profe/la-contribution-a-la-formation-p.html  https://net-entreprises.custhelp.com/app/answers/detail_dsn/a_id/2503/kw/Modalit%C3%A9s%20d%C3%A9claratives%20de%20la%20contribution%20%C3%A0%20la%20formation%20professionnelle  https://www.urssaf.fr/portail/files/live/sites/urssaf/files/documents/DSN-Guide-declaration-regularisation-cotisations-sociales-Urssaf.pdf  https://www.net-entreprises.fr/media/documentation/dsn-cahier-technique-2023.1.pdf</RO_B004_R014>
+                    <RO_B004_R015>L'anomalie est susceptible d'affecter le calcul de vos cotisations sociales et peut constituer un manquement à vos obligations déclaratives.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>La présence des CTP CFP 959 et 971 est interdite sur la même déclaration, or vous avez déclaré la CFP avec le CTP 971 pour un montant d'assiette de 32900.00 € et avec le CTP 959 pour un montant d'assiette de ${montant} €</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-30</RO_B005_R003>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+                            <RO_B007_R002>959 et 971</RO_B007_R002>
+                            <RO_B007_R009>05</RO_B007_R009>
+                            <RO_B010>
+<RO_B010_R001>959 ou 971</RO_B010_R001>
+                            </RO_B010>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+            </RO_B002>
+        </RO_B001>
+    </RO>
+</GIPMDS>
