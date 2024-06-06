@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+	<RO>
+		<RO_R001>P24V01</RO_R001>
+		<RO_B000>
+			<RO_B000_R001>G1PRo3zK.cXoLPBZ3PDGUGE</RO_B000_R001>
+			<RO_B000_R002>1</RO_B000_R002>
+			<RO_B000_R003>12345678912345</RO_B000_R003>
+			<RO_B000_R004>12345678912345</RO_B000_R004>
+			<RO_B000_R005>19</RO_B000_R005>
+			<RO_B000_R006>2023-06-01</RO_B000_R006>
+			<RO_B000_R007>02</RO_B000_R007>
+			<RO_B000_R008>NOMLOGICIEL</RO_B000_R008>
+			<RO_B000_R009>NOMEDITEUR</RO_B000_R009>
+			<RO_B000_R010>NUMVERSION</RO_B000_R010>
+			<RO_B000_R011>01</RO_B000_R011>
+			<RO_B000_R012>0</RO_B000_R012>
+			<RO_B000_R013>01</RO_B000_R013>
+			<RO_B000_R014>P24V01</RO_B000_R014>
+		</RO_B000>
+		<RO_B001>
+			<RO_B001_R001>01</RO_B001_R001>
+			<RO_B002>
+				<RO_B002_R001>G1PRo3zK.cXoLPBZ3PDGUGE_000001_3305764_2024-02-14T15:31:25</RO_B002_R001>
+				<RO_B002_R002>130</RO_B002_R002>
+				<RO_B002_R003>CRM bilan pour accompagner la résolution des anomalies</RO_B002_R003>
+				<RO_B002_R004>01</RO_B002_R004>
+				<RO_B002_R005>MSA DU NORD PAS DE CALAIS</RO_B002_R005>
+				<RO_B002_R006>12345678912345</RO_B002_R006>
+				<RO_B002_R007>12345678912345</RO_B002_R007>
+				<RO_B002_R008>2023-06-01</RO_B002_R008>
+				<RO_B002_R009>2023-06-30</RO_B002_R009>
+				<RO_B002_R011>2024-02-14T15:31:25</RO_B002_R011>
+				<RO_B003>
+					<RO_B003_R001>Recouvrement des cotisations - régime agricole</RO_B003_R001>
+					<RO_B003_R002>ANO</RO_B003_R002>
+				</RO_B003>
+				<RO_B004>
+					<RO_B004_R001>CS_CA_0001</RO_B004_R001>
+					<RO_B004_R002>Absence d'exonération pour un contrat d'apprentissage (loi de 1979)</RO_B004_R002>
+					<RO_B004_R003>01</RO_B004_R003>
+					<RO_B004_R004>05</RO_B004_R004>
+					<RO_B004_R005>12</RO_B004_R005>
+					<RO_B004_R006>04</RO_B004_R006>
+					<RO_B004_R011>Dans le cas où la valeur « 64 - Contrat d'apprentissage entreprises artisanales ou de moins de 11 salariés (loi du 3 janvier 1979) » est déclarée au niveau de la rubrique « Dispositif de politique publique et conventionnel - S21.G00.40.008 » d’un bloc « Contrat (contrat de travail, convention, mandat) - S21.G00.40 » déclaré pour l’individu, ce contrôle vérifie que la valeur « 001 - Exonération de cotisations au titre de l'emploi d'un apprenti (loi de 1979) » est déclarée au niveau de la rubrique  « Code de cotisation - S21.G00.81.001 » et qu’un montant d’assiette (S21.G00.81.003) différent de zéro est déclaré sur le même bloc « Cotisation individuelle - S21.G00.81 ».</RO_B004_R011>
+					<RO_B004_R012>Référence réglementaire</RO_B004_R012>
+					<RO_B004_R013>La régularisation attendue dans la prochaine DSN consiste à :- Soit déclarer un contrat qui n’est pas un contrat d’apprentissage et, par conséquent, le bloc « Cotisation individuelle - S21.G00.81 » de type « 001 - Exonération de cotisations au titre de l'emploi d'un apprenti (loi de 1979) » n’est pas attendu- Soit déclarer un bloc « Cotisation individuelle - S21.G00.81 » de type « 001 - Exonération de cotisations au titre de l'emploi d'un apprenti (loi de 1979) » comportant le montant de l’assiette exonérée au niveau de la rubrique montant d’assiette (S21.G00. 81.003) pour les individus concernés par un contrat d’apprentissage. Ce bloc « Cotisation individuelle - S21.G00.81 » doit être rattaché à un bloc « Base assujettie - S21.G00.78 » de type « 03 - Assiette brute déplafonnée » comportant les dates de rattachement du mois où l'anomalie a été signalée.</RO_B004_R013>
+					<RO_B004_R014>Pour plus d'information sur les méthodes de régularisation vous pouvez vous référer aux consignes déclaratives de la fiche consigne n°1317 sur la base de connaissance net-entreprises.fr</RO_B004_R014>
+					<RO_B004_R015>Sans action de votre part, votre caisse MSA procédera au calcul des éléments manquants et procèdera au recouvrement avec adjonction d'une pénalité pour inexactitude ou omission dans la déclaration définie à l’article R243-13 du code de la sécurité sociale.</RO_B004_R015>
+					<RO_B005>
+						<RO_B005_R001>L'exonération au titre de l'emploi d'un apprenti (loi de 1979) n'a pas été renseignée au titre du mois principal déclaré pour les individus concernés.Absence de bloc « Cotisation individuelle - S21.G00.81 » de type « 001 - Exonération de cotisations au titre de l'emploi d'un apprenti (loi de 1979) » OU Absence de montant au niveau de la rubrique « Montant d'assiette - S21.G00.81.003 » du bloc « Cotisation individuelle - S21.G00.81 » de type « 001 - Exonération de cotisations au titre de l'emploi d'un apprenti (loi de 1979) ».</RO_B005_R001>
+						<RO_B005_R002>2022-04-01</RO_B005_R002>
+						<RO_B005_R003>2022-04-30</RO_B005_R003>
+						<RO_B006>
+							<RO_B006_R001>1234567891234</RO_B006_R001>
+							<RO_B006_R003>XYZ</RO_B006_R003>
+							<RO_B006_R004>XYZ</RO_B006_R004>
+							<RO_B006_R006>2015-12-01</RO_B006_R006>
+							<RO_B006_R007>00001</RO_B006_R007>
+							<RO_B006_R008>1983-02-05</RO_B006_R008>
+						</RO_B006>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.51.013</RO_B007_R001>
+							<RO_B007_R002>toto</RO_B007_R002>
+							<RO_B007_R003>tata</RO_B007_R003>
+							<RO_B007_R004>01</RO_B007_R004>
+							<RO_B007_R009>02</RO_B007_R009>
+							<RO_B010>
+								<RO_B010_R001>ValeurAcceptee1201</RO_B010_R001>
+							</RO_B010>
+						</RO_B007>
+						<RO_B007>
+							<RO_B007_R001>S21.G00.78.002</RO_B007_R001>
+							<RO_B007_R002>tutu</RO_B007_R002>
+							<RO_B007_R003>titi</RO_B007_R003>
+							<RO_B007_R004>01</RO_B007_R004>
+							<RO_B007_R009>03</RO_B007_R009>
+							<RO_B010>
+								<RO_B010_R001>ValeurAcceptee1203</RO_B010_R001>
+							</RO_B010>
+							<RO_B010>
+								<RO_B010_R001>ValeurAcceptee1202</RO_B010_R001>
+							</RO_B010>
+						</RO_B007>
+					</RO_B005>
+				</RO_B004>
+			</RO_B002>
+		</RO_B001>
+	</RO>
+</GIPMDS>
