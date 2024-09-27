@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+    <RO>
+        <RO_R001>P24V01</RO_R001>
+        <RO_B000>
+            <RO_B000_R001>WSQOJmVyhJVg5DABRM.zlai</RO_B000_R001>
+            <RO_B000_R002>1</RO_B000_R002>
+            <RO_B000_R003>30247464800888</RO_B000_R003>
+            <RO_B000_R004>43279609200030</RO_B000_R004>
+            <RO_B000_R005>11</RO_B000_R005>
+            <RO_B000_R006>2024-01-01</RO_B000_R006>
+            <RO_B000_R007>01</RO_B000_R007>
+            <RO_B000_R008>Logiciel maison</RO_B000_R008>
+            <RO_B000_R009>Logiciel maison</RO_B000_R009>
+            <RO_B000_R010>2022.23</RO_B000_R010>
+            <RO_B000_R011>01</RO_B000_R011>
+            <RO_B000_R012>20</RO_B000_R012>
+            <RO_B000_R013>02</RO_B000_R013>
+            <RO_B000_R014>P23V01</RO_B000_R014>
+        </RO_B000>
+        <RO_B001>
+            <RO_B001_R001>03</RO_B001_R001>
+            <RO_B002>
+                <RO_B002_R001>65731</RO_B002_R001>
+                <RO_B002_R002>124</RO_B002_R002>
+                <RO_B002_R003>CRM de rappel annuel Urssaf</RO_B002_R003>
+                <RO_B002_R004>01</RO_B002_R004>
+                <RO_B002_R005>URSSAF Caisse Nationale</RO_B002_R005>
+                <RO_B002_R006>18003501600054</RO_B002_R006>
+                <RO_B002_R007>18003501600054</RO_B002_R007>
+                <RO_B002_R008>2023-01-01</RO_B002_R008>
+                <RO_B002_R009>2023-12-31</RO_B002_R009>
+                <RO_B002_R010>2024-04-02T11:02:19</RO_B002_R010>
+                <RO_B002_R011>2024-07-05T16:57:55</RO_B002_R011>
+                <RO_B003>
+                    <RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
+                    <RO_B003_R002>ANO</RO_B003_R002>
+                </RO_B003>
+                <RO_B004>
+                    <RO_B004_R001>UR_ANO_ASS_CAM_DIDAPA15a</RO_B004_R001>
+                    <RO_B004_R002>Incohérence entre les données agrégées et individuelles des assiettes pour le complément cotisation assurance maladie</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>02</RO_B004_R004>
+                    <RO_B004_R005>12</RO_B004_R005>
+                    <RO_B004_R006>06</RO_B004_R006>
+                    <RO_B004_R011>Ce contrôle vérifie la cohérence entre la somme des assiettes des CTP « 635 » et « 636 » déclarées en bloc « Cotisation agrégée – S21.G00.23 » et la somme des assiettes positives des individus ayant un code de cotisation individuelle « 907 - Complément de cotisation Assurance Maladie » en bloc « Cotisation individuelle – S21.G00.81 ».</RO_B004_R011>
+                    <RO_B004_R012>Article L241-2-1 CSS (cotisation maladie, réduction de cotisation)</RO_B004_R012>
+                    <RO_B004_R013>Si la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 est exacte, effectuez un bloc de régularisation dans votre prochaine DSN afin que les montants d'assiette individuelles (rubrique Cotisation individuelle S21.G00.81.003 - Montant d'assiette) associés à la valeur 907 - Complément de cotisation Assurance Maladie en rubrique S21.G00.81.001 - Code de cotisation soit conforme à la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23.  
+
+Si la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 n'est pas exacte, effectuez un bloc de régularisation dans votre prochaine DSN pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 (CTP 635 et CTP 636). 
+
+Versez, le cas échéant, auprès de votre Urssaf le complément de cotisations généré.
+
+Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.</RO_B004_R013>
+                    <RO_B004_R014>Pour plus d’information, consultez le guide Urssaf [lien : https://www.urssaf.fr/portail/files/live/sites/urssaf/files/documents/DSN_Guide-declaration-regularisation-cotisations-sociales-Urssaf_Norme-2021.pdf]</RO_B004_R014>
+                    <RO_B004_R015>Votre déclaration est prise en compte mais les données agrégées sont erronées. Cela peut entraîner un un débit de cotisations à régler.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>Une incohérence est constatée entre les montants d'assiette individuelle pour le code S21.G00.81.001 = 907 - Complément de cotisation Assurance Maladie, et la somme des montants d'assiette en données agrégées (S21.G00.23.004) pour le complément cotisation maladie (CTP 635 et/ou 636) et les codes de cotisations avec maladie à taux plein.</RO_B005_R001>
+                        <RO_B005_R002>2023-01-01</RO_B005_R002>
+                        <RO_B005_R003>2023-01-31</RO_B005_R003>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+                            <RO_B007_R002>023,150,285,330,331,404,585,592,635,636,712,714,715,804,823,850,852,854,861,863,864,866,886,892,894</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.002</RO_B007_R001>
+                            <RO_B007_R002>920 - Autre assiette</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.004</RO_B007_R001>
+                            <RO_B007_R002>6101.00</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>06</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+                            <RO_B007_R002>907</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.003</RO_B007_R001>
+                            <RO_B007_R002>0</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>06</RO_B007_R009>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Une incohérence est constatée entre les montants d'assiette individuelle pour le code S21.G00.81.001 = 907 - Complément de cotisation Assurance Maladie, et la somme des montants d'assiette en données agrégées (S21.G00.23.004) pour le complément cotisation maladie (CTP 635 et/ou 636) et les codes de cotisations avec maladie à taux plein.</RO_B005_R001>
+                        <RO_B005_R002>2023-02-01</RO_B005_R002>
+                        <RO_B005_R003>2023-02-28</RO_B005_R003>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+                            <RO_B007_R002>023,150,285,330,331,404,585,592,635,636,712,714,715,804,823,850,852,854,861,863,864,866,886,892,894</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.002</RO_B007_R001>
+                            <RO_B007_R002>920 - Autre assiette</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.004</RO_B007_R001>
+                            <RO_B007_R002>4441.00</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>06</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+                            <RO_B007_R002>907</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.003</RO_B007_R001>
+                            <RO_B007_R002>0</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>06</RO_B007_R009>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Une incohérence est constatée entre les montants d'assiette individuelle pour le code S21.G00.81.001 = 907 - Complément de cotisation Assurance Maladie, et la somme des montants d'assiette en données agrégées (S21.G00.23.004) pour le complément cotisation maladie (CTP 635 et/ou 636) et les codes de cotisations avec maladie à taux plein.</RO_B005_R001>
+                        <RO_B005_R002>2023-03-01</RO_B005_R002>
+                        <RO_B005_R003>2023-03-31</RO_B005_R003>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+                            <RO_B007_R002>023,150,285,330,331,404,585,592,635,636,712,714,715,804,823,850,852,854,861,863,864,866,886,892,894</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.002</RO_B007_R001>
+                            <RO_B007_R002>920 - Autre assiette</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.004</RO_B007_R001>
+                            <RO_B007_R002>6061.00</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>06</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+                            <RO_B007_R002>907</RO_B007_R002>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.003</RO_B007_R001>
+                            <RO_B007_R002>0</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>06</RO_B007_R009>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+            </RO_B002>
+        </RO_B001>
+    </RO>
+</GIPMDS>

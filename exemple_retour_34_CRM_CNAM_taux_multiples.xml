@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gipmds:rapport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gipmds="http://www.gip-mds.fr/" type="34" profil="DSN" version="v02r02" xsi:schemaLocation="http://www.gip-mds.fr/ dsn_bilans_v02r02.xsd">
+    <envoi>
+        <envoi_identification>
+            <idflux>F1cNtuwDrWx64EFF5Eg7fgg.</idflux>
+            <emetteur_siret>33331123100134</emetteur_siret>
+        </envoi_identification>
+        <envoi_bilan>
+            <envoi_etat>OK</envoi_etat>
+        </envoi_bilan>
+    </envoi>
+    <declaration>
+        <declaration_identification>
+            <rang>1</rang>
+            <SIREN>020802338</SIREN>
+            <nic_affectation>00011</nic_affectation>
+        </declaration_identification>
+        <declaration_bilan>
+            <etat>OK</etat>
+        </declaration_bilan>
+    </declaration>
+    <communication>
+        <information_collective type="atmp">
+            <calcul date_calcul="2019-11-01T15:15:59">
+                <information>
+                    <donnees_clefs>
+                        <rubriques>
+                            <rubrique_string name="section">01</rubrique_string>
+                            <rubrique_date name="dateDebutEffet">2019-11-17</rubrique_date>
+                        </rubriques>
+                    </donnees_clefs>
+                    <donnees_paie>
+                        <taux part="patronale">5</taux>
+                    </donnees_paie>
+                    <donnees_declaration>
+                        <rubriques>
+                            <rubrique_string name="codeCtn">CC</rubrique_string>
+                            <rubrique_string name="codeRisque">222CD</rubrique_string>
+                            <rubrique_string name="temoinBureau">B</rubrique_string>
+                        </rubriques>
+                    </donnees_declaration>
+                </information>
+            </calcul>
+            <calcul date_calcul="2019-11-02T15:15:59">
+                <information>
+                    <donnees_clefs>
+                        <rubriques>
+                            <rubrique_string name="section">01</rubrique_string>
+                            <rubrique_date name="dateDebutEffet">2019-11-17</rubrique_date>
+                        </rubriques>
+                    </donnees_clefs>
+                    <donnees_paie>
+                        <taux part="patronale">6</taux>
+                    </donnees_paie>
+                    <donnees_declaration>
+                        <rubriques>
+                            <rubrique_string name="codeCtn">CC</rubrique_string>
+                            <rubrique_string name="codeRisque">222CD</rubrique_string>
+                            <rubrique_string name="temoinBureau">B</rubrique_string>
+                        </rubriques>
+                    </donnees_declaration>
+                </information>
+            </calcul>
+        </information_collective>
+    </communication>
+</gipmds:rapport>
