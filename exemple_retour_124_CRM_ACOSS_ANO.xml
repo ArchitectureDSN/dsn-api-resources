@@ -3,7 +3,7 @@
     <RO>
         <RO_R001>P24V01</RO_R001>
         <RO_B000>
-            <RO_B000_R001>WSQOJmVyhJVg5DABRM.zlai</RO_B000_R001>
+            <RO_B000_R001>F1k9BhXVBSam5gLdThkFZtW</RO_B000_R001>
             <RO_B000_R002>1</RO_B000_R002>
             <RO_B000_R003>30247464800888</RO_B000_R003>
             <RO_B000_R004>43279609200030</RO_B000_R004>
@@ -12,133 +12,964 @@
             <RO_B000_R007>01</RO_B000_R007>
             <RO_B000_R008>Logiciel maison</RO_B000_R008>
             <RO_B000_R009>Logiciel maison</RO_B000_R009>
-            <RO_B000_R010>2022.23</RO_B000_R010>
             <RO_B000_R011>01</RO_B000_R011>
-            <RO_B000_R012>20</RO_B000_R012>
+            <RO_B000_R012>1</RO_B000_R012>
             <RO_B000_R013>02</RO_B000_R013>
-            <RO_B000_R014>P23V01</RO_B000_R014>
+            <RO_B000_R014>P24V01</RO_B000_R014>
         </RO_B000>
         <RO_B001>
             <RO_B001_R001>03</RO_B001_R001>
             <RO_B002>
-                <RO_B002_R001>65731</RO_B002_R001>
+                <RO_B002_R001>930748</RO_B002_R001>
                 <RO_B002_R002>124</RO_B002_R002>
                 <RO_B002_R003>CRM de rappel annuel Urssaf</RO_B002_R003>
                 <RO_B002_R004>01</RO_B002_R004>
                 <RO_B002_R005>URSSAF Caisse Nationale</RO_B002_R005>
                 <RO_B002_R006>18003501600054</RO_B002_R006>
                 <RO_B002_R007>18003501600054</RO_B002_R007>
-                <RO_B002_R008>2023-01-01</RO_B002_R008>
-                <RO_B002_R009>2023-12-31</RO_B002_R009>
-                <RO_B002_R010>2024-04-02T11:02:19</RO_B002_R010>
-                <RO_B002_R011>2024-07-05T16:57:55</RO_B002_R011>
-                <RO_B003>
-                    <RO_B003_R001>Recouvrement des cotisations - régime général</RO_B003_R001>
-                    <RO_B003_R002>ANO</RO_B003_R002>
-                </RO_B003>
+                <RO_B002_R008>2024-01-01</RO_B002_R008>
+                <RO_B002_R009>2024-12-31</RO_B002_R009>
+                <RO_B002_R010>2024-11-29T11:56:31</RO_B002_R010>
+                <RO_B002_R011>2024-12-05T19:17:34</RO_B002_R011>
                 <RO_B004>
-                    <RO_B004_R001>UR_ANO_ASS_CAM_DIDAPA15a</RO_B004_R001>
-                    <RO_B004_R002>Incohérence entre les données agrégées et individuelles des assiettes pour le complément cotisation assurance maladie</RO_B004_R002>
+                    <RO_B004_R001>UR_ANO_ASS_PLF_DIPA01I</RO_B004_R001>
+                    <RO_B004_R002>Pour un individu à temps plein : écart entre le montant de l'assiette brute plafonnée déclaré et celui calculé par l'Urssaf</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>04</RO_B004_R004>
+                    <RO_B004_R005>12</RO_B004_R005>
+                    <RO_B004_R006>01</RO_B004_R006>
+                    <RO_B004_R007>03</RO_B004_R007>
+                    <RO_B004_R008>01</RO_B004_R008>
+                    <RO_B004_R009>1</RO_B004_R009>
+                    <RO_B004_R010>1</RO_B004_R010>
+                    <RO_B004_R011>Pour un individu à temps plein (S21.G00.40.014, type 10): 
+- affilié au régime général CNAV (S21.G00.40.020 type 200)
+- CDI ou CDD ou CDI de chantier ou d'opération (S21.G00.40.007, type 01 ou 02 ou 82) 
+- avec une unité de mesure de quotité de travail en heure ou en forfait jour ou en forfait heure (S21.G00.40.011 type 10 ou 20 ou 21)
+- avec un employeur unique (S21.G00.40.037 type 01) et dans le cadre d’un emploi unique (S21.G00.40.036 type 01) ou lorsque une situation non connue est déclarée (S21.G00.40.036 type 03 ; S21.G00.40.037 type 03). 
+Une anomalie est détectée, pour au moins un des mois d’un exercice donné, si un écart est constaté entre le montant (S21.G00.78.004) de l'assiette brute plafonnée (S21.G00.78.001 code 02) déclaré et le montant calculé par l'Urssaf. 
+Pour information, le calcul Urssaf du montant de l'assiette brute plafonnée prend en compte la rubrique Unité de mesure de type 40 (S21.G00.53.002, S21.G00.53.003). Si cette donnée n’est pas déclarée, ce nombre de jours calendaires sera déterminé à partir des dates portées par les rubriques "Date de début de période de rattachement - S21.G00.78.002" et "Date de fin de période de rattachement - S21.G00.78.003" du code de base assujettie "03 - Assiette brute déplafonnée".</RO_B004_R011>
+                    <RO_B004_R012>Article R242-2 du Code de la Sécurité Sociale</RO_B004_R012>
+                    <RO_B004_R013>Le recalcul de l'assiette brute plafonnée s'effectue à partir des données déclarées par l'employeur. 
+
+Veuillez vérifier :
+- les conditions contractuelles déclarées pour cet individu
+- la valeur déclarée en ""Mesure - S21.G00.53.002"" du bloc ""Activité - S21.G00.53"" pour lequel la rubrique ""Unité de mesure - S21.G00.53.003"" est ""40 - Jours calendaires de la période d'emploi pris en compte dans le calcul du plafond de Sécurité sociale""
+- la bonne application des règles d’ajustement et de régularisation progressive du plafond
+
+Pour corriger les données en anomalie effectuez un bloc de régularisation et/ou de changement au sein de votre prochaine DSN.
+
+En cas de difficulté, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne plus reproduire cette anomalie.</RO_B004_R013>
+                    <RO_B004_R014>https://boss.gouv.fr/portail/accueil/regles-dassujettissement/assiette-generale.html#titre-chapitre-6---le-plafond-de-la-se
+https://www.urssaf.fr/accueil/employeur/cotisations/comprendre-cotisations/calcul-cotisations-employeur.html#l-assiette-maximale
+https://net-entreprises.custhelp.com/app/answers/detail_dsn/a_id/2007</RO_B004_R014>
+                    <RO_B004_R015>L'anomalie est susceptible d'affecter le montant des cotisations, les droits de vos salariés et peut constituer un manquement à vos obligations déclaratives.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>Pour 2881040039973 Test Test - contrat 00001VAR000001521132, une anomalie est détectée au niveau du montant de l'assiette plafonnée pour l’année 2024.
+Pour la période du 2024-01-01 au 2024-01-31, vous avez déclaré -379.62 € alors que le recalcul de l'Urssaf est de 0.0 €.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-03-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2881040039973</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>WZUZAG38WLXST2GE</RO_B006_R005>
+                            <RO_B006_R006>2021-06-01</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000001521153</RO_B006_R007>
+                            <RO_B006_R008>1988-10-08</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                            <RO_B007_R002>40</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R002>0.0</RO_B007_R002>
+                            <RO_B007_R005>2024-01-01</RO_B007_R005>
+                            <RO_B007_R006>2024-01-31</RO_B007_R006>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.78.001</RO_B007_R001>
+                            <RO_B007_R002>02</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.036</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.020</RO_B007_R001>
+                            <RO_B007_R002>200</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.78.004</RO_B007_R001>
+                            <RO_B007_R002>-379.62</RO_B007_R002>
+                            <RO_B007_R003>0.0</RO_B007_R003>
+                            <RO_B007_R005>2024-01-01</RO_B007_R005>
+                            <RO_B007_R006>2024-01-31</RO_B007_R006>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.037</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.007</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.011</RO_B007_R001>
+                            <RO_B007_R002>10</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.014</RO_B007_R001>
+                            <RO_B007_R002>10</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                            <RO_B007_R002>40</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R002>0.0</RO_B007_R002>
+                            <RO_B007_R005>2024-02-01</RO_B007_R005>
+                            <RO_B007_R006>2024-02-29</RO_B007_R006>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.78.001</RO_B007_R001>
+                            <RO_B007_R002>02</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.036</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.020</RO_B007_R001>
+                            <RO_B007_R002>200</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.78.004</RO_B007_R001>
+                            <RO_B007_R002>0.0</RO_B007_R002>
+                            <RO_B007_R003>0.0</RO_B007_R003>
+                            <RO_B007_R005>2024-02-01</RO_B007_R005>
+                            <RO_B007_R006>2024-02-29</RO_B007_R006>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.037</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.007</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.011</RO_B007_R001>
+                            <RO_B007_R002>10</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.014</RO_B007_R001>
+                            <RO_B007_R002>10</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                            <RO_B007_R002>40</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R002>0.0</RO_B007_R002>
+                            <RO_B007_R005>2024-03-01</RO_B007_R005>
+                            <RO_B007_R006>2024-03-31</RO_B007_R006>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.78.001</RO_B007_R001>
+                            <RO_B007_R002>02</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.036</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.020</RO_B007_R001>
+                            <RO_B007_R002>200</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.78.004</RO_B007_R001>
+                            <RO_B007_R002>0.0</RO_B007_R002>
+                            <RO_B007_R003>0.0</RO_B007_R003>
+                            <RO_B007_R005>2024-03-01</RO_B007_R005>
+                            <RO_B007_R006>2024-03-31</RO_B007_R006>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.037</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.007</RO_B007_R001>
+                            <RO_B007_R002>01</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.011</RO_B007_R001>
+                            <RO_B007_R002>10</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.40.014</RO_B007_R001>
+                            <RO_B007_R002>10</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+                <RO_B004>
+                    <RO_B004_R001>UR_ANO_RDG_DIDAEXO01</RO_B004_R001>
+                    <RO_B004_R002>Réduction Générale : Ecart entre la somme des données agrégées et la somme des données individuelles</RO_B004_R002>
                     <RO_B004_R003>01</RO_B004_R003>
                     <RO_B004_R004>02</RO_B004_R004>
                     <RO_B004_R005>12</RO_B004_R005>
-                    <RO_B004_R006>06</RO_B004_R006>
-                    <RO_B004_R011>Ce contrôle vérifie la cohérence entre la somme des assiettes des CTP « 635 » et « 636 » déclarées en bloc « Cotisation agrégée – S21.G00.23 » et la somme des assiettes positives des individus ayant un code de cotisation individuelle « 907 - Complément de cotisation Assurance Maladie » en bloc « Cotisation individuelle – S21.G00.81 ».</RO_B004_R011>
-                    <RO_B004_R012>Article L241-2-1 CSS (cotisation maladie, réduction de cotisation)</RO_B004_R012>
-                    <RO_B004_R013>Si la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 est exacte, effectuez un bloc de régularisation dans votre prochaine DSN afin que les montants d'assiette individuelles (rubrique Cotisation individuelle S21.G00.81.003 - Montant d'assiette) associés à la valeur 907 - Complément de cotisation Assurance Maladie en rubrique S21.G00.81.001 - Code de cotisation soit conforme à la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23.  
+                    <RO_B004_R006>01</RO_B004_R006>
+                    <RO_B004_R011>Au titre de la Réduction Générale, une anomalie est détectée lorsque la somme des montants de cotisations agrégées des CTP 801, 669, 419, 384, 671, 668, 413, 085 (S21.G00.23.005, S21.G00.23.004, S21.G00.23.001) est différente de la somme des montants de cotisations individuelles (S21.G00.81.001 type 018, S21.G00.81.004) rattachés à un Siret Urssaf (S21.G00.81.002).</RO_B004_R011>
+                    <RO_B004_R012>Article L241-13 code de la Sécurité sociale&#13;
+Article D241-7 code de la Sécurité sociale&#13;
+Décret n° 2022-1700 du 30/12/2022</RO_B004_R012>
+                    <RO_B004_R013>Au titre de la Réduction générale, vérifiez que la somme des montants de cotisations agrégées des CTP 801, 669, 419, 384, 671, 668, 413, 085 (S21.G00.23.005, S21.G00.23.004, S21.G00.23.001) correspond à la somme des montants de cotisations individuelles (S21.G00.81.001 type 018, S21.G00.81.004) rattachés à un Siret Urssaf (S21.G00.81.002). 
 
-Si la somme déclarée pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 n'est pas exacte, effectuez un bloc de régularisation dans votre prochaine DSN pour le complément cotisation maladie au bloc Cotisation agrégée S21.G00.23 (CTP 635 et CTP 636). 
-
-Versez, le cas échéant, auprès de votre Urssaf le complément de cotisations généré.
-
-Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.</RO_B004_R013>
-                    <RO_B004_R014>Pour plus d’information, consultez le guide Urssaf [lien : https://www.urssaf.fr/portail/files/live/sites/urssaf/files/documents/DSN_Guide-declaration-regularisation-cotisations-sociales-Urssaf_Norme-2021.pdf]</RO_B004_R014>
-                    <RO_B004_R015>Votre déclaration est prise en compte mais les données agrégées sont erronées. Cela peut entraîner un un débit de cotisations à régler.</RO_B004_R015>
+Effectuez un bloc de régularisation pour corriger les données en anomalie.  En cas de difficulté, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne plus reproduire cette anomalie.</RO_B004_R013>
+                    <RO_B004_R014>La réduction générale - Urssaf.fr</RO_B004_R014>
+                    <RO_B004_R015>L'anomalie est susceptible d'affecter le montant des cotisations et peut constituer un manquement à vos obligations déclaratives.</RO_B004_R015>
                     <RO_B005>
-                        <RO_B005_R001>Une incohérence est constatée entre les montants d'assiette individuelle pour le code S21.G00.81.001 = 907 - Complément de cotisation Assurance Maladie, et la somme des montants d'assiette en données agrégées (S21.G00.23.004) pour le complément cotisation maladie (CTP 635 et/ou 636) et les codes de cotisations avec maladie à taux plein.</RO_B005_R001>
-                        <RO_B005_R002>2023-01-01</RO_B005_R002>
-                        <RO_B005_R003>2023-01-31</RO_B005_R003>
+                        <RO_B005_R001>Au titre de la réduction générale pour l'exercice 2024, la somme des montant de cotisations agrégées rattachés aux CTP 085, 384, 413, 419, 668, 669, 671, 801 de -2271.0 € est différente de la somme des montants de cotisations individuelles (S21.G00.81.001 type 018, S21.G00.81.004) rattachés à un Siret Urssaf (S21.G00.81.002) de -3204.05 €</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
-                            <RO_B007_R002>023,150,285,330,331,404,585,592,635,636,712,714,715,804,823,850,852,854,861,863,864,866,886,892,894</RO_B007_R002>
-                        </RO_B007>
-                        <RO_B007>
-                            <RO_B007_R001>S21.G00.23.002</RO_B007_R001>
-                            <RO_B007_R002>920 - Autre assiette</RO_B007_R002>
-                        </RO_B007>
-                        <RO_B007>
-                            <RO_B007_R001>S21.G00.23.004</RO_B007_R001>
-                            <RO_B007_R002>6101.00</RO_B007_R002>
+                            <RO_B007_R001>S21.G00.81.004</RO_B007_R001>
+                            <RO_B007_R002>-3204.05</RO_B007_R002>
                             <RO_B007_R004>01</RO_B007_R004>
-                            <RO_B007_R009>06</RO_B007_R009>
+                            <RO_B007_R009>01</RO_B007_R009>
                         </RO_B007>
                         <RO_B007>
                             <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
-                            <RO_B007_R002>907</RO_B007_R002>
+                            <RO_B007_R002>018</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
                         </RO_B007>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.81.003</RO_B007_R001>
-                            <RO_B007_R002>0</RO_B007_R002>
+                            <RO_B007_R001>S21.G00.81.002</RO_B007_R001>
+                            <RO_B007_R002>SIRET URSSAF</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
+                            <RO_B007_R002>085, 384, 413, 419, 668, 669, 671, 801</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.005</RO_B007_R001>
+                            <RO_B007_R002>2271.0</RO_B007_R002>
                             <RO_B007_R004>01</RO_B007_R004>
-                            <RO_B007_R009>06</RO_B007_R009>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.23.004</RO_B007_R001>
+                            <RO_B007_R002>0.0</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+                <RO_B004>
+                    <RO_B004_R001>UR_ANO_RDG_DIEXO05a</RO_B004_R001>
+                    <RO_B004_R002>La somme des montants individuels de Réduction Générale  est positive pour l'exercice au lieu d'être négative</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>05</RO_B004_R004>
+                    <RO_B004_R005>12</RO_B004_R005>
+                    <RO_B004_R006>01</RO_B004_R006>
+                    <RO_B004_R007>03</RO_B004_R007>
+                    <RO_B004_R008>01</RO_B004_R008>
+                    <RO_B004_R009>1</RO_B004_R009>
+                    <RO_B004_R010>1</RO_B004_R010>
+                    <RO_B004_R011>Pour une période considérée, au titre de la Réduction Générale, une anomalie est détectée lorsque la somme des montants de cotisations individuelles (S21.G00.81.001 type 018 et 106) est positive alors qu'elle doit être négative.</RO_B004_R011>
+                    <RO_B004_R012>Article L241-13 code de la Sécurité sociale&#13;
+Article D241-7 code de la Sécurité sociale&#13;
+Décret n° 2022-1700 du 30/12/2022</RO_B004_R012>
+                    <RO_B004_R013>Pour le contrat concerné par l'anomalie, assurez-vous, pour la période concernée, que la somme des montants de Réduction générale des cotisations patronales de sécurité sociale et d'assurance chômage (S21.G00.81.001 type 018) et que la somme des montant de Réduction générale des cotisations patronales de retraite complémentaire (S21.G00.81.001 type 106) sont négatives.
+
+Effectuez un bloc de régularisation pour corriger les données en anomalie . En cas de difficulté, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne plus reproduire cette anomalie.</RO_B004_R013>
+                    <RO_B004_R014>https://www.urssaf.fr/portail/home/employeur/beneficier-dune-exoneration/exonerations-generales/la-reduction-generale.html</RO_B004_R014>
+                    <RO_B004_R015>L'anomalie est susceptible d'affecter le montant des cotisations et peut constituer un manquement à vos obligations déclaratives.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>Pour 2890661009383 Test Test - contrat 00001VAR000001321063, au titre de la réduction générale pour l'exercice 2024, la somme des montants de cotisations individuelles est positive alors qu'il est attendu une somme de montants négative de réduction générale Urssaf (S21.G00.81.001 type 018) et Agirc-Arrco (S21.G00.81.001 type 106)</RO_B005_R001>
+                        <RO_B005_R002>2024-03-01</RO_B005_R002>
+                        <RO_B005_R003>2024-03-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2890661009383</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>N3C4I77VKZ7PH2GW</RO_B006_R005>
+                            <RO_B006_R007>00001VAR000001321063</RO_B006_R007>
+                            <RO_B006_R008>1989-06-30</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+                            <RO_B007_R002>106</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.004</RO_B007_R001>
+                            <RO_B007_R002>-784.2</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.004</RO_B007_R001>
+                            <RO_B007_R002>69.14</RO_B007_R002>
+                            <RO_B007_R004>01</RO_B007_R004>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
+                            <RO_B007_R002>018</RO_B007_R002>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+                <RO_B004>
+                    <RO_B004_R001>UR_ANO_CTR_DI53c</RO_B004_R001>
+                    <RO_B004_R002>Absence du nombre de jours calendaires servant au calcul du plafond de Sécurité Sociale</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>04</RO_B004_R004>
+                    <RO_B004_R005>08</RO_B004_R005>
+                    <RO_B004_R006>02</RO_B004_R006>
+                    <RO_B004_R007>02</RO_B004_R007>
+                    <RO_B004_R008>01</RO_B004_R008>
+                    <RO_B004_R009>25</RO_B004_R009>
+                    <RO_B004_R010>25</RO_B004_R010>
+                    <RO_B004_R011>Une anomalie est détectée lorsque le nombre de jour calendaire servant au calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B004_R011>
+                    <RO_B004_R012>Article L133-5-3-1 CSS</RO_B004_R012>
+                    <RO_B004_R013>Pour l'individu en anomalie, veuillez vérifier que le nombre de jours calendaires de la période d’emploi concernée pris en compte dans le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est présent dans votre déclaration.
+
+Effectuez avant l'exigibilité une DSN annule et remplace. Après l'exigibilité, effectuez un bloc de régularisation   pour corriger les données en anomalie.
+Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie</RO_B004_R013>
+                    <RO_B004_R014>https://www.urssaf.fr/portail/home/employeur/calculer-les-cotisations/la-base-de-calcul/lassiette-maximale/la-notion-de-plafond/le-calcul-du-plafond/prise-en-compte-des-absences.html</RO_B004_R014>
+                    <RO_B004_R015>L'anomalie est susceptible d'affecter le montant des droits de vos salariés et assimilés et peut constituer un manquement à vos obligations déclaratives.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2850986297481 contrat 00001VAR000005024039 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2850986297481</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>42MEJIGYBSHERLJ6</RO_B006_R005>
+                            <RO_B006_R006>2024-02-06</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005024039</RO_B006_R007>
+                            <RO_B006_R008>1985-09-23</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
                         </RO_B007>
                     </RO_B005>
                     <RO_B005>
-                        <RO_B005_R001>Une incohérence est constatée entre les montants d'assiette individuelle pour le code S21.G00.81.001 = 907 - Complément de cotisation Assurance Maladie, et la somme des montants d'assiette en données agrégées (S21.G00.23.004) pour le complément cotisation maladie (CTP 635 et/ou 636) et les codes de cotisations avec maladie à taux plein.</RO_B005_R001>
-                        <RO_B005_R002>2023-02-01</RO_B005_R002>
-                        <RO_B005_R003>2023-02-28</RO_B005_R003>
+                        <RO_B005_R001>Pour Test Test 2840907069506 contrat 00001VAR000002220313 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2840907069506</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>ND8AY39QM743YYTV</RO_B006_R005>
+                            <RO_B006_R006>2020-11-09</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000002220313</RO_B006_R007>
+                            <RO_B006_R008>1984-09-17</RO_B006_R008>
+                        </RO_B006>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
-                            <RO_B007_R002>023,150,285,330,331,404,585,592,635,636,712,714,715,804,823,850,852,854,861,863,864,866,886,892,894</RO_B007_R002>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
                         </RO_B007>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.23.002</RO_B007_R001>
-                            <RO_B007_R002>920 - Autre assiette</RO_B007_R002>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
                         </RO_B007>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.23.004</RO_B007_R001>
-                            <RO_B007_R002>4441.00</RO_B007_R002>
-                            <RO_B007_R004>01</RO_B007_R004>
-                            <RO_B007_R009>06</RO_B007_R009>
-                        </RO_B007>
-                        <RO_B007>
-                            <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
-                            <RO_B007_R002>907</RO_B007_R002>
-                        </RO_B007>
-                        <RO_B007>
-                            <RO_B007_R001>S21.G00.81.003</RO_B007_R001>
-                            <RO_B007_R002>0</RO_B007_R002>
-                            <RO_B007_R004>01</RO_B007_R004>
-                            <RO_B007_R009>06</RO_B007_R009>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
                         </RO_B007>
                     </RO_B005>
                     <RO_B005>
-                        <RO_B005_R001>Une incohérence est constatée entre les montants d'assiette individuelle pour le code S21.G00.81.001 = 907 - Complément de cotisation Assurance Maladie, et la somme des montants d'assiette en données agrégées (S21.G00.23.004) pour le complément cotisation maladie (CTP 635 et/ou 636) et les codes de cotisations avec maladie à taux plein.</RO_B005_R001>
-                        <RO_B005_R002>2023-03-01</RO_B005_R002>
-                        <RO_B005_R003>2023-03-31</RO_B005_R003>
+                        <RO_B005_R001>Pour Test Test 2850986297485 contrat 00001VAR000005024045 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2850986297485</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>42MEJIGYBSHERLJ6</RO_B006_R005>
+                            <RO_B006_R006>2024-02-13</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005024045</RO_B006_R007>
+                            <RO_B006_R008>1985-09-23</RO_B006_R008>
+                        </RO_B006>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.23.001</RO_B007_R001>
-                            <RO_B007_R002>023,150,285,330,331,404,585,592,635,636,712,714,715,804,823,850,852,854,861,863,864,866,886,892,894</RO_B007_R002>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
                         </RO_B007>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.23.002</RO_B007_R001>
-                            <RO_B007_R002>920 - Autre assiette</RO_B007_R002>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
                         </RO_B007>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.23.004</RO_B007_R001>
-                            <RO_B007_R002>6061.00</RO_B007_R002>
-                            <RO_B007_R004>01</RO_B007_R004>
-                            <RO_B007_R009>06</RO_B007_R009>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2850986297487 contrat 00001VAR000005024057 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2850986297487</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>42MEJIGYBSHERLJ6</RO_B006_R005>
+                            <RO_B006_R006>2024-02-27</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005024057</RO_B006_R007>
+                            <RO_B006_R008>1985-09-23</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
                         </RO_B007>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.81.001</RO_B007_R001>
-                            <RO_B007_R002>907</RO_B007_R002>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
                         </RO_B007>
                         <RO_B007>
-                            <RO_B007_R001>S21.G00.81.003</RO_B007_R001>
-                            <RO_B007_R002>0</RO_B007_R002>
-                            <RO_B007_R004>01</RO_B007_R004>
-                            <RO_B007_R009>06</RO_B007_R009>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2850986297489 contrat 00001VAR000005024059 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2850986297489</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>42MEJIGYBSHERLJ6</RO_B006_R005>
+                            <RO_B006_R006>2024-02-20</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005024059</RO_B006_R007>
+                            <RO_B006_R008>1985-09-23</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2920283147702 contrat 00001VAR000000520282 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2920283147702</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>Y9A2B98EFYUT09MK</RO_B006_R005>
+                            <RO_B006_R006>2020-10-12</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000000520282</RO_B006_R007>
+                            <RO_B006_R008>1992-02-01</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2890661009383 contrat 00001VAR000001321063 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2890661009383</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>N3C4I77VKZ7PH2GW</RO_B006_R005>
+                            <RO_B006_R006>2021-03-03</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000001321063</RO_B006_R007>
+                            <RO_B006_R008>1989-06-30</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2760823001550 contrat 00001VAR000000420230 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2760823001550</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>ZI8VDDIP26XFBDXE</RO_B006_R005>
+                            <RO_B006_R006>2020-08-21</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000000420230</RO_B006_R007>
+                            <RO_B006_R008>1976-08-16</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2881040039973 contrat 00001VAR000001521153 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2881040039973</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>WZUZAG38WLXST2GE</RO_B006_R005>
+                            <RO_B006_R006>2021-06-01</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000001521153</RO_B006_R007>
+                            <RO_B006_R008>1988-10-08</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2850986297481 contrat 00001VAR000005024061 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2850986297481</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>42MEJIGYBSHERLJ6</RO_B006_R005>
+                            <RO_B006_R006>2024-02-29</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005024061</RO_B006_R007>
+                            <RO_B006_R008>1985-09-23</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2000601403223 contrat 00001VAR000001621153 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2000601403223</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>QRD9ECJQN5OXNAZ2</RO_B006_R005>
+                            <RO_B006_R006>2021-06-01</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000001621153</RO_B006_R007>
+                            <RO_B006_R008>2000-06-10</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2581184064436 contrat 00001VAR000001821166 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2581184064436</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>ZTCJHLERU80LNJ38</RO_B006_R005>
+                            <RO_B006_R006>2021-06-14</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000001821166</RO_B006_R007>
+                            <RO_B006_R008>1958-11-22</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2881118143218 contrat 00001VAR000005424038 sur le mois de 2024-02-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-02-01</RO_B005_R002>
+                        <RO_B005_R003>2024-02-29</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2881118143218</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>0R11WR626N8SL74S</RO_B006_R005>
+                            <RO_B006_R006>2024-02-01</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005424038</RO_B006_R007>
+                            <RO_B006_R008>1988-11-04</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2850986297481 contrat 00001VAR000005024031 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2850986297481</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>42MEJIGYBSHERLJ6</RO_B006_R005>
+                            <RO_B006_R006>2024-01-30</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005024031</RO_B006_R007>
+                            <RO_B006_R008>1985-09-23</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2760823001559 contrat 00001VAR000000420239 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2760823001559</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>ZI8VDDIP26XFBDXE</RO_B006_R005>
+                            <RO_B006_R006>2020-08-21</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000000420239</RO_B006_R007>
+                            <RO_B006_R008>1976-08-16</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2870659141678 contrat 00001VAR000006622270 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2870659141678</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>C548FVFP6FMF091L</RO_B006_R005>
+                            <RO_B006_R006>2022-09-27</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000006622270</RO_B006_R007>
+                            <RO_B006_R008>1987-06-29</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2581184064430 contrat 00001VAR000001821165 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2581184064430</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>ZTCJHLERU80LNJ38</RO_B006_R005>
+                            <RO_B006_R006>2021-06-14</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000001821165</RO_B006_R007>
+                            <RO_B006_R008>1958-11-22</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2850986297480 contrat 00001VAR000005024009 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2850986297480</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>42MEJIGYBSHERLJ6</RO_B006_R005>
+                            <RO_B006_R006>2024-01-09</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005024009</RO_B006_R007>
+                            <RO_B006_R008>1985-09-23</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2850986297489 contrat 00001VAR000005024023 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2850986297489</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>42MEJIGYBSHERLJ6</RO_B006_R005>
+                            <RO_B006_R006>2024-01-23</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005024023</RO_B006_R007>
+                            <RO_B006_R008>1985-09-23</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2760823001555 contrat 00001VAR000000420234 sur le mois de 2024-03-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-03-01</RO_B005_R002>
+                        <RO_B005_R003>2024-03-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2760823001555</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>ZI8VDDIP26XFBDXE</RO_B006_R005>
+                            <RO_B006_R006>2020-08-21</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000000420234</RO_B006_R007>
+                            <RO_B006_R008>1976-08-16</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2710907326410 contrat 00001VAR000003522070 sur le mois de 2024-03-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-03-01</RO_B005_R002>
+                        <RO_B005_R003>2024-03-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2710907326410</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>RY8THUNCA363F65I</RO_B006_R005>
+                            <RO_B006_R006>2022-03-11</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000003522070</RO_B006_R007>
+                            <RO_B006_R008>1971-09-12</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2680536051871 contrat 00001VAR000005924064 sur le mois de 2024-03-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-03-01</RO_B005_R002>
+                        <RO_B005_R003>2024-03-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2680536051871</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>NJTSPZJMLIXK6LSV</RO_B006_R005>
+                            <RO_B006_R006>2024-03-04</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000005924064</RO_B006_R007>
+                            <RO_B006_R008>1968-05-31</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2881040039971 contrat 00001VAR000001521152 sur le mois de 2024-03-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-03-01</RO_B005_R002>
+                        <RO_B005_R003>2024-03-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2881040039971</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>WZUZAG38WLXST2GE</RO_B006_R005>
+                            <RO_B006_R006>2021-06-01</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000001521152</RO_B006_R007>
+                            <RO_B006_R008>1988-10-08</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2000285115791 contrat 00001VAR000001421063 sur le mois de 2024-03-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-03-01</RO_B005_R002>
+                        <RO_B005_R003>2024-03-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2000285115791</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>Y181EH3YVCWJJJMY</RO_B006_R005>
+                            <RO_B006_R006>2021-03-04</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000001421063</RO_B006_R007>
+                            <RO_B006_R008>2000-02-20</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2801140218381 contrat 00001VAR000008024061 sur le mois de 2024-03-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-03-01</RO_B005_R002>
+                        <RO_B005_R003>2024-03-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2801140218381</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>5EZZ8Q3CPQX9HGID</RO_B006_R005>
+                            <RO_B006_R006>2024-03-01</RO_B006_R006>
+                            <RO_B006_R007>00001VAR000008024061</RO_B006_R007>
+                            <RO_B006_R008>1980-11-03</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
                         </RO_B007>
                     </RO_B005>
                 </RO_B004>

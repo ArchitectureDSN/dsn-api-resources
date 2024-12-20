@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+    <RO>
+        <RO_R001>P24V01</RO_R001>
+        <RO_B000>
+            <RO_B000_R001>F1p.OO6b7V4v7JJRMig8bUR</RO_B000_R001>
+            <RO_B000_R002>1</RO_B000_R002>
+            <RO_B000_R003>30247464800888</RO_B000_R003>
+            <RO_B000_R004>00565003100015</RO_B000_R004>
+            <RO_B000_R005>11</RO_B000_R005>
+            <RO_B000_R006>2024-01-01</RO_B000_R006>
+            <RO_B000_R007>01</RO_B000_R007>
+            <RO_B000_R008>Logiciel maison</RO_B000_R008>
+            <RO_B000_R009>Logiciel maison</RO_B000_R009>
+            <RO_B000_R010>101586008</RO_B000_R010>
+            <RO_B000_R011>01</RO_B000_R011>
+            <RO_B000_R012>1</RO_B000_R012>
+            <RO_B000_R013>02</RO_B000_R013>
+            <RO_B000_R014>P24V01</RO_B000_R014>
+        </RO_B000>
+        <RO_B001>
+            <RO_B001_R001>03</RO_B001_R001>
+            <RO_B002>
+                <RO_B002_R001>924074</RO_B002_R001>
+                <RO_B002_R002>124</RO_B002_R002>
+                <RO_B002_R003>CRM de rappel annuel Urssaf</RO_B002_R003>
+                <RO_B002_R004>01</RO_B002_R004>
+                <RO_B002_R005>URSSAF Caisse Nationale</RO_B002_R005>
+                <RO_B002_R006>18003501600054</RO_B002_R006>
+                <RO_B002_R007>18003501600054</RO_B002_R007>
+                <RO_B002_R008>2024-01-01</RO_B002_R008>
+                <RO_B002_R009>2024-12-31</RO_B002_R009>
+                <RO_B002_R010>2024-11-20T17:13:38</RO_B002_R010>
+                <RO_B002_R011>2024-11-20T18:05:49</RO_B002_R011>
+                <RO_B004>
+                    <RO_B004_R001>UR_ANO_CTR_DI53c</RO_B004_R001>
+                    <RO_B004_R002>Absence du nombre de jours calendaires servant au calcul du plafond de Sécurité Sociale</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>04</RO_B004_R004>
+                    <RO_B004_R005>08</RO_B004_R005>
+                    <RO_B004_R006>02</RO_B004_R006>
+                    <RO_B004_R007>02</RO_B004_R007>
+                    <RO_B004_R008>01</RO_B004_R008>
+                    <RO_B004_R009>3</RO_B004_R009>
+                    <RO_B004_R010>3</RO_B004_R010>
+                    <RO_B004_R011>Une anomalie est détectée lorsque le nombre de jour calendraire servant au calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B004_R011>
+                    <RO_B004_R012>Article L133-5-3-1 CSS</RO_B004_R012>
+                    <RO_B004_R013>Pour l'individu en anomalie, veuillez vérifier que le nombre de jours calendaires de la période d’emploi concernée pris en compte dans le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est présent dans votre déclaration.
+
+Effectuez avant l'exigibilité une DSN annule et remplace. Après l'exigibilité, effectuez un bloc de régularisation   pour corriger les données en anomalie.
+Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie</RO_B004_R013>
+                    <RO_B004_R014>https://www.urssaf.fr/portail/home/employeur/calculer-les-cotisations/la-base-de-calcul/lassiette-maximale/la-notion-de-plafond/le-calcul-du-plafond/prise-en-compte-des-absences.html</RO_B004_R014>
+                    <RO_B004_R015>L'anomalie est susceptible d'affecter le montant des droits de vos salariés et assimilés et peut constituer un manquement à vos obligations déclaratives.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2741199103755 contrat 00001 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2741199103755</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>L0544</RO_B006_R005>
+                            <RO_B006_R006>2014-12-02</RO_B006_R006>
+                            <RO_B006_R007>00001</RO_B006_R007>
+                            <RO_B006_R008>1974-11-05</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2970914088439 contrat 00001 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2970914088439</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>Y445Q</RO_B006_R005>
+                            <RO_B006_R006>2021-07-05</RO_B006_R006>
+                            <RO_B006_R007>00001</RO_B006_R007>
+                            <RO_B006_R008>1997-09-16</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                    <RO_B005>
+                        <RO_B005_R001>Pour Test Test 2401156040934 contrat 00001 sur le mois de 2024-01-01 le nombre de jours calendaires pour le calcul du plafond de Sécurité Sociale (S21.G00.53.002 rattaché au S21.G00.53.001 type 01, S21.G00.53.003 unité de mesure 040) est absent de votre déclaration.</RO_B005_R001>
+                        <RO_B005_R002>2024-01-01</RO_B005_R002>
+                        <RO_B005_R003>2024-01-31</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>2401156040934</RO_B006_R001>
+                            <RO_B006_R003>Test</RO_B006_R003>
+                            <RO_B006_R004>Test</RO_B006_R004>
+                            <RO_B006_R005>KNHFN</RO_B006_R005>
+                            <RO_B006_R006>2015-08-01</RO_B006_R006>
+                            <RO_B006_R007>00001</RO_B006_R007>
+                            <RO_B006_R008>1940-11-10</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.001</RO_B007_R001>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.002</RO_B007_R001>
+                            <RO_B007_R009>02</RO_B007_R009>
+                        </RO_B007>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.53.003</RO_B007_R001>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+            </RO_B002>
+        </RO_B001>
+    </RO>
+</GIPMDS>
