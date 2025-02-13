@@ -1,0 +1,330 @@
+openapi: 3.0.0
+info:
+  title: API de gestion de pièces jointes IJ
+  description: API permettant le dépôt de pièces jointes IJ
+  version: 1.0.0
+servers:
+  - url: /public/rest/facade/v1
+    description: Current endpoint
+  - url: https://localhost:8080/public/rest/
+    description: Endpoint local
+  - url: https://localhost:8888/public/rest/
+    description: Endpoint local docker
+tags:
+  - name: Envoi
+    description: API d'envoi de dépôt de pièces jointes IJ
+  - name: Consultation
+    description: API de consultation de rapports PJ IJ
+security:
+  - 'Authentification_net-E': []
+paths:
+  /indemnites-journalieres-pj:
+    post:
+      tags:
+        - Envoi
+      summary: Envoyer des données de pièces jointes IJ
+      description: Permet d'envoyer des données de pièces jointes IJ
+      operationId: depotPJIJ
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/DepotIJForm"
+      responses:
+        "200":
+          description: Succès de l'envoi des données
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RapportIJDto"
+              examples:
+                rapport_ok:
+                  $ref: '#/components/examples/RapportIJDtoOK'
+        "400":
+          description: Requête incorrecte
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RapportIJDto'
+              examples:
+                rapport_ko:
+                  $ref: '#/components/examples/RapportIJDtoKO'
+        "401":
+          description: Jeton de connexion incorrect ou expiré
+        "403":
+          description: Aucune habilitation trouvée
+        "409":
+          description: La requête ne peut être traitée à la suite d'un conflit avec l'état actuel du serveur.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RapportIJDto'
+        "500":
+          description: Erreur interne du serveur
+    get:
+      tags:
+        - Consultation
+      summary: Consultation des rapports PJ IJ paginés
+      description: Permet la consultation des rapports PJ IJ paginés
+      operationId: getAllRapportIJPageDtos
+      parameters:
+        - name: dateDebutTransmissionDepotPJ
+          in: query
+          description: Dates de transmission des dépôts de PJ
+          schema:
+            type: string
+            example: '20240101120000'
+        - name: dateFinTransmissionDepotPJ
+          in: query
+          description: Dates de transmission des dépôts de PJ
+          schema:
+            type: string
+            example: '20240101120000'
+        - name: page
+          in: query
+          description: Numéro de la page demandée
+          schema:
+            type: integer
+            default: 1
+        - name: taillePage
+          in: query
+          description: Nombre de dépôts par page
+          schema:
+            type: integer
+            default: 25
+        - name: tri
+          in: query
+          description: Tri par attribut
+          schema:
+            type: string
+            default: "dateEnvoi"
+        - name: directionTri
+          in: query
+          description: Direction du tri (ascendant ou descendant)
+          schema:
+            $ref: '#/components/schemas/DirectionTri'
+      responses:
+        '200':
+          description: Récupération des rapports PJ OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RapportIJPageDto'
+        '400':
+          description: Requête incorrecte
+        '413':
+          description: Taille de page limite dépassée
+        '401':
+          description: Jeton de connexion incorrect ou expiré
+        '403':
+          description: Aucune habilitation trouvée
+        '500':
+          description: Erreur interne du serveur
+  /indemnites-journalieres-pj/{idEnvoi}:
+    get:
+      tags:
+        - Consultation
+      summary: Consultation d'un rapport PJ IJ spécifique
+      description: Permet la consultation d'un rapport PJ IJ spécifique
+      operationId: getRapportIJDto
+      parameters:
+        - name: idEnvoi
+          in: path
+          required: true
+          description: id du dépôts de PJ
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Récupération rapport PJ OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RapportIJDto'
+              examples:
+                rapport_ok:
+                  $ref: '#/components/examples/RapportIJDtoOK'
+                rapport_ko:
+                  $ref: '#/components/examples/RapportIJDtoKO'
+        '404':
+          description: Rapport PJ introuvable
+        '401':
+          description: Jeton de connexion incorrect ou expiré
+        '403':
+          description: Aucune habilitation trouvée
+        '500':
+          description: Erreur interne du serveur
+components:
+  examples:
+    RapportIJDtoOK:
+      value:
+        idEnvoi: 'ADP-20230101'
+        dateEnvoi: '20240101120000'
+        siretDeclare: '18003502402369'
+        codeRetour: '200'
+        rapportRejet: [ ]
+    RapportIJDtoKO:
+      value:
+        idEnvoi: 'ADP-20230101'
+        dateEnvoi: '20240101120000'
+        siretDeclare: '18003502402369'
+        codeRetour: '400'
+        rapportRejet:
+          - codeRejet: 'CTL-PJ-TAI'
+            libelleRejet: 'Taille de la PJ supérieure à 5Mo'
+  schemas:
+    DirectionTri:
+      type: string
+      enum:
+        - ASC
+        - DESC
+
+    CodeRejetDto:
+      type: object
+      properties:
+        codeRejet:
+          type: string
+          description: Code de rejet du dépôt de PJ
+        libelleRejet:
+          type: string
+          description: Libellé de rejet du dépôt de PJ
+    RapportIJDto:
+      type: object
+      properties:
+        idEnvoi:
+          type: string
+          description: Identifiant unique de l'envoi
+        dateEnvoi:
+          type: string
+          description: Heure de traitement du dépôt de PJ
+        siretDeclare:
+          type: string
+        codeRetour:
+          type: string
+          description: statut du dépôt
+        rapportRejet:
+          type: array
+          items:
+            $ref: '#/components/schemas/CodeRejetDto'
+    DepotIJForm:
+      type: object
+      properties:
+        idEnvoi:
+          type: string
+          description: Identifiant unique de l'envoi (250 caractères max)
+          example: 'ADP2023010100001234567890'
+        siretDeclare:
+          type: string
+          description: SIRET déclaré (employeur) sur 14 caractères
+          example: '12345678901234'
+        nir:
+          type: string
+          description: Numéro d'identification au répertoire sur 15 caractères avec la clé
+          example: '163113844900397'
+        natureAbsence:
+          type: string
+          description: |
+            Nature de l'absence
+            * ACCIDENT_TRAVAIL
+            * DEUIL_ENFANT
+            * FEMME_ENCEINTE
+            * MALADIE
+            * MALADIE_PROFESSIONELLE
+            * MATERNITE
+            * PATERNITE
+            * TPT_ACCIDENT_TRAVAIL
+            * TPT_MALADIE
+            * TPT_MALADIE_PROFESSIONNELLE
+            * ADOPTION
+          example: 'DEUIL_ENFANT'
+        origine:
+          type: string
+          description: |
+            Origine de l'attestation de salaire
+            * DSIJ_DSN
+            * DSIJ_NET_ENTREPRISE
+          example: 'DSIJ_DSN'
+        dernierJourTravaille:
+          type: string
+          description: Date de dernier jour travaillé
+          example: '20240101'
+        motif:
+          type: string
+          description: |
+            Motif de création du dépôt
+            * DEMANDE_INITIALE
+            * METIER
+            * COURRIER
+          example: 'METIER'
+        typePieces:
+          type: string
+          description: | 
+            Type de pièces justificatives
+             * ATTESTATION_CURE
+             * BULLETIN_HOSPITALISATION
+             * JUSTIFICATIF_ECART_SALAIRE
+             * ACTE_DECES_ENFANT
+             * NON_RECLASSEMENT
+             * ACTE_NAISSANCE_ENFANT
+             * CONGES_PARENTAL
+             * CONTRAT_APPRENTISSAGE
+             * CONGE_ADOPTION
+             * BULLETIN_SALAIRE
+             * DECALAGE_GROSSESSE
+             * ACCIDENT_TRAVAIL
+             * CONGES_PATERNITE
+             * RIB_EMPLOYEUR
+             * CONGES_COORDINATION
+             * ARRET_POMPIER
+             * DECLARATION_FRACTIONNEMENT
+          example: 'CONTRAT_APPRENTISSAGE'
+        commentaire:
+          type: string
+          description: Commentaire (150 caractères max)
+        fichierPj:
+          type: string
+          format: binary
+          description: Fichier de la pièce jointe au format PDF
+        editeur:
+          type: string
+          description: Nom de l'éditeur (20 caractères max)
+        logiciel:
+          type: string
+          description: Nom du logiciel (20 caractères max)
+        versionLogiciel:
+          type: string
+          description: Version du logiciel (10 caractères max)
+    Page:
+      type: object
+      properties:
+        page:
+          type: integer
+        taillePage:
+          type: integer
+        totalPages:
+          type: integer
+        totalElements:
+          type: integer
+          format: int64
+        nombreElements:
+          type: integer
+    RapportIJPageDto:
+      allOf:
+        - $ref: "#/components/schemas/Page"
+        - type: object
+          properties:
+            elements:
+              type: array
+              items:
+                $ref: "#/components/schemas/RapportIJDto"
+  securitySchemes:
+    'Authentification_net-E':
+      name: Authorization
+      type: apiKey
+      in: header
+      description: |
+        - **classique** : 
+        DSNLogin jeton=[valeur_jeton]
+        - **concentrateur** : 
+        DSNLogin concentrateur=[valeur_jeton],declarant=[triplet_siret_nom_prenom_encodé]
+
