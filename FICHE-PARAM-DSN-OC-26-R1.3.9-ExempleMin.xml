@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Exemple complet de fiche de paramétrage DSN OC - version 1.3.9 du 16/06/2024 -->
+<FICHE IdentifiantFiche="numero1" DateHeureCreation="2019-10-01T09:30:47Z" Version="139" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FICHE-PARAM-DSN-OC-26-R1.3.9.xsd">
+	<Entreprise SIREN="123456789" RaisonSociale="Raison Sociale de l'Entreprise" NIC="12345"/>
+	<ProducteurFiche CodeProducteur="P0000" RaisonSocialeProducteur="Raison Sociale de l'organisme complémentaire"/>
+	<ContactTechniqueFiche Nom="Nom du contact technique" Tel="0101010101" Mail="contact@technique.fr"/>
+	<ContactGestionnaireFiche Nom="Nom du gestionnaire" Tel="0606060606" Mail="contact@gestionnaire.fr"/>
+	<GROUPE NumeroGrp="1" LibelleGrp="Contrats NON CADRE de plus de 6 mois">
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012019">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001" LibelleContrat="Contrat Prévoyance NON CADRE"/>
+			<CotisationEtablissement CodeCotisation="001" PeriodiciteDeclaration="T">
+				<Montant TypeMontant="02" Montant="35"/>
+				<Taux Taux="0.01" TypeBase="02"/>
+			</CotisationEtablissement>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012019">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001" LibelleContrat="Contrat Prévoyance NON CADRE"/>
+			<ElementsDeCalculAttendus>
+				<TAPrev>
+					<Taux>0.4</Taux>
+				</TAPrev>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012019" DateFinValidite="31122019">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000001" LibelleContrat="Contrat Santé NON CADRE"/>
+			<Option CodeOption="OPTION-1" LibelleOption="Option 1"/>
+			<Population CodePopulation="NCAD" LibellePopulation="Non Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Formule Famille" Condition="01">
+					<Montant>79.00</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Formule Assuré seul" Condition="02">
+					<Montant>19.00</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012019" DateFinValidite="31122019">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000001" LibelleContrat="Contrat Santé NON CADRE"/>
+			<Option CodeOption="OPTION-2" LibelleOption="Option 2"/>
+			<Population CodePopulation="NCAD" LibellePopulation="Non Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Formule Famille" Condition="01">
+					<Montant>99.00</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Formule Assuré seul" Condition="02">
+					<Montant>39.00</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012020">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000001" LibelleContrat="Contrat Santé NON CADRE"/>
+			<Option CodeOption="MENU" LibelleOption="Couverture à la carte"/>
+			<Population CodePopulation="NCAD" LibellePopulation="Non Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif assuré ouvrant droit">
+					<Montant>39</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif conjoint">
+					<Montant>31</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif pour chaque enfant">
+					<Montant>20</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+	</GROUPE>
+	<GROUPE NumeroGrp="2" LibelleGrp="Contrats CADRE de plus de 6 mois">
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012019">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000002" LibelleContrat="Contrat Prévoyance CADRE"/>
+			<CotisationEtablissement CodeCotisation="001" PeriodiciteDeclaration="T">
+				<Montant TypeMontant="02" Montant="35"/>
+				<Taux Taux="0.01" TypeBase="02"/>
+			</CotisationEtablissement>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012019">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000002" LibelleContrat="Contrat Prévoyance CADRE"/>
+			<ElementsDeCalculAttendus>
+				<TAPrev>
+					<Taux>1.5</Taux>
+				</TAPrev>
+				<TBPrev>
+					<Taux>0.1</Taux>
+				</TBPrev>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012019" DateFinValidite="31122019">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002" LibelleContrat="Contrat Santé CADRE"/>
+			<Option CodeOption="FAMILLE" LibelleOption="Couverture Famille"/>
+			<Population CodePopulation="CAD" LibellePopulation="Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="18" LibelleCodeNature="Formule Famille">
+					<Taux>3.5</Taux>
+					<Coef>1</Coef>
+					<Assiette>PMSS</Assiette>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Periodicite="Trimestriel" DateDebutValidite="01012019" DateFinValidite="31122019">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002" LibelleContrat="Contrat Santé CADRE"/>
+			<Option CodeOption="ISOLE" LibelleOption="Couverture Assuré seul"/>
+			<Population CodePopulation="CAD" LibellePopulation="Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="18" LibelleCodeNature="Formule Assuré seul">
+					<Taux>1.5</Taux>
+					<Coef>1</Coef>
+					<Assiette>PMSS</Assiette>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+	</GROUPE>
+</FICHE>

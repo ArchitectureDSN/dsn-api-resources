@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Exemple complet de fiche de paramétrage DSN OC - version 1.4.0 du 16/06/2025 -->
+<FICHE IdentifiantFiche="numero1" DateHeureCreation="2025-10-01T09:30:47" Version="140" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FICHE-PARAM-DSN-OC-26-R1.4.0.xsd">
+	<Entreprise SIREN="123456789" RaisonSociale="Raison Sociale de l'Entreprise" NIC="12345"/>
+	<ProducteurFiche CodeProducteur="P0000" RaisonSocialeProducteur="Raison Sociale de l'organisme complémentaire"/>
+	<ContactTechniqueFiche Nom="Nom du contact technique" Tel="0101010101" Mail="contact@technique.fr"/>
+	<ContactGestionnaireFiche Nom="Nom du gestionnaire" Tel="0606060606" Mail="contact@gestionnaire.fr"/>
+	<Message>Message à l'attention du déclarant</Message>
+	<GROUPE NumeroGrp="1" LibelleGrp="Contrats NON CADRE de plus de 6 mois">
+		<ParametresContrats Changement="00" Periodicite="Trimestriel" Terme="1" DateDebutValidite="01012026">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001" LibelleContrat="Contrat Prévoyance NON CADRE"/>
+			<CotisationEtablissement CodeCotisation="001" LibelleCotisation="Cotisation établissement trimestrielle" PeriodiciteDeclaration="T">
+				<Montant TypeMontant="02" Montant="35" DetailMontant="Montant forfaitaire trimestriel par établissement"/>
+				<Taux Taux="0.01" TypeBase="02" DetailTaux="Taux appliqué sur la masse salariale plafonnée TA"/>
+			</CotisationEtablissement>
+		</ParametresContrats>
+		<ParametresContrats Changement="00" Periodicite="Trimestriel" Terme="1" DateDebutValidite="01012026">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000001" LibelleContrat="Contrat Prévoyance NON CADRE"/>
+			<ElementsDeCalculAttendus>
+				<TAPrev>
+					<Taux>0.4</Taux>
+				</TAPrev>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="12" Periodicite="Trimestriel" DateDebutValidite="01012026" DateFinValidite="31122026">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000001" LibelleContrat="Contrat Santé NON CADRE"/>
+			<Option CodeOption="ISOLE" LibelleOption="Option assuré seul"/>
+			<Population CodePopulation="NCAD" LibellePopulation="Non Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Formule Isolé (assuré seul)">
+					<Montant>39.00</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="12" Periodicite="Trimestriel" DateDebutValidite="01012026" DateFinValidite="31122026">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000001" LibelleContrat="Contrat Santé NON CADRE"/>
+			<Option CodeOption="FAMILLE" LibelleOption="Option famille"/>
+			<Population CodePopulation="NCAD" LibellePopulation="Non Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Formule Famille">
+					<Montant>129.00</Montant>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="11" Periodicite="Trimestriel" DateDebutValidite="01012020">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000001" LibelleContrat="Contrat Santé NON CADRE"/>
+			<Option CodeOption="MENU" LibelleOption="Couverture à la carte"/>
+			<Population CodePopulation="NCAD" LibellePopulation="Non Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif ouvrant droit" Condition="90">
+					<Montant>39</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif conjoint" Condition="91">
+					<Montant>30</Montant>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="20" LibelleCodeNature="Tarif par enfant (gratuité au 4ième)" Condition="94">
+					<Montant>20</Montant>
+					<BasePlafond>
+						<MontantPlafond>20</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<MontantPlancher>0</MontantPlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<CotisationPlafond>
+					<MontantPlafond>129</MontantPlafond>
+				</CotisationPlafond>
+				<CotisationPlancher>
+					<MontantPlancher>59</MontantPlancher>
+				</CotisationPlancher>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<CriteresSalaries>
+			<StatutCategoriel>
+				<ValeursExclues>01</ValeursExclues>
+				<ValeursExclues>02</ValeursExclues>
+			</StatutCategoriel>
+			<AncienneteEntreprise UniteAnciennete="02" BorneINF="6"/>
+		</CriteresSalaries>
+		<Compatibilites>10000</Compatibilites>
+		<Compatibilites>10101</Compatibilites>
+		<Compatibilites>10011</Compatibilites>
+		<Compatibilites>10100</Compatibilites>
+		<Compatibilites>10010</Compatibilites>
+		<Compatibilites>10001</Compatibilites>
+		<Compatibilites>11000</Compatibilites>
+		<Compatibilites>11101</Compatibilites>
+		<Compatibilites>11011</Compatibilites>
+		<Compatibilites>11100</Compatibilites>
+		<Compatibilites>11010</Compatibilites>
+		<Compatibilites>11001</Compatibilites>
+	</GROUPE>
+	<GROUPE NumeroGrp="2" LibelleGrp="Contrats CADRE de plus de 6 mois">
+		<ParametresContrats Changement="00" Periodicite="Trimestriel" Terme="1" DateDebutValidite="01012026">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000002" LibelleContrat="Contrat Prévoyance CADRE"/>
+			<CotisationEtablissement CodeCotisation="001" LibelleCotisation="Cotisation établissement trimestrielle" PeriodiciteDeclaration="T">
+				<Montant TypeMontant="02" Montant="35" DetailMontant="Montant forfaitaire trimestriel par établissement"/>
+				<Taux Taux="0.01" TypeBase="02" DetailTaux="Taux appliqué sur la masse salariale plafonnée TA"/>
+			</CotisationEtablissement>
+		</ParametresContrats>
+		<ParametresContrats Changement="00" Periodicite="Trimestriel" Terme="1" DateDebutValidite="01012026">
+			<Organisme CodeOC="P0000"/>
+			<Contrat ReferenceContrat="PREV00000000002" LibelleContrat="Contrat Prévoyance CADRE"/>
+			<ElementsDeCalculAttendus>
+				<TAPrev>
+					<Taux>1.5</Taux>
+				</TAPrev>
+				<TBPrev>
+					<Taux>0.1</Taux>
+				</TBPrev>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="12" Periodicite="Trimestriel" DateDebutValidite="01012026" DateFinValidite="31122026">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002" LibelleContrat="Contrat Santé CADRE"/>
+			<Option CodeOption="FAMILLE" LibelleOption="Couverture Famille"/>
+			<Population CodePopulation="CAD" LibellePopulation="Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="18" LibelleCodeNature="Formule Famille">
+					<Taux>3.5</Taux>
+					<Coef>1</Coef>
+					<Assiette>PMSS</Assiette>
+				</BaseMontantSpecifique>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="10" Periodicite="Trimestriel" DateDebutValidite="01012020">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002" LibelleContrat="Contrat Santé CADRE"/>
+			<Option CodeOption="BASE" LibelleOption="Base"/>
+			<Population CodePopulation="CAD" LibellePopulation="Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif ouvrant droit (plancher 2PMSS et montant plafond)" Condition="90">
+					<Taux>0.95</Taux>
+					<BasePlafond>
+						<MontantPlafond>100</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<TauxPlancher>0.95</TauxPlancher>
+						<CoefPlancher>2</CoefPlancher>
+						<AssiettePlancher>PMSS</AssiettePlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif conjoint (plancher 2PMSS et montant plafond)" Condition="91">
+					<Taux>0.95</Taux>
+					<BasePlafond>
+						<MontantPlafond>100</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<TauxPlancher>0.95</TauxPlancher>
+						<CoefPlancher>2</CoefPlancher>
+						<AssiettePlancher>PMSS</AssiettePlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif par enfant (plafond et gratuité au 4ième)" Condition="94">
+					<Taux>0.42</Taux>
+					<BasePlafond>
+						<MontantPlafond>45</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<MontantPlancher>0</MontantPlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<CotisationPlafond>
+					<MontantPlafond>335</MontantPlafond>
+				</CotisationPlafond>
+				<CotisationPlancher>
+					<MontantPlancher>74.58</MontantPlancher>
+				</CotisationPlancher>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="10" Periodicite="Trimestriel" DateDebutValidite="01012020">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002" LibelleContrat="Contrat Santé CADRE"/>
+			<Option CodeOption="OPT1" LibelleOption="Base plus option 1"/>
+			<Population CodePopulation="CAD" LibellePopulation="Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif ouvrant droit (plancher 2PMSS et montant plafond)" Condition="90">
+					<Taux>1.15</Taux>
+					<BasePlafond>
+						<MontantPlafond>125</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<TauxPlancher>1.15</TauxPlancher>
+						<CoefPlancher>2</CoefPlancher>
+						<AssiettePlancher>PMSS</AssiettePlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif conjoint (plancher 2PMSS et montant plafond)" Condition="91">
+					<Taux>1.15</Taux>
+					<BasePlafond>
+						<MontantPlafond>125</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<TauxPlancher>1.15</TauxPlancher>
+						<CoefPlancher>2</CoefPlancher>
+						<AssiettePlancher>PMSS</AssiettePlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif par enfant (plafond et gratuité au 4ième)" Condition="94">
+					<Taux>0.52</Taux>
+					<BasePlafond>
+						<MontantPlafond>55</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<MontantPlancher>0</MontantPlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<CotisationPlafond>
+					<MontantPlafond>415</MontantPlafond>
+				</CotisationPlafond>
+				<CotisationPlancher>
+					<MontantPlancher>90.28</MontantPlancher>
+				</CotisationPlancher>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<ParametresContrats Changement="10" Periodicite="Trimestriel" DateDebutValidite="01012020">
+			<Organisme CodeOC="P0000" CodeDELEG="DELEG1"/>
+			<Contrat ReferenceContrat="SANTE0000000002" LibelleContrat="Contrat Santé CADRE"/>
+			<Option CodeOption="OPT2" LibelleOption="Base plus option 2"/>
+			<Population CodePopulation="CAD" LibellePopulation="Cadre"/>
+			<ElementsDeCalculAttendus>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif ouvrant droit (plancher 2PMSS et montant plafond)" Condition="90">
+					<Taux>1.35</Taux>
+					<BasePlafond>
+						<MontantPlafond>150</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<TauxPlancher>1.35</TauxPlancher>
+						<CoefPlancher>2</CoefPlancher>
+						<AssiettePlancher>PMSS</AssiettePlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif conjoint (plancher 2PMSS et montant plafond)" Condition="91">
+					<Taux>1.35</Taux>
+					<BasePlafond>
+						<MontantPlafond>150</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<TauxPlancher>1.35</TauxPlancher>
+						<CoefPlancher>2</CoefPlancher>
+						<AssiettePlancher>PMSS</AssiettePlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<BaseMontantSpecifique ValeurCodeNature="12" LibelleCodeNature="Tarif par enfant (plafond et gratuité au 4ième)" Condition="94">
+					<Taux>0.62</Taux>
+					<BasePlafond>
+						<MontantPlafond>65</MontantPlafond>
+					</BasePlafond>
+					<BasePlancher>
+						<MontantPlancher>0</MontantPlancher>
+					</BasePlancher>
+				</BaseMontantSpecifique>
+				<CotisationPlafond>
+					<MontantPlafond>495</MontantPlafond>
+				</CotisationPlafond>
+				<CotisationPlancher>
+					<MontantPlancher>105.98</MontantPlancher>
+				</CotisationPlancher>
+			</ElementsDeCalculAttendus>
+		</ParametresContrats>
+		<CriteresSalaries>
+			<StatutCategoriel>
+				<ValeursIncluses>01</ValeursIncluses>
+				<ValeursIncluses>02</ValeursIncluses>
+			</StatutCategoriel>
+			<AncienneteEntreprise UniteAnciennete="02" BorneINF="6"/>
+		</CriteresSalaries>
+		<Compatibilites>110000</Compatibilites>
+		<Compatibilites>110100</Compatibilites>
+		<Compatibilites>110010</Compatibilites>
+		<Compatibilites>110001</Compatibilites>
+		<Compatibilites>111000</Compatibilites>
+		<Compatibilites>111100</Compatibilites>
+		<Compatibilites>111010</Compatibilites>
+		<Compatibilites>111001</Compatibilites>
+	</GROUPE>
+</FICHE>
