@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GIPMDS xmlns="https://gipmds/1.0">
+    <RO>
+        <RO_R001>P26V01</RO_R001>
+        <RO_B000>
+            <RO_B000_R001>F1xGK3X.C-.wayM98pOcSJm</RO_B000_R001>
+            <RO_B000_R002>1</RO_B000_R002>
+            <RO_B000_R003>40059882700014</RO_B000_R003>
+            <RO_B000_R004>41040946000459</RO_B000_R004>
+            <RO_B000_R005>11</RO_B000_R005>
+            <RO_B000_R007>01</RO_B000_R007>
+            <RO_B000_R008>france travail</RO_B000_R008>
+            <RO_B000_R009>CRTL-prea03-ko</RO_B000_R009>
+            <RO_B000_R010>v99</RO_B000_R010>
+            <RO_B000_R011>01</RO_B000_R011>
+            <RO_B000_R012>22052026</RO_B000_R012>
+            <RO_B000_R013>02</RO_B000_R013>
+            <RO_B000_R014>P26V01</RO_B000_R014>
+        </RO_B000>
+        <RO_B001>
+            <RO_B001_R001>01</RO_B001_R001>
+            <RO_B002>
+                <RO_B002_R001>140621</RO_B002_R001>
+				<RO_B002_R002>135</RO_B002_R002>
+                <RO_B002_R003>Contrôle métier France Travail</RO_B002_R003>
+                <RO_B002_R004>01</RO_B002_R004>
+                <RO_B002_R005>France Travail</RO_B002_R005>
+                <RO_B002_R006>13000548100010</RO_B002_R006>
+                <RO_B002_R007>13000548100010</RO_B002_R007>
+                <RO_B002_R010>2026-05-27T16:08:28</RO_B002_R010>
+                <RO_B002_R011>2026-05-27T16:08:29</RO_B002_R011>
+                <RO_B003>
+                    <RO_B003_R001>Des anomalies détectées sur le périmètre des contrôles remontés automatiquement au déclarant</RO_B003_R001>
+                    <RO_B003_R002>ANO</RO_B003_R002>
+                </RO_B003>
+                <RO_B004>
+                    <RO_B004_R001>FT0013</RO_B004_R001>
+                    <RO_B004_R002>Détection d'une incohérence entre le début du préavis non effectué et non payé et la date de fin de contrat</RO_B004_R002>
+                    <RO_B004_R003>01</RO_B004_R003>
+                    <RO_B004_R004>05</RO_B004_R004>
+                    <RO_B004_R005>06</RO_B004_R005>
+                    <RO_B004_R006>01</RO_B004_R006>
+                    <RO_B004_R011>Un préavis non effectué et non payé doit systématiquement démarrer le lendemain de la date de fin de contrat. Si la Date de début de préavis - S21.G00.63.002 la plus ancienne est différente du lendemain de la Date de fin du contrat - S21.G00.62.001 pour le "Type réalisation et paiement du préavis - S21.G00.63.001 " à 03 - préavis non effectué et non payé" alors anomalie. NB : ce contrôle ne s'execute pas dans le ou les cas suivants : si pas de préavis 03</RO_B004_R011>
+                    <RO_B004_R012>Cour de cassation, chambre sociale, 5 octobre 1994, n°91-44.484; L. 1234-5 CT; L.1234-3 CT.</RO_B004_R012>
+                    <RO_B004_R013>Veuillez vérifier la cohérence entre la date de début de préavis non effectué et non payé par rapport à la date de fin de contrat. La date de début de préavis non effectué et non payé, la plus ancienne des préavis non effectués et non payés doit être positionnée au lendemain de la date de fin de contrat déclarée. Il convient de faire un signalement FCTU annule et remplace. Ci-dessous des exemples de déclaration cohérente (les exemples ci-dessous font état systématiquement de l'ensemble des types réalisation et paiement du préavis) : Exemple 1 : [Type réalisation et paiement du préavis - S21.G00.63.001 = 01 - préavis effectué et payé ET Date de début de préavis - S21.G00.63.002 = 1er septembre 2025 ET Date de fin de préavis - S21.G00.63.003 = 30 septembre 2025 ET Type réalisation et paiement du préavis - S21.G00.63.001 = 03 - préavis non effectué et non payé ET Date de début de préavis - S21.G00.63.002 = 1er octobre 2025 ET Date de fin de préavis - S21.G00.63.003 = 31 octobre 2025 ET Date de fin du contrat - S21.G00.62.001 = 30 septembre 2025] Exemple 2 : [Type réalisation et paiement du préavis - S21.G00.63.001 = 01 - préavis effectué et payé ET Date de début de préavis - S21.G00.63.002 = 1er septembre 2025 ET Date de fin de préavis - S21.G00.63.003 = 30 septembre 2025 ET Type réalisation et paiement du préavis - S21.G00.63.001 = 02 - préavis non effectué et payé ET Date de début de préavis - S21.G00.63.002 = 1er octobre 2025 ET Date de fin de préavis - S21.G00.63.003 = 31 octobre 2025 ET Type réalisation et paiement du préavis - S21.G00.63.001 = 03 - préavis non effectué et non payé ET Date de début de préavis - S21.G00.63.002 = 1er novembre 2025 ET Date de fin de préavis - S21.G00.63.003 = 30 novembre 2025 ET Date de fin du contrat - S21.G00.62.001 = 31 octobre 2025] Exemple 3 : [Type réalisation et paiement du préavis - S21.G00.63.001 = 01 - préavis effectué et payé ET Date de début de préavis - S21.G00.63.002 = 1er septembre 2025 ET Date de fin de préavis - S21.G00.63.003 = 30 septembre 2025 ET Type réalisation et paiement du préavis - S21.G00.63.001 = 51 - préavis non effectué et payé dans le cadre d’un congé de mobilité ET Date de début de préavis - S21.G00.63.002 = 1er octobre 2025 ET Date de fin de préavis - S21.G00.63.003 = 31 octobre 2025 ET Type réalisation et paiement du préavis - S21.G00.63.001 = 03 - préavis non effectué et non payé ET Date de début de préavis - S21.G00.63.002 = 1er novembre 2025 ET Date de fin de préavis - S21.G00.63.003 = 30 novembre 2025 ET Date de fin du contrat - S21.G00.62.001 = 31 octobre 2025] Le cas échéant, sollicitez votre éditeur de logiciel de paie pour modifier le paramétrage et ne pas reproduire cette anomalie.</RO_B004_R013>
+                    <RO_B004_R014>https://net-entreprises.custhelp.com/app/answers/detail_dsn/a_id/1264</RO_B004_R014>
+                    <RO_B004_R015>L'attestation employeur sera erronée et France Travail réclamera à l'employeur un justificatif correct afin de prendre en charge correctement l'indemnisation du demandeur d'emploi concerné. Les droits du demandeur d'emploi seront retardés.</RO_B004_R015>
+                    <RO_B005>
+                        <RO_B005_R001>Vous avez déclaré pour l'individu ALLILAIRE DOMINIQUE  et le contrat Contrat 2, 2026-01-01, une Date de début de préavis non effectué et non payé différente du lendemain de la date de fin de contrat, ce qui n'est pas admis dans le contexte déclaré.</RO_B005_R001>
+                        <RO_B005_R002>2026-01-01</RO_B005_R002>
+                        <RO_B005_R003>2026-02-28</RO_B005_R003>
+                        <RO_B006>
+                            <RO_B006_R001>1961068224024</RO_B006_R001>
+                            <RO_B006_R003>MARTIN</RO_B006_R003>
+                            <RO_B006_R004>MARTIN</RO_B006_R004>
+                            <RO_B006_R006>2026-01-01</RO_B006_R006>
+                            <RO_B006_R007>Contrat 2</RO_B006_R007>
+                            <RO_B006_R008>1996-10-30</RO_B006_R008>
+                        </RO_B006>
+                        <RO_B007>
+                            <RO_B007_R001>S21.G00.63.002</RO_B007_R001>
+                            <RO_B007_R002>2026-02-27</RO_B007_R002>
+                            <RO_B007_R003>2026-03-01</RO_B007_R003>
+                            <RO_B007_R009>01</RO_B007_R009>
+                        </RO_B007>
+                    </RO_B005>
+                </RO_B004>
+            </RO_B002>
+        </RO_B001>
+    </RO>
+</GIPMDS>
